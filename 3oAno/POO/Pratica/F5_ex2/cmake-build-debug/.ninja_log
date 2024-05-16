@@ -1,0 +1,6 @@
+# ninja log v5
+0	51	1699433209109164810	build.ninja	16c2644c7532df20
+5	204	1698228879756540321	CMakeFiles/F5_ex2.dir/Vetor.cpp.o	d244db35bc285362
+5	252	1698228879804802914	CMakeFiles/F5_ex2.dir/main.cpp.o	4fd592d66c687efa
+5	221	1699436755868967379	CMakeFiles/F5_ex2.dir/Vetor.cpp.o	d244db35bc285362
+5	272	1699436755918166324	CMakeFiles/F5_ex2.dir/main.cpp.o	4fd592d66c687efa

@@ -1,0 +1,228 @@
+1
+00:00:02,020 --> 00:00:04,059
+Now when it comes to the number of parameters
+
+2
+00:00:04,059 --> 00:00:07,330
+there is one special case, one special scenario.
+
+3
+00:00:07,330 --> 00:00:10,070
+And that would be functions like this.
+
+4
+00:00:10,070 --> 00:00:13,830
+Sum Up function, which simply sums up all the values
+
+5
+00:00:13,830 --> 00:00:15,060
+we pass in.
+
+6
+00:00:15,060 --> 00:00:16,900
+We can have functions like this
+
+7
+00:00:16,900 --> 00:00:20,370
+and even though this function takes six parameters,
+
+8
+00:00:20,370 --> 00:00:22,000
+six arguments in this case,
+
+9
+00:00:22,000 --> 00:00:25,210
+I would argue that it's very easy to read and understand.
+
+10
+00:00:25,210 --> 00:00:27,660
+It's very clear what this function does
+
+11
+00:00:27,660 --> 00:00:30,000
+and the order does actually not matter here
+
+12
+00:00:30,000 --> 00:00:31,800
+even for this example.
+
+13
+00:00:31,800 --> 00:00:34,660
+Still technically we violate the rule
+
+14
+00:00:34,660 --> 00:00:38,330
+of having less than or equal to three parameters.
+
+15
+00:00:38,330 --> 00:00:40,400
+Here we have six.
+
+16
+00:00:40,400 --> 00:00:43,550
+Now of course we could rewrite this function
+
+17
+00:00:43,550 --> 00:00:48,110
+also internally of course, to take an array as the argument.
+
+18
+00:00:48,110 --> 00:00:50,600
+Then we technically have only one argument
+
+19
+00:00:50,600 --> 00:00:52,450
+because this is one array.
+
+20
+00:00:52,450 --> 00:00:55,170
+Please note the square brackets.
+
+21
+00:00:55,170 --> 00:00:56,250
+We could do this
+
+22
+00:00:56,250 --> 00:00:59,440
+and this could be a perfectly viable solution,
+
+23
+00:00:59,440 --> 00:01:02,090
+but we don't even have to do that.
+
+24
+00:01:02,090 --> 00:01:03,470
+So here I'll comment that out
+
+25
+00:01:03,470 --> 00:01:05,600
+so that we still have it for reference.
+
+26
+00:01:05,600 --> 00:01:07,100
+Otherwise of course we learned
+
+27
+00:01:07,100 --> 00:01:10,610
+that we shouldn't comment out things but simply delete them.
+
+28
+00:01:10,610 --> 00:01:13,090
+Nonetheless, here I'm doing it so that we still have
+
+29
+00:01:13,090 --> 00:01:15,680
+this alternative solution for comparison,
+
+30
+00:01:15,680 --> 00:01:17,320
+but I still wanna make a point.
+
+31
+00:01:17,320 --> 00:01:21,580
+That this way of doing it also can be absolutely fine
+
+32
+00:01:21,580 --> 00:01:25,170
+because most programming languages allow you
+
+33
+00:01:25,170 --> 00:01:28,650
+to take in a dynamic number of arguments
+
+34
+00:01:28,650 --> 00:01:30,560
+and they then have a certain Syntax
+
+35
+00:01:30,560 --> 00:01:32,770
+for grouping all these arguments together
+
+36
+00:01:32,770 --> 00:01:36,040
+into an array inside of that function.
+
+37
+00:01:36,040 --> 00:01:38,080
+For example here in JavaScript,
+
+38
+00:01:38,080 --> 00:01:42,090
+it's this three-dot operator here.
+
+39
+00:01:42,090 --> 00:01:44,160
+Which simply tells JavaScript
+
+40
+00:01:44,160 --> 00:01:48,300
+that numbers can be any number of parameters,
+
+41
+00:01:48,300 --> 00:01:50,050
+any number of values,
+
+42
+00:01:50,050 --> 00:01:54,350
+but that they will all be merged together into one array.
+
+43
+00:01:54,350 --> 00:01:57,700
+Which is why, then we can simply loop through that array
+
+44
+00:01:57,700 --> 00:02:00,400
+to do something with the values in there.
+
+45
+00:02:00,400 --> 00:02:02,900
+And that allows us to define a function
+
+46
+00:02:02,900 --> 00:02:05,550
+which technically takes more than one parameter
+
+47
+00:02:05,550 --> 00:02:07,740
+and more than three parameters even,
+
+48
+00:02:07,740 --> 00:02:09,759
+but which still is very readable
+
+49
+00:02:09,759 --> 00:02:13,580
+and internally simply uses an array.
+
+50
+00:02:13,580 --> 00:02:15,900
+And I would argue that functions like this
+
+51
+00:02:15,900 --> 00:02:20,250
+also are pretty clean because ultimately we must not forget
+
+52
+00:02:20,250 --> 00:02:23,280
+that clean code is not about hard rules
+
+53
+00:02:23,280 --> 00:02:26,600
+which you have to follow under all circumstances,
+
+54
+00:02:26,600 --> 00:02:30,210
+but that it's about writing code which is understandable,
+
+55
+00:02:30,210 --> 00:02:32,750
+easy to read and easy to maintain.
+
+56
+00:02:32,750 --> 00:02:37,070
+And if this code is perfectly easy to read and maintain,
+
+57
+00:02:37,070 --> 00:02:38,923
+hence there is nothing wrong with it.
+

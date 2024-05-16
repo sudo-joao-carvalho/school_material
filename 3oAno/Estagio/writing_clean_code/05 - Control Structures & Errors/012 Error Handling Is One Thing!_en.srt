@@ -1,0 +1,276 @@
+1
+00:00:02,260 --> 00:00:04,680
+So now we got all this nice error
+
+2
+00:00:04,680 --> 00:00:07,140
+throwing and error handling code.
+
+3
+00:00:07,140 --> 00:00:09,160
+I got one last rule
+
+4
+00:00:09,160 --> 00:00:13,370
+or recommendation related to error handling.
+
+5
+00:00:13,370 --> 00:00:15,750
+And that is that error handling
+
+6
+00:00:15,750 --> 00:00:20,270
+actually is typically considered to be one thing.
+
+7
+00:00:20,270 --> 00:00:24,130
+When we talk about functions doing one thing,
+
+8
+00:00:24,130 --> 00:00:27,013
+and what's the implication of that for our code?
+
+9
+00:00:27,870 --> 00:00:30,480
+In the main function at the top
+
+10
+00:00:30,480 --> 00:00:32,840
+we have all this dummy data
+
+11
+00:00:32,840 --> 00:00:35,580
+but then here we have our try catch block.
+
+12
+00:00:35,580 --> 00:00:37,400
+And since this is just dummy data here
+
+13
+00:00:37,400 --> 00:00:39,170
+we can basically ignore it.
+
+14
+00:00:39,170 --> 00:00:41,290
+This could also be in the try block
+
+15
+00:00:41,290 --> 00:00:43,090
+where we then maybe try to fetch it
+
+16
+00:00:43,090 --> 00:00:45,203
+from a website or anything like that.
+
+17
+00:00:46,090 --> 00:00:48,510
+So here we in the end have just one thing.
+
+18
+00:00:48,510 --> 00:00:52,260
+We just have to try catch block inside of this function.
+
+19
+00:00:52,260 --> 00:00:55,720
+Of course we do something in the try and in the catch case
+
+20
+00:00:55,720 --> 00:00:58,630
+but that's the entire idea behind try catch.
+
+21
+00:00:58,630 --> 00:01:01,420
+It's not about not doing anything in here.
+
+22
+00:01:01,420 --> 00:01:03,320
+It's just about not doing anything
+
+23
+00:01:03,320 --> 00:01:07,233
+in addition to this try catch block, which is the case here.
+
+24
+00:01:08,580 --> 00:01:11,460
+But for process transactions, it's different.
+
+25
+00:01:11,460 --> 00:01:12,830
+Here we validate,
+
+26
+00:01:12,830 --> 00:01:15,610
+then we have a for loop and then in there
+
+27
+00:01:15,610 --> 00:01:17,560
+we have try-catch.
+
+28
+00:01:17,560 --> 00:01:21,240
+So here we are doing more than just error handling.
+
+29
+00:01:21,240 --> 00:01:24,440
+We are also looping and validating.
+
+30
+00:01:24,440 --> 00:01:27,700
+Now one way around this could be that we move
+
+31
+00:01:27,700 --> 00:01:31,563
+try catch actually into process transaction.
+
+32
+00:01:33,090 --> 00:01:36,630
+So kind of back to where it came from, you could say.
+
+33
+00:01:36,630 --> 00:01:39,890
+So let me grab this catch block remove the try block so
+
+34
+00:01:39,890 --> 00:01:43,260
+that if we just have process transaction and the loop again.
+
+35
+00:01:43,260 --> 00:01:45,950
+And now inside of process transaction,
+
+36
+00:01:45,950 --> 00:01:48,540
+we could add a try block here
+
+37
+00:01:48,540 --> 00:01:50,760
+and move validate transactions
+
+38
+00:01:50,760 --> 00:01:53,350
+as well as all this if code here
+
+39
+00:01:53,350 --> 00:01:57,040
+into this try block, and then add the catch block
+
+40
+00:01:57,040 --> 00:02:00,500
+from before with show error message.
+
+41
+00:02:00,500 --> 00:02:03,610
+This could be one way of fulfilling this rule again
+
+42
+00:02:03,610 --> 00:02:06,580
+and often ensuring the we do only one thing.
+
+43
+00:02:06,580 --> 00:02:10,160
+We try validating and then doing this.
+
+44
+00:02:10,160 --> 00:02:12,763
+And if that fails, we catch the error.
+
+45
+00:02:14,310 --> 00:02:19,060
+Now having this code in hear is still not super clean
+
+46
+00:02:19,060 --> 00:02:22,310
+it would probably be cleaner to validate and then
+
+47
+00:02:22,310 --> 00:02:25,650
+just call another function, which contains this code.
+
+48
+00:02:25,650 --> 00:02:28,440
+But the question is how would we name this function?
+
+49
+00:02:28,440 --> 00:02:32,010
+Is this a split which really makes a lot of sense.
+
+50
+00:02:32,010 --> 00:02:33,240
+We could try it.
+
+51
+00:02:33,240 --> 00:02:36,920
+And for example, add one other function here,
+
+52
+00:02:36,920 --> 00:02:39,660
+above user's transaction method maybe
+
+53
+00:02:39,660 --> 00:02:44,290
+which we name process by method.
+
+54
+00:02:44,290 --> 00:02:47,070
+And we pass our transaction in there.
+
+55
+00:02:47,070 --> 00:02:48,950
+And in here we then check for the method
+
+56
+00:02:48,950 --> 00:02:52,850
+and then dispatch our different process functions.
+
+57
+00:02:52,850 --> 00:02:57,110
+And now we could call process by method here
+
+58
+00:02:57,110 --> 00:03:01,260
+and forward the transaction inside of the try block.
+
+59
+00:03:01,260 --> 00:03:03,180
+And now this is cleaner.
+
+60
+00:03:03,180 --> 00:03:05,343
+And this down there is also clean.
+
+61
+00:03:06,840 --> 00:03:08,600
+and that's how I would recommend
+
+62
+00:03:08,600 --> 00:03:11,550
+that we solve this here though as always
+
+63
+00:03:11,550 --> 00:03:14,510
+it always comes down to personal preference
+
+64
+00:03:14,510 --> 00:03:17,653
+and what you find to be clean and readable.
+
+65
+00:03:19,010 --> 00:03:21,840
+With that however, we're now really done
+
+66
+00:03:21,840 --> 00:03:24,000
+with all the error handling.
+
+67
+00:03:24,000 --> 00:03:27,410
+Now I wanna come back to this problem
+
+68
+00:03:27,410 --> 00:03:30,030
+of our code duplication down there
+
+69
+00:03:30,030 --> 00:03:33,083
+and how we can maybe solve that in a better way.
+

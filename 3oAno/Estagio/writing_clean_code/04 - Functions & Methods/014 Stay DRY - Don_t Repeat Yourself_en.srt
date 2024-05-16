@@ -1,0 +1,152 @@
+1
+00:00:02,210 --> 00:00:05,280
+Now, besides the levels of abstraction
+
+2
+00:00:05,280 --> 00:00:07,710
+and the different kinds of operations
+
+3
+00:00:07,710 --> 00:00:09,940
+you might be doing in a function,
+
+4
+00:00:09,940 --> 00:00:11,960
+there is another reason for
+
+5
+00:00:11,960 --> 00:00:16,480
+why you might want to split a function into smaller pieces.
+
+6
+00:00:16,480 --> 00:00:21,480
+And that would be Reusability, because reusability matters
+
+7
+00:00:21,510 --> 00:00:23,700
+at least sometimes.
+
+8
+00:00:23,700 --> 00:00:27,060
+In programming whenever you write any code
+
+9
+00:00:27,060 --> 00:00:29,610
+there is one very important rule,
+
+10
+00:00:29,610 --> 00:00:33,440
+which you should try to follow as often as possible,
+
+11
+00:00:33,440 --> 00:00:36,600
+in the best case of course you should always follow it.
+
+12
+00:00:36,600 --> 00:00:40,090
+And that rule is that you shouldn't repeat yourself,
+
+13
+00:00:40,090 --> 00:00:43,780
+don't repeat yourself write DRY code,
+
+14
+00:00:43,780 --> 00:00:46,880
+that's something you will hear a lot and DRY code
+
+15
+00:00:46,880 --> 00:00:50,440
+simply means code where you don't repeat yourself.
+
+16
+00:00:50,440 --> 00:00:53,510
+And this is not a complex concept at all,
+
+17
+00:00:53,510 --> 00:00:57,120
+it simply means don't write the same code
+
+18
+00:00:57,120 --> 00:01:01,680
+or very similar code in more than one place.
+
+19
+00:01:01,680 --> 00:01:04,810
+Because if you do, you are repeating yourself,
+
+20
+00:01:04,810 --> 00:01:07,640
+and what's the problem with repeating yourself?
+
+21
+00:01:07,640 --> 00:01:11,540
+Well, whenever you need to change something about that code,
+
+22
+00:01:11,540 --> 00:01:13,360
+some logic or some error,
+
+23
+00:01:13,360 --> 00:01:17,750
+then you need to make this change in multiple places
+
+24
+00:01:17,750 --> 00:01:22,100
+throughout your application if you did repeat yourself,
+
+25
+00:01:22,100 --> 00:01:24,190
+if you never repeated yourself
+
+26
+00:01:24,190 --> 00:01:27,130
+then you only need to make the change once,
+
+27
+00:01:27,130 --> 00:01:29,570
+which is of course way better.
+
+28
+00:01:29,570 --> 00:01:33,320
+Now, here are some signs for a code which is not DRY.
+
+29
+00:01:33,320 --> 00:01:36,180
+So where you are repeating yourself,
+
+30
+00:01:36,180 --> 00:01:38,700
+one obvious sign of course is that you
+
+31
+00:01:38,700 --> 00:01:41,520
+find yourself copy and pasting code.
+
+32
+00:01:41,520 --> 00:01:45,423
+If you're doing that you are obviously repeating yourself,
+
+33
+00:01:46,280 --> 00:01:47,940
+but another sign would be
+
+34
+00:01:47,940 --> 00:01:50,690
+that you do need to change something,
+
+35
+00:01:50,690 --> 00:01:55,080
+and you see that you need to apply basically the same change
+
+36
+00:01:55,080 --> 00:01:58,230
+in different places in your code base.
+
+37
+00:01:58,230 --> 00:01:59,504
+Well, the reason for that probably
+
+38
+00:01:59,504 --> 00:02:01,903
+is that you did repeat yourself.
+

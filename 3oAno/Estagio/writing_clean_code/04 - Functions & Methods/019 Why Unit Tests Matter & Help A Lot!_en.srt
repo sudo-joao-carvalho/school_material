@@ -1,0 +1,572 @@
+1
+00:00:02,210 --> 00:00:04,140
+To conclude this module,
+
+2
+00:00:04,140 --> 00:00:07,340
+we'll have a look at another very important aspect
+
+3
+00:00:07,340 --> 00:00:11,940
+and that would be testing, specifically unit testing.
+
+4
+00:00:11,940 --> 00:00:14,750
+Of course, you should be testing your code.
+
+5
+00:00:14,750 --> 00:00:17,640
+So that means you should be running automated tests
+
+6
+00:00:17,640 --> 00:00:20,420
+and it would be even better if you would write your code
+
+7
+00:00:20,420 --> 00:00:22,840
+in a test-driven way.
+
+8
+00:00:22,840 --> 00:00:24,690
+This course it not about testing
+
+9
+00:00:24,690 --> 00:00:26,960
+or test-driven development though.
+
+10
+00:00:26,960 --> 00:00:29,880
+But unit testing will indeed help you not just
+
+11
+00:00:29,880 --> 00:00:32,470
+with writing error-free code
+
+12
+00:00:32,470 --> 00:00:34,616
+but also with writing clean code
+
+13
+00:00:34,616 --> 00:00:36,875
+because there's one simple question,
+
+14
+00:00:36,875 --> 00:00:39,900
+which you automatically have to answer
+
+15
+00:00:39,900 --> 00:00:41,910
+when you utilize testing.
+
+16
+00:00:41,910 --> 00:00:44,413
+Can you easily test a function?
+
+17
+00:00:45,290 --> 00:00:47,460
+If the answer to this is yes,
+
+18
+00:00:47,460 --> 00:00:50,740
+if you're not having any problems with side effects,
+
+19
+00:00:50,740 --> 00:00:52,910
+like data being written to a database,
+
+20
+00:00:52,910 --> 00:00:55,330
+which you typically don't want during testing,
+
+21
+00:00:55,330 --> 00:00:59,230
+and if you don't do 10 different things in one function,
+
+22
+00:00:59,230 --> 00:01:01,420
+which are then therefore difficult to test,
+
+23
+00:01:01,420 --> 00:01:04,513
+then it's great and you probably have clean code.
+
+24
+00:01:05,519 --> 00:01:07,250
+If the answer is no though,
+
+25
+00:01:07,250 --> 00:01:08,960
+if you find that one function
+
+26
+00:01:08,960 --> 00:01:11,410
+does too many things and you therefore have
+
+27
+00:01:11,410 --> 00:01:14,270
+to write many tests testing different things
+
+28
+00:01:14,270 --> 00:01:15,980
+for one and the same function,
+
+29
+00:01:15,980 --> 00:01:18,440
+or if you have a lot of side effects in there,
+
+30
+00:01:18,440 --> 00:01:21,600
+then you might wanna consider splitting up your function
+
+31
+00:01:21,600 --> 00:01:23,500
+so that you have multiple functions,
+
+32
+00:01:23,500 --> 00:01:25,740
+which are then easier to test.
+
+33
+00:01:25,740 --> 00:01:27,880
+And that is how unit testing
+
+34
+00:01:27,880 --> 00:01:29,900
+will help you write cleaner code
+
+35
+00:01:29,900 --> 00:01:33,240
+and especially will help you write slim
+
+36
+00:01:33,240 --> 00:01:35,510
+and focused functions
+
+37
+00:01:35,510 --> 00:01:38,390
+because it turns out that small functions,
+
+38
+00:01:38,390 --> 00:01:39,840
+which only do one thing
+
+39
+00:01:39,840 --> 00:01:42,360
+and which don't have unexpected side effects
+
+40
+00:01:42,360 --> 00:01:46,153
+are way easier to test than big functions.
+
+41
+00:01:46,153 --> 00:01:48,350
+Now, as an example,
+
+42
+00:01:48,350 --> 00:01:52,210
+here's a another dummy function, addProduct.
+
+43
+00:01:52,210 --> 00:01:53,940
+It's validating some input,
+
+44
+00:01:53,940 --> 00:01:55,380
+showing an error message
+
+45
+00:01:55,380 --> 00:01:57,740
+and then creating and storing a product
+
+46
+00:01:57,740 --> 00:01:58,720
+and therefore, of course,
+
+47
+00:01:58,720 --> 00:02:03,610
+it's very similar to the createUser example you saw earlier
+
+48
+00:02:03,610 --> 00:02:05,360
+in this module.
+
+49
+00:02:05,360 --> 00:02:07,900
+Now, obviously, we can immediately see by now
+
+50
+00:02:07,900 --> 00:02:10,810
+that we have mixed levels of abstraction here
+
+51
+00:02:10,810 --> 00:02:13,190
+and that the distance between the level
+
+52
+00:02:13,190 --> 00:02:15,280
+of abstraction of the function name
+
+53
+00:02:15,280 --> 00:02:18,110
+and the level of abstraction of certain steps
+
+54
+00:02:18,110 --> 00:02:20,800
+in that function is too big.
+
+55
+00:02:20,800 --> 00:02:22,760
+But even if we wouldn't see that,
+
+56
+00:02:22,760 --> 00:02:24,540
+we would face problems
+
+57
+00:02:24,540 --> 00:02:28,260
+when we try to write tests for this function.
+
+58
+00:02:28,260 --> 00:02:30,760
+Here are two dummy tests
+
+59
+00:02:30,760 --> 00:02:33,850
+as we could write them in JavaScript, for example.
+
+60
+00:02:33,850 --> 00:02:37,110
+And of course, no matter which programming language you use,
+
+61
+00:02:37,110 --> 00:02:40,060
+your tests will look something like this.
+
+62
+00:02:40,060 --> 00:02:42,450
+I got two test cases here.
+
+63
+00:02:42,450 --> 00:02:43,621
+And in the first case,
+
+64
+00:02:43,621 --> 00:02:46,630
+I test whether the overall creation
+
+65
+00:02:46,630 --> 00:02:48,390
+of the product works.
+
+66
+00:02:48,390 --> 00:02:51,340
+In the second case, I'm actually only interested
+
+67
+00:02:51,340 --> 00:02:52,970
+in the ID and I wanna find out
+
+68
+00:02:52,970 --> 00:02:55,600
+if the ID was generated correctly
+
+69
+00:02:55,600 --> 00:02:59,670
+because it turns out that my ID should be composed
+
+70
+00:02:59,670 --> 00:03:01,420
+of both the name of the product,
+
+71
+00:03:01,420 --> 00:03:03,680
+as well as some random number,
+
+72
+00:03:03,680 --> 00:03:05,573
+which is converted to a string.
+
+73
+00:03:06,750 --> 00:03:08,350
+Now, when writing these tests,
+
+74
+00:03:08,350 --> 00:03:11,680
+I can see and feel that something's wrong
+
+75
+00:03:11,680 --> 00:03:14,210
+with my addProduct function
+
+76
+00:03:14,210 --> 00:03:18,130
+because for one, we have an unwanted side effect,
+
+77
+00:03:18,130 --> 00:03:20,130
+not an unexpected one
+
+78
+00:03:20,130 --> 00:03:22,710
+but an unwanted one during testing.
+
+79
+00:03:22,710 --> 00:03:25,773
+We are writing a product to the database.
+
+80
+00:03:26,840 --> 00:03:28,810
+In addition, if I'm just interested
+
+81
+00:03:28,810 --> 00:03:31,840
+in testing whether the ID was created correctly,
+
+82
+00:03:31,840 --> 00:03:35,300
+I still have to run the entire addProduct function
+
+83
+00:03:35,300 --> 00:03:38,300
+including that unwanted side effect
+
+84
+00:03:38,300 --> 00:03:41,210
+just to then find out whether the ID
+
+85
+00:03:41,210 --> 00:03:43,053
+was generated correctly or not.
+
+86
+00:03:43,920 --> 00:03:46,330
+So therefore, this clearly signals to us
+
+87
+00:03:46,330 --> 00:03:48,265
+that something's wrong with the function.
+
+88
+00:03:48,265 --> 00:03:49,930
+We could test more.
+
+89
+00:03:49,930 --> 00:03:52,290
+For example, if validation fails.
+
+90
+00:03:52,290 --> 00:03:53,860
+For that, we would need to check
+
+91
+00:03:53,860 --> 00:03:57,730
+whether this function completes successfully or not.
+
+92
+00:03:57,730 --> 00:04:00,590
+And all these tests would run on the same function,
+
+93
+00:04:00,590 --> 00:04:03,210
+testing totally different things.
+
+94
+00:04:03,210 --> 00:04:05,990
+So clearly, this is not a great function.
+
+95
+00:04:05,990 --> 00:04:07,460
+We should split it up
+
+96
+00:04:07,460 --> 00:04:09,380
+so that we have multiple functions,
+
+97
+00:04:09,380 --> 00:04:11,153
+which are then easier to test.
+
+98
+00:04:12,500 --> 00:04:16,579
+This is how we could refactor this addProduct function
+
+99
+00:04:16,579 --> 00:04:17,870
+to be cleaner.
+
+100
+00:04:17,870 --> 00:04:19,310
+It's way shorter
+
+101
+00:04:19,310 --> 00:04:23,170
+and it's split up into multiple smaller pieces.
+
+102
+00:04:23,170 --> 00:04:25,990
+I have the validateProductData function,
+
+103
+00:04:25,990 --> 00:04:28,930
+which throws an error if we have invalid input
+
+104
+00:04:28,930 --> 00:04:31,420
+and even that is split up further
+
+105
+00:04:31,420 --> 00:04:33,420
+into the inputIsValid function
+
+106
+00:04:33,420 --> 00:04:35,962
+and then the reusable isEmpty
+
+107
+00:04:35,962 --> 00:04:38,163
+and hasMinValue functions here.
+
+108
+00:04:39,560 --> 00:04:41,210
+And the advantage of this
+
+109
+00:04:41,210 --> 00:04:42,870
+is that I now, for example,
+
+110
+00:04:42,870 --> 00:04:47,390
+can write tests, which only test the isEmpty function.
+
+111
+00:04:47,390 --> 00:04:50,600
+So I can only test this small unit now
+
+112
+00:04:50,600 --> 00:04:53,430
+and I can test parts of my validation
+
+113
+00:04:53,430 --> 00:04:56,500
+or also the entire validation if I wanted to
+
+114
+00:04:56,500 --> 00:05:00,410
+without running the entire addProduct function.
+
+115
+00:05:00,410 --> 00:05:03,690
+I can also test just the generation of an ID,
+
+116
+00:05:03,690 --> 00:05:04,860
+if I wanted to,
+
+117
+00:05:04,860 --> 00:05:08,370
+because I did extract an extra function for this.
+
+118
+00:05:08,370 --> 00:05:12,070
+So I could check whether an ID is generated correctly
+
+119
+00:05:12,070 --> 00:05:14,240
+without creating an entire product
+
+120
+00:05:14,240 --> 00:05:17,560
+and storing that product in some database.
+
+121
+00:05:17,560 --> 00:05:20,610
+And that is why unit testing helps you
+
+122
+00:05:20,610 --> 00:05:22,660
+with writing cleaner code.
+
+123
+00:05:22,660 --> 00:05:24,600
+You could derive this code
+
+124
+00:05:24,600 --> 00:05:26,859
+without unit testing as well.
+
+125
+00:05:26,859 --> 00:05:28,770
+But when writing tests
+
+126
+00:05:28,770 --> 00:05:30,880
+and when testing everything,
+
+127
+00:05:30,880 --> 00:05:32,460
+which I don't do in the solution,
+
+128
+00:05:32,460 --> 00:05:34,160
+I just have some examples here
+
+129
+00:05:34,160 --> 00:05:35,939
+but when testing everything,
+
+130
+00:05:35,939 --> 00:05:38,430
+you will automatically see
+
+131
+00:05:38,430 --> 00:05:39,930
+what should be extracted
+
+132
+00:05:39,930 --> 00:05:42,280
+and what should not be extracted
+
+133
+00:05:42,280 --> 00:05:45,330
+because you wanna extract as much as possible
+
+134
+00:05:45,330 --> 00:05:48,310
+to write as many tests as possible
+
+135
+00:05:48,310 --> 00:05:50,723
+as long as they make some sense, of course.
+
+136
+00:05:52,050 --> 00:05:55,920
+Now, we don't need to write any unit test for addProduct.
+
+137
+00:05:55,920 --> 00:05:58,600
+We could write an integration test for this,
+
+138
+00:05:58,600 --> 00:06:00,810
+but we do have all these unit tests,
+
+139
+00:06:00,810 --> 00:06:01,900
+which we can write
+
+140
+00:06:01,900 --> 00:06:04,593
+for the small extracted functions we have here.
+
+141
+00:06:05,600 --> 00:06:08,010
+That's why testing matters,
+
+142
+00:06:08,010 --> 00:06:10,140
+not just for avoiding errors
+
+143
+00:06:10,140 --> 00:06:13,623
+and bugs but also for writing clean code.
+

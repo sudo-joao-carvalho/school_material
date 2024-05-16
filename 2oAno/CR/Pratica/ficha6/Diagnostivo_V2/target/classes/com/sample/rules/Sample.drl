@@ -1,0 +1,121 @@
+package com.sample.rules
+
+import com.sample.Paciente;
+import com.sample.Sintoma;
+import com.sample.Diagnostico;
+ 
+//ERRO NAO APARECE NA ORDEM CERTA
+ 
+rule "exantema 1"
+salience 100
+    when
+        $p: Paciente(idade >= 15)
+        	
+        $s1:	Sintoma(sintoma == "febre", idPaciente == $p.getId())
+        $s2:	Sintoma(sintoma == "manchas", idPaciente == $p.getId())
+        $s3:	Sintoma(sintoma == "dores", idPaciente == $p.getId())
+    then
+        insert (new Diagnostico($p.getId(), $p.getNome(), "Exantema 1"));
+        retract ($p);
+        //System.out.println("O Paciente " + $p.getNome() + " foi diagnosticado com Exantema 1");
+end
+
+rule "exantema 2"
+salience 90
+	when
+		$p: Paciente(idade < 15)
+		
+		$s1:	Sintoma(sintoma == "febre", idPaciente == $p.getId())
+		$s2:	Sintoma(sintoma == "manchas", idPaciente == $p.getId())
+		
+	then
+		insert (new Diagnostico($p.getId(), $p.getNome(), "Exantema 2"));
+		retract ($p);
+		//System.out.println("O Paciente " + $p.getNome() + " foi diagnosticado com Exantema 2");
+		
+end
+
+rule "gripe"
+salience 80
+	when
+		$p: Paciente()
+		
+		$s1:	Sintoma(sintoma == "febre", idPaciente == $p.getId())
+		$s2:	Sintoma(sintoma == "dores", idPaciente == $p.getId())
+		
+	then
+		insert (new Diagnostico($p.getId(), $p.getNome(), "Gripe"));
+		retract ($p);
+		//System.out.println("O Paciente " + $p.getNome() + " foi diagnosticado com Gripe");
+		
+end
+
+rule "resfriado"
+salience 70
+	when
+		$p: Paciente()
+		
+		$s1:	Sintoma(sintoma == "febre", idPaciente == $p.getId())
+		
+	then
+		insert (new Diagnostico($p.getId(), $p.getNome(), "Resfriado"));
+		retract ($p);
+		//System.out.println("O Paciente " + $p.getNome() + " foi diagnosticado com Resfriado");
+		
+end
+
+rule "nao tem sintomas"
+salience 10
+	when
+		$p: Paciente()
+		
+		forall($s:Sintoma(idPaciente!=$p.getId()))
+		
+	then
+		insert (new Diagnostico($p.getId(), $p.getNome(), "Nao tem sintomas"));
+		retract ($p);
+		//System.out.println("O Paciente " + $p.getNome() + " não tem sintomas");
+		
+end
+
+rule "Inserir mais factos" 
+salience 110
+	when
+	then
+		insert (new Paciente("006","Carlos Lopes",22)); 
+		insert (new Paciente("007","Maria Ferreira",25)); 
+		insert (new Paciente("008","Nuno Gomes",60)); 
+		insert (new Paciente("009","Julio Lopes",58)); 
+		insert (new Paciente("010","Rui Saraiva",45)); 
+		insert (new Sintoma("006", "febre"));
+		insert (new Sintoma("006", "dores")); 
+		insert (new Sintoma("006", "manchas"));
+		insert (new Sintoma("007", "febre")); 
+		insert (new Sintoma("008", "dores")); 
+		insert (new Sintoma("010", "manchas"));
+end
+
+rule "com sintomas mas não correspondem a nenhum diagnóstico"
+salience 10
+	when
+		$p1: Paciente()
+	then
+		insert (new Diagnostico($p1.getId(), $p1.getNome(), "Com sintomas, mas não correspondem a nenhum diagnóstico"));
+		retract ($p1) 
+end
+
+
+rule "diagnostico"
+salience 0
+	when 
+		//$p: Paciente()
+		$d: Diagnostico()
+	then
+		System.out.println();
+		System.out.println("Paciente " + $d.getIdPaciente() + ": \n\tNome: " + $d.getNomePaciente() + "\n\tDiagnostico: " + $d.getDesignacao());
+		
+end
+
+
+
+	

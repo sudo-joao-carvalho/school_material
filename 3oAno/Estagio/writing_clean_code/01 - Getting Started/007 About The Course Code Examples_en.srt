@@ -1,0 +1,168 @@
+1
+00:00:02,220 --> 00:00:04,000
+Now I got one more thing to say
+
+2
+00:00:04,000 --> 00:00:06,770
+about the code examples you will see in this course,
+
+3
+00:00:06,770 --> 00:00:09,020
+just to make sure that we're all on the same page
+
+4
+00:00:09,020 --> 00:00:10,633
+and there is no confusion.
+
+5
+00:00:10,633 --> 00:00:13,482
+All these examples which you will find in the course
+
+6
+00:00:13,482 --> 00:00:18,482
+and there will be many examples are short, focused examples,
+
+7
+00:00:18,624 --> 00:00:22,197
+always focusing on one specific concept or idea
+
+8
+00:00:22,197 --> 00:00:23,770
+which I guess makes sense
+
+9
+00:00:23,770 --> 00:00:26,131
+because that is what the entire course is about.
+
+10
+00:00:26,131 --> 00:00:29,973
+So these are code snippets and most of them won't execute.
+
+11
+00:00:29,973 --> 00:00:32,931
+So most of the examples are just small snippets
+
+12
+00:00:32,931 --> 00:00:36,607
+taken from a bigger fictional project
+
+13
+00:00:36,607 --> 00:00:38,528
+so you won't be able to run them.
+
+14
+00:00:38,528 --> 00:00:40,490
+And I just want to make this clear
+
+15
+00:00:40,490 --> 00:00:42,426
+so that there is no confusion.
+
+16
+00:00:42,426 --> 00:00:45,801
+I will still show you valid code and all of that
+
+17
+00:00:45,801 --> 00:00:49,010
+it's just taken out of a bigger project
+
+18
+00:00:49,010 --> 00:00:50,379
+taken out of context.
+
+19
+00:00:50,379 --> 00:00:52,939
+And I wanna make that clear and obvious
+
+20
+00:00:52,939 --> 00:00:55,204
+so that you are not confused
+
+21
+00:00:55,204 --> 00:00:57,750
+why this code does not execute.
+
+22
+00:00:57,750 --> 00:01:02,390
+The examples also don't use a particular programming style
+
+23
+00:01:02,390 --> 00:01:04,910
+or follow a specific paradigm
+
+24
+00:01:04,910 --> 00:01:07,960
+I'm not doing object-oriented programming in this course
+
+25
+00:01:07,960 --> 00:01:09,648
+I'm not doing functional programming,
+
+26
+00:01:09,648 --> 00:01:12,760
+I most of the time have small snippets
+
+27
+00:01:12,760 --> 00:01:14,763
+with simple functions or classes
+
+28
+00:01:14,763 --> 00:01:17,650
+and what I teach you will apply
+
+29
+00:01:17,650 --> 00:01:20,663
+no matter which programming style you are using.
+
+30
+00:01:21,640 --> 00:01:24,832
+Now, one note for all the Java and C-sharp developers
+
+31
+00:01:24,832 --> 00:01:27,840
+in JavaScript and in Python
+
+32
+00:01:27,840 --> 00:01:31,150
+and in a couple of other programming languages as well
+
+33
+00:01:31,150 --> 00:01:34,420
+you don't have to wrap everything into a class
+
+34
+00:01:34,420 --> 00:01:37,110
+as you for example have to do it in Java
+
+35
+00:01:37,110 --> 00:01:39,750
+that's why you will see standalone functions
+
+36
+00:01:39,750 --> 00:01:42,693
+which are justifying like this without any classes
+
+37
+00:01:42,693 --> 00:01:45,390
+in all these examples throughout the course.
+
+38
+00:01:45,390 --> 00:01:48,972
+In Java or a C-sharp these would simply be some methods
+
+39
+00:01:48,972 --> 00:01:53,610
+to find in some root main class you could say.
+
+40
+00:01:53,610 --> 00:01:55,250
+So that's just something to be aware of
+
+41
+00:01:55,250 --> 00:01:58,289
+you simply don't need to have classes around everything
+
+42
+00:01:58,289 --> 00:02:02,003
+in programming languages like Python or JavaScript.
+

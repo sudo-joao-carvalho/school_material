@@ -1,0 +1,92 @@
+1
+00:00:02,120 --> 00:00:03,530
+Now, we're almost done
+
+2
+00:00:03,530 --> 00:00:07,060
+with this long practical section here.
+
+3
+00:00:07,060 --> 00:00:10,250
+There are still minor improvements we could make
+
+4
+00:00:10,250 --> 00:00:11,503
+and you should consider.
+
+5
+00:00:12,390 --> 00:00:16,890
+And that would, for example, be that in showErrorMessage,
+
+6
+00:00:16,890 --> 00:00:19,860
+we sometimes call it with just a message.
+
+7
+00:00:19,860 --> 00:00:21,110
+And sometimes, of course,
+
+8
+00:00:21,110 --> 00:00:23,500
+we call it with a message and an item,
+
+9
+00:00:23,500 --> 00:00:27,060
+which is why we accept both; message and item.
+
+10
+00:00:27,060 --> 00:00:30,210
+Now, this is okay, we have this if check here,
+
+11
+00:00:30,210 --> 00:00:33,678
+but we can actually get rid of this pointless if check here
+
+12
+00:00:33,678 --> 00:00:37,810
+if we simply always console.log the item,
+
+13
+00:00:37,810 --> 00:00:41,640
+but make sure that the item is never undefined, but instead,
+
+14
+00:00:41,640 --> 00:00:45,930
+maybe give it a default value of an empty object or a map.
+
+15
+00:00:45,930 --> 00:00:49,820
+And default parameter values, of course, are also accepted
+
+16
+00:00:49,820 --> 00:00:53,020
+and supported in many programming languages.
+
+17
+00:00:53,020 --> 00:00:55,660
+So now we ensure that there always is an item,
+
+18
+00:00:55,660 --> 00:00:57,520
+even if it's just an empty map,
+
+19
+00:00:57,520 --> 00:00:59,840
+which we then therefore output here.
+
+20
+00:00:59,840 --> 00:01:03,160
+So that's a tiny improvement we can make here to get rid
+
+21
+00:01:03,160 --> 00:01:05,200
+of one extra if check,
+
+22
+00:01:05,200 --> 00:01:07,830
+because as you saw throughout this section,
+
+23
+00:01:07,830 --> 00:01:12,213
+getting rid of if checks can really help with readability.
+

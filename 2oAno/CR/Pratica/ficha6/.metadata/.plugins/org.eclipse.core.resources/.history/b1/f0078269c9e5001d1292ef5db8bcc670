@@ -1,0 +1,31 @@
+package com.sample.rules
+
+import com.sample.Paciente;
+import com.sample.Sintoma;
+ 
+rule "exantema 1"
+salience 100
+    when
+        $p: Paciente(idade >= 15, diagnostico == "")
+        	
+        $s1:	Sintoma(sintoma == "febre", idPaciente == $p.getId())
+        $s2:	Sintoma(sintoma == "manchas", idPaciente == $p.getId())
+        $s3:	Sintoma(sintoma == "dores", idPaciente == $p.getId())
+    then
+        $p.setDiagnostico("exantema 1");
+        update($p);
+        System.out.println("O Paciente " + $p.getNome() + " foi diagnosticado com Exantema 1");
+end
+
+rule "exantema 2"
+salience 100
+	when
+		$p: Paciente(idade < 15, diagnostico == "")
+		
+		$s1:	Sintoma(sintoma == "febre", idPaciente == $p.getId())
+		$s2:	Sintoma(sintoma == "manchas", idPaciente == $p.getId())
+		
+	then
+		$p.setDiagnostico("exantema 2");
+		update($p);
+	

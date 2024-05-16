@@ -1,0 +1,17 @@
+package com.sample;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Divisao {
+
+	private String tipo;
+	private List<EntidadeDetetada> entidadesPermitidas;
+	
+	public Divisao(String tipo) {
+		this.tipo = tipo;
+		entidadesPermitidas = new ArrayList<EntidadeDetetada>();
+	}
+	
+	public void parseEntidades()
+}

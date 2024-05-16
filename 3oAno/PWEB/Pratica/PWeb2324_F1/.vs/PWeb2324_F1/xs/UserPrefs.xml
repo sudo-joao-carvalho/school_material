@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{7BE13CCD-EE98-4F5C-93EB-77051881D72A}|Default">
+  <MonoDevelop.Ide.ItemProperties.PWeb2324__F1 PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PWeb2324_F1/Views/Shared/_Layout.cshtml">
+    <Files>
+      <File FileName="PWeb2324_F1/Models/Aluno.cs" />
+      <File FileName="PWeb2324_F1/Data/ApplicationDbContext.cs" />
+      <File FileName="PWeb2324_F1/appsettings.json" />
+      <File FileName="PWeb2324_F1/Areas/Identity/Pages/_ViewStart.cshtml" />
+      <File FileName="PWeb2324_F1/Views/Shared/_Layout.cshtml" Line="20" Column="84" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PWeb2324_F1" expanded="True">
+            <Node name="PWeb2324_F1" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

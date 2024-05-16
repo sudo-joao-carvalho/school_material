@@ -1,0 +1,276 @@
+1
+00:00:02,070 --> 00:00:03,670
+So therefore, it's again time
+
+2
+00:00:03,670 --> 00:00:05,590
+for some specific examples,
+
+3
+00:00:05,590 --> 00:00:07,880
+now on functions and method names,
+
+4
+00:00:07,880 --> 00:00:11,160
+again with bad, okay, and good names.
+
+5
+00:00:11,160 --> 00:00:14,550
+Now, let's say we have a function that saves a user
+
+6
+00:00:14,550 --> 00:00:17,060
+or saves user data to a database.
+
+7
+00:00:17,060 --> 00:00:19,970
+How could we name this function or method?
+
+8
+00:00:19,970 --> 00:00:24,410
+Well, bad names would be something like process or handle.
+
+9
+00:00:24,410 --> 00:00:27,740
+This is very generic. These could be doing anything.
+
+10
+00:00:27,740 --> 00:00:31,070
+Yes, it could be processing or handling a user,
+
+11
+00:00:31,070 --> 00:00:33,340
+but we could also be processing an order,
+
+12
+00:00:33,340 --> 00:00:35,400
+so this is not telling us anything.
+
+13
+00:00:35,400 --> 00:00:38,970
+In addition, it's not clear whether process means save
+
+14
+00:00:38,970 --> 00:00:40,670
+or update or delete.
+
+15
+00:00:40,670 --> 00:00:41,640
+It could be anything,
+
+16
+00:00:41,640 --> 00:00:43,780
+so this is definitely very unspecific
+
+17
+00:00:43,780 --> 00:00:46,450
+and not the naming you wanna use.
+
+18
+00:00:46,450 --> 00:00:48,170
+Now, when it comes to okay names,
+
+19
+00:00:48,170 --> 00:00:51,511
+we could have something like save or storeData.
+
+20
+00:00:51,511 --> 00:00:53,530
+Now, the good thing is that now it's clear
+
+21
+00:00:53,530 --> 00:00:55,410
+that something is being saved,
+
+22
+00:00:55,410 --> 00:00:59,110
+but it's still not necessarily clear what is being saved.
+
+23
+00:00:59,110 --> 00:01:03,460
+Of course, if save is a method on a user object,
+
+24
+00:01:03,460 --> 00:01:07,030
+then it's way clearer and then save is perfectly fine.
+
+25
+00:01:07,030 --> 00:01:09,330
+But if you just have a function called save,
+
+26
+00:01:09,330 --> 00:01:11,530
+which is not called on an object
+
+27
+00:01:11,530 --> 00:01:12,940
+but which instead for example
+
+28
+00:01:12,940 --> 00:01:15,130
+receives an object as an argument,
+
+29
+00:01:15,130 --> 00:01:17,960
+there might be a better name which you can choose.
+
+30
+00:01:17,960 --> 00:01:22,010
+For example, saveUser or you use what I just said
+
+31
+00:01:22,010 --> 00:01:25,280
+and you instead make that a method on a user object,
+
+32
+00:01:25,280 --> 00:01:27,390
+which now again makes it very clear
+
+33
+00:01:27,390 --> 00:01:30,770
+that it's probably this object which is being saved.
+
+34
+00:01:30,770 --> 00:01:32,830
+Here, the intent is very clear,
+
+35
+00:01:32,830 --> 00:01:35,880
+especially if you use the method approach.
+
+36
+00:01:35,880 --> 00:01:37,470
+And again, just as before,
+
+37
+00:01:37,470 --> 00:01:41,380
+we are going to see more examples throughout this section.
+
+38
+00:01:41,380 --> 00:01:42,700
+But before we do that,
+
+39
+00:01:42,700 --> 00:01:45,480
+it's again time for you to pause this video
+
+40
+00:01:45,480 --> 00:01:47,200
+and try this on your own.
+
+41
+00:01:47,200 --> 00:01:48,810
+Let's say we have a function
+
+42
+00:01:48,810 --> 00:01:51,140
+which validates some user input.
+
+43
+00:01:51,140 --> 00:01:52,970
+How would you name that?
+
+44
+00:01:52,970 --> 00:01:53,810
+And by the way,
+
+45
+00:01:53,810 --> 00:01:57,400
+it doesn't necessarily have to return true or false.
+
+46
+00:01:57,400 --> 00:02:00,723
+So how would you name this function or this method then?
+
+47
+00:02:02,290 --> 00:02:06,730
+Well, bad names, again, could be process or now also save.
+
+48
+00:02:06,730 --> 00:02:09,789
+Validating is not the same as saving.
+
+49
+00:02:09,789 --> 00:02:12,800
+We might save after validating something,
+
+50
+00:02:12,800 --> 00:02:16,270
+but first we validate it and there nothing gets saved.
+
+51
+00:02:16,270 --> 00:02:19,650
+So this is unspecific in the case of process
+
+52
+00:02:19,650 --> 00:02:22,533
+and even misleading in the case of save.
+
+53
+00:02:23,670 --> 00:02:27,547
+Now, better names could be validateSave or check.
+
+54
+00:02:27,547 --> 00:02:30,210
+ValidateSave could imply that we do both,
+
+55
+00:02:30,210 --> 00:02:33,580
+validation and saving, so it's still not ideal,
+
+56
+00:02:33,580 --> 00:02:36,030
+but if that is what we do, it's okay.
+
+57
+00:02:36,030 --> 00:02:37,420
+Check is okay.
+
+58
+00:02:37,420 --> 00:02:39,840
+It makes it clear that we're checking something,
+
+59
+00:02:39,840 --> 00:02:41,670
+but it's also not really specific
+
+60
+00:02:41,670 --> 00:02:43,170
+and it leaves us guessing.
+
+61
+00:02:43,170 --> 00:02:47,540
+Both names leave us guessing on what's happening exactly.
+
+62
+00:02:47,540 --> 00:02:49,560
+So better names could be validate
+
+63
+00:02:49,560 --> 00:02:53,670
+or if true or false is returned isValid.
+
+64
+00:02:53,670 --> 00:02:55,210
+Validate could be called
+
+65
+00:02:55,210 --> 00:02:58,060
+if we are not returning true or false,
+
+66
+00:02:58,060 --> 00:03:00,940
+but if we are for example throwing an error
+
+67
+00:03:00,940 --> 00:03:03,078
+if the validation fails.
+
+68
+00:03:03,078 --> 00:03:05,180
+isValid, on the other hand, is a great name
+
+69
+00:03:05,180 --> 00:03:08,423
+if that function does return true or false.
+

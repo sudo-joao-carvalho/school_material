@@ -1,0 +1,13 @@
+package com.sample;
+
+import java.util.List;
+
+public class Log {
+	
+	private static List<String> log = new ArrayList<>();
+	
+	public Log(String log) {
+		
+	}
+
+}

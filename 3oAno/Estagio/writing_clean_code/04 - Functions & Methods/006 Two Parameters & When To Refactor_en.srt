@@ -1,0 +1,328 @@
+1
+00:00:02,130 --> 00:00:03,280
+Now, what about functions
+
+2
+00:00:03,280 --> 00:00:05,370
+that take two arguments?
+
+3
+00:00:05,370 --> 00:00:08,720
+For example, take this login function here.
+
+4
+00:00:08,720 --> 00:00:10,600
+It takes an email and a password,
+
+5
+00:00:10,600 --> 00:00:12,730
+and then internally it might be doing
+
+6
+00:00:12,730 --> 00:00:16,149
+whatever logic is required to log a user in,
+
+7
+00:00:16,149 --> 00:00:19,610
+to create a session for the user for example.
+
+8
+00:00:19,610 --> 00:00:22,670
+This again is something which makes sense
+
+9
+00:00:22,670 --> 00:00:24,020
+and which is expected.
+
+10
+00:00:24,020 --> 00:00:26,050
+Here, we have two parameters,
+
+11
+00:00:26,050 --> 00:00:29,650
+but the order is not surprising because in most forums,
+
+12
+00:00:29,650 --> 00:00:31,860
+we also have the email field first
+
+13
+00:00:31,860 --> 00:00:34,270
+and the password field second.
+
+14
+00:00:34,270 --> 00:00:37,030
+So this order of arguments makes sense.
+
+15
+00:00:37,030 --> 00:00:39,610
+And calling this function is very readable.
+
+16
+00:00:39,610 --> 00:00:42,520
+It's immediately obvious what this function does
+
+17
+00:00:42,520 --> 00:00:45,240
+and that we have an email address and a password
+
+18
+00:00:45,240 --> 00:00:47,030
+as expected parameters.
+
+19
+00:00:47,030 --> 00:00:50,460
+So this could be an example for a two argument function,
+
+20
+00:00:50,460 --> 00:00:52,860
+which is no problem at all.
+
+21
+00:00:52,860 --> 00:00:55,220
+And now for example would be this point clause,
+
+22
+00:00:55,220 --> 00:00:58,760
+which be instantiate by using the point constructor.
+
+23
+00:00:58,760 --> 00:01:02,891
+We take two arguments here, the X and Y coordinate.
+
+24
+00:01:02,891 --> 00:01:06,170
+And this again is really just common sense.
+
+25
+00:01:06,170 --> 00:01:09,820
+It is expected that the X argument is the first argument
+
+26
+00:01:09,820 --> 00:01:12,210
+and the Y value is the second parameter.
+
+27
+00:01:12,210 --> 00:01:15,170
+And therefore this is easy to understand,
+
+28
+00:01:15,170 --> 00:01:18,250
+easy to read and does nothing unexpected.
+
+29
+00:01:18,250 --> 00:01:19,830
+We don't need to think a lot
+
+30
+00:01:19,830 --> 00:01:22,560
+about calling this constructor function here
+
+31
+00:01:22,560 --> 00:01:24,670
+because it is very obvious what it does
+
+32
+00:01:24,670 --> 00:01:27,140
+and what these values will be.
+
+33
+00:01:27,140 --> 00:01:31,140
+So, as you can probably tell by now,
+
+34
+00:01:31,140 --> 00:01:34,490
+it is about minimizing the number of parameters,
+
+35
+00:01:34,490 --> 00:01:38,090
+but it's simply also about how readable
+
+36
+00:01:38,090 --> 00:01:41,560
+and how easy to understand a function is
+
+37
+00:01:41,560 --> 00:01:44,760
+if it's obvious which parameters it needs
+
+38
+00:01:44,760 --> 00:01:48,840
+and in which order these parameters need to be provided.
+
+39
+00:01:48,840 --> 00:01:51,780
+Like in this login or point example,
+
+40
+00:01:51,780 --> 00:01:55,850
+then it's absolutely fine to use two parameters.
+
+41
+00:01:55,850 --> 00:01:58,940
+You don't need to come up with a way of reducing
+
+42
+00:01:58,940 --> 00:02:01,190
+the number of parameters.
+
+43
+00:02:01,190 --> 00:02:05,040
+Because after all, you should always keep in mind,
+
+44
+00:02:05,040 --> 00:02:08,660
+that writing clean code is about writing readable
+
+45
+00:02:08,660 --> 00:02:13,260
+and meaningful code and about reducing the cognitive load.
+
+46
+00:02:13,260 --> 00:02:15,690
+So if we have no cognitive load,
+
+47
+00:02:15,690 --> 00:02:19,840
+because it's clear and easy to grasp what a function does
+
+48
+00:02:19,840 --> 00:02:21,440
+and how we should call it,
+
+49
+00:02:21,440 --> 00:02:24,870
+then of course there is no need to rewrite it.
+
+50
+00:02:24,870 --> 00:02:26,890
+And that is an important difference
+
+51
+00:02:26,890 --> 00:02:29,810
+between the examples I showed you thus far
+
+52
+00:02:29,810 --> 00:02:31,650
+and this example here.
+
+53
+00:02:31,650 --> 00:02:33,840
+Here, we got a log function,
+
+54
+00:02:33,840 --> 00:02:36,720
+which actually takes two arguments.
+
+55
+00:02:36,720 --> 00:02:38,070
+And if you just have a look
+
+56
+00:02:38,070 --> 00:02:40,490
+at the way we call this function,
+
+57
+00:02:40,490 --> 00:02:44,290
+it's totally not obvious how we should call it
+
+58
+00:02:44,290 --> 00:02:46,580
+what this second argument is about
+
+59
+00:02:46,580 --> 00:02:49,530
+and which order these arguments should have.
+
+60
+00:02:49,530 --> 00:02:51,460
+It's obvious that we have a message,
+
+61
+00:02:51,460 --> 00:02:54,010
+but what does false mean here?
+
+62
+00:02:54,010 --> 00:02:57,790
+We need help from the IDE to get some extra insight,
+
+63
+00:02:57,790 --> 00:03:01,540
+but ultimately, we probably need to dive into the code
+
+64
+00:03:01,540 --> 00:03:04,880
+to fully understand what this actually does.
+
+65
+00:03:04,880 --> 00:03:09,340
+And to understand that is error is an extra flag,
+
+66
+00:03:09,340 --> 00:03:13,203
+which controls how the message is being output.
+
+67
+00:03:14,060 --> 00:03:17,810
+And you wonder why such bullion flags in general.
+
+68
+00:03:17,810 --> 00:03:20,220
+But in addition, this is also a good example
+
+69
+00:03:20,220 --> 00:03:22,320
+for a two argument function,
+
+70
+00:03:22,320 --> 00:03:25,170
+which would better be written in a different way,
+
+71
+00:03:25,170 --> 00:03:28,410
+or which would better be refactored.
+
+72
+00:03:28,410 --> 00:03:31,800
+For example here, a better solution could be
+
+73
+00:03:31,800 --> 00:03:35,600
+to split this one function into two functions
+
+74
+00:03:35,600 --> 00:03:39,930
+where one function is dedicated to normal messages
+
+75
+00:03:39,930 --> 00:03:43,060
+and one function focuses on errors.
+
+76
+00:03:43,060 --> 00:03:46,810
+That way we have two functions with one argument each,
+
+77
+00:03:46,810 --> 00:03:50,710
+which then again are way easier to call and understand.
+
+78
+00:03:50,710 --> 00:03:53,360
+And that is what clean code is all about.
+
+79
+00:03:53,360 --> 00:03:55,520
+Questioning the code you have
+
+80
+00:03:55,520 --> 00:03:57,990
+and trying to always improve it
+
+81
+00:03:57,990 --> 00:04:01,380
+such that it's more readable, easier to understand
+
+82
+00:04:01,380 --> 00:04:05,023
+and requires less thinking and reasoning about the code.
+

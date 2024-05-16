@@ -1,0 +1,15 @@
+Aquario:
+    -> x peixes: vector<Peixes*>
+    -> Adicionar peixes
+    -> Verificar se existe
+    -> Alimentar: smp que se chama o alimentar apaga os mortos
+    -> Apagar mortos
+    -> Construtor: default
+    -> Composicao pois o aquario é responsavel por destruir os peixes, ou seja, destrutor do aquario(se destruir um aquario os peixes morrem)
+    -> ~Aquario(): destr. peixes
+
+Peixes:
+    -> Nome, cor, peso, s/n
+    -> Alimentar
+    -> GetAsString
+    -> Constr

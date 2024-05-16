@@ -1,0 +1,316 @@
+1
+00:00:02,260 --> 00:00:05,400
+Now let's move on to horizontal formatting.
+
+2
+00:00:05,400 --> 00:00:07,130
+With horizontal formatting,
+
+3
+00:00:07,130 --> 00:00:09,510
+we are talking about a single line of code
+
+4
+00:00:09,510 --> 00:00:12,100
+and that these lines of code should be readable
+
+5
+00:00:12,100 --> 00:00:14,410
+without horizontal scrolling.
+
+6
+00:00:14,410 --> 00:00:18,680
+So we should simply avoid very long unreadable sentences.`
+
+7
+00:00:18,680 --> 00:00:21,370
+And that all starts with indentation.
+
+8
+00:00:21,370 --> 00:00:23,320
+We should use indentation,
+
+9
+00:00:23,320 --> 00:00:25,850
+even if it's not required technically.
+
+10
+00:00:25,850 --> 00:00:27,930
+Now here is an extreme example.
+
+11
+00:00:27,930 --> 00:00:30,980
+This again is the disk storage class from before,
+
+12
+00:00:30,980 --> 00:00:34,780
+with the same code as before, but I changed the constructor.
+
+13
+00:00:34,780 --> 00:00:37,030
+I removed all indentation,
+
+14
+00:00:37,030 --> 00:00:40,030
+and instead I put all the code in one line,
+
+15
+00:00:40,030 --> 00:00:41,060
+it looks like this.
+
+16
+00:00:41,060 --> 00:00:42,450
+It's a very long line of code
+
+17
+00:00:42,450 --> 00:00:45,583
+and we have to scroll horizontally in order to read it.
+
+18
+00:00:46,450 --> 00:00:47,920
+This code would execute.
+
+19
+00:00:47,920 --> 00:00:50,760
+This is technically valid JavaScript code,
+
+20
+00:00:50,760 --> 00:00:53,610
+but of course it's not readable at all.
+
+21
+00:00:53,610 --> 00:00:57,430
+Hence, we should use multiple lines and also indentation,
+
+22
+00:00:57,430 --> 00:00:59,220
+to make it readable.
+
+23
+00:00:59,220 --> 00:01:02,010
+Because like this, it's perfectly readable.
+
+24
+00:01:02,010 --> 00:01:06,390
+If we just had multiple lines, but no indentation at all,
+
+25
+00:01:06,390 --> 00:01:07,440
+and if it looked like this,
+
+26
+00:01:07,440 --> 00:01:09,560
+therefore it would be readable.
+
+27
+00:01:09,560 --> 00:01:11,950
+But especially for longer functions,
+
+28
+00:01:11,950 --> 00:01:14,640
+it's not necessarily immediately obvious
+
+29
+00:01:14,640 --> 00:01:18,530
+that this code all belongs in one and the same function.
+
+30
+00:01:18,530 --> 00:01:22,750
+So using multiple shorter lines and using indentation
+
+31
+00:01:22,750 --> 00:01:27,340
+helps a lot with code readability and understandability.
+
+32
+00:01:27,340 --> 00:01:29,650
+Now, in addition to using indentation,
+
+33
+00:01:29,650 --> 00:01:31,960
+you should also break long statements
+
+34
+00:01:31,960 --> 00:01:33,730
+into multiple shorter ones.
+
+35
+00:01:33,730 --> 00:01:36,670
+And with that, I don't just mean the extreme example
+
+36
+00:01:36,670 --> 00:01:38,770
+I showed you a minute ago.
+
+37
+00:01:38,770 --> 00:01:42,030
+For example, consider line 19 here.
+
+38
+00:01:42,030 --> 00:01:44,720
+I changed this line to be a bit longer
+
+39
+00:01:44,720 --> 00:01:47,630
+because I'm not referring to this storage path
+
+40
+00:01:47,630 --> 00:01:50,970
+property of the class anymore, which holds the storage path,
+
+41
+00:01:50,970 --> 00:01:54,290
+but I'm creating the path in line instead.
+
+42
+00:01:54,290 --> 00:01:56,820
+And therefore we have a rather long line here.
+
+43
+00:01:56,820 --> 00:02:00,800
+In such cases, it would be better to extract this code
+
+44
+00:02:00,800 --> 00:02:03,093
+into a separate variable or constant,
+
+45
+00:02:04,040 --> 00:02:05,700
+like this for example,
+
+46
+00:02:05,700 --> 00:02:08,090
+and then use this variable or constant.
+
+47
+00:02:08,090 --> 00:02:09,840
+Now, it's way more readable,
+
+48
+00:02:09,840 --> 00:02:12,200
+even though it's the same code as before,
+
+49
+00:02:12,200 --> 00:02:15,880
+but we simply split this long line into multiple lines.
+
+50
+00:02:15,880 --> 00:02:17,090
+Now, last but not least,
+
+51
+00:02:17,090 --> 00:02:19,200
+when it comes to horizontal formatting,
+
+52
+00:02:19,200 --> 00:02:22,910
+you should also use clear and descriptive,
+
+53
+00:02:22,910 --> 00:02:25,960
+but not unreadably long names.
+
+54
+00:02:25,960 --> 00:02:28,950
+Names of variables and properties and methods
+
+55
+00:02:28,950 --> 00:02:30,290
+can be a bit longer.
+
+56
+00:02:30,290 --> 00:02:34,910
+This is totally fine, they can consist of multiple words.
+
+57
+00:02:34,910 --> 00:02:37,060
+But consider this extreme example,
+
+58
+00:02:37,060 --> 00:02:41,040
+I now renamed this constant to be very descriptive.
+
+59
+00:02:41,040 --> 00:02:42,330
+It's the storage path
+
+60
+00:02:42,330 --> 00:02:47,030
+for storing images in a temporary folder, for the year 2020.
+
+61
+00:02:47,030 --> 00:02:49,070
+Now, this is a very descriptive name,
+
+62
+00:02:49,070 --> 00:02:51,000
+but it doesn't help with readability.
+
+63
+00:02:51,000 --> 00:02:52,740
+It's simply too long.
+
+64
+00:02:52,740 --> 00:02:55,000
+It hides the rest of the line,
+
+65
+00:02:55,000 --> 00:02:58,160
+which would actually be more explanatory than the long name.
+
+66
+00:02:58,160 --> 00:03:00,470
+Because if we would see this code immediately,
+
+67
+00:03:00,470 --> 00:03:01,730
+it would be pretty clear
+
+68
+00:03:01,730 --> 00:03:05,400
+that we are creating a images folder in some temp folder,
+
+69
+00:03:05,400 --> 00:03:08,790
+which is somehow related to the year 2020.
+
+70
+00:03:08,790 --> 00:03:10,210
+This would be much clearer
+
+71
+00:03:10,210 --> 00:03:12,680
+than if we have to read this long name.
+
+72
+00:03:12,680 --> 00:03:16,500
+In addition, this long name does not just impact line 19,
+
+73
+00:03:16,500 --> 00:03:19,630
+but also line 20, where we use this long name.
+
+74
+00:03:19,630 --> 00:03:22,170
+This line now also is partially hidden
+
+75
+00:03:22,170 --> 00:03:24,060
+and requires some scrolling,
+
+76
+00:03:24,060 --> 00:03:26,470
+of course, always depending on your zoom level,
+
+77
+00:03:26,470 --> 00:03:28,750
+but still it's a way too long line.
+
+78
+00:03:28,750 --> 00:03:32,280
+And hence here, the older name was definitely better
+
+79
+00:03:32,280 --> 00:03:34,553
+and helped with readability way more.
+

@@ -1,0 +1,3 @@
+/Users/joaocarvalho/Desktop/Universidade/2oAno/POO/Pratica/ficha5_ex5/cmake-build-debug/CMakeFiles/ficha5_ex5.dir
+/Users/joaocarvalho/Desktop/Universidade/2oAno/POO/Pratica/ficha5_ex5/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/joaocarvalho/Desktop/Universidade/2oAno/POO/Pratica/ficha5_ex5/cmake-build-debug/CMakeFiles/rebuild_cache.dir

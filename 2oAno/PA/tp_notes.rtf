@@ -1,0 +1,82 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\froman\fcharset0 Times-Roman;
+\f3\froman\fcharset0 Times-Italic;}
+{\colortbl;\red255\green255\blue255;\red25\green25\blue25;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c12941\c12941\c12941;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa300\partightenfactor0
+
+\f0\fs30 \cf2 \expnd0\expndtw0\kerning0
+Boa noite,\
+Antes de mais uma boa Queima para todos.\
+\uc0\u8232 Estou a enviar esta mensagem porque alguns de v\'f3s est\'e3o a aproveitar este interregno das aulas para avan\'e7ar com os trabalhos pr\'e1ticos e existe um cuidado a ter na programa\'e7\'e3o das interfaces gr\'e1ficas, seja em JavaFX seja com qualquer outro ambiente gr\'e1fico, e que est\'e1 relacionado com evitar atualizar componentes gr\'e1ficos no contexto de Threads secund\'e1rias.\'a0Este assunto j\'e1 foi abordado em algumas aulas pr\'e1ticas, mas ainda n\'e3o houve hip\'f3tese de o fazer em todas.\
+Sempre que \'e9 feita uma tentativa de alterar algum componente JavaFX a partir de uma Thread secund\'e1ria normalmente \'e9 gerada uma excep\'e7\'e3o com a seguinte mensagem: "
+\f1 Not on FX application thread;....
+\f0 ".\
+Esta situa\'e7\'e3o pode ocorrer no contexto da implementa\'e7\'e3o do TinyPAC porque, conforme j\'e1 foi sendo discutido em v\'e1rias aulas (por exemplo nas aulas te\'f3ricas), para fazer avan\'e7ar os elementos de jogo de forma autom\'e1tica deve ser usado o 
+\f1 GameEngine
+\f0  fornecido.\uc0\u8232 Na inst\'e2ncia do 
+\f1 GameEngine
+\f0  criada deve ser registado um cliente com c\'f3digo que fa\'e7a ser executada uma transi\'e7\'e3o - a transi\'e7\'e3o que ser\'e1 comum \'e0 maior parte dos estados que permitir\'e1 fazer mover o Pacman e os Fantasmas. Supondo que essa transi\'e7\'e3o se chama "
+\f1 evolve
+\f0 ", "
+\f1 avanca
+\f0 ", "
+\f1 move
+\f0 ", "
+\f1 changePos
+\f0 " ,... ent\'e3o algures no vosso c\'f3digo existir\'e1 algo semelhante a:\
+\'a0
+\f1  \'a0 gameEngine.registerClient( (g, currentTime) -> avanca(currentTime));
+\f0 \
+Quando de forma repetida o per\'edodo programado na inst\'e2ncia do 
+\f1 GameEngine
+\f0  for sendo ultrapassado, ent\'e3o ser\'e1 gerado o evento que ter\'e1 como resultado a execu\'e7\'e3o do m\'e9todo programado na linha anterior.\'a0\'c9 suposto que essa transi\'e7\'e3o seja executada no estado atual, a qual aturar\'e1 sobre o modelo de dados.\
+De acordo com o modelo de programa\'e7\'e3o baseado no padr\'e3o Observer/Observable implementado atrav\'e9s de Property Changes, a classe correspondente a um 
+\f1 TinyPACManager
+\f0  efectuar\'e1 o "fire" da propriedade que ir\'e1 atualizar a interface gr\'e1fica.\
+Acontece que todo o c\'f3digo executado a partir do evento gerado pela classe 
+\f1 GameEngine
+\f0  ser\'e1 realizado no contexto de uma thread secund\'e1ria. Dessa forma, ser\'e1 prov\'e1vel que o erro mencionado acima ocorra nas vossas aplica\'e7\'f5es.\uc0\u8232 Assim, quando est\'e3o a programar o "listener" para fazer o refresh da interface gr\'e1fica dever\'e3o usar algo do g\'e9nero (que dever\'e3o adaptar de acordo com os nomes usados):\
+
+\f1 \'a0 \'a0 tinyPACManager.addPropertyChangeListener(tinyPACManager.PROP_STATE, evt -> Platform.runLater(()->update()));
+\f0 \
+A fun\'e7\'e3o 
+\f1 Platform.runLater(<Runnable>)
+\f0  garantir\'e1 que o c\'f3digo indicado ser\'e1 executado na Thread associada ao controlo dos elementos gr\'e1ficos do JavaFX.\
+Aproveito tamb\'e9m esta mensagem para esclarecer uma d\'favida frequente que tem sido levantada: n\'e3o \'e9 necess\'e1rio usar os m\'e9todos 
+\f1 pause/resume
+\f0  do 
+\f1 GameEngine
+\f0  para colocar os mecanismos de avan\'e7o autom\'e1tico do jogo em standby. Basta que o m\'e9todo de tratamento da transi\'e7\'e3o referida anteriormente seja vazio/nulo nos estados em quest\'e3o.\
+Com os melhores cumprimentos,\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa300\partightenfactor0
+\cf2 \'c1lvaro Santos\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Logica que falta:\
+Speed dos fantasmas e do Pacman\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf3 Local onde dever\'e1 aparecer uma fruta a cada 20 bolas que s\'e3o comidas. Apenas existe 1 ocorr\'eancia desta c\'e9lula no ficheiro de defini\'e7\'e3o de um labirinto. Durante o jogo, a fruta aparece apenas se nesse instante n\'e3o estiver dispon\'edvel outra fruta. Quando recolhida, uma fruta d\'e1 pontua\'e7\'e3o em m\'faltiplos crescentes de 25. Em cada n\'edvel come\'e7a com 25, 50, 75 e assim sucessivamente. Os fantasmas ignoram as frutas; 
+\f0\fs30 \cf2 \
+
+\f2\fs29\fsmilli14667 \cf3 Para cada n\'edvel, a velocidade dos fantasmas deve ir aumentando e o tempo de vulnerabilidade dos fantasmas dever\'e1 ir diminuindo (com valores \'e0 escolha do aluno). 
+\fs24 \
+\pard\pardeftab720\sa300\partightenfactor0
+
+\f0\fs30 \cf2 Movimento dos \'faltimos 3 fantasmas\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf3 Os fantasmas podem ser comidos quando est\'e3o vulner\'e1veis (ap\'f3s o 
+\f3\i pac-man 
+\f2\i0 comer a bola com poderes), recebendo o jogador 50 pontos pelo primeiro, 100 pontos pelo segundo, 150 pelo terceiro e 200 pelo quarto. Para cada bola com poderes recolhida, esta sequ\'eancia de atribui\'e7\'e3o de pontos volta a ser reiniciada em 50 pontos. 
+\fs24 \
+\pard\pardeftab720\sa300\partightenfactor0
+
+\f0\fs30 \cf2 Top 5\
+ContextManager\
+}

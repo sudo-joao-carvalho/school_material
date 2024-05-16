@@ -1,0 +1,9 @@
+package com.sample;
+
+public class Alarme {
+
+	Divisao divisaoInvadida;
+	
+	public Alarme(Divisao divisaoInvadida)
+	
+}

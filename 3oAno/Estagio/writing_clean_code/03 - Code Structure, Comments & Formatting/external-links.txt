@@ -1,0 +1,21 @@
+
+002 Code
+https://github.com/academind/clean-code-course-code/tree/comments-formatting-01-bad-comments
+
+003 Code
+https://github.com/academind/clean-code-course-code/tree/comments-formatting-02-good-comments
+
+005 Code
+https://github.com/academind/clean-code-course-code/tree/comments-formatting-03-vertical-formatting
+
+006 Code
+https://github.com/academind/clean-code-course-code/tree/comments-formatting-04-language-specific
+
+008 Code
+https://github.com/academind/clean-code-course-code/tree/comments-formatting-05-challenge
+
+009 Code
+https://github.com/academind/clean-code-course-code/tree/comments-formatting-05-challenge
+
+010 Slides-Summary-Sheet
+https://github.com/academind/clean-code-course-code/tree/comments-formatting-extra-attachments

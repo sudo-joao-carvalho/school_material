@@ -1,0 +1,696 @@
+1
+00:00:01,603 --> 00:00:04,610
+Now let's come back to this problem
+
+2
+00:00:04,610 --> 00:00:06,700
+of having some duplicated code
+
+3
+00:00:06,700 --> 00:00:08,132
+and having all these extra cheques
+
+4
+00:00:08,132 --> 00:00:11,630
+for whether something is a payment or a refund.
+
+5
+00:00:11,630 --> 00:00:13,360
+We can solve this problem
+
+6
+00:00:13,360 --> 00:00:17,510
+by utilizing factory functions and polymorphism.
+
+7
+00:00:17,510 --> 00:00:19,370
+And for that of course, we need
+
+8
+00:00:19,370 --> 00:00:21,560
+to understand what a factory function is
+
+9
+00:00:21,560 --> 00:00:23,391
+and what polymorphism is.
+
+10
+00:00:23,391 --> 00:00:27,410
+A factory function is simply a function which is used
+
+11
+00:00:27,410 --> 00:00:31,520
+to produce something, for example, to produce objects
+
+12
+00:00:31,520 --> 00:00:35,170
+or produce maps, arrays, anything like that.
+
+13
+00:00:35,170 --> 00:00:36,990
+We provide a certain input,
+
+14
+00:00:36,990 --> 00:00:41,050
+and it then produces a certain object for us.
+
+15
+00:00:41,050 --> 00:00:44,410
+Polymorphism is a concept to which I will come back to
+
+16
+00:00:44,410 --> 00:00:46,530
+in the next course section,
+
+17
+00:00:46,530 --> 00:00:49,040
+which is about classes and objects.
+
+18
+00:00:49,040 --> 00:00:51,680
+In the end, it means that we can have an object
+
+19
+00:00:51,680 --> 00:00:56,410
+or a function, which we can always use in the same way,
+
+20
+00:00:56,410 --> 00:00:57,900
+for example, an object
+
+21
+00:00:57,900 --> 00:01:01,100
+on which we always can use the same method,
+
+22
+00:01:01,100 --> 00:01:04,060
+but what this method does in detail,
+
+23
+00:01:04,060 --> 00:01:06,960
+then depends on some other factors.
+
+24
+00:01:06,960 --> 00:01:10,670
+And we can combine this to write a factory function,
+
+25
+00:01:10,670 --> 00:01:15,060
+which produces different other functions or objects
+
+26
+00:01:15,060 --> 00:01:18,720
+with functions that we can always call in the same way,
+
+27
+00:01:18,720 --> 00:01:22,190
+but that then sometimes handle credit card payments,
+
+28
+00:01:22,190 --> 00:01:25,600
+and sometimes handle PayPal refunds for example.
+
+29
+00:01:25,600 --> 00:01:28,770
+And that is exactly what we're going to work on now.
+
+30
+00:01:28,770 --> 00:01:31,400
+We're going to write a factory function,
+
+31
+00:01:31,400 --> 00:01:32,950
+which creates an object,
+
+32
+00:01:32,950 --> 00:01:35,210
+which always will have the same structure,
+
+33
+00:01:35,210 --> 00:01:36,650
+but then different code
+
+34
+00:01:36,650 --> 00:01:39,503
+that executes under different circumstances.
+
+35
+00:01:40,860 --> 00:01:44,660
+Let's go up to the process transaction function again.
+
+36
+00:01:44,660 --> 00:01:49,660
+Here I call process by method to then trigger this function.
+
+37
+00:01:51,010 --> 00:01:55,190
+Now I will replace this function, so we'll add a new one,
+
+38
+00:01:55,190 --> 00:01:57,230
+and soon delete the old one.
+
+39
+00:01:57,230 --> 00:02:01,973
+And I will name this function get transaction processor.
+
+40
+00:02:03,710 --> 00:02:07,910
+And this function will be a factory function.
+
+41
+00:02:07,910 --> 00:02:10,460
+This function will return an object,
+
+42
+00:02:10,460 --> 00:02:13,660
+and it will actually return a polymorphic object full
+
+43
+00:02:13,660 --> 00:02:16,530
+of functions which always have the same name,
+
+44
+00:02:16,530 --> 00:02:18,550
+but will do different things.
+
+45
+00:02:18,550 --> 00:02:19,710
+That's the plan here.
+
+46
+00:02:19,710 --> 00:02:22,350
+And for that, we will utilize the fact that
+
+47
+00:02:22,350 --> 00:02:24,830
+in most programming languages,
+
+48
+00:02:24,830 --> 00:02:28,382
+you can indeed use functions like regular values.
+
+49
+00:02:28,382 --> 00:02:33,090
+So you can assign functions to variables to properties,
+
+50
+00:02:33,090 --> 00:02:35,040
+you can pass functions around.
+
+51
+00:02:35,040 --> 00:02:37,100
+And we're going to do that because we are going
+
+52
+00:02:37,100 --> 00:02:41,630
+to return an object full of functions, which already exist,
+
+53
+00:02:41,630 --> 00:02:43,280
+but which we won't call in here,
+
+54
+00:02:43,280 --> 00:02:46,210
+but which we will just swap dynamically depending
+
+55
+00:02:46,210 --> 00:02:47,720
+on which function we need.
+
+56
+00:02:47,720 --> 00:02:50,320
+But it will become clearer as we start working
+
+57
+00:02:50,320 --> 00:02:52,140
+on this factory function.
+
+58
+00:02:52,140 --> 00:02:55,460
+And for this, I want to utilize the fact that functions
+
+59
+00:02:55,460 --> 00:02:57,110
+in JavaScript but also
+
+60
+00:02:57,110 --> 00:03:01,320
+in many other programming languages are callable,
+
+61
+00:03:01,320 --> 00:03:02,925
+but don't have to be called.
+
+62
+00:03:02,925 --> 00:03:06,600
+And if you don't add the brackets after the function name,
+
+63
+00:03:06,600 --> 00:03:09,300
+you can use them just like any other value,
+
+64
+00:03:09,300 --> 00:03:12,690
+like a string, a number or an object.
+
+65
+00:03:12,690 --> 00:03:15,376
+So now with that, we can grab this code here,
+
+66
+00:03:15,376 --> 00:03:19,564
+and move that into get transaction processor,
+
+67
+00:03:19,564 --> 00:03:22,963
+and then add a new variable here,
+
+68
+00:03:23,880 --> 00:03:26,640
+in this get transaction processor function,
+
+69
+00:03:26,640 --> 00:03:29,380
+which in JavaScript, we do with the let keyword,
+
+70
+00:03:29,380 --> 00:03:31,677
+which will name processors,
+
+71
+00:03:31,677 --> 00:03:33,997
+because we have two possible processors
+
+72
+00:03:33,997 --> 00:03:38,730
+for every transaction, a payment and a refund processor.
+
+73
+00:03:38,730 --> 00:03:41,630
+At least after going through these cheques.
+
+74
+00:03:41,630 --> 00:03:44,109
+Now in here in this object, which I create like this
+
+75
+00:03:44,109 --> 00:03:49,109
+in JavaScript, or a map in other programming languages,
+
+76
+00:03:49,150 --> 00:03:51,053
+I will add q keys.
+
+77
+00:03:52,360 --> 00:03:57,308
+Payment with a value of null initially, so no value,
+
+78
+00:03:57,308 --> 00:04:00,863
+and refund with a value of null initially.
+
+79
+00:04:02,990 --> 00:04:06,810
+Now the idea is that we populate payment and refund
+
+80
+00:04:06,810 --> 00:04:11,780
+with functions as values inside of these cheques.
+
+81
+00:04:11,780 --> 00:04:15,890
+So here, if we use a credit card as a payment method,
+
+82
+00:04:15,890 --> 00:04:19,959
+I will set processors.payment,
+
+83
+00:04:19,959 --> 00:04:23,400
+equal to process credit card payment,
+
+84
+00:04:23,400 --> 00:04:25,460
+but I'm not calling this function,
+
+85
+00:04:25,460 --> 00:04:28,743
+I'm not adding parentheses, I'm just pointing at it.
+
+86
+00:04:29,590 --> 00:04:31,630
+So this process credit card function
+
+87
+00:04:31,630 --> 00:04:34,610
+which is defined down there, I'm pointing at it.
+
+88
+00:04:34,610 --> 00:04:37,750
+I'm using it as a value, I'm not executing it.
+
+89
+00:04:37,750 --> 00:04:40,250
+And I'm storing this pointer at this function
+
+90
+00:04:40,250 --> 00:04:43,033
+in this key in this object or map.
+
+91
+00:04:44,740 --> 00:04:49,226
+So here, I'll then do the same for refund and store process,
+
+92
+00:04:49,226 --> 00:04:53,670
+credit card refund in the refund field of this map.
+
+93
+00:04:53,670 --> 00:04:55,318
+Again just pointing at it.
+
+94
+00:04:55,318 --> 00:05:00,318
+And we can now do this here, in all these cases,
+
+95
+00:05:00,360 --> 00:05:04,740
+and just point at the different processor functions.
+
+96
+00:05:04,740 --> 00:05:07,010
+So here it's process PayPal payment,
+
+97
+00:05:07,010 --> 00:05:11,809
+at which I'm pointing here, it's process PayPal refund.
+
+98
+00:05:11,809 --> 00:05:15,530
+And here it's process plan payment,
+
+99
+00:05:15,530 --> 00:05:18,363
+and process plan refund.
+
+100
+00:05:19,390 --> 00:05:21,990
+So now we're populating this object,
+
+101
+00:05:21,990 --> 00:05:26,220
+and I am simply returning this object thereafter.
+
+102
+00:05:26,220 --> 00:05:29,041
+So in this get transaction processor function,
+
+103
+00:05:29,041 --> 00:05:30,900
+I'm creating this object,
+
+104
+00:05:30,900 --> 00:05:33,500
+populating the different processors depending
+
+105
+00:05:33,500 --> 00:05:35,660
+on the payment method, which was chosen,
+
+106
+00:05:35,660 --> 00:05:37,657
+and then I return this.
+
+107
+00:05:37,657 --> 00:05:40,258
+Now with that, we can get rid of the process
+
+108
+00:05:40,258 --> 00:05:44,430
+by method, function, we should keep the is payment,
+
+109
+00:05:44,430 --> 00:05:46,262
+and is refund helper functions,
+
+110
+00:05:46,262 --> 00:05:49,503
+but we can get rid of the process credit card transaction,
+
+111
+00:05:49,503 --> 00:05:51,630
+process PayPal transaction,
+
+112
+00:05:51,630 --> 00:05:54,026
+and process plan transaction functions.
+
+113
+00:05:54,026 --> 00:05:57,330
+So we remove a lot of code here.
+
+114
+00:05:57,330 --> 00:05:59,168
+In get transaction processor,
+
+115
+00:05:59,168 --> 00:06:02,650
+we should now accept the transaction as a parameter,
+
+116
+00:06:02,650 --> 00:06:05,164
+because we're using it here to derive the method.
+
+117
+00:06:05,164 --> 00:06:07,341
+And now we're creating this object here,
+
+118
+00:06:07,341 --> 00:06:08,885
+which we can now utilize
+
+119
+00:06:08,885 --> 00:06:12,343
+by calling get transaction processor,
+
+120
+00:06:14,570 --> 00:06:17,838
+here in the process transaction function.
+
+121
+00:06:17,838 --> 00:06:20,530
+Instead of calling process by method,
+
+122
+00:06:20,530 --> 00:06:22,660
+we now get our processors,
+
+123
+00:06:22,660 --> 00:06:25,330
+by calling get transaction processor,
+
+124
+00:06:25,330 --> 00:06:27,590
+and passing the transaction to it.
+
+125
+00:06:27,590 --> 00:06:32,590
+And now we can simply check if we have a payment
+
+126
+00:06:32,648 --> 00:06:34,849
+for the given transaction,
+
+127
+00:06:34,849 --> 00:06:39,313
+in which case, we want to call processors.payment,
+
+128
+00:06:39,313 --> 00:06:41,410
+and execute this as a function,
+
+129
+00:06:41,410 --> 00:06:43,563
+and pass the transaction to it,
+
+130
+00:06:44,560 --> 00:06:47,705
+else we can call processors refund
+
+131
+00:06:47,705 --> 00:06:50,683
+and pass the transaction as a function.
+
+132
+00:06:50,683 --> 00:06:53,313
+And of course now we can also outsource this
+
+133
+00:06:53,313 --> 00:06:56,763
+out of process transaction to keep it clean,
+
+134
+00:06:56,763 --> 00:06:59,086
+and maybe add a new function here,
+
+135
+00:06:59,086 --> 00:07:04,086
+which we call process with processor,
+
+136
+00:07:06,110 --> 00:07:10,089
+accept the transactions argument and copy our code in there.
+
+137
+00:07:10,089 --> 00:07:12,544
+And now it's processed with processor,
+
+138
+00:07:12,544 --> 00:07:13,998
+which we can call here.
+
+139
+00:07:13,998 --> 00:07:15,171
+Though again you can argue
+
+140
+00:07:15,171 --> 00:07:18,074
+whether this really is a good split or not,
+
+141
+00:07:18,074 --> 00:07:20,609
+it definitely makes this function more readable,
+
+142
+00:07:20,609 --> 00:07:23,000
+but now of course we have to scroll down
+
+143
+00:07:23,000 --> 00:07:24,492
+to process with processor.
+
+144
+00:07:24,492 --> 00:07:27,307
+Still I would argue both functions are easy to find
+
+145
+00:07:27,307 --> 00:07:30,456
+and readable and therefore clean.
+
+146
+00:07:30,456 --> 00:07:32,854
+We could also rename these keys here,
+
+147
+00:07:32,854 --> 00:07:35,093
+to make it clear that they hold functions,
+
+148
+00:07:35,093 --> 00:07:37,952
+and rename this to make payment,
+
+149
+00:07:37,952 --> 00:07:42,952
+and make refund for example, or process payment,
+
+150
+00:07:43,769 --> 00:07:46,049
+and process refund,
+
+151
+00:07:46,049 --> 00:07:49,270
+and of course then also use process payment here,
+
+152
+00:07:49,270 --> 00:07:50,848
+when we store a function,
+
+153
+00:07:50,848 --> 00:07:55,552
+and process refund when we store a function,
+
+154
+00:07:55,552 --> 00:07:57,835
+and with these properties renamed,
+
+155
+00:07:57,835 --> 00:08:01,314
+we can call process refund here,
+
+156
+00:08:01,314 --> 00:08:03,389
+and process payment here.
+
+157
+00:08:03,389 --> 00:08:05,587
+But that's just some renaming to make it clear
+
+158
+00:08:05,587 --> 00:08:07,787
+of what's inside of these properties,
+
+159
+00:08:07,787 --> 00:08:11,558
+which we of course should do to write clean code.
+
+160
+00:08:11,558 --> 00:08:12,989
+And now with (indistinct) got rid
+
+161
+00:08:12,989 --> 00:08:15,443
+of these extra nested if cheques.
+
+162
+00:08:15,443 --> 00:08:19,125
+Because now we're using such a map of functions,
+
+163
+00:08:19,125 --> 00:08:20,412
+which we return.
+
+164
+00:08:20,412 --> 00:08:24,563
+So in the end get transaction processor is a function,
+
+165
+00:08:24,563 --> 00:08:27,716
+which just returns a map of other functions,
+
+166
+00:08:27,716 --> 00:08:29,557
+maybe therefore we should rename it
+
+167
+00:08:29,557 --> 00:08:32,730
+to get transaction processors,
+
+168
+00:08:32,730 --> 00:08:37,289
+and also call get transaction processors here of course.
+
+169
+00:08:37,289 --> 00:08:39,453
+Because now this will give us an object
+
+170
+00:08:39,453 --> 00:08:41,479
+or a map full of functions,
+
+171
+00:08:41,479 --> 00:08:43,260
+which we then can call
+
+172
+00:08:43,260 --> 00:08:45,387
+to process the transaction appropriately.
+
+173
+00:08:45,387 --> 00:08:50,103
+And this is a technique we can use to make this code slimmer
+
+174
+00:08:50,103 --> 00:08:53,963
+and to remove all these duplicate cheques.
+

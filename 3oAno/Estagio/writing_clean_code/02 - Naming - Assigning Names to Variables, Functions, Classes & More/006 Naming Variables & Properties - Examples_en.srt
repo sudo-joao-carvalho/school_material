@@ -1,0 +1,392 @@
+1
+00:00:01,621 --> 00:00:04,920
+So now that we know how to name variables,
+
+2
+00:00:04,920 --> 00:00:06,780
+constants and properties,
+
+3
+00:00:06,780 --> 00:00:08,330
+let's see more examples
+
+4
+00:00:08,330 --> 00:00:11,090
+and let's see different variations of names.
+
+5
+00:00:11,090 --> 00:00:13,800
+For that we will consider what's being stored.
+
+6
+00:00:13,800 --> 00:00:16,149
+We'll then have a look at bad names,
+
+7
+00:00:16,149 --> 00:00:20,060
+at okay-ish names and at good names.
+
+8
+00:00:20,060 --> 00:00:23,300
+And let's start with the good old user object again.
+
+9
+00:00:23,300 --> 00:00:24,860
+Let's say we have a variable
+
+10
+00:00:24,860 --> 00:00:27,170
+in which we store a user object.
+
+11
+00:00:27,170 --> 00:00:29,460
+And the same would be true if it's a constant
+
+12
+00:00:29,460 --> 00:00:31,140
+or if it's a property.
+
+13
+00:00:31,140 --> 00:00:33,950
+And let's say that user object is simply the combination
+
+14
+00:00:33,950 --> 00:00:37,510
+of the name of the user, the email address and the age.
+
+15
+00:00:37,510 --> 00:00:40,190
+Now what could be bad names here?
+
+16
+00:00:40,190 --> 00:00:42,720
+Now bad names for this kind of variable
+
+17
+00:00:42,720 --> 00:00:45,610
+would be something like u or data.
+
+18
+00:00:45,610 --> 00:00:48,350
+U is simply very short and unspecific
+
+19
+00:00:48,350 --> 00:00:51,080
+and data is also not very specific.
+
+20
+00:00:51,080 --> 00:00:53,220
+These variables could contain anything.
+
+21
+00:00:53,220 --> 00:00:57,240
+It's not clear that they hold some user object.
+
+22
+00:00:57,240 --> 00:01:00,540
+Names which are okay could be userData,
+
+23
+00:01:00,540 --> 00:01:04,030
+instead of just data, or person.
+
+24
+00:01:04,030 --> 00:01:06,560
+The problem with userData is that it
+
+25
+00:01:06,560 --> 00:01:10,030
+might have some redundant information attached to it.
+
+26
+00:01:10,030 --> 00:01:12,150
+I mean, if we have a user object,
+
+27
+00:01:12,150 --> 00:01:15,500
+it's clear that it contains data about that user.
+
+28
+00:01:15,500 --> 00:01:19,560
+So we probably don't want to name the variable userData.
+
+29
+00:01:19,560 --> 00:01:23,170
+And for person, that might be too unspecific.
+
+30
+00:01:23,170 --> 00:01:24,810
+It can make sense.
+
+31
+00:01:24,810 --> 00:01:27,070
+I will not say that it's always wrong.
+
+32
+00:01:27,070 --> 00:01:30,120
+But often you might be working on a customer,
+
+33
+00:01:30,120 --> 00:01:31,740
+or on an author,
+
+34
+00:01:31,740 --> 00:01:33,020
+or an instructor,
+
+35
+00:01:33,020 --> 00:01:34,680
+or an administrator.
+
+36
+00:01:34,680 --> 00:01:38,000
+So maybe you want to use these specific words instead.
+
+37
+00:01:38,000 --> 00:01:41,480
+If we would not be storing a user object here,
+
+38
+00:01:41,480 --> 00:01:45,190
+but let's say we would just be collecting data
+
+39
+00:01:45,190 --> 00:01:48,340
+a user entered in some form and we have a mixture
+
+40
+00:01:48,340 --> 00:01:52,680
+of the entered values and of validation results
+
+41
+00:01:52,680 --> 00:01:54,730
+of us validating these inputs,
+
+42
+00:01:54,730 --> 00:01:57,480
+then we could have a user data variable
+
+43
+00:01:57,480 --> 00:02:00,460
+which holds this bag of entered values
+
+44
+00:02:00,460 --> 00:02:02,400
+and validation results.
+
+45
+00:02:02,400 --> 00:02:05,200
+There, something like that could make more sense
+
+46
+00:02:05,200 --> 00:02:08,639
+because it would not be the finished user object then,
+
+47
+00:02:08,639 --> 00:02:12,670
+but some intermediate object between collecting the values
+
+48
+00:02:12,670 --> 00:02:14,520
+and creating the user.
+
+49
+00:02:14,520 --> 00:02:16,230
+So that's something to consider.
+
+50
+00:02:16,230 --> 00:02:19,540
+And I'm bringing this up here just to make it clear
+
+51
+00:02:19,540 --> 00:02:22,770
+that a name which might be okay in one scenario
+
+52
+00:02:22,770 --> 00:02:27,030
+might be a good name in another scenario and vice versa.
+
+53
+00:02:27,030 --> 00:02:30,843
+Just bad names are really often very bad.
+
+54
+00:02:31,850 --> 00:02:34,010
+So therefore, good names could be user,
+
+55
+00:02:34,010 --> 00:02:37,940
+or as I just said, something more specific like customer.
+
+56
+00:02:37,940 --> 00:02:40,090
+User is pretty descriptive and clear
+
+57
+00:02:40,090 --> 00:02:42,440
+and customer is even more specific,
+
+58
+00:02:42,440 --> 00:02:44,740
+which often might be the better option
+
+59
+00:02:44,740 --> 00:02:48,290
+to make it really clear which kind of user that is.
+
+60
+00:02:48,290 --> 00:02:50,000
+Of course if you have an application
+
+61
+00:02:50,000 --> 00:02:52,340
+where a user is really just a user
+
+62
+00:02:52,340 --> 00:02:54,810
+and not necessarily a customer yet,
+
+63
+00:02:54,810 --> 00:02:57,840
+then there is nothing wrong with going with just user,
+
+64
+00:02:57,840 --> 00:03:00,970
+which is why it's listed under good names here.
+
+65
+00:03:00,970 --> 00:03:04,420
+And with that, I got a first little exercise for you.
+
+66
+00:03:04,420 --> 00:03:07,600
+Let's say we're now validating some user input
+
+67
+00:03:07,600 --> 00:03:09,730
+and it's the result of this validation
+
+68
+00:03:09,730 --> 00:03:13,320
+which is being stored in a variable or in a property.
+
+69
+00:03:13,320 --> 00:03:15,530
+How would you name that?
+
+70
+00:03:15,530 --> 00:03:17,900
+Pause the video for a second and think about
+
+71
+00:03:17,900 --> 00:03:20,010
+bad, okay, and good names.
+
+72
+00:03:20,010 --> 00:03:23,500
+And then we'll have a look at the examples I came up with.
+
+73
+00:03:23,500 --> 00:03:26,160
+So what could be some bad names for this?
+
+74
+00:03:26,160 --> 00:03:28,610
+Well again, just using a single character
+
+75
+00:03:28,610 --> 00:03:32,210
+is pretty much always bad with some rare exceptions.
+
+76
+00:03:32,210 --> 00:03:35,950
+So we could use v for the validation result.
+
+77
+00:03:35,950 --> 00:03:37,263
+Or something like val.
+
+78
+00:03:38,424 --> 00:03:40,530
+The problem with v is that it could be anything.
+
+79
+00:03:40,530 --> 00:03:43,320
+The problem with val is that we could also think
+
+80
+00:03:43,320 --> 00:03:47,460
+that it stands for value instead of validation result.
+
+81
+00:03:47,460 --> 00:03:51,750
+So these are too unspecific and don't tell us anything.
+
+82
+00:03:51,750 --> 00:03:53,660
+When it comes to okay names,
+
+83
+00:03:53,660 --> 00:03:56,663
+we could have something like correct or validatedInput.
+
+84
+00:03:57,510 --> 00:04:01,050
+The problem with these names is that they don't imply
+
+85
+00:04:01,050 --> 00:04:04,120
+that they hold true or false values.
+
+86
+00:04:04,120 --> 00:04:06,930
+Correct could be holding any kind of value.
+
+87
+00:04:06,930 --> 00:04:08,800
+It could be true or false
+
+88
+00:04:08,800 --> 00:04:12,100
+but it could also be some text or anything else.
+
+89
+00:04:12,100 --> 00:04:16,160
+And validatedInput could hold the value which was validated
+
+90
+00:04:16,160 --> 00:04:18,810
+instead of the validation result.
+
+91
+00:04:18,810 --> 00:04:23,140
+So better options could be isCorrect or isValid,
+
+92
+00:04:23,140 --> 00:04:26,050
+or something like did validate successfully.
+
+93
+00:04:26,050 --> 00:04:28,350
+These would be names which are descriptive
+
+94
+00:04:28,350 --> 00:04:30,520
+and where it's clear that we have a true
+
+95
+00:04:30,520 --> 00:04:33,020
+or false value stored in there.
+
+96
+00:04:33,020 --> 00:04:35,500
+Now there will be more examples throughout this course.
+
+97
+00:04:35,500 --> 00:04:38,080
+But this hopefully gives you a first idea
+
+98
+00:04:38,080 --> 00:04:42,113
+on how variables, properties and constants may be named.
+

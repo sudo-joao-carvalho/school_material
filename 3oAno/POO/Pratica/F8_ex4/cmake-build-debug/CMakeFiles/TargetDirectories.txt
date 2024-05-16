@@ -1,0 +1,3 @@
+/Users/joaocarvalho/Desktop/Universidade/3oAno/POO/Pratica/F8_ex4/cmake-build-debug/CMakeFiles/F8_ex4.dir
+/Users/joaocarvalho/Desktop/Universidade/3oAno/POO/Pratica/F8_ex4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/joaocarvalho/Desktop/Universidade/3oAno/POO/Pratica/F8_ex4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

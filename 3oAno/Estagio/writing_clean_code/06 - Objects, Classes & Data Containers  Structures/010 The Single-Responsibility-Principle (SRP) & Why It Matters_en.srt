@@ -1,0 +1,564 @@
+1
+00:00:02,120 --> 00:00:04,820
+Now the Single-Responsibility Principle
+
+2
+00:00:04,820 --> 00:00:05,970
+in the end says
+
+3
+00:00:05,970 --> 00:00:09,600
+that classes should have a single responsibility,
+
+4
+00:00:09,600 --> 00:00:10,690
+and that's, of course,
+
+5
+00:00:10,690 --> 00:00:13,300
+something we heard about before already.
+
+6
+00:00:13,300 --> 00:00:15,530
+And that a class shouldn't change
+
+7
+00:00:15,530 --> 00:00:18,300
+for more than one reason, therefore.
+
+8
+00:00:18,300 --> 00:00:19,133
+Now, as I said,
+
+9
+00:00:19,133 --> 00:00:22,990
+we heard about that idea of having a single responsibility
+
+10
+00:00:22,990 --> 00:00:26,240
+in a class earlier in this module already
+
+11
+00:00:26,240 --> 00:00:29,860
+when I explained that classes should be small.
+
+12
+00:00:29,860 --> 00:00:33,910
+And indeed, classes should have a single responsibility.
+
+13
+00:00:33,910 --> 00:00:35,600
+Now I wanna highlight though
+
+14
+00:00:35,600 --> 00:00:39,080
+that the Single-Responsibility Principle in the end
+
+15
+00:00:39,080 --> 00:00:42,610
+focuses on changes made to a class.
+
+16
+00:00:42,610 --> 00:00:43,443
+But, of course,
+
+17
+00:00:43,443 --> 00:00:44,430
+that simply means that
+
+18
+00:00:44,430 --> 00:00:47,690
+if a class would have multiple responsibilities,
+
+19
+00:00:47,690 --> 00:00:50,560
+there would be multiple reasons for code edits
+
+20
+00:00:50,560 --> 00:00:52,330
+to be made to this class,
+
+21
+00:00:52,330 --> 00:00:56,520
+simply because it has well, too many responsibilities.
+
+22
+00:00:56,520 --> 00:01:00,400
+And therefore, less responsibilities, to be precise,
+
+23
+00:01:00,400 --> 00:01:02,220
+a single responsibility,
+
+24
+00:01:02,220 --> 00:01:05,890
+means that code changes have less impact on the class,
+
+25
+00:01:05,890 --> 00:01:07,330
+and ultimately, of course,
+
+26
+00:01:07,330 --> 00:01:09,120
+that then also implies
+
+27
+00:01:09,120 --> 00:01:11,850
+that the class is really focused and small,
+
+28
+00:01:11,850 --> 00:01:14,383
+which was our overall goal.
+
+29
+00:01:16,020 --> 00:01:18,890
+Nonetheless, the question, of course, now is,
+
+30
+00:01:18,890 --> 00:01:22,860
+what exactly is a single responsibility?
+
+31
+00:01:22,860 --> 00:01:24,250
+Earlier in the course,
+
+32
+00:01:24,250 --> 00:01:27,150
+or earlier in this module to be precise,
+
+33
+00:01:27,150 --> 00:01:29,460
+I showed you this big class
+
+34
+00:01:29,460 --> 00:01:33,430
+with a broad API with a lot of methods.
+
+35
+00:01:33,430 --> 00:01:35,940
+And I argued that this class
+
+36
+00:01:35,940 --> 00:01:38,710
+would have multiple responsibilities,
+
+37
+00:01:38,710 --> 00:01:40,630
+that it would be doing too much,
+
+38
+00:01:40,630 --> 00:01:43,320
+and I would still say that this is true.
+
+39
+00:01:43,320 --> 00:01:46,220
+Still, the single responsibility,
+
+40
+00:01:46,220 --> 00:01:49,760
+as defined by the Single-Responsibility Principle,
+
+41
+00:01:49,760 --> 00:01:52,210
+is not talking about whether a class
+
+42
+00:01:52,210 --> 00:01:56,900
+might be doing work on both a product and a customer.
+
+43
+00:01:56,900 --> 00:01:59,810
+Instead, single responsibility,
+
+44
+00:01:59,810 --> 00:02:02,330
+in the context of this principle,
+
+45
+00:02:02,330 --> 00:02:07,020
+is actually meant to refer to different,
+
+46
+00:02:07,020 --> 00:02:12,020
+you could say business areas, this code might be related to.
+
+47
+00:02:12,570 --> 00:02:14,430
+And to give you a better example,
+
+48
+00:02:14,430 --> 00:02:16,930
+consider this report document class,
+
+49
+00:02:16,930 --> 00:02:20,820
+which actually violates the Single-Responsibility Principle,
+
+50
+00:02:20,820 --> 00:02:22,923
+even though it's super small.
+
+51
+00:02:23,820 --> 00:02:28,270
+This class here has a method called generate report
+
+52
+00:02:28,270 --> 00:02:31,503
+and a second method called create PDF.
+
+53
+00:02:32,460 --> 00:02:35,970
+Now it's violating the Single-Responsibility Principle
+
+54
+00:02:35,970 --> 00:02:39,620
+because it's very likely that generating a report,
+
+55
+00:02:39,620 --> 00:02:43,600
+which is about pulling data, connecting data, and so on,
+
+56
+00:02:43,600 --> 00:02:47,480
+so which is about generating the final report data
+
+57
+00:02:47,480 --> 00:02:49,470
+that should be included in the report,
+
+58
+00:02:49,470 --> 00:02:52,280
+that this kind of task actually
+
+59
+00:02:52,280 --> 00:02:54,770
+is a totally different feature,
+
+60
+00:02:54,770 --> 00:02:58,160
+a totally different area in our business organization,
+
+61
+00:02:58,160 --> 00:02:59,733
+than creating a PDF.
+
+62
+00:03:00,620 --> 00:03:02,490
+When we talk about creating a PDF,
+
+63
+00:03:02,490 --> 00:03:04,750
+it's about things like layout,
+
+64
+00:03:04,750 --> 00:03:06,907
+it's about things like how many pages
+
+65
+00:03:06,907 --> 00:03:11,090
+and all this presentational logic.
+
+66
+00:03:11,090 --> 00:03:13,550
+Generate report is way more technical.
+
+67
+00:03:13,550 --> 00:03:17,830
+It's about pulling in data and connecting the right data,
+
+68
+00:03:17,830 --> 00:03:19,140
+so it's hopefully clear
+
+69
+00:03:19,140 --> 00:03:22,320
+that these are two totally different responsibilities.
+
+70
+00:03:22,320 --> 00:03:25,440
+Generating and connecting and analyzing data
+
+71
+00:03:25,440 --> 00:03:29,700
+is a different responsibility than presenting data,
+
+72
+00:03:29,700 --> 00:03:32,310
+and that's what a single responsibility means
+
+73
+00:03:32,310 --> 00:03:36,440
+in the context of the Single-Responsibility Principle.
+
+74
+00:03:36,440 --> 00:03:37,273
+For example,
+
+75
+00:03:37,273 --> 00:03:40,270
+this user class would probably not violate
+
+76
+00:03:40,270 --> 00:03:43,150
+the Single-Responsibility Principle.
+
+77
+00:03:43,150 --> 00:03:46,890
+It has a couple of methods, which do quite different things,
+
+78
+00:03:46,890 --> 00:03:49,300
+but all these methods are related
+
+79
+00:03:49,300 --> 00:03:54,190
+to managing the authentication and the status of this user.
+
+80
+00:03:54,190 --> 00:03:58,600
+Be it the user creation as part of the signup method,
+
+81
+00:03:58,600 --> 00:04:02,370
+or be it the creation of a session when the user logs in,
+
+82
+00:04:02,370 --> 00:04:05,530
+or be it changing the authentication status
+
+83
+00:04:05,530 --> 00:04:08,980
+and the permissions when we assign a role.
+
+84
+00:04:08,980 --> 00:04:10,740
+We could argue that all of that
+
+85
+00:04:10,740 --> 00:04:13,480
+is related to user authentication
+
+86
+00:04:13,480 --> 00:04:17,970
+and that probably is one general responsibility.
+
+87
+00:04:17,970 --> 00:04:20,089
+Now, of course, I'm saying probably,
+
+88
+00:04:20,089 --> 00:04:21,540
+and you could argue,
+
+89
+00:04:21,540 --> 00:04:25,070
+because as always this is up for discussion,
+
+90
+00:04:25,070 --> 00:04:28,040
+and that it depends on your exact use case,
+
+91
+00:04:28,040 --> 00:04:29,820
+your exact application,
+
+92
+00:04:29,820 --> 00:04:34,230
+on what exactly a responsibility is and what not.
+
+93
+00:04:34,230 --> 00:04:38,620
+You also might not always be able to draw a sharp border,
+
+94
+00:04:38,620 --> 00:04:41,890
+but you should be aware of the general idea
+
+95
+00:04:41,890 --> 00:04:46,400
+of having only one core responsibility per class.
+
+96
+00:04:46,400 --> 00:04:48,140
+And you should also be aware
+
+97
+00:04:48,140 --> 00:04:52,320
+that one responsibility doesn't mean just one method,
+
+98
+00:04:52,320 --> 00:04:53,993
+as explained earlier.
+
+99
+00:04:55,090 --> 00:04:59,190
+So what I explained earlier about keeping classes small
+
+100
+00:04:59,190 --> 00:05:01,220
+and not doing too many things,
+
+101
+00:05:01,220 --> 00:05:05,830
+having too many responsibilities in a class, still applies.
+
+102
+00:05:05,830 --> 00:05:09,330
+I just also want to clarify that this does not mean
+
+103
+00:05:09,330 --> 00:05:11,510
+that you have to split a user
+
+104
+00:05:11,510 --> 00:05:15,950
+into an authenticated user and an unauthenticated user,
+
+105
+00:05:15,950 --> 00:05:18,310
+but that instead, for example,
+
+106
+00:05:18,310 --> 00:05:21,030
+everything related to authentication
+
+107
+00:05:21,030 --> 00:05:22,810
+might be one responsibility
+
+108
+00:05:22,810 --> 00:05:26,530
+and therefore might fit into one user class.
+
+109
+00:05:26,530 --> 00:05:27,810
+So I basically, again,
+
+110
+00:05:27,810 --> 00:05:30,040
+wanna emphasize that you should definitely
+
+111
+00:05:30,040 --> 00:05:32,860
+keep your classes small and focused,
+
+112
+00:05:32,860 --> 00:05:34,920
+but, just as mentioned earlier,
+
+113
+00:05:34,920 --> 00:05:38,370
+that you should not end up with super small classes
+
+114
+00:05:38,370 --> 00:05:40,563
+which only have one method each.
+
+115
+00:05:41,860 --> 00:05:43,840
+Now I did mention that especially,
+
+116
+00:05:43,840 --> 00:05:46,210
+the Single-Responsibility Principle
+
+117
+00:05:46,210 --> 00:05:48,250
+and the Open-Closed Principle
+
+118
+00:05:48,250 --> 00:05:50,970
+help us with writing clean code.
+
+119
+00:05:50,970 --> 00:05:54,330
+Now in the context of the Single-Responsibility Principle,
+
+120
+00:05:54,330 --> 00:05:57,883
+which we just had a look at, why would that be the case?
+
+121
+00:05:58,730 --> 00:06:01,920
+Well, basically for the same reason as before.
+
+122
+00:06:01,920 --> 00:06:04,310
+The Single-Responsibility Principle,
+
+123
+00:06:04,310 --> 00:06:09,310
+as mentioned before already, is about keeping classes small,
+
+124
+00:06:09,420 --> 00:06:13,000
+so restricting classes to one core responsibility
+
+125
+00:06:13,000 --> 00:06:15,937
+automatically leads to smaller classes,
+
+126
+00:06:15,937 --> 00:06:19,660
+even if we keep in mind that responsibility
+
+127
+00:06:19,660 --> 00:06:24,660
+does not mean task, but instead is about a group of task,
+
+128
+00:06:24,780 --> 00:06:29,540
+which are connected to the same feature or business area.
+
+129
+00:06:29,540 --> 00:06:32,530
+Still, you will end up with more classes,
+
+130
+00:06:32,530 --> 00:06:35,700
+if you respect the Single-Responsibility Principle,
+
+131
+00:06:35,700 --> 00:06:38,640
+and, of course, therefore smaller classes,
+
+132
+00:06:38,640 --> 00:06:40,070
+if you don't overdo it,
+
+133
+00:06:40,070 --> 00:06:42,290
+if you don't split your classes too much,
+
+134
+00:06:42,290 --> 00:06:44,960
+lead to code, which is easier to read,
+
+135
+00:06:44,960 --> 00:06:47,090
+because you don't have these long classes
+
+136
+00:06:47,090 --> 00:06:48,630
+with bunch of code in there
+
+137
+00:06:48,630 --> 00:06:51,270
+where you don't know what these classes are doing
+
+138
+00:06:51,270 --> 00:06:53,850
+and where you have to scroll a lot.
+
+139
+00:06:53,850 --> 00:06:56,820
+But instead, you end up with smaller classes,
+
+140
+00:06:56,820 --> 00:06:58,410
+which typically,
+
+141
+00:06:58,410 --> 00:07:02,343
+make managing your code and reading your code easier.
+

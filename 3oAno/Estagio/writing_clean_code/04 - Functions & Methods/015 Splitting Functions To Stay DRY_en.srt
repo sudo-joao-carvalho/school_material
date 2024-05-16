@@ -1,0 +1,444 @@
+1
+00:00:02,150 --> 00:00:03,540
+Now here's an example
+
+2
+00:00:03,540 --> 00:00:06,000
+where we do repeat ourselves.
+
+3
+00:00:06,000 --> 00:00:08,990
+By the way, don't wonder why the createUser function
+
+4
+00:00:08,990 --> 00:00:11,500
+looks different than the final function forum
+
+5
+00:00:11,500 --> 00:00:12,980
+we derived before,
+
+6
+00:00:12,980 --> 00:00:16,580
+I will simply dive into errors and handling errors
+
+7
+00:00:16,580 --> 00:00:18,640
+in the next course section
+
+8
+00:00:18,640 --> 00:00:21,350
+therefore, I again removed that code
+
+9
+00:00:21,350 --> 00:00:23,700
+which would have been the perfect final code though
+
+10
+00:00:23,700 --> 00:00:24,850
+just to make this clear
+
+11
+00:00:24,850 --> 00:00:28,730
+and I went back to this second best solution here
+
+12
+00:00:28,730 --> 00:00:32,119
+where we actually have more levels of abstraction
+
+13
+00:00:32,119 --> 00:00:33,670
+inside of create user,
+
+14
+00:00:33,670 --> 00:00:36,930
+but that's not the function we're going to focus on anyways.
+
+15
+00:00:36,930 --> 00:00:40,480
+This createSupportChannel function is new,
+
+16
+00:00:40,480 --> 00:00:43,650
+it's a dummy function which doesn't actually do a lot
+
+17
+00:00:43,650 --> 00:00:45,480
+but it does one important thing,
+
+18
+00:00:45,480 --> 00:00:48,370
+it takes an email address because with that,
+
+19
+00:00:48,370 --> 00:00:51,340
+we then for example create a new support channel
+
+20
+00:00:51,340 --> 00:00:54,200
+where customers can contact us whatever.
+
+21
+00:00:54,200 --> 00:00:57,070
+And this email needs to be validated
+
+22
+00:00:57,070 --> 00:00:59,650
+before anything is done with it.
+
+23
+00:00:59,650 --> 00:01:01,890
+This of course should sound familiar.
+
+24
+00:01:01,890 --> 00:01:05,060
+We did already validate an email when we created
+
+25
+00:01:05,060 --> 00:01:08,500
+a user in the createUser function up there.
+
+26
+00:01:08,500 --> 00:01:13,090
+Here we got this input is valid validation function
+
+27
+00:01:13,090 --> 00:01:16,470
+where we do also validate the email together
+
+28
+00:01:16,470 --> 00:01:18,390
+with the password.
+
+29
+00:01:18,390 --> 00:01:21,040
+So in the end, we have some duplication here.
+
+30
+00:01:21,040 --> 00:01:24,130
+It's not exactly the same code because down there
+
+31
+00:01:24,130 --> 00:01:26,060
+we check for the positive case
+
+32
+00:01:26,060 --> 00:01:28,800
+and here we check for the negative case
+
+33
+00:01:28,800 --> 00:01:32,760
+but it's the same goal in the end and that's important,
+
+34
+00:01:32,760 --> 00:01:36,290
+code duplication and repeating yourself
+
+35
+00:01:36,290 --> 00:01:40,120
+does not mean that it's always the exact same code
+
+36
+00:01:40,120 --> 00:01:42,470
+but that is the same task you are doing,
+
+37
+00:01:42,470 --> 00:01:46,780
+the same logic you have and here it's definitely the same.
+
+38
+00:01:46,780 --> 00:01:49,660
+By the way also for the error message,
+
+39
+00:01:49,660 --> 00:01:52,936
+we're logging an error message here while we did this
+
+40
+00:01:52,936 --> 00:01:54,560
+in createUser as well,
+
+41
+00:01:54,560 --> 00:01:58,870
+there we then just created this show error message function
+
+42
+00:01:58,870 --> 00:02:00,263
+which we are calling.
+
+43
+00:02:01,280 --> 00:02:04,830
+Now because we created this showErrorMessage function,
+
+44
+00:02:04,830 --> 00:02:08,800
+we can at least get rid of this console log duplication
+
+45
+00:02:08,800 --> 00:02:11,330
+because if we ever would decide
+
+46
+00:02:11,330 --> 00:02:14,420
+that we don't want to log errors to the console
+
+47
+00:02:14,420 --> 00:02:17,320
+but handled differently, we would have to make
+
+48
+00:02:17,320 --> 00:02:20,760
+this change down there in show error message
+
+49
+00:02:20,760 --> 00:02:23,530
+and if we don't use this function here,
+
+50
+00:02:23,530 --> 00:02:26,710
+we would have to make this change here as well
+
+51
+00:02:26,710 --> 00:02:30,290
+that's exactly why we don't want to repeat ourselves.
+
+52
+00:02:30,290 --> 00:02:33,500
+So here we can of course also use show error message
+
+53
+00:02:33,500 --> 00:02:35,460
+instead of calling console log
+
+54
+00:02:35,460 --> 00:02:37,973
+and we already improved this code.
+
+55
+00:02:38,870 --> 00:02:41,490
+But what about the email validation?
+
+56
+00:02:41,490 --> 00:02:44,070
+Well, the fact that we need to validate
+
+57
+00:02:44,070 --> 00:02:47,900
+an email here as well but not a password
+
+58
+00:02:47,900 --> 00:02:50,260
+could be another reason for splitting up
+
+59
+00:02:50,260 --> 00:02:52,480
+this code even further.
+
+60
+00:02:52,480 --> 00:02:55,840
+Without the new create support channel function,
+
+61
+00:02:55,840 --> 00:02:58,650
+there wasn't really a strong reason
+
+62
+00:02:58,650 --> 00:03:03,650
+for splitting inputIsValid into multiple sub functions.
+
+63
+00:03:03,710 --> 00:03:06,130
+But with the existence of this new function,
+
+64
+00:03:06,130 --> 00:03:08,200
+there is a strong reason.
+
+65
+00:03:08,200 --> 00:03:10,683
+Because now we could add a new function,
+
+66
+00:03:12,085 --> 00:03:15,930
+emailIsvalid which takes just an email address
+
+67
+00:03:15,930 --> 00:03:18,930
+which in the end returns this part here
+
+68
+00:03:20,010 --> 00:03:22,610
+and in input is valid here,
+
+69
+00:03:22,610 --> 00:03:25,530
+we could then just call email is valid
+
+70
+00:03:25,530 --> 00:03:28,300
+and forward the email and combine that
+
+71
+00:03:28,300 --> 00:03:30,033
+with our password checks.
+
+72
+00:03:31,110 --> 00:03:33,970
+And now that we have this extra function,
+
+73
+00:03:33,970 --> 00:03:37,550
+this email is valid function, we could use this here
+
+74
+00:03:37,550 --> 00:03:40,373
+in the createSupportChannel function as well.
+
+75
+00:03:41,620 --> 00:03:43,970
+Like this, of course, here we need to add
+
+76
+00:03:43,970 --> 00:03:45,393
+an exclamation mark now.
+
+77
+00:03:46,390 --> 00:03:50,540
+And with that, we re-factored this code to extract it
+
+78
+00:03:50,540 --> 00:03:54,560
+into a separate function and we did create this function
+
+79
+00:03:54,560 --> 00:03:58,190
+not because we needed to because input is valid
+
+80
+00:03:58,190 --> 00:04:02,310
+was unreadable or had mixed levels of abstraction.
+
+81
+00:04:02,310 --> 00:04:07,310
+No, but we did it because of reusability and to stay dry.
+
+82
+00:04:07,990 --> 00:04:12,140
+And this can be another reason for extracting functions
+
+83
+00:04:12,140 --> 00:04:14,550
+and for splitting up functions
+
+84
+00:04:14,550 --> 00:04:17,750
+because now we don't repeat ourselves
+
+85
+00:04:17,750 --> 00:04:21,040
+and that's something we indeed wanna avoid.
+
+86
+00:04:21,040 --> 00:04:24,090
+Now as a side note, because I did create
+
+87
+00:04:24,090 --> 00:04:28,990
+this separate emailIsValid function and inputIsValid,
+
+88
+00:04:28,990 --> 00:04:32,060
+we use this function combined with this code,
+
+89
+00:04:32,060 --> 00:04:35,540
+we actually do have mixed levels of abstraction again
+
+90
+00:04:35,540 --> 00:04:37,033
+in input is valid.
+
+91
+00:04:38,321 --> 00:04:42,180
+EmailIsValid is a higher level of abstraction
+
+92
+00:04:42,180 --> 00:04:45,260
+because that's not the actual work we're doing instead
+
+93
+00:04:45,260 --> 00:04:48,400
+it's just calling some other function this function
+
+94
+00:04:48,400 --> 00:04:51,150
+which will do the work but then we combined
+
+95
+00:04:51,150 --> 00:04:55,040
+this with code where we do actual low-level work.
+
+96
+00:04:55,040 --> 00:04:57,530
+Therefore here, we could consider
+
+97
+00:04:57,530 --> 00:04:59,805
+and we should strongly consider to create
+
+98
+00:04:59,805 --> 00:05:04,805
+another function which is the passwordIsValid function maybe
+
+99
+00:05:05,030 --> 00:05:06,860
+which takes a password
+
+100
+00:05:06,860 --> 00:05:10,300
+and which then does this password validation.
+
+101
+00:05:10,300 --> 00:05:13,620
+So that we cut this code and returned a result
+
+102
+00:05:13,620 --> 00:05:16,650
+of this code here in password is valid
+
+103
+00:05:16,650 --> 00:05:19,440
+and then here we just call password is valid
+
+104
+00:05:19,440 --> 00:05:21,683
+and forward this password.
+
+105
+00:05:22,720 --> 00:05:24,500
+And with that here, we would again,
+
+106
+00:05:24,500 --> 00:05:26,770
+have the same levels of abstraction
+
+107
+00:05:26,770 --> 00:05:30,390
+and hence input is valid is now clean again.
+
+108
+00:05:30,390 --> 00:05:32,370
+So that's just another side note
+
+109
+00:05:32,370 --> 00:05:34,560
+and a consequence of extracting
+
+110
+00:05:34,560 --> 00:05:36,960
+this extra emailIsValid function
+
+111
+00:05:36,960 --> 00:05:39,453
+which we did in order to stay dry.
+

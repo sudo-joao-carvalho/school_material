@@ -1,0 +1,88 @@
+1
+00:00:02,250 --> 00:00:04,120
+In the last course section
+
+2
+00:00:04,120 --> 00:00:07,200
+we learned how proper naming can help us
+
+3
+00:00:07,200 --> 00:00:08,980
+with the code readability
+
+4
+00:00:08,980 --> 00:00:12,590
+and therefore with the maintainability of code.
+
+5
+00:00:12,590 --> 00:00:14,820
+In this course section,
+
+6
+00:00:14,820 --> 00:00:18,780
+we're going to dive into things we can do beyond naming
+
+7
+00:00:18,780 --> 00:00:21,000
+things to improve readability
+
+8
+00:00:21,000 --> 00:00:23,250
+or to hurt it as you will learn,
+
+9
+00:00:23,250 --> 00:00:25,660
+because this section is about comments
+
+10
+00:00:25,660 --> 00:00:27,240
+and code formatting,
+
+11
+00:00:27,240 --> 00:00:32,049
+and it turns out that both can be used to improve our code
+
+12
+00:00:32,049 --> 00:00:34,060
+or to make it worse.
+
+13
+00:00:34,060 --> 00:00:38,070
+Therefore, we'll learn that comments are mostly bad,
+
+14
+00:00:38,070 --> 00:00:39,610
+but I will also explain
+
+15
+00:00:39,610 --> 00:00:42,560
+which kind of comments would be good.
+
+16
+00:00:42,560 --> 00:00:45,430
+We will learn that code formatting is important
+
+17
+00:00:45,430 --> 00:00:47,330
+and how to format our code,
+
+18
+00:00:47,330 --> 00:00:51,210
+also how to adhere to language conventions.
+
+19
+00:00:51,210 --> 00:00:54,760
+And of course, again, we'll have examples, demos,
+
+20
+00:00:54,760 --> 00:00:57,900
+and a challenge for you so that you again,
+
+21
+00:00:57,900 --> 00:01:01,870
+are able to apply all these concepts, not just in theory,
+
+22
+00:01:01,870 --> 00:01:03,713
+but also in your own project.
+

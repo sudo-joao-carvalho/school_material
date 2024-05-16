@@ -1,0 +1,10 @@
+# ninja log v5
+0	45	1670595691482108390	CMakeFiles/IIA_Ficha8_Codigo_Inicio.dir/algoritmo.c.o	afba75ae0ca9606f
+1	46	1670595691482253095	CMakeFiles/IIA_Ficha8_Codigo_Inicio.dir/funcao.c.o	ef6237de55a0975c
+2	47	1670595691483422153	CMakeFiles/IIA_Ficha8_Codigo_Inicio.dir/main.c.o	c6947891c75b53fa
+2	47	1670595691485067200	CMakeFiles/IIA_Ficha8_Codigo_Inicio.dir/utils.c.o	17babf22bf0ce1e3
+47	83	1670595691521024334	IIA_Ficha8_Codigo_Inicio	d0059e5c3e897d50
+0	34	1670595787584893821	CMakeFiles/IIA_Ficha8_Codigo_Inicio.dir/main.c.o	c6947891c75b53fa
+34	87	1670595787638194701	IIA_Ficha8_Codigo_Inicio	d0059e5c3e897d50
+0	35	1670595814261574958	CMakeFiles/IIA_Ficha8_Codigo_Inicio.dir/main.c.o	c6947891c75b53fa
+35	69	1670595814296138955	IIA_Ficha8_Codigo_Inicio	d0059e5c3e897d50

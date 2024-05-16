@@ -1,0 +1,548 @@
+1
+00:00:02,120 --> 00:00:04,440
+Now of course, no good rule comes
+
+2
+00:00:04,440 --> 00:00:05,810
+without exceptions.
+
+3
+00:00:05,810 --> 00:00:10,320
+So all the rules I walked you through over the last lectures
+
+4
+00:00:10,320 --> 00:00:12,720
+of course apply, but there are a couple
+
+5
+00:00:12,720 --> 00:00:15,490
+of exceptions you might wanna be aware of.
+
+6
+00:00:15,490 --> 00:00:17,420
+And you see one right here.
+
+7
+00:00:17,420 --> 00:00:22,150
+This is a Python code snippet using the date time library,
+
+8
+00:00:22,150 --> 00:00:24,690
+which is part of the Python standard library.
+
+9
+00:00:24,690 --> 00:00:28,160
+So it's a built in module shipping together with Python,
+
+10
+00:00:28,160 --> 00:00:28,993
+which you can use
+
+11
+00:00:28,993 --> 00:00:32,360
+if you need daytime specific functionality.
+
+12
+00:00:32,360 --> 00:00:35,677
+Now I'm calling date time now here to get
+
+13
+00:00:35,677 --> 00:00:39,670
+the current timestamp of today, right at this minute
+
+14
+00:00:39,670 --> 00:00:41,580
+where this code executes,
+
+15
+00:00:41,580 --> 00:00:43,880
+and this gives us a date object,
+
+16
+00:00:43,880 --> 00:00:46,540
+which we then can format to a string
+
+17
+00:00:46,540 --> 00:00:48,470
+with certain formatting rules
+
+18
+00:00:48,470 --> 00:00:51,380
+by using strftime method here.
+
+19
+00:00:51,380 --> 00:00:55,980
+And as you can clearly tell, these names actually violate
+
+20
+00:00:55,980 --> 00:00:59,050
+what I taught you over the last minutes.
+
+21
+00:00:59,050 --> 00:01:01,670
+Now is a method as you can tell
+
+22
+00:01:01,670 --> 00:01:03,800
+by the brackets we are executing it.
+
+23
+00:01:03,800 --> 00:01:06,030
+It's a method, not a property.
+
+24
+00:01:06,030 --> 00:01:08,400
+Hence it sounds like a property.
+
+25
+00:01:08,400 --> 00:01:11,840
+It's not describing a command and it's also not returning
+
+26
+00:01:11,840 --> 00:01:16,070
+a Boolean where something like is now would be acceptable.
+
+27
+00:01:16,070 --> 00:01:18,800
+Instead it's just now and not something
+
+28
+00:01:18,800 --> 00:01:23,270
+like get now or get current timestamp.
+
+29
+00:01:23,270 --> 00:01:25,040
+No, that's not how it's named.
+
+30
+00:01:25,040 --> 00:01:26,760
+It's named now.
+
+31
+00:01:26,760 --> 00:01:29,030
+And since it's a built in library,
+
+32
+00:01:29,030 --> 00:01:31,060
+you of course can't change it.
+
+33
+00:01:31,060 --> 00:01:34,595
+This was defined by other people you can't override it.
+
+34
+00:01:34,595 --> 00:01:39,230
+The strftime method here also has a lot of strange name.
+
+35
+00:01:39,230 --> 00:01:41,620
+I'm not sure if it sounds like a command
+
+36
+00:01:41,620 --> 00:01:44,670
+because it's pretty hard to tell what this should be.
+
+37
+00:01:44,670 --> 00:01:47,430
+I can tell you that strftime should stand
+
+38
+00:01:47,430 --> 00:01:49,870
+for string from time
+
+39
+00:01:49,870 --> 00:01:54,050
+because it returns a string from a date time object,
+
+40
+00:01:54,050 --> 00:01:56,540
+but of course this is really not intuitive,
+
+41
+00:01:56,540 --> 00:02:00,030
+and therefore, in my opinion, not really a great name.
+
+42
+00:02:00,030 --> 00:02:04,270
+In addition, even string from time is not really a command,
+
+43
+00:02:04,270 --> 00:02:06,670
+but again, more like a property name.
+
+44
+00:02:06,670 --> 00:02:09,180
+Now, again, this is built into Python
+
+45
+00:02:09,180 --> 00:02:11,620
+or into a python code library,
+
+46
+00:02:11,620 --> 00:02:14,120
+so you won't be able to change it.
+
+47
+00:02:14,120 --> 00:02:16,960
+It does not mean that you have to use the same naming
+
+48
+00:02:16,960 --> 00:02:18,370
+in your code though.
+
+49
+00:02:18,370 --> 00:02:21,110
+You should try to follow the rules outlined
+
+50
+00:02:21,110 --> 00:02:24,190
+over the last lectures, unless you have a good reason
+
+51
+00:02:24,190 --> 00:02:25,760
+for not doing so.
+
+52
+00:02:25,760 --> 00:02:28,410
+For example, because everyone in your team agrees
+
+53
+00:02:28,410 --> 00:02:31,770
+that you want to follow a different naming convention.
+
+54
+00:02:31,770 --> 00:02:34,530
+And of course, naming conventions can also differ
+
+55
+00:02:34,530 --> 00:02:37,710
+across languages though even in Python,
+
+56
+00:02:37,710 --> 00:02:41,230
+you typically should not follow the naming you see here
+
+57
+00:02:41,230 --> 00:02:43,890
+on the date time library because I would argue
+
+58
+00:02:43,890 --> 00:02:45,820
+it is not super readable.
+
+59
+00:02:45,820 --> 00:02:50,450
+Now is okay, but strf time, it's totally unintuitive.
+
+60
+00:02:50,450 --> 00:02:54,140
+You need to hover over debt to understand what it does.
+
+61
+00:02:54,140 --> 00:02:55,910
+And even that might not be enough,
+
+62
+00:02:55,910 --> 00:02:58,430
+so you might need to dive into the official docs
+
+63
+00:02:58,430 --> 00:03:00,410
+to understand what it does.
+
+64
+00:03:00,410 --> 00:03:03,520
+And if you just explore the available methods here
+
+65
+00:03:03,520 --> 00:03:05,110
+with auto completion,
+
+66
+00:03:05,110 --> 00:03:08,120
+you see these methods don't tell you anything.
+
+67
+00:03:08,120 --> 00:03:11,630
+So it's really not easy to quickly see what you wanna call
+
+68
+00:03:11,630 --> 00:03:13,630
+to achieve a certain result.
+
+69
+00:03:13,630 --> 00:03:16,970
+So that just proves my point, that naming matters
+
+70
+00:03:16,970 --> 00:03:18,730
+and that good names matter.
+
+71
+00:03:18,730 --> 00:03:21,020
+And I would argue, these are not great names.
+
+72
+00:03:21,020 --> 00:03:22,240
+And of course, as I said,
+
+73
+00:03:22,240 --> 00:03:24,060
+there's nothing we can change about it,
+
+74
+00:03:24,060 --> 00:03:26,863
+but we also don't have to copy it into our code.
+
+75
+00:03:27,830 --> 00:03:29,450
+Now, speaking of our code,
+
+76
+00:03:29,450 --> 00:03:31,320
+this code snippet has more to offer
+
+77
+00:03:31,320 --> 00:03:34,320
+than these built in library method names here.
+
+78
+00:03:34,320 --> 00:03:36,500
+For example, I defined my own class
+
+79
+00:03:36,500 --> 00:03:38,213
+and I named it DateUtil.
+
+80
+00:03:39,243 --> 00:03:44,243
+Now DateUtil is not too far away from this manager pattern,
+
+81
+00:03:44,700 --> 00:03:47,080
+which I just said a couple of minutes ago
+
+82
+00:03:47,080 --> 00:03:48,850
+that you shouldn't use.
+
+83
+00:03:48,850 --> 00:03:53,000
+You should avoid names like database manager, remember?
+
+84
+00:03:53,000 --> 00:03:54,740
+DateUtil is quite similar,
+
+85
+00:03:54,740 --> 00:03:57,800
+but actually here it's really an exception.
+
+86
+00:03:57,800 --> 00:04:02,280
+Naming classes like this DateUtill or also utility
+
+87
+00:04:02,280 --> 00:04:05,140
+to be even more expressive can make sense,
+
+88
+00:04:05,140 --> 00:04:08,150
+especially if they mostly contain static methods
+
+89
+00:04:08,150 --> 00:04:10,340
+like this one does.
+
+90
+00:04:10,340 --> 00:04:12,690
+A static method of course, is a method
+
+91
+00:04:12,690 --> 00:04:14,567
+which can be called without instantiating
+
+92
+00:04:14,567 --> 00:04:17,940
+the class first, like we're doing it down there.
+
+93
+00:04:17,940 --> 00:04:19,829
+Then the class simply is there
+
+94
+00:04:19,829 --> 00:04:22,820
+to group related functionality together.
+
+95
+00:04:22,820 --> 00:04:27,190
+And then adding something like util, utility or even manager
+
+96
+00:04:27,190 --> 00:04:30,020
+in the class name can make sense to signal
+
+97
+00:04:30,020 --> 00:04:32,170
+that this will not be instantiated,
+
+98
+00:04:32,170 --> 00:04:35,330
+but that it's just a grouping of well, utility
+
+99
+00:04:35,330 --> 00:04:38,390
+or helper methods, like we have it here.
+
+100
+00:04:38,390 --> 00:04:41,533
+So these are some exceptions and things to be aware of.
+
+101
+00:04:42,850 --> 00:04:45,820
+Another exception can be seen in this code snippet,
+
+102
+00:04:45,820 --> 00:04:47,920
+which now is written in TypeScript,
+
+103
+00:04:47,920 --> 00:04:49,890
+and therefore JavaScript.
+
+104
+00:04:49,890 --> 00:04:51,940
+Here, I have a database clause which
+
+105
+00:04:51,940 --> 00:04:55,170
+has a private property client, which is actually set
+
+106
+00:04:55,170 --> 00:04:57,610
+when the connect method is called.
+
+107
+00:04:57,610 --> 00:05:00,340
+However, since that property is private,
+
+108
+00:05:00,340 --> 00:05:03,020
+it can't be accessed from outside the class,
+
+109
+00:05:03,020 --> 00:05:06,960
+For that we instead have this connected client Getters.
+
+110
+00:05:06,960 --> 00:05:10,770
+And getters and setters are a special concepts
+
+111
+00:05:10,770 --> 00:05:13,720
+which exist in multiple programming languages
+
+112
+00:05:13,720 --> 00:05:17,010
+to provide you as a developer with greater control
+
+113
+00:05:17,010 --> 00:05:20,490
+over how data in a class can be read or set,
+
+114
+00:05:20,490 --> 00:05:23,200
+for example, a getter allows us to control access
+
+115
+00:05:23,200 --> 00:05:25,560
+to certain properties in the class.
+
+116
+00:05:25,560 --> 00:05:27,680
+In this case, we control whether the client
+
+117
+00:05:27,680 --> 00:05:30,780
+is initialized before we return it.
+
+118
+00:05:30,780 --> 00:05:32,360
+And here you will notice that even
+
+119
+00:05:32,360 --> 00:05:35,000
+though connected client is written like a method,
+
+120
+00:05:35,000 --> 00:05:37,750
+it has brackets and a function body,
+
+121
+00:05:37,750 --> 00:05:40,200
+it actually has a name like a property.
+
+122
+00:05:40,200 --> 00:05:42,890
+It's not get connected client,
+
+123
+00:05:42,890 --> 00:05:45,590
+but instead just connected client
+
+124
+00:05:45,590 --> 00:05:48,740
+because actually this getter would be accessed
+
+125
+00:05:48,740 --> 00:05:49,800
+like a property.
+
+126
+00:05:49,800 --> 00:05:52,610
+That's just a language feature JavaScript offers,
+
+127
+00:05:52,610 --> 00:05:56,290
+and many of our programming languages have similar concepts.
+
+128
+00:05:56,290 --> 00:05:58,090
+So for getters and setters,
+
+129
+00:05:58,090 --> 00:06:00,990
+it is okay to use property naming rules,
+
+130
+00:06:00,990 --> 00:06:03,770
+even though it's technically written as a method.
+
+131
+00:06:03,770 --> 00:06:06,380
+But since we access it as a property,
+
+132
+00:06:06,380 --> 00:06:08,200
+we should also name it as such.
+
+133
+00:06:08,200 --> 00:06:10,460
+So that's another exception to be aware of.
+
+134
+00:06:10,460 --> 00:06:13,750
+However, even with all these exceptions I just showed you,
+
+135
+00:06:13,750 --> 00:06:16,580
+it should become clear and obvious that these rules,
+
+136
+00:06:16,580 --> 00:06:20,200
+which I outlined over the last lectures are super important
+
+137
+00:06:20,200 --> 00:06:22,763
+and apply in the vast majority of cases.
+

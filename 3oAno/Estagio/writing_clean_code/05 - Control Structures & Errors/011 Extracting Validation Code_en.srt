@@ -1,0 +1,336 @@
+1
+00:00:02,050 --> 00:00:04,760
+So by now, we already refactored a lot.
+
+2
+00:00:04,760 --> 00:00:06,360
+I'm fully aware of that.
+
+3
+00:00:06,360 --> 00:00:08,990
+But this is how you do write clean code.
+
+4
+00:00:08,990 --> 00:00:11,260
+It's a step-by-step process,
+
+5
+00:00:11,260 --> 00:00:14,150
+which is why I'm showing it in great detail here.
+
+6
+00:00:14,150 --> 00:00:16,160
+Because that is what you will do ultimately,
+
+7
+00:00:16,160 --> 00:00:18,290
+when you clean up your own code.
+
+8
+00:00:18,290 --> 00:00:21,140
+It's about trying out things, being creative,
+
+9
+00:00:21,140 --> 00:00:23,530
+and moving things around.
+
+10
+00:00:23,530 --> 00:00:26,350
+And speaking of moving things around,
+
+11
+00:00:26,350 --> 00:00:29,470
+we now use errors, which is great.
+
+12
+00:00:29,470 --> 00:00:32,650
+But now we have all that code for creating errors
+
+13
+00:00:32,650 --> 00:00:35,470
+side by side with code that, for example,
+
+14
+00:00:35,470 --> 00:00:38,070
+dispatches different process functions
+
+15
+00:00:38,070 --> 00:00:40,113
+for different transaction methods.
+
+16
+00:00:41,410 --> 00:00:45,063
+This, again, is mixing different levels of abstraction.
+
+17
+00:00:46,890 --> 00:00:49,910
+So we should consider splitting our functions.
+
+18
+00:00:49,910 --> 00:00:52,840
+For example, here in process transactions,
+
+19
+00:00:52,840 --> 00:00:56,250
+where I check for whether my transactions are empty
+
+20
+00:00:56,250 --> 00:00:57,823
+to then create an error,
+
+21
+00:00:58,890 --> 00:01:00,630
+we can create a new function,
+
+22
+00:01:00,630 --> 00:01:02,730
+which we could name "validateTransactions"
+
+23
+00:01:04,730 --> 00:01:07,580
+where we get all the transactions.
+
+24
+00:01:07,580 --> 00:01:09,450
+And then we move this code
+
+25
+00:01:09,450 --> 00:01:12,603
+where we generate this error into this function.
+
+26
+00:01:14,400 --> 00:01:17,767
+Then here in process transactions, we can simply call
+
+27
+00:01:17,767 --> 00:01:22,240
+validateTransactions before we go through this for loop.
+
+28
+00:01:22,240 --> 00:01:24,030
+The great advantage of this approach
+
+29
+00:01:24,030 --> 00:01:28,590
+is not just that processTransactions is now slimmer,
+
+30
+00:01:28,590 --> 00:01:30,810
+though we should forward transactions
+
+31
+00:01:30,810 --> 00:01:33,510
+to validate transactions function,
+
+32
+00:01:33,510 --> 00:01:36,700
+but although that because we use real errors,
+
+33
+00:01:36,700 --> 00:01:38,460
+and we throw this error,
+
+34
+00:01:38,460 --> 00:01:41,760
+we use a built-in mechanism in the programming language,
+
+35
+00:01:41,760 --> 00:01:44,602
+which will ensure that this automatically bubbles up.
+
+36
+00:01:44,602 --> 00:01:48,380
+So it will just bubble through processTransactions,
+
+37
+00:01:48,380 --> 00:01:50,404
+canceling this function as well,
+
+38
+00:01:50,404 --> 00:01:54,610
+if an error is generated inside of validateTransactions,
+
+39
+00:01:54,610 --> 00:01:58,550
+moving up to the next function until it is being handled,
+
+40
+00:01:58,550 --> 00:02:00,600
+which in this case, it is here.
+
+41
+00:02:00,600 --> 00:02:03,550
+And this of course, is great.
+
+42
+00:02:03,550 --> 00:02:06,380
+This here, of course, should be transactions, by the way,
+
+43
+00:02:06,380 --> 00:02:07,953
+not transaction.
+
+44
+00:02:09,330 --> 00:02:10,400
+Now, we could argue
+
+45
+00:02:10,400 --> 00:02:13,140
+that we have mixed levels of abstraction here.
+
+46
+00:02:13,140 --> 00:02:16,290
+Calling is empty, and then this low level code
+
+47
+00:02:16,290 --> 00:02:18,820
+of creating the error and adding a code,
+
+48
+00:02:18,820 --> 00:02:21,620
+and therefore, we could also add another function here,
+
+49
+00:02:21,620 --> 00:02:23,710
+where we build this error.
+
+50
+00:02:23,710 --> 00:02:27,330
+You could absolutely do that but I will not do it here.
+
+51
+00:02:27,330 --> 00:02:29,110
+I think it's too much splitting,
+
+52
+00:02:29,110 --> 00:02:31,600
+and if you would want such a helper function
+
+53
+00:02:31,600 --> 00:02:34,080
+which builds an error, I would recommend
+
+54
+00:02:34,080 --> 00:02:36,600
+that you simply create your own error class,
+
+55
+00:02:36,600 --> 00:02:38,240
+which you instantiate here.
+
+56
+00:02:38,240 --> 00:02:40,290
+So I will leave it like this.
+
+57
+00:02:40,290 --> 00:02:42,790
+Nonetheless, we have some extractions left to do
+
+58
+00:02:42,790 --> 00:02:46,137
+here for processTransaction.
+
+59
+00:02:46,137 --> 00:02:47,860
+There we check whether it's not open,
+
+60
+00:02:47,860 --> 00:02:50,580
+or if it's neither a payment nor a refund.
+
+61
+00:02:50,580 --> 00:02:53,573
+And we can outsource these validations as well.
+
+62
+00:02:55,370 --> 00:02:59,030
+So we can add a new function here,
+
+63
+00:02:59,030 --> 00:03:02,920
+which we name "validateTransaction", for example,
+
+64
+00:03:02,920 --> 00:03:05,353
+receiving the transaction as a parameter.
+
+65
+00:03:06,550 --> 00:03:07,830
+And now we could either create
+
+66
+00:03:07,830 --> 00:03:10,040
+one function for each check here
+
+67
+00:03:10,040 --> 00:03:14,400
+or we take both checks and put them into the same function.
+
+68
+00:03:14,400 --> 00:03:15,470
+Which I will do here
+
+69
+00:03:15,470 --> 00:03:17,600
+because we're doing the same kind of work,
+
+70
+00:03:17,600 --> 00:03:21,000
+we're validating a transaction, just with different checks,
+
+71
+00:03:21,000 --> 00:03:22,740
+and therefore having this in one function
+
+72
+00:03:22,740 --> 00:03:24,910
+makes a lot of sense to me.
+
+73
+00:03:24,910 --> 00:03:29,610
+And now we can just call validate transaction here
+
+74
+00:03:30,670 --> 00:03:34,680
+before we then try to process the different transactions.
+
+75
+00:03:34,680 --> 00:03:38,850
+And again, because validateTransaction froze an error,
+
+76
+00:03:38,850 --> 00:03:41,990
+if we got an error, this processTransaction,
+
+77
+00:03:41,990 --> 00:03:45,250
+function execution will be canceled if an error occurs,
+
+78
+00:03:45,250 --> 00:03:47,510
+and this code will not be executed.
+
+79
+00:03:47,510 --> 00:03:50,380
+Instead, we move up to the next function above it
+
+80
+00:03:50,380 --> 00:03:52,360
+until this is being handled,
+
+81
+00:03:52,360 --> 00:03:56,173
+which in this case is happening here in this for loop.
+
+82
+00:03:57,500 --> 00:04:00,420
+And that now again, we're more extractions,
+
+83
+00:04:00,420 --> 00:04:03,820
+which hopefully, overall, help with readability
+
+84
+00:04:03,820 --> 00:04:07,733
+if you would read this entire code top to bottom.
+

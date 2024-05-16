@@ -1,0 +1,8 @@
+# ninja log v5
+0	231	1669972734596417619	CMakeFiles/ficha5_ex5.dir/Pessoa.cpp.o	c94f4b2f980d34b0
+0	232	1669972734596706984	CMakeFiles/ficha5_ex5.dir/Clube.cpp.o	af3ec0379ce346fa
+0	237	1669972734603127349	CMakeFiles/ficha5_ex5.dir/main.cpp.o	c502e83fe9a88ddd
+1	325	1669972812194582097	CMakeFiles/ficha5_ex5.dir/Clube.cpp.o	af3ec0379ce346fa
+1	329	1669972812200365985	CMakeFiles/ficha5_ex5.dir/Pessoa.cpp.o	c94f4b2f980d34b0
+1	338	1669972812208869657	CMakeFiles/ficha5_ex5.dir/main.cpp.o	c502e83fe9a88ddd
+338	368	1669972812240152229	ficha5_ex5	a265abd17d4e14d4

@@ -1,0 +1,360 @@
+1
+00:00:02,150 --> 00:00:05,180
+You should care about this differentiation
+
+2
+00:00:05,180 --> 00:00:08,470
+because you can end up writing bad code,
+
+3
+00:00:08,470 --> 00:00:09,820
+not clean code,
+
+4
+00:00:09,820 --> 00:00:12,250
+if you mix these concepts.
+
+5
+00:00:12,250 --> 00:00:14,790
+Let's say you have this database class
+
+6
+00:00:14,790 --> 00:00:18,230
+which has all the logic for connecting and disconnecting.
+
+7
+00:00:18,230 --> 00:00:19,920
+You could be using such a class
+
+8
+00:00:19,920 --> 00:00:23,140
+because you are using an object oriented approach,
+
+9
+00:00:23,140 --> 00:00:28,040
+or maybe also because you use a procedural programing style
+
+10
+00:00:28,040 --> 00:00:32,720
+but you still use some classes to hold some of the logic.
+
+11
+00:00:32,720 --> 00:00:34,100
+Whatever you do,
+
+12
+00:00:34,100 --> 00:00:35,700
+here you might have this class,
+
+13
+00:00:35,700 --> 00:00:37,410
+and this class has everything you need
+
+14
+00:00:37,410 --> 00:00:39,670
+to connect and disconnect.
+
+15
+00:00:39,670 --> 00:00:42,120
+So you could use it like this,
+
+16
+00:00:42,120 --> 00:00:43,540
+you could instantiate it,
+
+17
+00:00:43,540 --> 00:00:45,810
+pass in your connection URL,
+
+18
+00:00:45,810 --> 00:00:47,290
+pass in this engine,
+
+19
+00:00:47,290 --> 00:00:49,330
+which you got from somewhere else,
+
+20
+00:00:49,330 --> 00:00:51,510
+maybe from a third party package,
+
+21
+00:00:51,510 --> 00:00:53,350
+and you call connect.
+
+22
+00:00:53,350 --> 00:00:54,183
+And of course,
+
+23
+00:00:54,183 --> 00:00:55,840
+you can now also call disconnect,
+
+24
+00:00:55,840 --> 00:00:58,950
+and this would be very clean code.
+
+25
+00:00:58,950 --> 00:01:02,030
+You would be using this object in a clean way,
+
+26
+00:01:02,030 --> 00:01:04,390
+and the place where you write this code,
+
+27
+00:01:04,390 --> 00:01:07,380
+which could be in another method of another object,
+
+28
+00:01:07,380 --> 00:01:11,010
+would also be very easy to read and understand.
+
+29
+00:01:11,010 --> 00:01:13,330
+In addition, whenever de-connection
+
+30
+00:01:13,330 --> 00:01:15,610
+or disconnection logic changes,
+
+31
+00:01:15,610 --> 00:01:18,950
+you don't need to make any changes in this part here,
+
+32
+00:01:18,950 --> 00:01:23,930
+you would just make these changes internally in the class.
+
+33
+00:01:23,930 --> 00:01:27,530
+Now, if you mix the idea of such a real object
+
+34
+00:01:27,530 --> 00:01:29,320
+and a data structure,
+
+35
+00:01:29,320 --> 00:01:33,920
+you could for example have a public connection property,
+
+36
+00:01:33,920 --> 00:01:37,230
+which means that this connection is now available
+
+37
+00:01:37,230 --> 00:01:39,303
+outside of the class as well.
+
+38
+00:01:40,380 --> 00:01:42,650
+Hence, somewhere else in your application,
+
+39
+00:01:42,650 --> 00:01:44,010
+you could decide
+
+40
+00:01:44,010 --> 00:01:47,010
+that you wanna close your database connection
+
+41
+00:01:47,010 --> 00:01:49,630
+by accessing the database connection
+
+42
+00:01:49,630 --> 00:01:52,393
+and then call close on it.
+
+43
+00:01:53,450 --> 00:01:55,040
+Which in the end is what we're doing here
+
+44
+00:01:55,040 --> 00:01:57,800
+instead of disconnect in the class as well.
+
+45
+00:01:57,800 --> 00:02:00,340
+The problem just is the class knows
+
+46
+00:02:00,340 --> 00:02:02,010
+how to deal with this connection
+
+47
+00:02:02,010 --> 00:02:04,020
+because it is its main job,
+
+48
+00:02:04,020 --> 00:02:05,930
+and whenever the logic would change
+
+49
+00:02:05,930 --> 00:02:10,930
+and close would for example change from close to disconnect
+
+50
+00:02:11,070 --> 00:02:12,540
+or anything like that,
+
+51
+00:02:12,540 --> 00:02:14,570
+we would only need to make this change
+
+52
+00:02:14,570 --> 00:02:16,170
+in that of this one class,
+
+53
+00:02:16,170 --> 00:02:18,240
+and everywhere where we use it,
+
+54
+00:02:18,240 --> 00:02:20,430
+this change would automatically be applied
+
+55
+00:02:20,430 --> 00:02:22,343
+without changing any code.
+
+56
+00:02:23,240 --> 00:02:26,800
+If we instead dig into our class like this here
+
+57
+00:02:26,800 --> 00:02:29,390
+and we call close ourselves
+
+58
+00:02:29,390 --> 00:02:31,510
+somewhere else in our code,
+
+59
+00:02:31,510 --> 00:02:34,030
+then whenever this logic changes,
+
+60
+00:02:34,030 --> 00:02:36,570
+we need to change this to disconnect
+
+61
+00:02:36,570 --> 00:02:38,020
+everywhere in the code
+
+62
+00:02:38,020 --> 00:02:41,340
+where we used our database class like this.
+
+63
+00:02:41,340 --> 00:02:44,030
+In addition, even if this never changes,
+
+64
+00:02:44,030 --> 00:02:45,910
+this is harder to read.
+
+65
+00:02:45,910 --> 00:02:48,310
+All of a sudden here in this place,
+
+66
+00:02:48,310 --> 00:02:51,150
+where we're just dealing with a database,
+
+67
+00:02:51,150 --> 00:02:52,960
+we now also need to understand
+
+68
+00:02:52,960 --> 00:02:54,510
+how to deal with a connection
+
+69
+00:02:54,510 --> 00:02:57,790
+in addition to dealing with a database.
+
+70
+00:02:57,790 --> 00:03:00,150
+This is more to understand,
+
+71
+00:03:00,150 --> 00:03:01,970
+to keep in mind and to read,
+
+72
+00:03:01,970 --> 00:03:05,250
+and therefore this is not good code
+
+73
+00:03:05,250 --> 00:03:07,880
+because of multiple reasons.
+
+74
+00:03:07,880 --> 00:03:10,230
+And that's why this differentiation matters,
+
+75
+00:03:10,230 --> 00:03:14,150
+there are times when you just need a data container.
+
+76
+00:03:14,150 --> 00:03:16,450
+For example, as I mentioned before,
+
+77
+00:03:16,450 --> 00:03:20,100
+when you pass it as a parameter to another method.
+
+78
+00:03:20,100 --> 00:03:22,470
+But then, there also are times
+
+79
+00:03:22,470 --> 00:03:26,510
+where you need a real object which hides its logic away
+
+80
+00:03:26,510 --> 00:03:29,070
+and where you don't dive into the object
+
+81
+00:03:29,070 --> 00:03:31,590
+to then mess around with it.
+
+82
+00:03:31,590 --> 00:03:34,250
+So it is fine to use either of the two concepts,
+
+83
+00:03:34,250 --> 00:03:36,660
+depending on what you plan to achieve,
+
+84
+00:03:36,660 --> 00:03:39,450
+but you shouldn't mix them as I'm doing it here
+
+85
+00:03:39,450 --> 00:03:41,760
+by having this public property
+
+86
+00:03:41,760 --> 00:03:45,760
+and by exposing some internals to the outside world.
+
+87
+00:03:45,760 --> 00:03:48,120
+That's why this differentiation matters
+
+88
+00:03:48,120 --> 00:03:50,280
+and why you should keep this in mind
+
+89
+00:03:50,280 --> 00:03:53,530
+when you are working with classes or objects
+
+90
+00:03:53,530 --> 00:03:55,083
+in your applications.
+

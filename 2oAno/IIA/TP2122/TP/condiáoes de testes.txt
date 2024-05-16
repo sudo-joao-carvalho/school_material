@@ -1,0 +1,238 @@
+MODELO BASE
+
+HIPOTESE 1
+	10/10
+		["N-comiloes" 10]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 10]
+	20/20
+		["N-comiloes" 20]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 20]
+
+HIPOTESE 2
+
+	10/10
+		["N-comiloes" 10]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 10]
+	
+	10/20
+		["N-comiloes" 10]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 20]
+
+	20/10
+		["N-comiloes" 20]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 10]
+
+	20/20
+		["N-comiloes" 20]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 20]
+
+HIPOTESE 3
+
+	D5 10/10
+		["N-comiloes" 10]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 5]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 10]
+
+	D5 10/20
+		["N-comiloes" 10]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 5]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 20]
+
+	D5 20/10
+		["N-comiloes" 20]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 5]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 10]
+
+	D5 20/20
+		["N-comiloes" 20]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 5]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 20]
+
+	D10 10/10
+		["N-comiloes" 10]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 10]
+
+	D10 10/20
+		["N-comiloes" 10]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 20]
+
+	D10 20/10
+		["N-comiloes" 20]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 10]
+
+	D10 20/20
+		["N-comiloes" 20]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 20]
+
+
+MODELO MELHORADO
+
+HIPOTESE 1
+
+	E5 10/10
+		["N-comiloes" 10]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 10]
+		["Energy_drink" 5]
+
+	E5 10/20
+		["N-comiloes" 10]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 20]
+		["Energy_drink" 5]
+
+	E5 20/10
+		["N-comiloes" 20]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 10]
+		["Energy_drink" 5]
+
+	E5 20/20
+		["N-comiloes" 20]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 20]
+		["Energy_drink" 5]
+
+	E10 10/10
+		["N-comiloes" 10]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 10]
+		["Energy_drink" 10]
+
+	E10 10/20
+		["N-comiloes" 10]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 20]
+		["Energy_drink" 10]
+
+	E10 20/10
+		["N-comiloes" 20]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 10]
+		["Energy_drink" 10]
+
+	E10 20/20
+		["N-comiloes" 20]
+		["nComida" 54 80 120 160 218]
+		["Max_lixo" 20]
+		["nLixoToxico" 70]
+		["nDepositos" 10]
+		["Aum_energy" 20]
+		["nLixoNormal" 70]
+		["N-limpadores" 20]
+		["Energy_drink" 10]

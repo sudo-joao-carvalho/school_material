@@ -1,0 +1,544 @@
+1
+00:00:02,170 --> 00:00:04,480
+Now, with all the splitting up we did,
+
+2
+00:00:04,480 --> 00:00:07,660
+and with all the reasons we have, or we might have,
+
+3
+00:00:07,660 --> 00:00:11,000
+for splitting up a function and shrinking functions,
+
+4
+00:00:11,000 --> 00:00:12,960
+there's one important thing though.
+
+5
+00:00:12,960 --> 00:00:16,770
+You should still always use your common sense.
+
+6
+00:00:16,770 --> 00:00:19,090
+You should still always question
+
+7
+00:00:19,090 --> 00:00:22,150
+whether it's now really improving readability
+
+8
+00:00:22,150 --> 00:00:26,030
+and maintainability if you split a function.
+
+9
+00:00:26,030 --> 00:00:28,510
+You should split your functions reasonably.
+
+10
+00:00:28,510 --> 00:00:30,720
+At least, that is my opinion.
+
+11
+00:00:30,720 --> 00:00:33,610
+You learned all these different rules and concepts,
+
+12
+00:00:33,610 --> 00:00:37,530
+like the level of abstraction, and these rules of thumb,
+
+13
+00:00:37,530 --> 00:00:39,730
+and that you should stay DRY,
+
+14
+00:00:39,730 --> 00:00:43,100
+but just blindly following all these rules
+
+15
+00:00:43,100 --> 00:00:47,520
+bears the danger of becoming too granular.
+
+16
+00:00:47,520 --> 00:00:51,410
+And just because you are granular, and you split your code,
+
+17
+00:00:51,410 --> 00:00:55,670
+won't automatically improve readability of your code.
+
+18
+00:00:55,670 --> 00:00:59,070
+Indeed, the opposite might be the case.
+
+19
+00:00:59,070 --> 00:01:03,160
+So make reasonable decisions and don't split your code
+
+20
+00:01:03,160 --> 00:01:04,709
+if you are, for example,
+
+21
+00:01:04,709 --> 00:01:08,530
+just renaming the operation which you extracted.
+
+22
+00:01:08,530 --> 00:01:11,900
+Don't split if finding the code which you extracted
+
+23
+00:01:11,900 --> 00:01:13,690
+will then actually take longer
+
+24
+00:01:13,690 --> 00:01:16,060
+than if you would've just left it in place,
+
+25
+00:01:16,060 --> 00:01:18,520
+because we need to scroll to that new function
+
+26
+00:01:18,520 --> 00:01:20,400
+or search for it.
+
+27
+00:01:20,400 --> 00:01:23,510
+And a good sign that you shouldn't split
+
+28
+00:01:23,510 --> 00:01:27,177
+is if you have problems coming up with a name
+
+29
+00:01:27,177 --> 00:01:29,750
+for the new extracted function.
+
+30
+00:01:29,750 --> 00:01:32,760
+If you feel like any name you give it is clashing
+
+31
+00:01:32,760 --> 00:01:36,240
+with the name of the function you extracted the code from,
+
+32
+00:01:36,240 --> 00:01:40,300
+then extracting the code might've been a bad idea.
+
+33
+00:01:40,300 --> 00:01:42,870
+And I got an example for this as well.
+
+34
+00:01:42,870 --> 00:01:46,390
+Consider this saveUser function here.
+
+35
+00:01:46,390 --> 00:01:48,210
+You could definitely argue
+
+36
+00:01:48,210 --> 00:01:51,320
+that we have mixed levels of abstraction here.
+
+37
+00:01:51,320 --> 00:01:54,260
+Having this user object, which I create like this,
+
+38
+00:01:54,260 --> 00:01:56,830
+is on a different level of abstraction
+
+39
+00:01:56,830 --> 00:02:00,123
+than calling insert on this database object.
+
+40
+00:02:01,140 --> 00:02:05,900
+So you could split this and add a new function,
+
+41
+00:02:05,900 --> 00:02:08,460
+which you could name buildUser.
+
+42
+00:02:08,460 --> 00:02:11,570
+This takes a email and a password
+
+43
+00:02:11,570 --> 00:02:14,260
+and then returns this object here.
+
+44
+00:02:14,260 --> 00:02:17,310
+So I cut this object and return it here,
+
+45
+00:02:17,310 --> 00:02:20,270
+and then here, I just call buildUser
+
+46
+00:02:20,270 --> 00:02:23,280
+and forward the email and the password,
+
+47
+00:02:23,280 --> 00:02:26,450
+so that saving a user now is a combination
+
+48
+00:02:26,450 --> 00:02:29,200
+of building a user and inserting a user,
+
+49
+00:02:29,200 --> 00:02:31,010
+which is, I would argue,
+
+50
+00:02:31,010 --> 00:02:33,653
+on the same level of abstraction again.
+
+51
+00:02:34,560 --> 00:02:36,610
+So this is a split we could make.
+
+52
+00:02:36,610 --> 00:02:39,910
+It's not horrible, but in my personal opinion,
+
+53
+00:02:39,910 --> 00:02:43,180
+it doesn't really help with readability too much.
+
+54
+00:02:43,180 --> 00:02:46,180
+It doesn't really improve the code.
+
+55
+00:02:46,180 --> 00:02:49,260
+Indeed, I would argue that we can check two
+
+56
+00:02:49,260 --> 00:02:53,770
+of these three indicators at the bottom of this slide.
+
+57
+00:02:53,770 --> 00:02:57,400
+In the end, we just renamed the operation.
+
+58
+00:02:57,400 --> 00:02:59,900
+Previously, we created a new object,
+
+59
+00:02:59,900 --> 00:03:01,650
+which was a user object,
+
+60
+00:03:01,650 --> 00:03:05,780
+as was clearly indicated by that name of this variable.
+
+61
+00:03:05,780 --> 00:03:08,210
+Because we used proper naming there,
+
+62
+00:03:08,210 --> 00:03:12,200
+it was easy to understand what this object is about.
+
+63
+00:03:12,200 --> 00:03:14,210
+Now, I outsourced this code
+
+64
+00:03:14,210 --> 00:03:16,750
+into a function called buildUser.
+
+65
+00:03:16,750 --> 00:03:19,450
+So in the end, that's just renaming the operation,
+
+66
+00:03:19,450 --> 00:03:24,310
+which was obvious before as well without too much thinking.
+
+67
+00:03:24,310 --> 00:03:26,860
+In addition, it is quite difficult
+
+68
+00:03:26,860 --> 00:03:30,033
+to come up with a good name for this new function.
+
+69
+00:03:31,000 --> 00:03:33,100
+I named it buildUser.
+
+70
+00:03:33,100 --> 00:03:36,270
+Now, you could argue that createUser would be better,
+
+71
+00:03:36,270 --> 00:03:38,810
+but this actually clashes with this function
+
+72
+00:03:38,810 --> 00:03:40,710
+which we have at the very top.
+
+73
+00:03:40,710 --> 00:03:41,860
+Now, you could of course argue
+
+74
+00:03:41,860 --> 00:03:44,180
+that this function should maybe be renamed,
+
+75
+00:03:44,180 --> 00:03:48,130
+and maybe you could do that, but still I am struggling
+
+76
+00:03:48,130 --> 00:03:50,575
+with coming up with a good name down there.
+
+77
+00:03:50,575 --> 00:03:52,260
+buildUser, createUser,
+
+78
+00:03:52,260 --> 00:03:54,280
+in the end, these are just synonyms,
+
+79
+00:03:54,280 --> 00:03:57,070
+and it is difficult to come up with a good name here
+
+80
+00:03:57,070 --> 00:04:00,760
+because we are just renaming the operation.
+
+81
+00:04:00,760 --> 00:04:04,110
+So this split here is one which you can make,
+
+82
+00:04:04,110 --> 00:04:05,700
+which is not horrible,
+
+83
+00:04:05,700 --> 00:04:10,600
+but which I would argue will not really improve readability.
+
+84
+00:04:10,600 --> 00:04:12,150
+And if you do this a lot,
+
+85
+00:04:12,150 --> 00:04:17,110
+you actually might have less readability and less clean code
+
+86
+00:04:17,110 --> 00:04:18,829
+than if you don't do it.
+
+87
+00:04:18,829 --> 00:04:21,810
+And of course, with experience, you'll get a better feeling
+
+88
+00:04:21,810 --> 00:04:24,760
+for when to split and when not to split.
+
+89
+00:04:24,760 --> 00:04:27,800
+In general, of course, all the rules, and guidelines,
+
+90
+00:04:27,800 --> 00:04:30,290
+and ideas I covered throughout the section
+
+91
+00:04:30,290 --> 00:04:33,720
+still apply though, as you can tell by all the examples
+
+92
+00:04:33,720 --> 00:04:36,600
+you find in the rest of this code file.
+
+93
+00:04:36,600 --> 00:04:39,320
+Now, if you would want to split this code
+
+94
+00:04:39,320 --> 00:04:43,450
+and not have mixed levels of abstraction in saveUser,
+
+95
+00:04:43,450 --> 00:04:46,930
+you could, for example, come up with a better solution
+
+96
+00:04:46,930 --> 00:04:51,440
+where you utilize a new User class, let's say,
+
+97
+00:04:51,440 --> 00:04:55,710
+which takes an email and password constructor,
+
+98
+00:04:55,710 --> 00:04:58,910
+where you then store email and password,
+
+99
+00:04:58,910 --> 00:05:02,470
+and this again, of course, is a JavaScript example,
+
+100
+00:05:02,470 --> 00:05:04,890
+but you could apply this concept
+
+101
+00:05:04,890 --> 00:05:06,850
+in any programming language.
+
+102
+00:05:06,850 --> 00:05:09,590
+And then, you could have a save method here
+
+103
+00:05:09,590 --> 00:05:11,200
+in this User class
+
+104
+00:05:11,200 --> 00:05:15,000
+in which you call database.insert this,
+
+105
+00:05:15,000 --> 00:05:18,710
+or you restructure the data which should be inserted
+
+106
+00:05:18,710 --> 00:05:20,700
+inside of this method.
+
+107
+00:05:20,700 --> 00:05:23,380
+And with such a class being added,
+
+108
+00:05:23,380 --> 00:05:25,220
+you could rewrite this down there
+
+109
+00:05:25,220 --> 00:05:28,940
+to simply create a user by calling new User
+
+110
+00:05:28,940 --> 00:05:31,720
+and forwarding the email and the password,
+
+111
+00:05:31,720 --> 00:05:35,610
+and then on that user, you could simply call save.
+
+112
+00:05:35,610 --> 00:05:37,940
+Now, this would be on the same level
+
+113
+00:05:37,940 --> 00:05:39,670
+of extraction in the end.
+
+114
+00:05:39,670 --> 00:05:43,910
+It would be one level below the saveUser function name.
+
+115
+00:05:43,910 --> 00:05:46,710
+And now, we actually did improve the code
+
+116
+00:05:46,710 --> 00:05:50,950
+because now we didn't just make a useless code extraction
+
+117
+00:05:50,950 --> 00:05:52,780
+or a code replacement,
+
+118
+00:05:52,780 --> 00:05:55,460
+but instead we restructured the logic,
+
+119
+00:05:55,460 --> 00:05:59,510
+and we changed the place where we manage the user data
+
+120
+00:05:59,510 --> 00:06:02,200
+and the database insertion.
+
+121
+00:06:02,200 --> 00:06:05,780
+That's now all being done in this User class.
+
+122
+00:06:05,780 --> 00:06:09,030
+So if you would want to refactor saveUser,
+
+123
+00:06:09,030 --> 00:06:11,880
+this could be the better approach
+
+124
+00:06:11,880 --> 00:06:16,480
+than using this extra function which we created before.
+
+125
+00:06:16,480 --> 00:06:20,190
+Of course, now, in theory, you could also move further
+
+126
+00:06:20,190 --> 00:06:22,550
+towards an object-oriented approach,
+
+127
+00:06:22,550 --> 00:06:24,920
+and you could add your validation logic
+
+128
+00:06:24,920 --> 00:06:26,920
+inside of this class as well,
+
+129
+00:06:26,920 --> 00:06:28,990
+but that would then be more a question
+
+130
+00:06:28,990 --> 00:06:31,170
+of your general architecture
+
+131
+00:06:31,170 --> 00:06:33,670
+and where you wanna have which code.
+
+132
+00:06:33,670 --> 00:06:37,940
+It's then only related to clean code to a certain extent.
+
+133
+00:06:37,940 --> 00:06:40,310
+I just wanted to bring this up here
+
+134
+00:06:40,310 --> 00:06:44,600
+to show you that this can also be a way of refactoring this
+
+135
+00:06:44,600 --> 00:06:47,150
+so that you don't have to make a split
+
+136
+00:06:47,150 --> 00:06:49,363
+which might not make too much sense.
+

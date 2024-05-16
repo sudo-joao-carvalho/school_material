@@ -1,0 +1,320 @@
+1
+00:00:02,070 --> 00:00:04,939
+Now, when it comes to writing that essay,
+
+2
+00:00:04,939 --> 00:00:08,560
+that good story, there are a couple of key pain points,
+
+3
+00:00:08,560 --> 00:00:11,570
+a couple of key areas on what you wanna focus
+
+4
+00:00:11,570 --> 00:00:14,480
+and which will be the sections in this course
+
+5
+00:00:14,480 --> 00:00:16,860
+where we will go through all the core concepts
+
+6
+00:00:16,860 --> 00:00:18,440
+in great detail.
+
+7
+00:00:18,440 --> 00:00:21,460
+It all starts with the naming of things.
+
+8
+00:00:21,460 --> 00:00:24,240
+With the names we assign to variables, functions,
+
+9
+00:00:24,240 --> 00:00:25,460
+and classes.
+
+10
+00:00:25,460 --> 00:00:28,060
+We can already mess up code with that
+
+11
+00:00:28,060 --> 00:00:30,150
+as you saw with the initial example,
+
+12
+00:00:30,150 --> 00:00:32,012
+I showed you a couple of minutes ago.
+
+13
+00:00:32,900 --> 00:00:35,820
+It continues with the general code structure
+
+14
+00:00:35,820 --> 00:00:38,580
+and any comments we might have in the code.
+
+15
+00:00:38,580 --> 00:00:40,120
+As you will learn in this course,
+
+16
+00:00:40,120 --> 00:00:41,880
+code formatting matters,
+
+17
+00:00:41,880 --> 00:00:45,550
+and there are various aspects that come into play
+
+18
+00:00:45,550 --> 00:00:47,700
+when we talk about code formatting.
+
+19
+00:00:47,700 --> 00:00:51,350
+And we also can differentiate between good and bad comments,
+
+20
+00:00:51,350 --> 00:00:54,930
+and we can see how that matters and how comments
+
+21
+00:00:54,930 --> 00:00:57,730
+and too many comments could actually lead
+
+22
+00:00:57,730 --> 00:01:00,323
+to dirty code instead of improving.
+
+23
+00:01:01,310 --> 00:01:03,160
+Another key pain point,
+
+24
+00:01:03,160 --> 00:01:04,530
+another important area,
+
+25
+00:01:04,530 --> 00:01:07,330
+which we'll have an entire section on in this course
+
+26
+00:01:07,330 --> 00:01:08,890
+will be functions.
+
+27
+00:01:08,890 --> 00:01:12,390
+There it's about the length of the functions,
+
+28
+00:01:12,390 --> 00:01:14,830
+so the amount of code in the functions
+
+29
+00:01:14,830 --> 00:01:17,640
+and the kind of code inside of a single function,
+
+30
+00:01:17,640 --> 00:01:20,910
+and the number of parameters a function takes.
+
+31
+00:01:20,910 --> 00:01:22,650
+As you will learn in this course,
+
+32
+00:01:22,650 --> 00:01:25,500
+functions are also one of the key things
+
+33
+00:01:25,500 --> 00:01:28,060
+that leads to bad and dirty code.
+
+34
+00:01:28,060 --> 00:01:31,060
+And therefore knowing how to write good functions
+
+35
+00:01:31,060 --> 00:01:34,963
+is a key skill and you will get it in this course.
+
+36
+00:01:35,870 --> 00:01:38,450
+We also will have a look at conditionals
+
+37
+00:01:38,450 --> 00:01:39,860
+and error handling
+
+38
+00:01:39,860 --> 00:01:41,980
+because nesting conditionals
+
+39
+00:01:41,980 --> 00:01:45,200
+and controlled structures in general too deeply
+
+40
+00:01:45,200 --> 00:01:48,340
+and not using error handling appropriately,
+
+41
+00:01:48,340 --> 00:01:50,790
+these are also two common mistakes
+
+42
+00:01:50,790 --> 00:01:52,380
+a lot of developers make,
+
+43
+00:01:52,380 --> 00:01:55,940
+and they also lead to dirty or bad code
+
+44
+00:01:55,940 --> 00:01:58,160
+and doing it right on the other hand,
+
+45
+00:01:58,160 --> 00:01:59,990
+will improve our code a lot
+
+46
+00:01:59,990 --> 00:02:03,693
+and will be one core building block of writing clean code.
+
+47
+00:02:04,610 --> 00:02:08,120
+Last but not least, working with classes, objects,
+
+48
+00:02:08,120 --> 00:02:09,639
+and data structures.
+
+49
+00:02:09,639 --> 00:02:14,290
+That's another key area where it's easy to mess up code.
+
+50
+00:02:14,290 --> 00:02:16,820
+It's easy to have no distinction,
+
+51
+00:02:16,820 --> 00:02:19,630
+no separation between data structures
+
+52
+00:02:19,630 --> 00:02:21,280
+and real objects.
+
+53
+00:02:21,280 --> 00:02:23,480
+And we will learn what the difference is
+
+54
+00:02:23,480 --> 00:02:25,070
+in this course, of course.
+
+55
+00:02:25,070 --> 00:02:28,260
+And it's also easy to end up with bloated classes,
+
+56
+00:02:28,260 --> 00:02:30,420
+which are doing too many things,
+
+57
+00:02:30,420 --> 00:02:33,010
+hence making it difficult for our developers
+
+58
+00:02:33,010 --> 00:02:34,760
+to understand them.
+
+59
+00:02:34,760 --> 00:02:36,510
+In this course, we're going to have a look at
+
+60
+00:02:36,510 --> 00:02:39,750
+all these areas at all these pain points,
+
+61
+00:02:39,750 --> 00:02:42,170
+and we'll not just learn about the problems
+
+62
+00:02:42,170 --> 00:02:43,690
+and the challenges there,
+
+63
+00:02:43,690 --> 00:02:45,960
+but of course, we're going to dive into the various
+
+64
+00:02:45,960 --> 00:02:50,440
+solutions you can apply to write cleaner code.
+
+65
+00:02:50,440 --> 00:02:53,990
+We'll dive into important rules and concepts, patterns,
+
+66
+00:02:53,990 --> 00:02:55,920
+and principles you should be aware of.
+
+67
+00:02:55,920 --> 00:02:58,270
+And we're also going to have a look
+
+68
+00:02:58,270 --> 00:02:59,620
+in the functions module.
+
+69
+00:02:59,620 --> 00:03:02,810
+We're also going to have a look at test-driven development
+
+70
+00:03:02,810 --> 00:03:06,550
+or how testing can help you write clean code as well.
+
+71
+00:03:06,550 --> 00:03:08,260
+Though, I also wanna make it clear,
+
+72
+00:03:08,260 --> 00:03:11,010
+this is not a test-driven development course,
+
+73
+00:03:11,010 --> 00:03:12,610
+not at all.
+
+74
+00:03:12,610 --> 00:03:14,150
+So by the end of the course,
+
+75
+00:03:14,150 --> 00:03:16,720
+once we went through all these sections,
+
+76
+00:03:16,720 --> 00:03:19,890
+we'll definitely not write code like this anymore.
+
+77
+00:03:19,890 --> 00:03:22,930
+Instead you will know how to write clean code
+
+78
+00:03:22,930 --> 00:03:24,220
+right from the start,
+
+79
+00:03:24,220 --> 00:03:27,880
+but also how you can derive clean code over time
+
+80
+00:03:27,880 --> 00:03:29,923
+as you're working on a project.
+

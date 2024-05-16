@@ -1,0 +1,336 @@
+PWD /Users/joaocarvalho/Desktop/Universidade/3oAno/Estagio/Template4LaTeX4ISEC/ISEC LaTeX Template (LIC)
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt
+INPUT /Users/joaocarvalho/Desktop/Universidade/3oAno/Estagio/Template4LaTeX4ISEC/ISEC LaTeX Template (LIC)/main.tex
+OUTPUT main.log
+INPUT ./Setup/template_isec_class.cls
+INPUT Setup/template_isec_class.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/book.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/book.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/bk12.clo
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/bk12.clo
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/bk12.clo
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr12.tfm
+INPUT ./Setup/template_isec_package.sty
+INPUT Setup/template_isec_package.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/fontenc.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/fontenc.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm1200.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/babel.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/babel.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/txtbabel.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/arabi/bblopts.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/arabi/bblopts.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/arabi/bblopts.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/babel-english/english.ldf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/babel-english/english.ldf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/babel-english/english.ldf
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/babel-portuges/portuguese.ldf
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/babel-portuges/portuguese.ldf
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/babel-portuges/portuguese.ldf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/locale/pt/babel-portuguese.tex
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/locale/pt/babel-portuguese.tex
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/locale/pt/babel-portuguese.tex
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/locale/pt/babel-pt.ini
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/locale/en/babel-english.tex
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/locale/en/babel-english.tex
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/locale/en/babel-english.tex
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/locale/en/babel-en.ini
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tex-gyre/tgpagella.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tex-gyre/tgpagella.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/kvoptions/kvoptions.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/kvoptions/kvoptions.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyphenat/hyphenat.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyphenat/hyphenat.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/iftex.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/iftex.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.cfg
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.cfg
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.cfg
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/setspace/setspace.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/setspace/setspace.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tex-gyre/t1qpl.fd
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tex-gyre/t1qpl.fd
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tex-gyre/t1qpl.fd
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/tex-gyre/ec-qplr.tfm
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tocloft/tocloft.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tocloft/tocloft.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/parskip/parskip.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/parskip/parskip.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/etoolbox/etoolbox.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/etoolbox/etoolbox.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphicx.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphicx.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphics.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphics.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdftex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdftex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdftex.def
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pdfpages/pdfpages.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pdfpages/pdfpages.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/calc.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/calc.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/eso-pic/eso-pic.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/eso-pic/eso-pic.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/color.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/color.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/color.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/mathcolor.ltx
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/mathcolor.ltx
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/mathcolor.ltx
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pdfpages/pppdftex.def
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pdfpages/pppdftex.def
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pdfpages/pppdftex.def
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/fancyhdr/fancyhdr.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/fancyhdr/fancyhdr.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/truncate/truncate.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/truncate/truncate.sty
+INPUT ./extras.sty
+INPUT extras.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hyperref.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hyperref.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pdfescape/pdfescape.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pdfescape/pdfescape.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/infwarerr/infwarerr.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/infwarerr/infwarerr.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hycolor/hycolor.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hycolor/hycolor.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/auxhook/auxhook.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/auxhook/auxhook.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/refcount/refcount.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/refcount/refcount.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/pd1enc.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/pd1enc.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/pd1enc.def
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/intcalc/intcalc.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/intcalc/intcalc.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/puenc.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/puenc.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/puenc.def
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/bitset/bitset.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/bitset/bitset.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/atbegshi/atbegshi.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/atbegshi-ltx.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/atbegshi-ltx.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hpdftex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hpdftex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hpdftex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/atveryend/atveryend.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/atveryend-ltx.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/atveryend-ltx.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/caption.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/caption.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/caption3.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/caption3.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/subcaption.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/subcaption.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
+INPUT ./main.aux
+INPUT ./main.aux
+INPUT main.aux
+OUTPUT main.aux
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pdflscape/pdflscape.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pdflscape/pdflscape.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pdflscape/pdflscape-nometadata.sty
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pdflscape/pdflscape-nometadata.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/lscape.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/lscape.sty
+INPUT ./main.out
+INPUT ./main.out
+INPUT main.out
+INPUT main.out
+OUTPUT main.pdf
+INPUT ./main.out
+INPUT ./main.out
+OUTPUT main.out
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/capa.pdf
+INPUT ./Inicio/resumo.tex
+INPUT ./Inicio/resumo.tex
+INPUT ./Inicio/resumo.tex
+INPUT ./Inicio/resumo.tex
+INPUT Inicio/resumo.tex
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/tex-gyre/ec-qplr.tfm
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/tex-gyre/ec-qplb.tfm
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/tex-gyre/ec-qplb-sc.tfm
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/tex-gyre/ec-qplb.tfm
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map
+INPUT ./Inicio/abstract.tex
+INPUT ./Inicio/abstract.tex
+INPUT ./Inicio/abstract.tex
+INPUT ./Inicio/abstract.tex
+INPUT Inicio/abstract.tex
+INPUT ./Inicio/epigrafe.tex
+INPUT ./Inicio/epigrafe.tex
+INPUT ./Inicio/epigrafe.tex
+INPUT ./Inicio/epigrafe.tex
+INPUT Inicio/epigrafe.tex
+INPUT ./Inicio/dedicatoria.tex
+INPUT ./Inicio/dedicatoria.tex
+INPUT ./Inicio/dedicatoria.tex
+INPUT ./Inicio/dedicatoria.tex
+INPUT Inicio/dedicatoria.tex
+INPUT ./Inicio/agradecimentos.tex
+INPUT ./Inicio/agradecimentos.tex
+INPUT ./Inicio/agradecimentos.tex
+INPUT ./Inicio/agradecimentos.tex
+INPUT Inicio/agradecimentos.tex
+INPUT ./main.toc
+INPUT ./main.toc
+INPUT main.toc
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr8.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr6.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi6.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy8.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy6.tfm
+OUTPUT main.toc
+INPUT ./main.lot
+INPUT ./main.lot
+INPUT main.lot
+OUTPUT main.lot
+INPUT ./main.lof
+INPUT ./main.lof
+INPUT main.lof
+OUTPUT main.lof
+INPUT ./Inicio/lista_abreviaturas.tex
+INPUT ./Inicio/lista_abreviaturas.tex
+INPUT ./Inicio/lista_abreviaturas.tex
+INPUT ./Inicio/lista_abreviaturas.tex
+INPUT Inicio/lista_abreviaturas.tex
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/tex-gyre/ec-qplri.tfm
+INPUT ./Inicio/lista_siglas_acronimos.tex
+INPUT ./Inicio/lista_siglas_acronimos.tex
+INPUT ./Inicio/lista_siglas_acronimos.tex
+INPUT ./Inicio/lista_siglas_acronimos.tex
+INPUT Inicio/lista_siglas_acronimos.tex
+INPUT ./Inicio/lista_simbolos.tex
+INPUT ./Inicio/lista_simbolos.tex
+INPUT ./Inicio/lista_simbolos.tex
+INPUT ./Inicio/lista_simbolos.tex
+INPUT Inicio/lista_simbolos.tex
+INPUT ./Capitulos/introducao.tex
+INPUT ./Capitulos/introducao.tex
+INPUT ./Capitulos/introducao.tex
+INPUT ./Capitulos/introducao.tex
+INPUT Capitulos/introducao.tex
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/tex-gyre/ec-qplr.tfm
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/tex-gyre/ec-qplb.tfm
+INPUT ./Capitulos/capitulo2.tex
+INPUT ./Capitulos/capitulo2.tex
+INPUT ./Capitulos/capitulo2.tex
+INPUT ./Capitulos/capitulo2.tex
+INPUT Capitulos/capitulo2.tex
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/tex-gyre/ec-qplr.tfm
+INPUT ./Capitulos/capitulo3.tex
+INPUT ./Capitulos/capitulo3.tex
+INPUT ./Capitulos/capitulo3.tex
+INPUT ./Capitulos/capitulo3.tex
+INPUT Capitulos/capitulo3.tex
+INPUT ./Capitulos/conclusao.tex
+INPUT ./Capitulos/conclusao.tex
+INPUT ./Capitulos/conclusao.tex
+INPUT ./Capitulos/conclusao.tex
+INPUT Capitulos/conclusao.tex
+INPUT ./main.bbl
+INPUT ./main.bbl
+INPUT main.bbl
+INPUT ./Anexos/anexoA.tex
+INPUT ./Anexos/anexoA.tex
+INPUT ./Anexos/anexoA.tex
+INPUT ./Anexos/anexoA.tex
+INPUT Anexos/anexoA.tex
+INPUT ./Anexos/anexoB.tex
+INPUT ./Anexos/anexoB.tex
+INPUT ./Anexos/anexoB.tex
+INPUT ./Anexos/anexoB.tex
+INPUT Anexos/anexoB.tex
+INPUT ./Setup/ultima_pagina.tex
+INPUT ./Setup/ultima_pagina.tex
+INPUT ./Setup/ultima_pagina.tex
+INPUT ./Setup/ultima_pagina.tex
+INPUT Setup/ultima_pagina.tex
+INPUT ./Setup/isec-logo.png
+INPUT ./Setup/isec-logo.png
+INPUT ./Setup/isec-logo.png
+INPUT ./Setup/isec-logo.png
+INPUT ./Setup/isec-logo.png
+INPUT ./Setup/isec-logo.png
+INPUT main.aux
+INPUT ./main.out
+INPUT ./main.out
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/tex-gyre/q-ec.enc
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/tex-gyre/q-ec-sc.enc
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/tex-gyre/qplb.pfb
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/tex-gyre/qplb.pfb
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/tex-gyre/qplr.pfb
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/tex-gyre/qplr.pfb
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/tex-gyre/qplri.pfb
+INPUT /Users/joaocarvalho/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/tex-gyre/qplri.pfb

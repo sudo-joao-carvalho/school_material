@@ -1,0 +1,144 @@
+1
+00:00:02,240 --> 00:00:04,123
+So now that we learned
+
+2
+00:00:04,123 --> 00:00:05,580
+about the Law of Demeter, we should dive
+
+3
+00:00:05,580 --> 00:00:09,700
+into a couple of other often cited principles,
+
+4
+00:00:09,700 --> 00:00:13,380
+which you should be aware of when working with classes
+
+5
+00:00:13,380 --> 00:00:18,380
+and especially when writing code in an object oriented way.
+
+6
+00:00:18,970 --> 00:00:22,530
+And here, amongst the most popular principles,
+
+7
+00:00:22,530 --> 00:00:26,550
+we would have the so-called SOLID principles.
+
+8
+00:00:26,550 --> 00:00:29,980
+We should write classes in a SOLID way,
+
+9
+00:00:29,980 --> 00:00:33,370
+and SOLID is an acronym which stands
+
+10
+00:00:33,370 --> 00:00:37,240
+for five different principles which you should apply
+
+11
+00:00:37,240 --> 00:00:40,300
+to your classes, so which you should respect
+
+12
+00:00:40,300 --> 00:00:43,900
+when writing code, to end up with clauses
+
+13
+00:00:43,900 --> 00:00:46,990
+which are considered to be well-written,
+
+14
+00:00:46,990 --> 00:00:50,100
+extensible and maintainable.
+
+15
+00:00:50,100 --> 00:00:53,900
+Now here's what these different characters stand for.
+
+16
+00:00:53,900 --> 00:00:58,900
+The S principle is the single responsibility principle,
+
+17
+00:00:59,240 --> 00:01:02,330
+and we're going to have a closer look at these principles
+
+18
+00:01:02,330 --> 00:01:04,113
+over the next minutes, of course.
+
+19
+00:01:05,209 --> 00:01:08,840
+O stands for open-closed principle,
+
+20
+00:01:08,840 --> 00:01:12,260
+L for Liskov substitution principle,
+
+21
+00:01:12,260 --> 00:01:16,000
+I for interface segregation principle,
+
+22
+00:01:16,000 --> 00:01:20,520
+and D for dependency inversion principle.
+
+23
+00:01:20,520 --> 00:01:23,180
+These are the SOLID principles
+
+24
+00:01:23,180 --> 00:01:24,960
+which you typically should follow
+
+25
+00:01:24,960 --> 00:01:28,360
+when writing object oriented code.
+
+26
+00:01:28,360 --> 00:01:32,240
+Now, it's especially the S and O principles
+
+27
+00:01:32,240 --> 00:01:35,450
+which also matter to us when writing clean code
+
+28
+00:01:35,450 --> 00:01:37,570
+because, as mentioned multiple times,
+
+29
+00:01:37,570 --> 00:01:40,370
+whilst all patterns and principles,
+
+30
+00:01:40,370 --> 00:01:43,690
+of course, tend to make our code cleaner,
+
+31
+00:01:43,690 --> 00:01:46,190
+we especially have two principles here
+
+32
+00:01:46,190 --> 00:01:51,190
+which have a very clear impact on the cleanness of our code.
+
+33
+00:01:51,470 --> 00:01:53,710
+So therefore, let's take a closer look
+
+34
+00:01:53,710 --> 00:01:58,200
+at the single responsibility and the open-closed principle,
+
+35
+00:01:58,200 --> 00:02:00,500
+but, of course, let's also briefly look
+
+36
+00:02:00,500 --> 00:02:03,433
+at the other principles over the next minutes.
+

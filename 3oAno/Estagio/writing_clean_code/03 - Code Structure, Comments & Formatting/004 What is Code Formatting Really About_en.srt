@@ -1,0 +1,208 @@
+1
+00:00:02,120 --> 00:00:05,360
+Now where comments can rarely help
+
+2
+00:00:05,360 --> 00:00:07,150
+and often hurt our code,
+
+3
+00:00:07,150 --> 00:00:11,040
+code formatting is another thing which is really helpful,
+
+4
+00:00:11,040 --> 00:00:13,260
+when it comes to improving the readability
+
+5
+00:00:13,260 --> 00:00:15,840
+and understandability of our code.
+
+6
+00:00:15,840 --> 00:00:19,010
+Because code formatting improves readability
+
+7
+00:00:19,010 --> 00:00:22,730
+and helps us transport meaning across our code.
+
+8
+00:00:22,730 --> 00:00:24,180
+And we can differentiate
+
+9
+00:00:24,180 --> 00:00:26,700
+between two kinds of code formatting,
+
+10
+00:00:26,700 --> 00:00:31,370
+vertical formatting and horizontal formatting.
+
+11
+00:00:31,370 --> 00:00:32,490
+Vertical formatting
+
+12
+00:00:32,490 --> 00:00:37,050
+simply refers to any formatting any code structuring we do
+
+13
+00:00:37,050 --> 00:00:39,350
+from the top to the bottom of our file.
+
+14
+00:00:39,350 --> 00:00:40,760
+So vertically.
+
+15
+00:00:40,760 --> 00:00:45,550
+That includes spacing between lines and grouping of code.
+
+16
+00:00:45,550 --> 00:00:49,150
+And I will show you concrete examples in just a second.
+
+17
+00:00:49,150 --> 00:00:51,680
+Horizontal formatting on the other end
+
+18
+00:00:51,680 --> 00:00:54,530
+is everything which happens within one line of code.
+
+19
+00:00:54,530 --> 00:00:56,510
+So horizontally.
+
+20
+00:00:56,510 --> 00:00:59,010
+And that involves indentation,
+
+21
+00:00:59,010 --> 00:01:01,730
+space between code in one line of code,
+
+22
+00:01:01,730 --> 00:01:04,830
+and of course in general the width of our code lines.
+
+23
+00:01:04,830 --> 00:01:08,530
+Now when it comes to formatting and formatting properly,
+
+24
+00:01:08,530 --> 00:01:11,200
+it is of course true that formatting is important
+
+25
+00:01:11,200 --> 00:01:13,500
+and helps us with code readability,
+
+26
+00:01:13,500 --> 00:01:15,630
+but only if it's done properly.
+
+27
+00:01:15,630 --> 00:01:18,840
+And here we'll not just have some general rules
+
+28
+00:01:18,840 --> 00:01:22,360
+and concepts which I will show you over the next lectures,
+
+29
+00:01:22,360 --> 00:01:26,430
+but we'll also have language specific formatting rules.
+
+30
+00:01:26,430 --> 00:01:29,400
+Where most of the concepts shown in this course
+
+31
+00:01:29,400 --> 00:01:32,150
+apply across all languages.
+
+32
+00:01:32,150 --> 00:01:33,730
+We also have formatting rules
+
+33
+00:01:33,730 --> 00:01:37,320
+which differ between different programming languages.
+
+34
+00:01:37,320 --> 00:01:39,510
+And is always the general conventions
+
+35
+00:01:39,510 --> 00:01:41,980
+and style guides of these languages,
+
+36
+00:01:41,980 --> 00:01:44,800
+which you wanna follow when it comes to formatting.
+
+37
+00:01:44,800 --> 00:01:47,770
+So for example, if you think about indentation
+
+38
+00:01:47,770 --> 00:01:49,940
+something I will come back to in a second,
+
+39
+00:01:49,940 --> 00:01:52,640
+and you will think about whether you wanna indent by
+
+40
+00:01:52,640 --> 00:01:56,360
+two spaces or four spaces, or by using taps.
+
+41
+00:01:56,360 --> 00:01:59,440
+Then it's always also the language guidelines
+
+42
+00:01:59,440 --> 00:02:01,910
+and style guides which you will typically find,
+
+43
+00:02:01,910 --> 00:02:05,740
+which answered the question on how to indent properly.
+
+44
+00:02:05,740 --> 00:02:07,870
+So you never wanna forget about these.
+
+45
+00:02:07,870 --> 00:02:10,509
+Nonetheless, there also are some general rules
+
+46
+00:02:10,509 --> 00:02:12,700
+and concepts, which always apply.
+
+47
+00:02:12,700 --> 00:02:14,610
+And these are the rules and concepts,
+
+48
+00:02:14,610 --> 00:02:17,280
+we're now going to have a closer look at.
+
+49
+00:02:17,280 --> 00:02:18,770
+So let's now take a closer look
+
+50
+00:02:18,770 --> 00:02:21,100
+at these two kinds of formatting's
+
+51
+00:02:21,100 --> 00:02:23,000
+and let's understand which kind of rules
+
+52
+00:02:23,000 --> 00:02:24,303
+we should follow there.
+

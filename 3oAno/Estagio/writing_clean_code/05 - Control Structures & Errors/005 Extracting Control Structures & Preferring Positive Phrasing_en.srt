@@ -1,0 +1,244 @@
+1
+00:00:02,150 --> 00:00:04,160
+So now we added guards.
+
+2
+00:00:04,160 --> 00:00:06,850
+We leave aside the fact that we have a bunch of
+
+3
+00:00:06,850 --> 00:00:10,170
+if statements here, we should see another problem
+
+4
+00:00:10,170 --> 00:00:12,060
+with this code though.
+
+5
+00:00:12,060 --> 00:00:16,149
+And that is the mixture of levels of abstraction.
+
+6
+00:00:16,149 --> 00:00:19,050
+What we learned about functions still applies.
+
+7
+00:00:19,050 --> 00:00:22,310
+This is inside of a functional after all.
+
+8
+00:00:22,310 --> 00:00:25,880
+And when it comes to simplifying controlled structures
+
+9
+00:00:25,880 --> 00:00:29,210
+and managing deeply nested controlled structures,
+
+10
+00:00:29,210 --> 00:00:33,660
+splitting up functions and extracting controlled structures
+
+11
+00:00:33,660 --> 00:00:37,103
+into functions is another important building block.
+
+12
+00:00:37,970 --> 00:00:41,210
+Now this starts with the checks here.
+
+13
+00:00:41,210 --> 00:00:44,190
+We can run the checks here in line
+
+14
+00:00:44,190 --> 00:00:47,720
+but we could also outsource this into a separate function
+
+15
+00:00:47,720 --> 00:00:52,420
+which then also would allow us to use positive wording.
+
+16
+00:00:52,420 --> 00:00:55,080
+For example, here we are interested in whether
+
+17
+00:00:55,080 --> 00:00:57,460
+we have transactions or not.
+
+18
+00:00:57,460 --> 00:01:00,390
+So we could grab this code, cut it
+
+19
+00:01:00,390 --> 00:01:02,180
+and add a new function
+
+20
+00:01:02,180 --> 00:01:05,570
+below this process transactions function.
+
+21
+00:01:05,570 --> 00:01:07,827
+And we could name this function isEmpty
+
+22
+00:01:09,610 --> 00:01:12,500
+and then simply return the result of this check
+
+23
+00:01:12,500 --> 00:01:16,363
+of course ensure though that we get transactions as a value.
+
+24
+00:01:17,669 --> 00:01:19,920
+So isEmpty will return true
+
+25
+00:01:19,920 --> 00:01:22,130
+if we have no transactions object
+
+26
+00:01:22,130 --> 00:01:24,963
+or if we have no elements in transactions.
+
+27
+00:01:25,840 --> 00:01:30,840
+And I named this is empty and not has no elements
+
+28
+00:01:31,710 --> 00:01:35,140
+because of this prefer positive checks rule here,
+
+29
+00:01:35,140 --> 00:01:39,320
+it's simply is easier to read if we use a positive statement
+
+30
+00:01:39,320 --> 00:01:40,830
+than a negative one.
+
+31
+00:01:40,830 --> 00:01:42,910
+So if I named this is empty,
+
+32
+00:01:42,910 --> 00:01:46,760
+I can simply check here in process transactions,
+
+33
+00:01:46,760 --> 00:01:50,663
+if isEmpty transactions,
+
+34
+00:01:51,700 --> 00:01:53,660
+passing transactions to isEmpty.
+
+35
+00:01:53,660 --> 00:01:55,410
+And this is super easy to read.
+
+36
+00:01:55,410 --> 00:01:58,323
+If it's empty transactions, then we do this.
+
+37
+00:01:59,300 --> 00:02:02,870
+Now of course, speaking of mixed levels of abstraction,
+
+38
+00:02:02,870 --> 00:02:06,100
+we do have more violations of that rule.
+
+39
+00:02:06,100 --> 00:02:09,100
+For example, also in this console log statement,
+
+40
+00:02:09,100 --> 00:02:12,170
+it's not directly related to the if statement
+
+41
+00:02:12,170 --> 00:02:14,440
+and to simplifying the if statements
+
+42
+00:02:14,440 --> 00:02:17,060
+but of course we might also wanna extract that
+
+43
+00:02:17,060 --> 00:02:19,490
+so we can grab this console log statement
+
+44
+00:02:19,490 --> 00:02:21,600
+and add a number of function here,
+
+45
+00:02:21,600 --> 00:02:26,010
+showErrorMessage could be the function name
+
+46
+00:02:26,010 --> 00:02:28,790
+where we get the message as a parameter
+
+47
+00:02:28,790 --> 00:02:32,660
+and where we then simply output the message like this
+
+48
+00:02:32,660 --> 00:02:37,460
+and then we could call, showErrorMessage here
+
+49
+00:02:37,460 --> 00:02:40,700
+and forward this message which we wanna show to again
+
+50
+00:02:40,700 --> 00:02:44,150
+have an equal level of abstraction here.
+
+51
+00:02:44,150 --> 00:02:46,600
+Now of course, extracting these two functions
+
+52
+00:02:46,600 --> 00:02:48,430
+didn't remove the if statement,
+
+53
+00:02:48,430 --> 00:02:51,370
+it also didn't shorten this code here
+
+54
+00:02:51,370 --> 00:02:53,660
+but it makes it a bit more readable
+
+55
+00:02:53,660 --> 00:02:57,130
+and overall that is our end goal still.
+
+56
+00:02:57,130 --> 00:03:00,430
+Nonetheless, when we talk about functions,
+
+57
+00:03:00,430 --> 00:03:03,870
+it's not just about extracting Boolean checks
+
+58
+00:03:03,870 --> 00:03:07,610
+and deriving booleans or showing messages,
+
+59
+00:03:07,610 --> 00:03:11,550
+it's also about extracting entire controlled structures
+
+60
+00:03:11,550 --> 00:03:12,760
+from our code.
+
+61
+00:03:12,760 --> 00:03:15,210
+And that's therefore what we're going to do next.
+

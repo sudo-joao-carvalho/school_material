@@ -1,0 +1,276 @@
+1
+00:00:02,060 --> 00:00:04,220
+When it comes to naming things
+
+2
+00:00:04,220 --> 00:00:08,350
+in development, there is one simple overarching rule,
+
+3
+00:00:08,350 --> 00:00:11,500
+and that would be that names should be meaningful.
+
+4
+00:00:11,500 --> 00:00:14,610
+This really is all, this is the core idea.
+
+5
+00:00:14,610 --> 00:00:17,030
+Whenever you name something,
+
+6
+00:00:17,030 --> 00:00:20,670
+no matter if that's a variable or a function or a class,
+
+7
+00:00:20,670 --> 00:00:22,840
+the name should be meaningful.
+
+8
+00:00:22,840 --> 00:00:26,760
+It should transport what's stored in a variable
+
+9
+00:00:26,760 --> 00:00:29,540
+or what a function or method does
+
+10
+00:00:29,540 --> 00:00:31,730
+without having to look at the code
+
+11
+00:00:31,730 --> 00:00:33,830
+inside of that function or method,
+
+12
+00:00:33,830 --> 00:00:37,640
+or without exploring the value stored in a variable.
+
+13
+00:00:37,640 --> 00:00:40,380
+For example, consider this code snippet.
+
+14
+00:00:40,380 --> 00:00:42,290
+It's not a lot of lines,
+
+15
+00:00:42,290 --> 00:00:46,450
+but it's really not clear at all what's going on there.
+
+16
+00:00:46,450 --> 00:00:51,450
+const us equals new MainEntity us process if login,
+
+17
+00:00:52,360 --> 00:00:53,710
+what are we doing there?
+
+18
+00:00:53,710 --> 00:00:55,070
+What's this main entity?
+
+19
+00:00:55,070 --> 00:00:59,130
+What does process do and what is the value of login?
+
+20
+00:00:59,130 --> 00:01:02,620
+Is it the function for which existence we check?
+
+21
+00:01:02,620 --> 00:01:04,430
+Is it a Boolean value?
+
+22
+00:01:04,430 --> 00:01:06,650
+Is it a string, an error or code?
+
+23
+00:01:06,650 --> 00:01:08,660
+We don't know at all.
+
+24
+00:01:08,660 --> 00:01:11,410
+And now consider this alternative.
+
+25
+00:01:11,410 --> 00:01:13,990
+It's the same code, but it's way clearer.
+
+26
+00:01:13,990 --> 00:01:16,970
+It's now obvious that we are creating a user,
+
+27
+00:01:16,970 --> 00:01:20,910
+which we are then saving, maybe to a file or to a database.
+
+28
+00:01:20,910 --> 00:01:22,200
+This might not matter to us,
+
+29
+00:01:22,200 --> 00:01:24,100
+but we are saving the user
+
+30
+00:01:24,100 --> 00:01:26,990
+and we got isLoggedIn instead of login,
+
+31
+00:01:26,990 --> 00:01:30,280
+making it clear that this very likely holds the result
+
+32
+00:01:30,280 --> 00:01:33,310
+of checking whether that user is logged in or not.
+
+33
+00:01:33,310 --> 00:01:36,420
+So a Boolean value, true or false.
+
+34
+00:01:36,420 --> 00:01:40,060
+This is now very readable and very easy to understand,
+
+35
+00:01:40,060 --> 00:01:42,500
+even though it's the same number of lines.
+
+36
+00:01:42,500 --> 00:01:46,980
+The only difference is that now we have meaningful names.
+
+37
+00:01:46,980 --> 00:01:51,120
+So picking good names in your code really matters.
+
+38
+00:01:51,120 --> 00:01:55,830
+If we have well-named things, variables and so on,
+
+39
+00:01:55,830 --> 00:01:58,830
+in our code, we allow our readers,
+
+40
+00:01:58,830 --> 00:02:02,110
+so the people reading our code, to understand that code
+
+41
+00:02:02,110 --> 00:02:04,130
+without going through all the details,
+
+42
+00:02:04,130 --> 00:02:06,520
+without diving into it in detail.
+
+43
+00:02:06,520 --> 00:02:08,530
+Consider these examples.
+
+44
+00:02:08,530 --> 00:02:10,130
+In all three examples,
+
+45
+00:02:10,130 --> 00:02:13,790
+it's pretty clear what this code does,
+
+46
+00:02:13,790 --> 00:02:16,650
+even though we don't know the details.
+
+47
+00:02:16,650 --> 00:02:19,570
+We don't need to dive into the rest of the code
+
+48
+00:02:19,570 --> 00:02:23,010
+just to understand these snippets.
+
+49
+00:02:23,010 --> 00:02:25,440
+That's why names matter.
+
+50
+00:02:25,440 --> 00:02:27,470
+Now, I will emphasize right away.
+
+51
+00:02:27,470 --> 00:02:30,700
+We will not always agree, because obviously,
+
+52
+00:02:30,700 --> 00:02:33,630
+there is more than one way of naming something.
+
+53
+00:02:33,630 --> 00:02:36,760
+In this course section, I'll explore the rules
+
+54
+00:02:36,760 --> 00:02:40,730
+we can follow to come up with good names, but ultimately,
+
+55
+00:02:40,730 --> 00:02:43,970
+you will still always have more than one option.
+
+56
+00:02:43,970 --> 00:02:47,350
+For example, here, this is readable, I would say.
+
+57
+00:02:47,350 --> 00:02:50,530
+We are probably creating some admin user,
+
+58
+00:02:50,530 --> 00:02:55,130
+but this here is also readable and not necessarily worse.
+
+59
+00:02:55,130 --> 00:02:57,140
+You could definitely find arguments
+
+60
+00:02:57,140 --> 00:02:58,870
+for either of the two names.
+
+61
+00:02:58,870 --> 00:03:01,590
+And it's up to you how you wanna name something
+
+62
+00:03:01,590 --> 00:03:03,540
+in such cases.
+
+63
+00:03:03,540 --> 00:03:07,130
+There are however, also names which clearly are bad.
+
+64
+00:03:07,130 --> 00:03:10,350
+And that's what I'll focus on in this course section,
+
+65
+00:03:10,350 --> 00:03:11,940
+so that by the end of the section,
+
+66
+00:03:11,940 --> 00:03:15,600
+you have a clear understanding of what makes up a good name
+
+67
+00:03:15,600 --> 00:03:17,600
+and what makes up a bad name.
+
+68
+00:03:17,600 --> 00:03:19,530
+And then of course, it's up to you to pick
+
+69
+00:03:19,530 --> 00:03:21,913
+which good name you wanna go with.
+

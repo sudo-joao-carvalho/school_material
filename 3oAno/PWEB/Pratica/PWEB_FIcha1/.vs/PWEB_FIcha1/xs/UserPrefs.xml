@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{959A864D-DCFA-4EEE-B88A-DE773AC20AA7}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.PWEB__FIcha1 PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PWEB_FIcha1/appsettings.json">
+    <Files>
+      <File FileName="PWEB_FIcha1/appsettings.json" Line="5" Column="132" />
+      <File FileName="PWEB_FIcha1/Program.cs" Line="22" Column="33" />
+      <File FileName="PWEB_FIcha1/Data/ApplicationDbContext.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PWEB_FIcha1" expanded="True">
+            <Node name="PWEB_FIcha1" expanded="True">
+              <Node name="Data" expanded="True">
+                <Node name="Migrations" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Aluno" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+</Properties>

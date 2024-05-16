@@ -1,0 +1,3 @@
+/Users/joaocarvalho/Desktop/Universidade/3oAno/POO/exame_ano_anterior/cmake-build-debug/CMakeFiles/exame_ano_anterior.dir
+/Users/joaocarvalho/Desktop/Universidade/3oAno/POO/exame_ano_anterior/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/joaocarvalho/Desktop/Universidade/3oAno/POO/exame_ano_anterior/cmake-build-debug/CMakeFiles/rebuild_cache.dir

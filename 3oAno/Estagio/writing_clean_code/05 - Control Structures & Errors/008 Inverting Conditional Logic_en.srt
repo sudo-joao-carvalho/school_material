@@ -1,0 +1,632 @@
+1
+00:00:02,120 --> 00:00:03,450
+The problem we have
+
+2
+00:00:03,450 --> 00:00:04,890
+with processPayment and processRefund is
+
+3
+00:00:06,450 --> 00:00:09,600
+that we have some kind of code duplication in there.
+
+4
+00:00:09,600 --> 00:00:12,220
+We have the same kind of checks, which we run in there
+
+5
+00:00:12,220 --> 00:00:14,070
+and that's bad because that means
+
+6
+00:00:14,070 --> 00:00:17,270
+that we repeat ourselves, which we of course shouldn't do
+
+7
+00:00:17,270 --> 00:00:18,103
+as we learned.
+
+8
+00:00:19,100 --> 00:00:20,810
+The problem just is that
+
+9
+00:00:20,810 --> 00:00:24,310
+for these different checks, we then do different things.
+
+10
+00:00:24,310 --> 00:00:26,556
+We processCreditCardPayments
+
+11
+00:00:26,556 --> 00:00:29,810
+and CreditCardRefunds, which are different functions
+
+12
+00:00:29,810 --> 00:00:32,460
+which of course that should be easy to imagine,
+
+13
+00:00:32,460 --> 00:00:35,300
+do totally different things in reality.
+
+14
+00:00:35,300 --> 00:00:36,730
+Here, we just log something
+
+15
+00:00:36,730 --> 00:00:39,620
+to the console, but that's just some dummy code.
+
+16
+00:00:39,620 --> 00:00:40,453
+In reality,
+
+17
+00:00:40,453 --> 00:00:43,810
+there's a big difference between charging a credit card
+
+18
+00:00:43,810 --> 00:00:46,950
+and refunding a payment to the credit card.
+
+19
+00:00:46,950 --> 00:00:50,060
+So it makes sense that we have different functions here
+
+20
+00:00:50,060 --> 00:00:52,870
+and we probably won't be able to merge these
+
+21
+00:00:52,870 --> 00:00:54,470
+in an elegant way.
+
+22
+00:00:54,470 --> 00:00:57,270
+Though there actually is something we could
+
+23
+00:00:57,270 --> 00:01:00,320
+consider doing to slim this code
+
+24
+00:01:00,320 --> 00:01:02,440
+down and to make it more readable.
+
+25
+00:01:02,440 --> 00:01:07,400
+We could kind of inverse our checking logic.
+
+26
+00:01:07,400 --> 00:01:09,010
+Now, what do I mean by that?
+
+27
+00:01:09,010 --> 00:01:12,530
+Currently we first check whether we have a payment
+
+28
+00:01:12,530 --> 00:01:15,630
+or a refund, and then we process this payment
+
+29
+00:01:15,630 --> 00:01:18,670
+or a refund, which means we then have these checks.
+
+30
+00:01:18,670 --> 00:01:20,530
+Of course we could theoretically
+
+31
+00:01:20,530 --> 00:01:23,930
+also first check what the payment method is,
+
+32
+00:01:23,930 --> 00:01:26,450
+since we have the same methods for both payments
+
+33
+00:01:26,450 --> 00:01:30,080
+and refunds, and then only check if it's a payment or refund
+
+34
+00:01:30,080 --> 00:01:33,790
+in the second step. To check this, I will actually get rid
+
+35
+00:01:33,790 --> 00:01:36,810
+of checking for his payment and his refund, though,
+
+36
+00:01:36,810 --> 00:01:38,670
+I will keep these functions
+
+37
+00:01:38,670 --> 00:01:41,670
+but instead I'll add a new function where I wanna check
+
+38
+00:01:41,670 --> 00:01:45,420
+whether a transaction uses credit card, PayPal
+
+39
+00:01:45,420 --> 00:01:46,683
+or a payment plan.
+
+40
+00:01:47,640 --> 00:01:50,280
+So we can name this function usesCreditCard
+
+41
+00:01:52,100 --> 00:01:54,683
+and we would get a transaction here.
+
+42
+00:01:55,690 --> 00:01:59,993
+And then I wanna essentially return this check here.
+
+43
+00:02:00,920 --> 00:02:05,920
+So I have return transaction method equals credit card
+
+44
+00:02:07,040 --> 00:02:10,360
+and we can repeat this function to
+
+45
+00:02:10,360 --> 00:02:15,110
+also have a usesPayPal function, where we check
+
+46
+00:02:15,110 --> 00:02:20,110
+for PayPal as a method and to have a usesPlan function
+
+47
+00:02:21,140 --> 00:02:25,453
+where we check for plan as a payment method.
+
+48
+00:02:26,330 --> 00:02:29,010
+We could even merge these together
+
+49
+00:02:29,010 --> 00:02:34,010
+and just have a usesTransactionMethod function
+
+50
+00:02:34,170 --> 00:02:37,020
+where we get the transaction and the method.
+
+51
+00:02:37,020 --> 00:02:39,400
+And we then have this comparison here.
+
+52
+00:02:39,400 --> 00:02:40,233
+It's up to you,
+
+53
+00:02:40,233 --> 00:02:43,990
+which approach you prefer. With such a method added though,
+
+54
+00:02:43,990 --> 00:02:46,400
+we could go to processTransaction
+
+55
+00:02:46,400 --> 00:02:48,930
+and not check first, whether it's a payment
+
+56
+00:02:48,930 --> 00:02:52,400
+or a refund, but instead, simply check
+
+57
+00:02:52,400 --> 00:02:55,043
+if he usesTransactionMethod
+
+58
+00:02:55,980 --> 00:02:57,260
+for any given transaction.
+
+59
+00:02:57,260 --> 00:02:59,853
+For example, if we use credit card,
+
+60
+00:03:00,900 --> 00:03:04,570
+and if we do that, then we'll do something here.
+
+61
+00:03:04,570 --> 00:03:08,150
+Else, if we use the another method
+
+62
+00:03:08,150 --> 00:03:13,150
+let's say PayPal, we do something else.
+
+63
+00:03:13,860 --> 00:03:16,010
+And last but not least
+
+64
+00:03:16,010 --> 00:03:21,010
+if we have a transaction where the method is plan,
+
+65
+00:03:22,550 --> 00:03:24,773
+we do get something else.
+
+66
+00:03:25,610 --> 00:03:29,080
+Now, what are these something else's which you wanna do?
+
+67
+00:03:29,080 --> 00:03:31,340
+Well, that is now our processing
+
+68
+00:03:31,340 --> 00:03:33,220
+for credit card transactions,
+
+69
+00:03:33,220 --> 00:03:36,133
+PayPal transactions, and plan transactions.
+
+70
+00:03:37,160 --> 00:03:40,200
+So these would be new functions, which we can add.
+
+71
+00:03:40,200 --> 00:03:43,800
+We can add a new function here, maybe above processPayment
+
+72
+00:03:43,800 --> 00:03:47,090
+which is named processCreditCardTransaction.
+
+73
+00:03:50,130 --> 00:03:52,400
+And here we get our transaction, no matter
+
+74
+00:03:52,400 --> 00:03:56,070
+if it's a payment or a refund and we can do the same
+
+75
+00:03:56,070 --> 00:03:59,210
+for PayPal to have a processPayPalTransaction
+
+76
+00:04:00,930 --> 00:04:03,430
+and the same for a payment plan.
+
+77
+00:04:03,430 --> 00:04:04,680
+So processPlanTransaction
+
+78
+00:04:07,300 --> 00:04:10,490
+and we'll add logic to these functions in a second.
+
+79
+00:04:10,490 --> 00:04:12,410
+So now we have these free functions
+
+80
+00:04:12,410 --> 00:04:15,490
+and these are the functions which we wanna call here.
+
+81
+00:04:15,490 --> 00:04:19,300
+So we wanna process a credit card transaction here
+
+82
+00:04:19,300 --> 00:04:22,410
+and forward the transaction in the next
+
+83
+00:04:22,410 --> 00:04:25,853
+if branch, we wanna processPayPalTransaction
+
+84
+00:04:29,300 --> 00:04:32,040
+and forward the transaction.
+
+85
+00:04:32,040 --> 00:04:35,767
+And in the last branch, we wanna processPlanTransaction
+
+86
+00:04:36,810 --> 00:04:39,163
+and forward the transaction like this.
+
+87
+00:04:40,360 --> 00:04:42,280
+Now we will eventually remove this code.
+
+88
+00:04:42,280 --> 00:04:45,140
+I'll just leave it here for reference for a second.
+
+89
+00:04:45,140 --> 00:04:47,020
+But now we have these functions
+
+90
+00:04:47,020 --> 00:04:50,960
+which are being called depending on the transaction method.
+
+91
+00:04:50,960 --> 00:04:52,900
+So to check, which we previously had instead
+
+92
+00:04:52,900 --> 00:04:56,310
+of processPayment and processRefund now moved
+
+93
+00:04:56,310 --> 00:04:59,183
+up one level directly into processTransaction.
+
+94
+00:05:00,940 --> 00:05:03,620
+Therefore, to fully invert our logic,
+
+95
+00:05:03,620 --> 00:05:05,570
+we now have to move the payment
+
+96
+00:05:05,570 --> 00:05:08,120
+and refund logic down one level
+
+97
+00:05:08,120 --> 00:05:11,860
+out of processTransaction into these processCreditCard,
+
+98
+00:05:11,860 --> 00:05:15,100
+PayPal and planTransaction functions.
+
+99
+00:05:15,100 --> 00:05:17,440
+Hence now in all these functions,
+
+100
+00:05:17,440 --> 00:05:20,350
+we have to check whether we have a payment or a refund.
+
+101
+00:05:20,350 --> 00:05:23,550
+And that is what I meant with, we invert the logic.
+
+102
+00:05:23,550 --> 00:05:25,680
+We will still have some duplication.
+
+103
+00:05:25,680 --> 00:05:26,513
+There is no way
+
+104
+00:05:26,513 --> 00:05:30,340
+around that because we had two dependent kind if checks.
+
+105
+00:05:30,340 --> 00:05:32,350
+But now we have the more complex
+
+106
+00:05:32,350 --> 00:05:36,530
+if check where we replicated three different checks
+
+107
+00:05:36,530 --> 00:05:37,950
+at a higher level.
+
+108
+00:05:37,950 --> 00:05:40,010
+And we have the easier check where
+
+109
+00:05:40,010 --> 00:05:42,930
+we only have queue options at a lower level.
+
+110
+00:05:42,930 --> 00:05:43,763
+But on the other hand,
+
+111
+00:05:43,763 --> 00:05:45,920
+we execute this check three times now.
+
+112
+00:05:45,920 --> 00:05:49,230
+So overall, we can question whether we gain a lot.
+
+113
+00:05:49,230 --> 00:05:52,300
+Nonetheless, let's finish this before we look for an
+
+114
+00:05:52,300 --> 00:05:53,863
+even more elegant solution.
+
+115
+00:05:54,830 --> 00:05:58,750
+So here, in processCreditCardTransaction, we can now check
+
+116
+00:05:58,750 --> 00:06:02,620
+if we have a payment using this is payment function
+
+117
+00:06:02,620 --> 00:06:04,200
+which we defined before,
+
+118
+00:06:04,200 --> 00:06:09,200
+for our given transaction, or if we have a refund
+
+119
+00:06:10,210 --> 00:06:15,210
+for this given transaction or else we know it's invalid
+
+120
+00:06:15,450 --> 00:06:17,580
+and then we can show an error message
+
+121
+00:06:17,580 --> 00:06:21,560
+and simply, well, use this code
+
+122
+00:06:21,560 --> 00:06:25,320
+from before, show error message, invalid transaction type
+
+123
+00:06:25,320 --> 00:06:29,450
+and pass the transaction as well, like this.
+
+124
+00:06:29,450 --> 00:06:30,283
+And now,
+
+125
+00:06:30,283 --> 00:06:33,290
+if it's a payment, we know it's a credit card payment.
+
+126
+00:06:33,290 --> 00:06:35,363
+So here we can call processCreditCardPayment.
+
+127
+00:06:36,941 --> 00:06:37,774
+And that's one
+
+128
+00:06:37,774 --> 00:06:39,800
+of the functions which existed right from the start.
+
+129
+00:06:39,800 --> 00:06:41,323
+One of these dummy functions.
+
+130
+00:06:42,200 --> 00:06:45,530
+If it's a refund, we know it's a credit card refund,
+
+131
+00:06:45,530 --> 00:06:48,580
+so we can call processCreditCardRefund.
+
+132
+00:06:48,580 --> 00:06:50,310
+And now we can copy that code
+
+133
+00:06:50,310 --> 00:06:53,300
+into the other method functions here.
+
+134
+00:06:53,300 --> 00:06:55,230
+So here we call processPayPalPayment
+
+135
+00:06:58,030 --> 00:07:02,270
+and processPayPalRefund.
+
+136
+00:07:02,270 --> 00:07:04,520
+And here we have processPlanPayment
+
+137
+00:07:07,022 --> 00:07:08,855
+and processPlanRefund.
+
+138
+00:07:11,093 --> 00:07:11,926
+And we can now get rid
+
+139
+00:07:11,926 --> 00:07:14,690
+of processPayment and processRefund down there
+
+140
+00:07:14,690 --> 00:07:17,053
+because we don't need these functions anymore.
+
+141
+00:07:18,010 --> 00:07:21,420
+So what we did now is we inverted these checks.
+
+142
+00:07:21,420 --> 00:07:22,770
+Now we check for the method
+
+143
+00:07:22,770 --> 00:07:25,870
+at a higher level, and then for the type of transaction
+
+144
+00:07:25,870 --> 00:07:28,500
+at a lower level, hence we can now remove this
+
+145
+00:07:28,500 --> 00:07:32,150
+if check here from the process transaction function
+
+146
+00:07:32,150 --> 00:07:33,900
+because that's the check which we now have
+
+147
+00:07:33,900 --> 00:07:37,030
+in all these methods, specific functions.
+
+148
+00:07:37,030 --> 00:07:39,520
+Nonetheless, of course we have duplication here
+
+149
+00:07:39,520 --> 00:07:42,300
+and just like this, we also won't be able to get rid
+
+150
+00:07:42,300 --> 00:07:45,400
+of it because we're in the interest of moving around checks.
+
+151
+00:07:45,400 --> 00:07:46,470
+And it's up to you,
+
+152
+00:07:46,470 --> 00:07:49,590
+which kind of solution you find easier to read.
+
+153
+00:07:49,590 --> 00:07:51,620
+If it was the one from before
+
+154
+00:07:51,620 --> 00:07:54,950
+where we had the payment refund check at a higher level
+
+155
+00:07:54,950 --> 00:07:57,720
+and we checked for the method at a lower level,
+
+156
+00:07:57,720 --> 00:08:01,550
+or if it's this solution where we do the opposite.
+
+157
+00:08:01,550 --> 00:08:03,680
+Nonetheless, this is our current state
+
+158
+00:08:03,680 --> 00:08:05,883
+which we will now use to build up on.
+

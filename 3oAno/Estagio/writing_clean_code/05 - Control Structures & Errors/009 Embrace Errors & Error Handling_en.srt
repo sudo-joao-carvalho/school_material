@@ -1,0 +1,552 @@
+1
+00:00:02,340 --> 00:00:04,050
+Before we're going to explore
+
+2
+00:00:04,050 --> 00:00:07,550
+how composition and polymorphism might be able to help us
+
+3
+00:00:07,550 --> 00:00:10,500
+with that problem of duplicated checks
+
+4
+00:00:10,500 --> 00:00:12,900
+which I outlined over the last lectures,
+
+5
+00:00:12,900 --> 00:00:15,610
+let's see how utilizing errors can help us
+
+6
+00:00:15,610 --> 00:00:17,300
+with our code overall,
+
+7
+00:00:17,300 --> 00:00:21,140
+because one mistake which quite a lot of developers make
+
+8
+00:00:21,140 --> 00:00:23,700
+is that they don't utilize errors
+
+9
+00:00:23,700 --> 00:00:26,690
+and throwing custom errors enough.
+
+10
+00:00:26,690 --> 00:00:31,290
+And errors as well as error handling is really your friend,
+
+11
+00:00:31,290 --> 00:00:35,240
+because throwing and handling errors in the proper places
+
+12
+00:00:35,240 --> 00:00:38,500
+can actually replace useless if statements
+
+13
+00:00:38,500 --> 00:00:42,090
+and lead to more focused functions.
+
+14
+00:00:42,090 --> 00:00:43,620
+And here's a simple rule.
+
+15
+00:00:43,620 --> 00:00:45,370
+If something is an error,
+
+16
+00:00:45,370 --> 00:00:49,150
+if something has an error or a character, make it an error,
+
+17
+00:00:49,150 --> 00:00:52,120
+don't try to solve it with an if statement.
+
+18
+00:00:52,120 --> 00:00:54,230
+For example, here is a short snippet,
+
+19
+00:00:54,230 --> 00:00:56,370
+which we don't have in our big example,
+
+20
+00:00:56,370 --> 00:00:59,610
+but which you could see in other programs as well.
+
+21
+00:00:59,610 --> 00:01:02,180
+Here we're checking whether is something is an email,
+
+22
+00:01:02,180 --> 00:01:04,129
+and if we make it into the safe block,
+
+23
+00:01:04,129 --> 00:01:08,330
+I do return an object here where I assign some code,
+
+24
+00:01:08,330 --> 00:01:12,143
+probably some kind of error code and a message.
+
+25
+00:01:13,200 --> 00:01:16,520
+And then in other parts of our application,
+
+26
+00:01:16,520 --> 00:01:20,110
+we could check for this object, check the code in there,
+
+27
+00:01:20,110 --> 00:01:23,753
+and then run code depending on whether we have code 422,
+
+28
+00:01:24,720 --> 00:01:27,350
+or if we maybe we're successful.
+
+29
+00:01:27,350 --> 00:01:28,850
+So in the end, what we're doing here,
+
+30
+00:01:28,850 --> 00:01:33,287
+is we're constructing an error without really using
+
+31
+00:01:33,287 --> 00:01:35,810
+the built-in error mechanisms
+
+32
+00:01:35,810 --> 00:01:39,450
+all modern programming language has offer to us.
+
+33
+00:01:39,450 --> 00:01:42,940
+This here would be a better way of writing this.
+
+34
+00:01:42,940 --> 00:01:44,500
+We're having the same check,
+
+35
+00:01:44,500 --> 00:01:47,580
+but now I'm constructing a real error,
+
+36
+00:01:47,580 --> 00:01:50,480
+building up on the built-in error object,
+
+37
+00:01:50,480 --> 00:01:54,050
+which also all modern programming languages give you
+
+38
+00:01:54,050 --> 00:01:55,100
+in some way.
+
+39
+00:01:55,100 --> 00:01:58,260
+I then add extra data to this error object.
+
+40
+00:01:58,260 --> 00:02:01,880
+In this case, a code field which I set to 422.
+
+41
+00:02:01,880 --> 00:02:05,500
+And then I throw this error.
+
+42
+00:02:05,500 --> 00:02:07,370
+Now this again is JavaScript,
+
+43
+00:02:07,370 --> 00:02:09,889
+but similar mechanisms for building
+
+44
+00:02:09,889 --> 00:02:12,490
+and raising your own errors exist
+
+45
+00:02:12,490 --> 00:02:15,610
+in all programming languages pretty much.
+
+46
+00:02:15,610 --> 00:02:17,247
+You can always build errors
+
+47
+00:02:17,247 --> 00:02:19,780
+if you're using built-in error objects,
+
+48
+00:02:19,780 --> 00:02:22,700
+or building your own ones to add any data
+
+49
+00:02:22,700 --> 00:02:26,440
+you might need to add, and then you can throw these errors.
+
+50
+00:02:26,440 --> 00:02:28,700
+And then, and that's the key part,
+
+51
+00:02:28,700 --> 00:02:31,630
+you can also handle these errors.
+
+52
+00:02:31,630 --> 00:02:33,820
+And if we come back to our example,
+
+53
+00:02:33,820 --> 00:02:35,810
+we have a couple of places
+
+54
+00:02:35,810 --> 00:02:39,050
+where we are doing error like stuff
+
+55
+00:02:39,050 --> 00:02:41,630
+without really using errors.
+
+56
+00:02:41,630 --> 00:02:45,030
+For example, here in processTransactions.
+
+57
+00:02:45,030 --> 00:02:48,220
+Here, we are checking if we have no transactions.
+
+58
+00:02:48,220 --> 00:02:51,483
+And if that's the case, we're printing the error message.
+
+59
+00:02:52,360 --> 00:02:56,400
+Now we could argue that from a clean code perspective,
+
+60
+00:02:56,400 --> 00:02:59,680
+printing the error message should actually not be part
+
+61
+00:02:59,680 --> 00:03:02,170
+of processing the transactions.
+
+62
+00:03:02,170 --> 00:03:05,630
+Processing the transactions should really just do that.
+
+63
+00:03:05,630 --> 00:03:08,823
+Go fruity transactions and do something with them.
+
+64
+00:03:09,700 --> 00:03:12,800
+Checking whether they are valid would be okay,
+
+65
+00:03:12,800 --> 00:03:16,540
+but handling the they are not valid case,
+
+66
+00:03:16,540 --> 00:03:18,450
+that is actually too much.
+
+67
+00:03:18,450 --> 00:03:20,380
+It would be better to do that in the place
+
+68
+00:03:20,380 --> 00:03:22,710
+where we call processTransactions,
+
+69
+00:03:22,710 --> 00:03:25,700
+which is this main method I provided to you right
+
+70
+00:03:25,700 --> 00:03:28,713
+from the start where we also have some dummy data.
+
+71
+00:03:30,520 --> 00:03:34,070
+And that's exactly where we can use proper errors,
+
+72
+00:03:34,070 --> 00:03:36,370
+instead of doing it like this.
+
+73
+00:03:36,370 --> 00:03:39,430
+Now one naive solution would be,
+
+74
+00:03:39,430 --> 00:03:44,120
+that we actually return an object here,
+
+75
+00:03:44,120 --> 00:03:46,530
+where we do what I showed you on the slide.
+
+76
+00:03:46,530 --> 00:03:49,500
+And we have a code of one, let's say,
+
+77
+00:03:49,500 --> 00:03:52,210
+which stands for we have an error,
+
+78
+00:03:52,210 --> 00:03:57,210
+and I then have a message of no transactions provided.
+
+79
+00:03:58,760 --> 00:04:00,920
+And we return this in the error case.
+
+80
+00:04:00,920 --> 00:04:02,163
+And then here,
+
+81
+00:04:04,080 --> 00:04:05,810
+in the the main function
+
+82
+00:04:05,810 --> 00:04:07,510
+where we call processTransactions,
+
+83
+00:04:08,460 --> 00:04:10,973
+we get the result back from processTransactions,
+
+84
+00:04:11,910 --> 00:04:14,660
+so this object, we store it here.
+
+85
+00:04:14,660 --> 00:04:19,660
+And then we check if result.code is equal to one.
+
+86
+00:04:19,880 --> 00:04:22,530
+And if that's the case, we know we have an error.
+
+87
+00:04:22,530 --> 00:04:25,620
+And then we show an error message,
+
+88
+00:04:25,620 --> 00:04:28,220
+and the message which we do show also comes
+
+89
+00:04:28,220 --> 00:04:31,123
+from the result and it's that message field.
+
+90
+00:04:32,750 --> 00:04:34,630
+This is what we could do.
+
+91
+00:04:34,630 --> 00:04:36,550
+This is how we could handle this
+
+92
+00:04:36,550 --> 00:04:39,750
+with an error like approach.
+
+93
+00:04:39,750 --> 00:04:42,570
+And it is better than having the message here,
+
+94
+00:04:42,570 --> 00:04:44,410
+or the logic to show this message,
+
+95
+00:04:44,410 --> 00:04:45,813
+here in processTransactions.
+
+96
+00:04:46,950 --> 00:04:49,750
+But it's bad because we now wrote code
+
+97
+00:04:49,750 --> 00:04:52,440
+which requires an extra if statement
+
+98
+00:04:52,440 --> 00:04:56,253
+and which doesn't really utilize the built-in error support.
+
+99
+00:04:57,250 --> 00:04:59,160
+Hence a better way of doing that
+
+100
+00:04:59,160 --> 00:05:02,910
+would be to create a proper error in JavaScript.
+
+101
+00:05:02,910 --> 00:05:06,240
+We can do this by instantiating the error object.
+
+102
+00:05:06,240 --> 00:05:08,700
+This error constructor also takes
+
+103
+00:05:08,700 --> 00:05:11,440
+the message as a parameter.
+
+104
+00:05:11,440 --> 00:05:12,920
+Then here in JavaScript,
+
+105
+00:05:12,920 --> 00:05:15,240
+we can easily add extra data
+
+106
+00:05:15,240 --> 00:05:17,040
+by setting a property like this,
+
+107
+00:05:17,040 --> 00:05:20,870
+even if it didn't exist before and setting this to one,
+
+108
+00:05:20,870 --> 00:05:22,893
+and then we can throw this error.
+
+109
+00:05:24,330 --> 00:05:26,400
+Now to have an even cleaner way,
+
+110
+00:05:26,400 --> 00:05:28,900
+we could also create our own error class,
+
+111
+00:05:28,900 --> 00:05:31,290
+which extends to built-in error class.
+
+112
+00:05:31,290 --> 00:05:33,000
+But this is the quick way of doing it,
+
+113
+00:05:33,000 --> 00:05:35,903
+and I just wanna focus on the general concept here.
+
+114
+00:05:37,000 --> 00:05:39,280
+So now we can remove this return statement.
+
+115
+00:05:39,280 --> 00:05:41,800
+Because of the throw key word in JavaScript,
+
+116
+00:05:41,800 --> 00:05:46,460
+this code execution will stop anyways, as soon as we throw.
+
+117
+00:05:46,460 --> 00:05:49,150
+So this code down there will not be executed
+
+118
+00:05:49,150 --> 00:05:51,550
+if we throw an error.
+
+119
+00:05:51,550 --> 00:05:54,470
+And therefore, this error will then bubble up
+
+120
+00:05:54,470 --> 00:05:58,170
+throughout our application and we now need to handle it.
+
+121
+00:05:58,170 --> 00:06:01,520
+That's the other part of working with errors.
+
+122
+00:06:01,520 --> 00:06:04,650
+And as in so many applications,
+
+123
+00:06:04,650 --> 00:06:08,583
+we can handle our error by using try catch,
+
+124
+00:06:10,330 --> 00:06:13,593
+or in Python, for example, it's try except.
+
+125
+00:06:14,520 --> 00:06:16,890
+There, we catch our error,
+
+126
+00:06:16,890 --> 00:06:19,900
+and we try processing the transactions,
+
+127
+00:06:19,900 --> 00:06:23,170
+where we now no longer get back a result.
+
+128
+00:06:23,170 --> 00:06:25,630
+And instead here when we catch the error,
+
+129
+00:06:25,630 --> 00:06:28,350
+we show our error message
+
+130
+00:06:28,350 --> 00:06:30,623
+with this show error message function.
+
+131
+00:06:31,680 --> 00:06:35,200
+And this is now a proper way of dealing with this.
+
+132
+00:06:35,200 --> 00:06:38,060
+Now we're using the built-in error mechanism
+
+133
+00:06:38,060 --> 00:06:40,930
+to ensure that the error message is triggered
+
+134
+00:06:40,930 --> 00:06:42,400
+in the right function,
+
+135
+00:06:42,400 --> 00:06:46,270
+and that the error is generated as a real error,
+
+136
+00:06:46,270 --> 00:06:48,990
+instead of some dummy object.
+
+137
+00:06:48,990 --> 00:06:52,200
+This is the proper and clean way of doing it.
+
+138
+00:06:52,200 --> 00:06:55,143
+Use errors where you have errors.
+

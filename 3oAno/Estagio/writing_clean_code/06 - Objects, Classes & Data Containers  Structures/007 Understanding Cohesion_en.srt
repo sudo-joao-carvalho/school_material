@@ -1,0 +1,400 @@
+1
+00:00:02,150 --> 00:00:04,290
+Now, when we learned about functions
+
+2
+00:00:04,290 --> 00:00:07,840
+we also learned about these levels of abstraction.
+
+3
+00:00:07,840 --> 00:00:09,990
+Which in the end helped us decide
+
+4
+00:00:09,990 --> 00:00:12,310
+whether a function is doing too much.
+
+5
+00:00:12,310 --> 00:00:14,920
+It was a part of the decision process.
+
+6
+00:00:14,920 --> 00:00:17,090
+For classes we also have
+
+7
+00:00:17,090 --> 00:00:20,380
+a related helper concept, you could say.
+
+8
+00:00:20,380 --> 00:00:21,640
+Which helps us decide
+
+9
+00:00:21,640 --> 00:00:24,330
+whether a class is too big or too small
+
+10
+00:00:24,330 --> 00:00:27,340
+in case you're not sure whether that could be the case.
+
+11
+00:00:27,340 --> 00:00:30,940
+And that concept is called Cohesion.
+
+12
+00:00:30,940 --> 00:00:32,940
+Now what's cohesion about?
+
+13
+00:00:32,940 --> 00:00:35,540
+Cohesion in the end just defines
+
+14
+00:00:35,540 --> 00:00:38,180
+how well the methods of a class
+
+15
+00:00:38,180 --> 00:00:41,050
+are using the class properties.
+
+16
+00:00:41,050 --> 00:00:43,830
+So how much are your class methods
+
+17
+00:00:43,830 --> 00:00:46,030
+using the properties of that class?
+
+18
+00:00:46,030 --> 00:00:48,380
+That's what makes up cohesion.
+
+19
+00:00:48,380 --> 00:00:51,960
+And you would have maximum cohesion inside of a class,
+
+20
+00:00:51,960 --> 00:00:54,480
+if all methods in the class,
+
+21
+00:00:54,480 --> 00:00:57,433
+each would use all class properties.
+
+22
+00:00:58,380 --> 00:01:00,630
+So every single method in a class
+
+23
+00:01:00,630 --> 00:01:03,430
+uses all the class properties.
+
+24
+00:01:03,430 --> 00:01:05,200
+If that's what you would have
+
+25
+00:01:05,200 --> 00:01:07,940
+then you would have a highly cohesive object
+
+26
+00:01:07,940 --> 00:01:10,520
+and you would have maximum cohesion.
+
+27
+00:01:10,520 --> 00:01:13,270
+Now the opposite would be no cohesion.
+
+28
+00:01:13,270 --> 00:01:14,650
+That basically means,
+
+29
+00:01:14,650 --> 00:01:17,310
+that of all the methods in your class,
+
+30
+00:01:17,310 --> 00:01:21,120
+no method is using any class property.
+
+31
+00:01:21,120 --> 00:01:24,870
+So all the class properties are not managed by your methods.
+
+32
+00:01:24,870 --> 00:01:27,260
+Instead they probably are public
+
+33
+00:01:27,260 --> 00:01:30,610
+and can be used from outside the class.
+
+34
+00:01:30,610 --> 00:01:32,250
+Then in the end you would just have
+
+35
+00:01:32,250 --> 00:01:36,190
+a data structure, a container with some utility methods
+
+36
+00:01:36,190 --> 00:01:39,200
+as it seems, since the methods are not operating
+
+37
+00:01:39,200 --> 00:01:42,220
+on the properties of the class at all.
+
+38
+00:01:42,220 --> 00:01:43,980
+Now you definitely wanna avoid
+
+39
+00:01:43,980 --> 00:01:46,350
+having a class with no cohesion,
+
+40
+00:01:46,350 --> 00:01:50,730
+unless you wanna have a data container with utility methods.
+
+41
+00:01:50,730 --> 00:01:53,070
+Otherwise you wanna avoid this.
+
+42
+00:01:53,070 --> 00:01:57,030
+The goal of course is maximum cohesion,
+
+43
+00:01:57,030 --> 00:01:58,990
+though this is not entirely true.
+
+44
+00:01:58,990 --> 00:02:01,250
+The goal is high cohesion.
+
+45
+00:02:01,250 --> 00:02:02,950
+Because you will never be able
+
+46
+00:02:02,950 --> 00:02:06,990
+or rarely be able to achieve maximum cohesion.
+
+47
+00:02:06,990 --> 00:02:09,289
+Instead, you're going to be somewhere in between
+
+48
+00:02:09,289 --> 00:02:13,430
+and you wanna write highly cohesive classes
+
+49
+00:02:13,430 --> 00:02:17,850
+where all your methods use many of your properties.
+
+50
+00:02:17,850 --> 00:02:19,560
+You will not be able to make
+
+51
+00:02:19,560 --> 00:02:22,600
+every method use every property all the time
+
+52
+00:02:22,600 --> 00:02:25,110
+but you should have a good usage of properties
+
+53
+00:02:25,110 --> 00:02:26,750
+in your methods.
+
+54
+00:02:26,750 --> 00:02:27,790
+For example,
+
+55
+00:02:27,790 --> 00:02:31,270
+if you have a look at this large class from before again,
+
+56
+00:02:31,270 --> 00:02:35,350
+I added some comment annotations next to the methods
+
+57
+00:02:35,350 --> 00:02:37,850
+about which properties these methods
+
+58
+00:02:37,850 --> 00:02:39,650
+probably would be using.
+
+59
+00:02:39,650 --> 00:02:42,100
+And I think it's fair to say that
+
+60
+00:02:42,100 --> 00:02:44,810
+add product, update product, remove product,
+
+61
+00:02:44,810 --> 00:02:48,150
+get available items and restock product,
+
+62
+00:02:48,150 --> 00:02:53,150
+probably all only operate on the offered products property.
+
+63
+00:02:54,670 --> 00:02:58,140
+So they use one of the three properties you got.
+
+64
+00:02:58,140 --> 00:03:00,750
+Create customer, log-in customer,
+
+65
+00:03:00,750 --> 00:03:04,010
+these two methods probably only operate on customers
+
+66
+00:03:04,890 --> 00:03:08,503
+just as the update customer profile method, by the way.
+
+67
+00:03:09,440 --> 00:03:14,160
+And then we only got make purchase and add order,
+
+68
+00:03:14,160 --> 00:03:17,410
+which use all three properties probably.
+
+69
+00:03:17,410 --> 00:03:21,360
+The orders offered products and customers properties.
+
+70
+00:03:21,360 --> 00:03:25,330
+And refund would probably use customers and orders.
+
+71
+00:03:25,330 --> 00:03:29,110
+So we can see that only make purchase an add order,
+
+72
+00:03:29,110 --> 00:03:31,330
+are methods that would really belong
+
+73
+00:03:31,330 --> 00:03:33,160
+into this kind of a class
+
+74
+00:03:33,160 --> 00:03:36,820
+because these are the methods which use all the properties.
+
+75
+00:03:36,820 --> 00:03:39,720
+Refund at least uses two of the properties.
+
+76
+00:03:39,720 --> 00:03:43,570
+But generally, this class doesn't have a great cohesion
+
+77
+00:03:43,570 --> 00:03:45,560
+because almost all methods
+
+78
+00:03:45,560 --> 00:03:48,770
+use only one of the three properties.
+
+79
+00:03:48,770 --> 00:03:52,240
+So there is no hard rule on when to split.
+
+80
+00:03:52,240 --> 00:03:55,510
+You can't say if seven out of 10 methods
+
+81
+00:03:55,510 --> 00:03:58,230
+use at least two or three properties,
+
+82
+00:03:58,230 --> 00:04:00,590
+then that's good otherwise you should split.
+
+83
+00:04:00,590 --> 00:04:02,890
+That's not how it works.
+
+84
+00:04:02,890 --> 00:04:05,050
+But it should be obvious that in this class,
+
+85
+00:04:05,050 --> 00:04:09,670
+many methods are only using one or at most two
+
+86
+00:04:09,670 --> 00:04:11,370
+of the available properties.
+
+87
+00:04:11,370 --> 00:04:14,190
+The majority indeed only uses one property
+
+88
+00:04:14,190 --> 00:04:16,632
+and that's not cohesive at all.
+
+89
+00:04:18,010 --> 00:04:19,430
+Now as soon as you start
+
+90
+00:04:19,430 --> 00:04:22,420
+splitting your classes into smaller classes,
+
+91
+00:04:22,420 --> 00:04:24,540
+you should see your cohesion grow.
+
+92
+00:04:24,540 --> 00:04:26,640
+And definitely don't end up
+
+93
+00:04:26,640 --> 00:04:29,690
+with the one method per class solution,
+
+94
+00:04:29,690 --> 00:04:33,160
+just because this has maximum cohesion.
+
+95
+00:04:33,160 --> 00:04:35,790
+As I mentioned on the slide, that's not the goal.
+
+96
+00:04:35,790 --> 00:04:39,060
+But you should end up with smaller classes
+
+97
+00:04:39,060 --> 00:04:40,880
+which have good cohesion.
+
+98
+00:04:40,880 --> 00:04:42,810
+So where most of your methods
+
+99
+00:04:42,810 --> 00:04:45,810
+use at least a couple of the available properties,
+
+100
+00:04:45,810 --> 00:04:47,543
+that's the end goal in the end.
+

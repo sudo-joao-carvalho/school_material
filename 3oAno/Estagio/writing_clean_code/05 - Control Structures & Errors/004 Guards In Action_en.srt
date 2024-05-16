@@ -1,0 +1,644 @@
+1
+00:00:02,110 --> 00:00:04,770
+Now, how can we add a guard here?
+
+2
+00:00:04,770 --> 00:00:07,130
+Definitely feel free to try this on your own
+
+3
+00:00:07,130 --> 00:00:10,160
+and for that, of course, you can pause this video
+
+4
+00:00:10,160 --> 00:00:13,677
+and then try restructuring this code such
+
+5
+00:00:13,677 --> 00:00:16,550
+that you are using a guard in there
+
+6
+00:00:16,550 --> 00:00:18,650
+and that you fail fast.
+
+7
+00:00:18,650 --> 00:00:22,310
+And you should be able to get rid of some nesting
+
+8
+00:00:22,310 --> 00:00:23,360
+by doing that.
+
+9
+00:00:23,360 --> 00:00:25,330
+So here's your chance to pause the video.
+
+10
+00:00:25,330 --> 00:00:27,680
+Thereafter, we'll do that together.
+
+11
+00:00:27,680 --> 00:00:30,297
+Of course, before you try solving this,
+
+12
+00:00:30,297 --> 00:00:32,830
+also have a look at the entire code,
+
+13
+00:00:32,830 --> 00:00:34,950
+so all the code in the code file,
+
+14
+00:00:34,950 --> 00:00:36,230
+which you'll find attached
+
+15
+00:00:36,230 --> 00:00:39,260
+so that you get a feeling for what this program does,
+
+16
+00:00:39,260 --> 00:00:40,888
+which kind of data we're working with.
+
+17
+00:00:40,888 --> 00:00:44,570
+It's a list of transactions and so on.
+
+18
+00:00:44,570 --> 00:00:47,040
+And if you're not fluent with JavaScript
+
+19
+00:00:47,040 --> 00:00:49,030
+and you're not ready to transform this
+
+20
+00:00:49,030 --> 00:00:52,140
+because you're not sure how to write this in JavaScript,
+
+21
+00:00:52,140 --> 00:00:54,840
+you should still understand the general idea
+
+22
+00:00:54,840 --> 00:00:57,060
+of the code and what it's doing in general.
+
+23
+00:00:57,060 --> 00:00:58,810
+And you can then also, of course,
+
+24
+00:00:58,810 --> 00:01:00,920
+solve this in theory
+
+25
+00:01:00,920 --> 00:01:04,269
+and/or by writing down some pseudo code.
+
+26
+00:01:04,269 --> 00:01:06,060
+So definitely give this a try,
+
+27
+00:01:06,060 --> 00:01:09,053
+no matter if you write real code or not.
+
+28
+00:01:11,540 --> 00:01:13,380
+Were you successful?
+
+29
+00:01:13,380 --> 00:01:14,894
+You can easily add a guard
+
+30
+00:01:14,894 --> 00:01:17,220
+by converting this if check,
+
+31
+00:01:17,220 --> 00:01:20,530
+this very first if statement here to the opposite.
+
+32
+00:01:20,530 --> 00:01:22,010
+What we're doing in this if check
+
+33
+00:01:22,010 --> 00:01:24,024
+is in the end, we're checking whether transactions
+
+34
+00:01:24,024 --> 00:01:28,370
+is a thing, so if it's not null to be precise.
+
+35
+00:01:28,370 --> 00:01:29,660
+And if it is not null,
+
+36
+00:01:29,660 --> 00:01:33,210
+we check if we have at least one element in there
+
+37
+00:01:33,210 --> 00:01:36,236
+because transactions seems to be an array.
+
+38
+00:01:36,236 --> 00:01:39,210
+So therefore, what we can do here
+
+39
+00:01:39,210 --> 00:01:41,340
+is we can invert this
+
+40
+00:01:41,340 --> 00:01:44,210
+and we can check if not transactions,
+
+41
+00:01:44,210 --> 00:01:45,940
+so if this is null,
+
+42
+00:01:45,940 --> 00:01:50,940
+or if transactions.length is equal to zero.
+
+43
+00:01:52,460 --> 00:01:54,240
+So if we have no elements.
+
+44
+00:01:54,240 --> 00:01:56,020
+So if we have transactions at all,
+
+45
+00:01:56,020 --> 00:01:58,120
+if the entire object is null
+
+46
+00:01:58,120 --> 00:01:59,620
+or if it's an empty array,
+
+47
+00:01:59,620 --> 00:02:02,130
+then we make it into this if check.
+
+48
+00:02:02,130 --> 00:02:04,680
+So now we inverted this conditions.
+
+49
+00:02:04,680 --> 00:02:06,600
+Instead of having two conditions,
+
+50
+00:02:06,600 --> 00:02:08,270
+which both have to be met,
+
+51
+00:02:08,270 --> 00:02:10,350
+we now have a either/or decision
+
+52
+00:02:10,350 --> 00:02:13,090
+where one condition failing is enough
+
+53
+00:02:13,090 --> 00:02:15,110
+to make it into this if block.
+
+54
+00:02:15,110 --> 00:02:16,930
+And all we have to do in there
+
+55
+00:02:16,930 --> 00:02:19,210
+is then return.
+
+56
+00:02:19,210 --> 00:02:20,560
+And once we added this,
+
+57
+00:02:20,560 --> 00:02:22,990
+we can get rid of this if statement here,
+
+58
+00:02:22,990 --> 00:02:24,950
+which wraps the for loop.
+
+59
+00:02:24,950 --> 00:02:27,370
+So we can also get rid of it down there.
+
+60
+00:02:27,370 --> 00:02:28,890
+Now, you see actually here,
+
+61
+00:02:28,890 --> 00:02:30,750
+we had a else block,
+
+62
+00:02:30,750 --> 00:02:32,490
+so we did not just return.
+
+63
+00:02:32,490 --> 00:02:34,550
+So actually we can also put the content,
+
+64
+00:02:34,550 --> 00:02:36,960
+which was in the else block in there as well
+
+65
+00:02:36,960 --> 00:02:38,143
+and then return.
+
+66
+00:02:39,060 --> 00:02:41,060
+We still need to return to avoid
+
+67
+00:02:41,060 --> 00:02:43,040
+that the rest of the code doesn't run
+
+68
+00:02:43,040 --> 00:02:44,680
+but if there was extra work,
+
+69
+00:02:44,680 --> 00:02:46,940
+which we wanted to do in the else case,
+
+70
+00:02:46,940 --> 00:02:49,350
+we can, of course, do that before we return.
+
+71
+00:02:49,350 --> 00:02:51,230
+So we log this to the console
+
+72
+00:02:51,230 --> 00:02:53,440
+and then we return.
+
+73
+00:02:53,440 --> 00:02:55,520
+And this is a guard which we added,
+
+74
+00:02:55,520 --> 00:02:59,170
+which already removed one level of nesting
+
+75
+00:02:59,170 --> 00:03:02,150
+in this big chunk of code down there.
+
+76
+00:03:02,150 --> 00:03:06,460
+Now, there actually also is a second guard we can extract,
+
+77
+00:03:06,460 --> 00:03:07,940
+which works a bit differently
+
+78
+00:03:07,940 --> 00:03:10,240
+and which is harder to spot.
+
+79
+00:03:10,240 --> 00:03:11,930
+So if you didn't spot that,
+
+80
+00:03:11,930 --> 00:03:13,420
+that's no problem at all.
+
+81
+00:03:13,420 --> 00:03:15,810
+That is why we are also doing this together.
+
+82
+00:03:15,810 --> 00:03:17,860
+But maybe you can see it now.
+
+83
+00:03:17,860 --> 00:03:19,860
+If you have a look at the rest of the code,
+
+84
+00:03:19,860 --> 00:03:23,083
+which other guard could we find in there?
+
+85
+00:03:23,990 --> 00:03:26,650
+A good indicator for a guard
+
+86
+00:03:26,650 --> 00:03:28,190
+or for a guard being used
+
+87
+00:03:28,190 --> 00:03:29,600
+is if you have a if statement
+
+88
+00:03:29,600 --> 00:03:31,840
+with a lot of code inside of it
+
+89
+00:03:31,840 --> 00:03:34,370
+where you then maybe have a else statement
+
+90
+00:03:34,370 --> 00:03:35,900
+with some error message
+
+91
+00:03:35,900 --> 00:03:37,300
+or anything like this.
+
+92
+00:03:37,300 --> 00:03:39,910
+And we do have this here for this if check
+
+93
+00:03:39,910 --> 00:03:42,268
+where I check if a given transaction
+
+94
+00:03:42,268 --> 00:03:46,560
+inside of this loop has a status of OPEN.
+
+95
+00:03:46,560 --> 00:03:48,130
+If that's the case,
+
+96
+00:03:48,130 --> 00:03:51,720
+then we do process it, depending on the method
+
+97
+00:03:51,720 --> 00:03:52,553
+that was used.
+
+98
+00:03:52,553 --> 00:03:53,830
+We have different functions.
+
+99
+00:03:53,830 --> 00:03:56,510
+Fictional functions, which are being called.
+
+100
+00:03:56,510 --> 00:03:58,930
+These functions do exist but they just log something
+
+101
+00:03:58,930 --> 00:04:00,290
+to the console.
+
+102
+00:04:00,290 --> 00:04:02,530
+But if the status is not OPEN,
+
+103
+00:04:02,530 --> 00:04:04,650
+if we don't make it into this if check,
+
+104
+00:04:04,650 --> 00:04:06,200
+we make it into this else block
+
+105
+00:04:06,200 --> 00:04:08,403
+and we'll log this to the console.
+
+106
+00:04:08,403 --> 00:04:11,780
+So this if check could also be replaced
+
+107
+00:04:11,780 --> 00:04:14,120
+with a guard-like object.
+
+108
+00:04:14,120 --> 00:04:15,470
+We could add a if check here
+
+109
+00:04:15,470 --> 00:04:19,140
+and check if the transactions.status is not OPEN.
+
+110
+00:04:19,140 --> 00:04:21,240
+So again, the idea of a guard
+
+111
+00:04:21,240 --> 00:04:23,690
+is that we invert the check
+
+112
+00:04:23,690 --> 00:04:25,390
+and if it's not OPEN,
+
+113
+00:04:25,390 --> 00:04:28,430
+then in this case, I don't want to return
+
+114
+00:04:28,430 --> 00:04:29,910
+because I'm still in a loop,
+
+115
+00:04:29,910 --> 00:04:31,890
+which I wanna continue going through
+
+116
+00:04:31,890 --> 00:04:33,773
+but I can continue.
+
+117
+00:04:34,730 --> 00:04:37,810
+And statements like continue and break exist
+
+118
+00:04:37,810 --> 00:04:39,684
+in most programming languages.
+
+119
+00:04:39,684 --> 00:04:41,480
+In the context of a loop,
+
+120
+00:04:41,480 --> 00:04:44,130
+it means stop the current iteration
+
+121
+00:04:44,130 --> 00:04:46,570
+and continue with the next one.
+
+122
+00:04:46,570 --> 00:04:48,230
+And that's what I wanna do if I make it
+
+123
+00:04:48,230 --> 00:04:49,320
+into this guard.
+
+124
+00:04:49,320 --> 00:04:52,900
+I don't wanna try processing this as a credit card
+
+125
+00:04:52,900 --> 00:04:55,830
+or PayPal or planned payment or refund.
+
+126
+00:04:55,830 --> 00:04:57,810
+Instead, I just wanna continue
+
+127
+00:04:57,810 --> 00:04:59,690
+with the next loop iteration
+
+128
+00:05:00,830 --> 00:05:03,333
+so that we have a look at the next transaction.
+
+129
+00:05:04,350 --> 00:05:06,720
+Now, we also printed an error message,
+
+130
+00:05:06,720 --> 00:05:09,230
+so I will do that first before I continue.
+
+131
+00:05:09,230 --> 00:05:12,230
+And now we can get rid of the else block here
+
+132
+00:05:12,230 --> 00:05:16,700
+and we now also remove one extra level of nesting here.
+
+133
+00:05:16,700 --> 00:05:18,870
+Now, we can have the same logic here
+
+134
+00:05:18,870 --> 00:05:21,760
+for the refund case.
+
+135
+00:05:21,760 --> 00:05:23,960
+So here we can also get rid of this
+
+136
+00:05:23,960 --> 00:05:26,040
+and add our guard instead
+
+137
+00:05:26,040 --> 00:05:28,980
+and get rid of this else statement down there.
+
+138
+00:05:28,980 --> 00:05:31,436
+But of course, now that we have the same code
+
+139
+00:05:31,436 --> 00:05:34,450
+in both these branches for the payment
+
+140
+00:05:34,450 --> 00:05:37,122
+and the refund, we can also take this guard
+
+141
+00:05:37,122 --> 00:05:41,070
+and remove it from these nested branches
+
+142
+00:05:41,070 --> 00:05:43,099
+and instead, list it up to the beginning
+
+143
+00:05:43,099 --> 00:05:45,511
+of this for loop.
+
+144
+00:05:45,511 --> 00:05:49,300
+Now we check for this status right at the beginning
+
+145
+00:05:49,300 --> 00:05:50,590
+of the iteration
+
+146
+00:05:50,590 --> 00:05:53,310
+and continue with the next transaction in line
+
+147
+00:05:53,310 --> 00:05:55,423
+if the status is not OPEN.
+
+148
+00:05:55,423 --> 00:05:59,200
+And continue processing the transaction otherwise.
+
+149
+00:05:59,200 --> 00:06:03,270
+And that again makes that code already a bit more readable
+
+150
+00:06:03,270 --> 00:06:06,570
+because we removed one level of nesting here.
+
+151
+00:06:06,570 --> 00:06:07,403
+Now, of course,
+
+152
+00:06:07,403 --> 00:06:10,010
+with this transaction.status guard added here,
+
+153
+00:06:10,010 --> 00:06:12,920
+we should also remove this wrapper if check here
+
+154
+00:06:12,920 --> 00:06:14,250
+in the payment branch,
+
+155
+00:06:14,250 --> 00:06:16,910
+just as I did it in the refund branch.
+
+156
+00:06:16,910 --> 00:06:20,910
+And for the moment, that's it for guards here.
+
+157
+00:06:20,910 --> 00:06:22,780
+Of course, this is not the final code
+
+158
+00:06:22,780 --> 00:06:25,630
+and we'll clean it up way more than that
+
+159
+00:06:25,630 --> 00:06:27,180
+but this is a start.
+
+160
+00:06:27,180 --> 00:06:29,210
+Now we at least use guards
+
+161
+00:06:29,210 --> 00:06:31,373
+to make this code a bit more readable.
+

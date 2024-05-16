@@ -1,0 +1,124 @@
+1
+00:00:02,130 --> 00:00:04,530
+Now, as I mentioned in the last lecture,
+
+2
+00:00:04,530 --> 00:00:06,040
+this course does not focus
+
+3
+00:00:06,040 --> 00:00:08,780
+on a specific programming paradigm.
+
+4
+00:00:08,780 --> 00:00:12,350
+You can follow along no matter if you wanna do functional,
+
+5
+00:00:12,350 --> 00:00:16,550
+object oriented or procedural programming or anything else.
+
+6
+00:00:16,550 --> 00:00:18,750
+Things like naming things correctly
+
+7
+00:00:18,750 --> 00:00:21,990
+and writing good functions will always apply.
+
+8
+00:00:21,990 --> 00:00:26,330
+Of course, you still might have paradigm specific patterns,
+
+9
+00:00:26,330 --> 00:00:28,140
+principles and conventions,
+
+10
+00:00:28,140 --> 00:00:30,270
+which you should still take into account
+
+11
+00:00:30,270 --> 00:00:32,439
+even after finishing this course.
+
+12
+00:00:32,439 --> 00:00:34,710
+So if the style you're using
+
+13
+00:00:34,710 --> 00:00:37,180
+or also the programming language you're using
+
+14
+00:00:37,180 --> 00:00:39,860
+has extra style guides or rules,
+
+15
+00:00:39,860 --> 00:00:42,570
+you should of course still respect these,
+
+16
+00:00:42,570 --> 00:00:45,380
+even if that's not covered in this course,
+
+17
+00:00:45,380 --> 00:00:48,210
+because this course focuses on general,
+
+18
+00:00:48,210 --> 00:00:50,750
+universal clean code rules.
+
+19
+00:00:50,750 --> 00:00:54,180
+So of course, don't abandon other rules or concepts
+
+20
+00:00:54,180 --> 00:00:57,210
+which might apply to the style you are using.
+
+21
+00:00:57,210 --> 00:00:59,480
+Nonetheless, the core principles and rules
+
+22
+00:00:59,480 --> 00:01:02,890
+which are covered in this course will always apply.
+
+23
+00:01:02,890 --> 00:01:06,630
+No matter which style or programming language you're using,
+
+24
+00:01:06,630 --> 00:01:10,550
+it's always about using good, readable and meaningful names.
+
+25
+00:01:10,550 --> 00:01:13,830
+It's always about having slim and concise functions,
+
+26
+00:01:13,830 --> 00:01:15,150
+which are easy to read.
+
+27
+00:01:15,150 --> 00:01:18,690
+And of course, you always want an understandable code flow
+
+28
+00:01:18,690 --> 00:01:21,410
+and no deeply nested, if, statements.
+
+29
+00:01:21,410 --> 00:01:23,640
+So this will all always apply,
+
+30
+00:01:23,640 --> 00:01:25,530
+and therefore the concepts taught
+
+31
+00:01:25,530 --> 00:01:27,493
+in this course will always apply.
+

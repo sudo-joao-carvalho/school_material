@@ -1,0 +1,728 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 ;;tpMelhorado\
+;;implementa\'e7ao dos destruidores que detetam os 8 neighbors e que tem como objetivo destruir as armadilhas\
+;;no maximo destroiem 10 armadilhas no total e estao 5 ticks em cima de cada armadilha a destrui la\
+;;os experts deixam de poder matar os basics\
+;;superpatches que dao 5000 de energia\
+\
+breed[Basics Basic]\
+breed[Experts Expert]\
+breed[Destroyers Destroyer]\
+turtles-own[Energia]\
+Experts-own[expLevel AliIngVerde AliIngAmarelo tempoAbrigo]\
+Destroyers-own[ArmDestruidas tempoArmadilha]\
+globals[n_AliV n_AliA n_Armadilhas]\
+\
+to setup\
+  reset-ticks\
+  setup-patches\
+  setup-turtles\
+end\
+\
+to setup-patches\
+  clear-all\
+  set-patch-size 15\
+  reset-ticks\
+\
+  let num_patches count patches\
+\
+  set n_AliV num_patches * perc_AliV\
+  set n_AliA num_patches * perc_AliA\
+  set n_Armadilhas num_patches * perc_Armadilhas\
+\
+  ask patches with[pcolor = black]\
+  [\
+    ;;let x 0\
+\
+      if random 101 <= perc_AliV ;;Patches com comida verde\
+      [\
+        set pcolor green\
+      ]\
+\
+      if random 101 <= perc_AliA ;;Patches com comida amarela\
+      [\
+        set pcolor yellow\
+      ]\
+\
+      if random 101 <= perc_Armadilhas ;;Patches com armadilhas\
+      [\
+        set pcolor red\
+      ]\
+  ]\
+\
+  ;;ask patches[set pcolor black]\
+\
+;;Setup patches\
+;  let w 0 ;;Alimento Verde\
+;  let x 0 ;;Alimento Amaredo\
+;  let y 0 ;;Armadilhas\
+  let z 0 ;;Abrigos\
+;\
+;  ask patches with[pcolor = black]\
+;  [\
+;    while[w < n_AliV]\
+;    [\
+;      ask one-of patches with[pcolor = black]\
+;      [\
+;        set pcolor green\
+;      ]\
+;\
+;      set w w + 1\
+;    ]\
+;\
+;    while[x < n_AliA]\
+;    [\
+;      ask one-of patches with[pcolor = black]\
+;      [\
+;        set pcolor yellow\
+;      ]\
+;\
+;      set x x + 1\
+;    ]\
+;\
+;    while[y < n_Armadilhas]\
+;    [\
+;      ask one-of patches with[pcolor = black]\
+;      [\
+;        set pcolor red\
+;      ]\
+;\
+;      set y y + 1\
+;    ]\
+\
+    while[z < n_Abrigos]\
+    [\
+      ask one-of patches with[pcolor = black]\
+      [\
+        set pcolor blue\
+      ]\
+\
+      set z z + 1\
+    ]\
+;  ]\
+\
+  let a 0\
+\
+  while[a < n_SuperPatches]\
+  [\
+    ask one-of patches with[pcolor = black]\
+    [\
+      set pcolor brown\
+    ]\
+\
+    set a a + 1\
+  ]\
+;;Setup patches\
+\
+end\
+\
+to setup-turtles\
+\
+  let Energia_Inicial 100\
+\
+  create-Basics N-Basics\
+  [\
+    set color cyan\
+    let x one-of patches with[pcolor != green and pcolor != yellow and pcolor != red and pcolor != blue and pcolor != brown and not any? Basics-here and not any? Experts-here and not any? Destroyers-here]\
+    setxy [pxcor] of x [pycor] of x\
+    set heading one-of [0 90 180 270]\
+    set Energia Energia_Inicial\
+  ]\
+\
+  create-Experts N-Experts\
+  [\
+    set color grey\
+    let x one-of patches with[pcolor != green and pcolor != yellow and pcolor != red and pcolor != blue and pcolor != brown and not any? Basics-here and not any? Experts-here and not any? Destroyers-here]\
+    setxy [pxcor] of x [pycor] of x\
+    set heading one-of [0 90 180 270]\
+    set Energia Energia_Inicial\
+    set expLevel 0\
+    set AliIngAmarelo 0\
+    set AliIngVerde 0\
+    set tempoAbrigo 0\
+  ]\
+\
+  create-Destroyers N-Destroyers\
+  [\
+    set color pink\
+    let x one-of patches with[pcolor != green and pcolor != yellow and pcolor != red and pcolor != blue and pcolor != brown and not any? Basics-here and not any? Experts-here and not any? Destroyers-here]\
+    setxy [pxcor] of x [pycor] of x\
+    set heading one-of [0 90 180 270]\
+    set Energia Energia_Inicial + 100\
+    set ArmDestruidas 0\
+    set tempoArmadilha 0\
+  ]\
+\
+end\
+\
+to go\
+\
+  ask Basics\
+  [\
+    let x Energia\
+    let y Energia\
+\
+    ;;percecionar se existe algum Expert na patch-ahead 1 e na patch-right-and-ahead 90 1\
+    if any? Experts-on patch-ahead 1 or any? Experts-on patch-right-and-ahead 90 1\
+    [\
+      ask Experts-on patch-ahead 1\
+      [\
+        if [pcolor] of patch-here != blue\
+        [\
+          ifelse expLevel < 50\
+          [\
+            set x x + (Energia / 2)\
+            set Energia Energia / 2\
+          ]\
+          [\
+            set x x - (x * 0.10)\
+          ]\
+        ]\
+      ]\
+        set Energia x\
+    ]\
+\
+    if any? Experts-on patch-right-and-ahead 90 1\
+    [\
+      ask Experts-on patch-right-and-ahead 90 1\
+      [\
+        if [pcolor] of patch-here != blue\
+        [\
+          ifelse expLevel < 50\
+          [\
+            set y y + (Energia / 2)\
+            set Energia Energia / 2\
+          ]\
+          [\
+            set y y - (y * 0.10)\
+          ]\
+        ]\
+      ]\
+        set Energia y\
+    ]\
+    ;;percecionar se existe algum Expert na patch-ahead 1 e na patch-right-and-ahead 90 1\
+\
+    move_Basics\
+    getSuperPatches\
+  ]\
+\
+  ask Experts\
+  [\
+    let y Energia\
+\
+    ;;percecionar se existe algum Basic patch-ahead 1 e na patch-left-and-ahead 90 1 e na patch-right-and-ahead 90 1\
+    if any? Basics-on patch-ahead 1\
+    [\
+      ask one-of Basics-on patch-ahead 1\
+      [\
+        let x Energia\
+        set y x\
+        ;;die\
+      ]\
+    ]\
+\
+    if any? Basics-on patch-left-and-ahead 90 1\
+    [\
+      ask one-of Basics-on patch-left-and-ahead 90 1\
+      [\
+        let x Energia\
+        set y x\
+        ;;die\
+      ]\
+    ]\
+\
+    if any? Basics-on patch-right-and-ahead 90 1\
+    [\
+      ask one-of Basics-on patch-right-and-ahead 90 1\
+      [\
+        let x Energia\
+        set y x\
+        ;;die\
+      ]\
+    ]\
+    ;;percecionar se existe algum Basic patch-ahead 1 e na patch-left-and-ahead 90 1 e na patch-right-and-ahead 90 1\
+\
+    ;;permanecer abrigo\
+    ifelse [pcolor] of patch-here = blue\
+    [\
+      set tempoAbrigo tempoAbrigo + 1\
+\
+      ifelse tempoAbrigo = 10\
+      [\
+        set Energia Energia + 500\
+        set expLevel expLevel + 25\
+      ]\
+      [\
+        if tempoAbrigo > 10\
+        [\
+          move_Experts\
+        ]\
+      ]\
+    ]\
+    ;;permanecer abrigo\
+    [\
+      move_Experts\
+    ]\
+\
+  ]\
+\
+  ask Destroyers\
+  [\
+    ifelse ArmDestruidas <= 10\
+    [\
+      ;;move_Destroyers\
+\
+      ifelse [pcolor] of patch-here = red\
+      [\
+        set tempoArmadilha tempoArmadilha + 1\
+\
+        if tempoArmadilha = 5\
+        [\
+          set Energia Energia - 10\
+          set pcolor black\
+          set n_Armadilhas n_Armadilhas - 1\
+          set ArmDestruidas ArmDestruidas + 1\
+          set tempoArmadilha 0\
+        ]\
+      ]\
+      [move_Destroyers]\
+    ]\
+    [die]\
+  ]\
+\
+  semEnergia\
+  expHandling\
+  tick\
+  if count turtles = 0 or ticks = 1001\
+  [stop]\
+\
+end\
+\
+;;BASICS\
+\
+to eat_basics\
+\
+  if [pcolor] of patch-here = yellow\
+  [\
+    set Energia Energia + 10\
+\
+    ask one-of patches with[pcolor = black] ;;repor celula com comida\
+    [\
+      set pcolor yellow\
+    ]\
+\
+    set pcolor black\
+  ]\
+\
+end\
+\
+to getSuperPatches\
+\
+  if [pcolor] of patch-here = brown\
+  [\
+    set Energia Energia + 5000\
+    set pcolor black\
+  ]\
+\
+end\
+\
+to move_basics\
+\
+  ifelse [pcolor] of patch-ahead 1 = yellow ;; celula comida\
+  [\
+    set Energia Energia - 1\
+    fd 1\
+\
+    eat_basics\
+  ]\
+  [\
+    ifelse [pcolor] of patch-right-and-ahead 90 1 = yellow ;; celula comida\
+    [\
+      set Energia Energia - 1\
+      rt 90\
+      fd 1 ;;perguntar ao stor se \'e9 possivel rt e fd ao percecionar a direita e de modo a movimentar se para a comida\
+\
+      eat_basics\
+    ]\
+    [\
+      ifelse [pcolor] of patch-ahead 1 = red ;; celula armadilha\
+      [\
+        ifelse Energia < 100\
+        [die]\
+        [\
+          if Energia >= 100\
+          [\
+            set Energia Energia - (Energia * 0.10)\
+            fd 1\
+          ]\
+        ]\
+      ]\
+      [\
+        ifelse [pcolor] of patch-right-and-ahead 90 1 = red\
+        [\
+          ifelse Energia < 100\
+          [die]\
+          [\
+            if Energia >= 100\
+            [\
+              set Energia Energia - (Energia * 0.10)\
+              fd 1\
+            ]\
+          ]\
+        ]\
+        [\
+          ifelse [pcolor] of patch-ahead 1 = green\
+          [\
+            set Energia Energia - 1\
+            fd 1\
+          ]\
+          [\
+            ifelse [pcolor] of patch-right-and-ahead 90 1 = green\
+            [\
+              set Energia Energia - 1\
+              rt 90\
+            ]\
+            [\
+              ifelse [pcolor] of patch-ahead 1 = blue and any? experts-on patch-ahead 1\
+              [\
+                set Energia Energia - (Energia * 0.05)\
+                rt 90\
+                fd 1\
+              ]\
+              [\
+                ifelse [pcolor] of patch-right-and-ahead 90 1 = blue and any? experts-on patch-right-and-ahead 90 1\
+                [\
+                  set Energia Energia - (Energia * 0.05)\
+                  fd 1\
+                ]\
+                [\
+                  ifelse [pcolor] of patch-ahead 1 = blue\
+                  [\
+                    set Energia Energia - 1\
+                    rt 90\
+                  ]\
+                  [\
+                    ifelse [pcolor] of patch-right-and-ahead 90 1 = blue\
+                    [\
+                      set Energia Energia - 1\
+                      fd 1\
+                    ]\
+                    [\
+                      ifelse [pcolor] of patch-ahead 1 = brown\
+                      [\
+                        set Energia Energia - 1\
+                        fd 1\
+                      ]\
+                      [\
+                        ifelse [pcolor] of patch-right-and-ahead 90 1 = brown\
+                        [\
+                          set Energia Energia - 1\
+                          rt 90\
+                          fd 1\
+                        ]\
+                        [\
+                          ifelse [pcolor] of patch-ahead 1 = black\
+                          [\
+                            ifelse random 101 < 50\
+                            [set Energia Energia - 1 fd 1][set Energia Energia - 1 rt 90]\
+                          ]\
+                          [\
+                            if [pcolor] of patch-right-and-ahead 90 1 = black\
+                            [\
+                              ifelse random 101 < 50\
+                              [set Energia Energia - 1 fd 1][set Energia Energia - 1 rt 90]\
+                            ]\
+                          ]\
+                        ]\
+                      ]\
+                    ]\
+                  ]\
+                ]\
+              ]\
+            ]\
+          ]\
+        ]\
+      ]\
+    ]\
+  ]\
+\
+end\
+\
+;;BASICS\
+\
+;;EXPERTS\
+\
+to eat_experts\
+\
+  if [pcolor] of patch-here = yellow\
+  [\
+    set energia energia + 5\
+    set AliIngAmarelo AliIngAmarelo + 1\
+\
+    ask one-of patches with[pcolor = black] ;;repor celula com comida\
+    [\
+      set pcolor yellow\
+    ]\
+\
+    set pcolor black\
+  ]\
+\
+  if [pcolor] of patch-here = green\
+  [\
+    set energia energia + 10\
+    set AliIngVerde AliIngVerde + 1\
+\
+    ask one-of patches with[pcolor = black] ;;repor celula com comida\
+    [\
+      set pcolor green\
+    ]\
+\
+    set pcolor black\
+  ]\
+\
+end\
+\
+to move_experts\
+\
+  ifelse [pcolor] of patch-ahead 1 = yellow\
+  [\
+    set Energia Energia - 1\
+    fd 1\
+    eat_experts\
+  ]\
+  [\
+    ifelse [pcolor] of patch-left-and-ahead 90 1 = yellow\
+    [\
+      set Energia Energia - 1\
+      lt 90\
+      fd 1\
+\
+      eat_experts\
+    ]\
+    [\
+      ifelse [pcolor] of patch-right-and-ahead 90 1 = yellow\
+      [\
+        set Energia Energia - 1\
+        rt 90\
+        fd 1\
+\
+        eat_experts\
+      ]\
+      [\
+        ifelse [pcolor] of patch-ahead 1 = green\
+        [\
+          set Energia Energia - 1\
+          fd 1\
+\
+          eat_experts\
+        ]\
+        [\
+          ifelse [pcolor] of patch-left-and-ahead 90 1 = green\
+          [\
+            set Energia Energia - 1\
+            lt 90\
+            fd 1\
+\
+            eat_experts\
+          ]\
+          [\
+            ifelse [pcolor] of patch-right-and-ahead 90 1 = green\
+            [\
+              set Energia Energia - 1\
+              rt 90\
+              fd 1\
+\
+              eat_experts\
+            ]\
+            [\
+              ifelse [pcolor] of patch-ahead 1 = red\
+              [\
+                ;;percecao de armadilha\
+                ifelse expLevel >= 50\
+                [\
+                  set Energia Energia\
+                  set expLevel expLevel\
+                  ifelse random 101 < 50\
+                  [rt 90 fd 1][lt 90 fd 1]\
+                ]\
+                [\
+                  ifelse expLevel < 50 and Energia >= 100\
+                  [\
+                    set Energia Energia - (Energia * 0.10)\
+                    ifelse random 101 < 50\
+                    [rt 90 fd 1][lt 90 fd 1]\
+                  ]\
+                  [\
+                    if expLevel < 50 and Energia < 100\
+                    [die]\
+                  ]\
+                ]\
+                ;;percecao de armadilha\
+\
+              ]\
+              [\
+                ifelse [pcolor] of patch-left-and-ahead 90 1 = red\
+                [\
+                  ;;percecao de armadilha\
+                  ifelse expLevel >= 50\
+                  [\
+                    set Energia Energia\
+                    set expLevel expLevel\
+                    rt 90\
+                  ]\
+                  [\
+                    ifelse expLevel < 50 and Energia >= 100\
+                    [\
+                      set Energia Energia - (Energia * 0.10)\
+                      ifelse random 101 < 50\
+                      [rt 90 fd 1][lt 90 fd 1]\
+                    ]\
+                    [\
+                      if expLevel < 50 and Energia < 100\
+                      [die]\
+                    ]\
+                  ]\
+                  ;;percecao de armadilha\
+                ]\
+                [\
+                  ifelse [pcolor] of patch-right-and-ahead 90 1 = red\
+                  [\
+                    ;;percecao de armadilha\
+                    ifelse expLevel >= 50\
+                    [\
+                      set Energia Energia\
+                      set expLevel expLevel\
+                      lt 90\
+                    ]\
+                    [\
+                      ifelse expLevel < 50 and Energia >= 100\
+                      [\
+                        set Energia Energia - (Energia * 0.10)\
+                        ifelse random 101 < 50\
+                        [rt 90 fd 1][lt 90 fd 1]\
+                      ]\
+                      [\
+                        if expLevel < 50 and Energia < 100\
+                        [die]\
+                      ]\
+                    ]\
+                    ;;percecao de armadilha\
+                    lt 90\
+                  ]\
+                  [\
+                    ifelse [pcolor] of patch-ahead 1 = blue and not any? turtles-on patch-ahead 1\
+                    [\
+                      set Energia Energia - 1\
+                      fd 1\
+                    ]\
+                    [\
+                      if [pcolor] of patch-ahead 1 = blue and any? turtles-on patch-ahead 1 ;;afastar do abrigo caso tenha alguem no abrigo\
+                      [set Energia Energia - 1 rt 90 fd 1]\
+\
+                      ifelse [pcolor] of patch-left-and-ahead 90 1 = blue and not any? turtles-on patch-left-and-ahead 90 1\
+                      [\
+                        set Energia Energia - 1\
+                        lt 90\
+                        fd 1\
+                      ]\
+                      [\
+                        if [pcolor] of patch-left-and-ahead 90 1 = blue and any? turtles-on patch-left-and-ahead 90 1 ;;afastar do abrigo caso tenha alguem no abrigo\
+                        [set Energia Energia - 1 lt 90 fd 1]\
+\
+                        ifelse [pcolor] of patch-right-and-ahead 90 1 = blue and not any? turtles-on patch-right-and-ahead 90 1\
+                        [\
+                          set Energia Energia - 1\
+                          rt 90\
+                          fd 1\
+                        ]\
+                        [\
+                          if [pcolor] of patch-right-and-ahead 90 1 = blue and any? turtles-on patch-right-and-ahead 90 1 ;;afastar do abrigo caso tenha alguem no abrigo\
+                          [set Energia Energia - 1 rt 90 fd 1]\
+\
+                          ifelse [pcolor] of patch-ahead 1 = black\
+                          [\
+                            ifelse random 101 < 50\
+                            [set Energia Energia - 1 rt 90 fd 1][set Energia Energia - 1 lt 90 fd 1]\
+                          ]\
+                          [\
+                            ifelse [pcolor] of patch-left-and-ahead 90 1 = black\
+                            [\
+                              ifelse random 101 < 50\
+                              [set Energia Energia - 1 rt 90 fd 1][set Energia Energia - 1 lt 90 fd 1]\
+                            ]\
+                            [\
+                              if [pcolor] of patch-right-and-ahead 90 1 = black\
+                              [\
+                                ifelse random 101 < 50\
+                                [set Energia Energia - 1 rt 90 fd 1][set Energia Energia - 1 lt 90 fd 1]\
+                              ]\
+                            ]\
+                          ]\
+                        ]\
+                      ]\
+                    ]\
+                  ]\
+                ]\
+              ]\
+            ]\
+          ]\
+        ]\
+      ]\
+    ]\
+  ]\
+\
+end\
+\
+to expHandling\
+\
+  ask Experts\
+  [\
+    if expLevel > 0 and remainder AliIngVerde 10 = 0\
+    [set expLevel expLevel + 2]\
+\
+    if expLevel > 0 and remainder ALiIngAmarelo 10 = 0\
+    [set expLevel  expLevel + 1]\
+\
+    if [pcolor] of patch-here = blue\
+    [set expLevel expLevel + 25]\
+  ]\
+\
+\
+end\
+;;EXPERTS\
+\
+;;DESTROYERS\
+to move_Destroyers\
+\
+  let x neighbors with[pcolor = red]\
+\
+  ifelse any? neighbors with[pcolor = red]\
+  [\
+    set Energia Energia - 5 ;;perde 5 de energia ao detetar uma armadilha\
+    move-to one-of x\
+  ]\
+  [\
+    ifelse random  101 < 50\
+    [set Energia Energia - 2 rt 90 fd 1][set Energia Energia - 2 lt 90 fd 1] ;;perde 2 de energia ao andar normalmente\
+  ]\
+\
+end\
+;;DESTROYERS\
+\
+;;COMMON FUNC\
+\
+to semEnergia\
+\
+  ask turtles\
+  [\
+    if Energia <= 0\
+    [die]\
+  ]\
+\
+end}

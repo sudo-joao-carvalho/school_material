@@ -1,0 +1,3 @@
+
+001 Slides-Checklist
+https://github.com/academind/clean-code-course-code/tree/summary

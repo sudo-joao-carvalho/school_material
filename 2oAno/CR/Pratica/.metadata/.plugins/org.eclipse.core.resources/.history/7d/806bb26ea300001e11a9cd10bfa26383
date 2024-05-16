@@ -1,0 +1,14 @@
+package com.sample;
+
+public class Alarme {
+
+	Divisao divisaoInvadida;
+	
+	public Alarme(Divisao divisaoInvadida) {
+		super();
+		this.divisaoInvadida = divisaoInvadida;
+	}
+	
+	
+	
+}

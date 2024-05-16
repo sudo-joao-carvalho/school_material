@@ -1,0 +1,184 @@
+1
+00:00:02,120 --> 00:00:03,360
+Now let's next have a look
+
+2
+00:00:03,360 --> 00:00:07,680
+at a couple of examples for one-argument functions.
+
+3
+00:00:07,680 --> 00:00:10,330
+For example here, I have a log function
+
+4
+00:00:10,330 --> 00:00:14,530
+which simply wraps the built in console log method.
+
+5
+00:00:14,530 --> 00:00:16,570
+Now we can argue whether such a function
+
+6
+00:00:16,570 --> 00:00:19,680
+makes too much sense, but we could be doing that,
+
+7
+00:00:19,680 --> 00:00:24,320
+if we want the option of quickly swapping console log
+
+8
+00:00:24,320 --> 00:00:28,020
+for some other outputting or logging mechanism.
+
+9
+00:00:28,020 --> 00:00:30,570
+Then having our own logging function,
+
+10
+00:00:30,570 --> 00:00:33,720
+which we use for our program, could make sense,
+
+11
+00:00:33,720 --> 00:00:36,720
+because if we ever switched from console log
+
+12
+00:00:36,720 --> 00:00:38,160
+to some other mechanism,
+
+13
+00:00:38,160 --> 00:00:40,720
+we only need to make that switch in one place
+
+14
+00:00:40,720 --> 00:00:43,340
+instead of in multiple places.
+
+15
+00:00:43,340 --> 00:00:47,060
+And then we have a function where it makes a lot of sense
+
+16
+00:00:47,060 --> 00:00:50,470
+that we need one-argument and just one-argument
+
+17
+00:00:50,470 --> 00:00:53,510
+and that would be the message which should be logged.
+
+18
+00:00:53,510 --> 00:00:56,720
+Now we could also come up with a way of writing this
+
+19
+00:00:56,720 --> 00:00:59,180
+such that no arguments are needed
+
+20
+00:00:59,180 --> 00:01:00,970
+again by creating a class,
+
+21
+00:01:00,970 --> 00:01:03,110
+which takes the message into constructor
+
+22
+00:01:03,110 --> 00:01:06,760
+and then has a no parameter log method.
+
+23
+00:01:06,760 --> 00:01:10,260
+But I'm not to sure whether it is really as an improvement.
+
+24
+00:01:10,260 --> 00:01:14,280
+It's a lot of extra code and we just replace a function
+
+25
+00:01:14,280 --> 00:01:18,880
+where it was totally obvious that we might have a parameter
+
+26
+00:01:18,880 --> 00:01:22,130
+and where the kind and value of that parameter
+
+27
+00:01:22,130 --> 00:01:24,650
+also is no surprise at all.
+
+28
+00:01:24,650 --> 00:01:27,810
+So here, I'm absolutely not a fan of changing this
+
+29
+00:01:27,810 --> 00:01:29,790
+just for the sake of changing it.
+
+30
+00:01:29,790 --> 00:01:31,860
+Instead, I think the original example
+
+31
+00:01:31,860 --> 00:01:34,450
+with one-argument here makes a lot of sense
+
+32
+00:01:34,450 --> 00:01:37,930
+and is absolutely something we can keep around.
+
+33
+00:01:37,930 --> 00:01:40,190
+Now, here are more functions
+
+34
+00:01:40,190 --> 00:01:42,630
+where one-argument makes a lot of sense
+
+35
+00:01:42,630 --> 00:01:44,790
+and is totally obvious.
+
+36
+00:01:44,790 --> 00:01:47,150
+For example this square function,
+
+37
+00:01:47,150 --> 00:01:49,090
+which simply squares a number
+
+38
+00:01:49,090 --> 00:01:52,740
+and therefore for takes that number as a single parameter
+
+39
+00:01:52,740 --> 00:01:55,120
+or the email is valid function,
+
+40
+00:01:55,120 --> 00:01:56,480
+which takes the email address,
+
+41
+00:01:56,480 --> 00:01:59,690
+which should be validated as input.
+
+42
+00:01:59,690 --> 00:02:02,640
+These are all examples for functions,
+
+43
+00:02:02,640 --> 00:02:04,540
+which we can leave like that
+
+44
+00:02:04,540 --> 00:02:06,210
+and where having one-argument
+
+45
+00:02:06,210 --> 00:02:08,820
+is totally fine, obvious, easy to read
+
+46
+00:02:08,820 --> 00:02:10,372
+and easy to understand.
+

@@ -1,0 +1,496 @@
+1
+00:00:02,290 --> 00:00:05,080
+So by now, we learned about the difference
+
+2
+00:00:05,080 --> 00:00:08,700
+between real objects and data containers,
+
+3
+00:00:08,700 --> 00:00:12,570
+and we learned that polymorphism is one important aspect
+
+4
+00:00:12,570 --> 00:00:16,010
+that we can keep in mind when we work with classes
+
+5
+00:00:16,010 --> 00:00:19,860
+to avoid code duplication and the effort to stay DRY,
+
+6
+00:00:19,860 --> 00:00:23,120
+which ultimately is a part of writing clean, readable,
+
+7
+00:00:23,120 --> 00:00:24,820
+and maintainable code.
+
+8
+00:00:24,820 --> 00:00:28,120
+Now I want to have a closer look at classes in general,
+
+9
+00:00:28,120 --> 00:00:31,070
+no matter if we use polymorphism or not.
+
+10
+00:00:31,070 --> 00:00:34,490
+How do you write clean classes in general?
+
+11
+00:00:34,490 --> 00:00:36,940
+Let's say you're writing some new class
+
+12
+00:00:36,940 --> 00:00:39,650
+for whichever data entity you might have,
+
+13
+00:00:39,650 --> 00:00:41,993
+and how should you now write this class?
+
+14
+00:00:42,950 --> 00:00:45,980
+Well, clean classes should be small
+
+15
+00:00:45,980 --> 00:00:48,770
+just like functions in the end.
+
+16
+00:00:48,770 --> 00:00:52,930
+You typically should prefer multiple smaller classes
+
+17
+00:00:52,930 --> 00:00:56,290
+over a few large classes.
+
+18
+00:00:56,290 --> 00:00:58,240
+And of course that is very similar
+
+19
+00:00:58,240 --> 00:01:00,460
+to what we learned about functions.
+
+20
+00:01:00,460 --> 00:01:03,810
+Clean functions also should be small.
+
+21
+00:01:03,810 --> 00:01:04,970
+They should be short.
+
+22
+00:01:04,970 --> 00:01:08,710
+They should be focused on one thing as you'll learn
+
+23
+00:01:08,710 --> 00:01:11,350
+to ensure that not too many lines
+
+24
+00:01:11,350 --> 00:01:14,420
+of code are in one function and to ensure
+
+25
+00:01:14,420 --> 00:01:18,280
+that they are always easy to comprehend and read.
+
+26
+00:01:18,280 --> 00:01:21,280
+And it's the same here for classes now.
+
+27
+00:01:21,280 --> 00:01:23,940
+However, there is an important difference
+
+28
+00:01:23,940 --> 00:01:27,600
+when we define what small means exactly.
+
+29
+00:01:27,600 --> 00:01:30,400
+With functions, we had the concept
+
+30
+00:01:30,400 --> 00:01:32,900
+of a function doing one thing.
+
+31
+00:01:32,900 --> 00:01:37,350
+With classes, we have a related yet different concept.
+
+32
+00:01:37,350 --> 00:01:40,560
+Classes should have a single responsibility
+
+33
+00:01:41,600 --> 00:01:45,800
+and there is a principle, a well known principle,
+
+34
+00:01:45,800 --> 00:01:48,770
+the single responsibility principle,
+
+35
+00:01:48,770 --> 00:01:51,560
+which actually also revolves around that.
+
+36
+00:01:51,560 --> 00:01:53,810
+And I will come back to that principle
+
+37
+00:01:53,810 --> 00:01:55,670
+in just a second again.
+
+38
+00:01:55,670 --> 00:01:58,670
+The general idea is simply is that a product class,
+
+39
+00:01:58,670 --> 00:02:00,970
+for example, should be responsible
+
+40
+00:02:00,970 --> 00:02:04,130
+for product related issues, for example,
+
+41
+00:02:04,130 --> 00:02:05,970
+changing the name of a product,
+
+42
+00:02:05,970 --> 00:02:09,810
+not for changing the name of a user for example.
+
+43
+00:02:09,810 --> 00:02:12,110
+This might sound trivial,
+
+44
+00:02:12,110 --> 00:02:13,760
+but it is easy to mix up
+
+45
+00:02:13,760 --> 00:02:16,620
+these different concepts in reality.
+
+46
+00:02:16,620 --> 00:02:20,780
+Take this dummy online shop class, for example.
+
+47
+00:02:20,780 --> 00:02:24,770
+All the real code is missing, but you can see the API,
+
+48
+00:02:24,770 --> 00:02:28,490
+the methods, the surface area of this class here.
+
+49
+00:02:28,490 --> 00:02:31,570
+And you see, I got three properties here,
+
+50
+00:02:31,570 --> 00:02:34,810
+orders, offered products, customers,
+
+51
+00:02:34,810 --> 00:02:37,430
+whichever data would be stored in there, doesn't matter,
+
+52
+00:02:37,430 --> 00:02:40,290
+the names give us a good idea of what is in there,
+
+53
+00:02:40,290 --> 00:02:43,050
+and then we have a bunch of methods here
+
+54
+00:02:43,050 --> 00:02:44,290
+for adding a product,
+
+55
+00:02:44,290 --> 00:02:46,950
+for creating a customer, and so on.
+
+56
+00:02:46,950 --> 00:02:50,130
+And all these methods kind of make sense, right?
+
+57
+00:02:50,130 --> 00:02:52,580
+It's the online shop class after all,
+
+58
+00:02:52,580 --> 00:02:55,610
+so it makes sense that we can add both a product
+
+59
+00:02:55,610 --> 00:02:58,330
+as well as add a customer.
+
+60
+00:02:58,330 --> 00:03:01,070
+But the problem here is not necessarily
+
+61
+00:03:01,070 --> 00:03:03,120
+the number of methods.
+
+62
+00:03:03,120 --> 00:03:07,050
+It could make sense to have that many methods in a class,
+
+63
+00:03:07,050 --> 00:03:09,260
+but the focus of this class,
+
+64
+00:03:09,260 --> 00:03:13,180
+the responsibility of this class, that's the problem.
+
+65
+00:03:13,180 --> 00:03:17,440
+Because this class doesn't just have one responsibility.
+
+66
+00:03:17,440 --> 00:03:20,520
+Instead, this class is dealing with orders,
+
+67
+00:03:20,520 --> 00:03:22,600
+with products, with customers,
+
+68
+00:03:22,600 --> 00:03:26,030
+and even there, it's actually having multiple purposes.
+
+69
+00:03:26,030 --> 00:03:29,310
+It is dealing with updating and adding products
+
+70
+00:03:29,310 --> 00:03:30,920
+and removing products,
+
+71
+00:03:30,920 --> 00:03:34,540
+but then it also is responsible for restocking a product,
+
+72
+00:03:34,540 --> 00:03:38,760
+which is not the same as changing a product name in the end.
+
+73
+00:03:38,760 --> 00:03:42,080
+So this class has a bunch of responsibilities,
+
+74
+00:03:42,080 --> 00:03:45,450
+at least three, orders, products, and customers,
+
+75
+00:03:45,450 --> 00:03:47,540
+but maybe even more than that.
+
+76
+00:03:47,540 --> 00:03:49,340
+And that would be a problem here.
+
+77
+00:03:49,340 --> 00:03:53,720
+Even if every method, which just have one line of code,
+
+78
+00:03:53,720 --> 00:03:58,050
+then this class wouldn't be big when we count lines of code,
+
+79
+00:03:58,050 --> 00:04:02,460
+but it would be big if we consider its responsibilities.
+
+80
+00:04:02,460 --> 00:04:04,730
+And a better way to write this code
+
+81
+00:04:04,730 --> 00:04:06,740
+would be to split this class
+
+82
+00:04:06,740 --> 00:04:10,680
+into multiple smaller classes, for example.
+
+83
+00:04:10,680 --> 00:04:14,000
+And this is just one possible split here of course.
+
+84
+00:04:14,000 --> 00:04:15,930
+Here we could have classes,
+
+85
+00:04:15,930 --> 00:04:19,740
+which do have separate responsibilities.
+
+86
+00:04:19,740 --> 00:04:23,360
+Again, you might even be able to split this up further,
+
+87
+00:04:23,360 --> 00:04:25,610
+but you can already see the idea here.
+
+88
+00:04:25,610 --> 00:04:30,503
+We have multiple smaller classes where small really means
+
+89
+00:04:30,503 --> 00:04:33,550
+that we have less responsibilities
+
+90
+00:04:33,550 --> 00:04:35,380
+in our individual classes.
+
+91
+00:04:35,380 --> 00:04:40,380
+And this is considered clean code, small focused classes,
+
+92
+00:04:41,250 --> 00:04:44,240
+where I know that if I want to change something
+
+93
+00:04:44,240 --> 00:04:45,620
+on the product logic,
+
+94
+00:04:45,620 --> 00:04:48,120
+I have to go to the product class,
+
+95
+00:04:48,120 --> 00:04:49,720
+and I don't have to scroll
+
+96
+00:04:49,720 --> 00:04:52,140
+through the entire large class here
+
+97
+00:04:52,140 --> 00:04:56,770
+just to find the product specific functions I'm looking for.
+
+98
+00:04:56,770 --> 00:04:59,460
+That's the idea behind small classes,
+
+99
+00:04:59,460 --> 00:05:02,700
+and what you should focus on when writing classes.
+
+100
+00:05:02,700 --> 00:05:05,540
+Keep them small and define small
+
+101
+00:05:05,540 --> 00:05:08,410
+by looking at their responsibilities.
+
+102
+00:05:08,410 --> 00:05:12,780
+I absolutely want to highlight that small for classes,
+
+103
+00:05:12,780 --> 00:05:17,780
+unlike for functions, does not mean do just one thing.
+
+104
+00:05:17,950 --> 00:05:20,600
+This product class knows how to update
+
+105
+00:05:20,600 --> 00:05:23,710
+and remove for example, which is definitely more
+
+106
+00:05:23,710 --> 00:05:27,360
+than one thing, but it's the same responsibility.
+
+107
+00:05:27,360 --> 00:05:31,060
+The responsibility is to manage the product data
+
+108
+00:05:31,060 --> 00:05:32,730
+and the product existence.
+
+109
+00:05:32,730 --> 00:05:35,230
+That's the responsibility here.
+
+110
+00:05:35,230 --> 00:05:37,780
+And that's a core difference to functions.
+
+111
+00:05:37,780 --> 00:05:40,150
+And this difference of course makes sense,
+
+112
+00:05:40,150 --> 00:05:42,260
+because if we would have the same definition
+
+113
+00:05:42,260 --> 00:05:45,690
+as for functions, then every class would in the end
+
+114
+00:05:45,690 --> 00:05:49,390
+only be allowed to have exactly one method, right?
+
+115
+00:05:49,390 --> 00:05:51,990
+And if you create one class per method,
+
+116
+00:05:51,990 --> 00:05:54,280
+then this is definitely not efficient,
+
+117
+00:05:54,280 --> 00:05:58,440
+and you would end up with dozens of super tiny classes,
+
+118
+00:05:58,440 --> 00:06:01,870
+which probably then also would have strange names
+
+119
+00:06:01,870 --> 00:06:04,760
+just to have one method per class.
+
+120
+00:06:04,760 --> 00:06:06,320
+This makes no sense at all.
+
+121
+00:06:06,320 --> 00:06:09,560
+It basically defeats the idea of using classes
+
+122
+00:06:09,560 --> 00:06:11,360
+in the first place.
+
+123
+00:06:11,360 --> 00:06:13,820
+So it's not about doing just one thing.
+
+124
+00:06:13,820 --> 00:06:17,803
+It is about having one responsibility per class.
+

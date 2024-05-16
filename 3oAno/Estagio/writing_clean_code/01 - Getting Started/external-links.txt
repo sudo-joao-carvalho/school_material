@@ -1,0 +1,3 @@
+
+012 General-Resources
+https://github.com/academind/clean-code-course-code/tree/general-resources

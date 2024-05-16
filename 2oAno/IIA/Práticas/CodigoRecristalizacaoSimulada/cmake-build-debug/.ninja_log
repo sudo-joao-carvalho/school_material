@@ -1,0 +1,13 @@
+# ninja log v5
+0	28	1669990847173551675	CMakeFiles/CodigoRecristalizacaoSimulada.dir/funcao.c.o	353ebbd59627767d
+1	40	1669990847185039526	CMakeFiles/CodigoRecristalizacaoSimulada.dir/main.c.o	a858825a3bd333f8
+1	42	1669990847187786879	CMakeFiles/CodigoRecristalizacaoSimulada.dir/utils.c.o	c7efc8caa3367813
+0	28	1669990860831486999	CMakeFiles/CodigoRecristalizacaoSimulada.dir/algoritmo.c.o	783a44d6b51c065f
+28	61	1669990860865933969	CodigoRecristalizacaoSimulada	6379078308a44ea8
+0	26	1669991393132585790	CMakeFiles/CodigoRecristalizacaoSimulada.dir/main.c.o	a858825a3bd333f8
+26	58	1669991393165428363	CodigoRecristalizacaoSimulada	6379078308a44ea8
+0	27	1672931908123886149	CMakeFiles/CodigoRecristalizacaoSimulada.dir/main.c.o	a858825a3bd333f8
+27	57	1672931908154096517	CodigoRecristalizacaoSimulada	6379078308a44ea8
+1	28	1672932559125822364	CMakeFiles/CodigoRecristalizacaoSimulada.dir/main.c.o	a858825a3bd333f8
+1	29	1672932559127339348	CMakeFiles/CodigoRecristalizacaoSimulada.dir/algoritmo.c.o	783a44d6b51c065f
+29	60	1672932559158134443	CodigoRecristalizacaoSimulada	6379078308a44ea8

@@ -1,0 +1,432 @@
+1
+00:00:02,200 --> 00:00:03,200
+Now, besides the
+
+2
+00:00:03,200 --> 00:00:06,600
+single responsibility principle, there is one other
+
+3
+00:00:06,600 --> 00:00:09,960
+core principle you should be aware of when working
+
+4
+00:00:09,960 --> 00:00:13,850
+with classes, especially in the context of clean code,
+
+5
+00:00:13,850 --> 00:00:16,550
+and that's the open-closed principle.
+
+6
+00:00:16,550 --> 00:00:21,130
+The open-closed principle says that a clause should be open
+
+7
+00:00:21,130 --> 00:00:25,170
+for extension, but closed for modification.
+
+8
+00:00:25,170 --> 00:00:27,120
+Now, what does this mean?
+
+9
+00:00:27,120 --> 00:00:28,680
+Here is an example.
+
+10
+00:00:28,680 --> 00:00:32,180
+Now, again, it's just a dummy clause without actual code
+
+11
+00:00:32,180 --> 00:00:35,080
+because again, it is more about the general architecture
+
+12
+00:00:35,080 --> 00:00:38,570
+of your classes, the API of your classes
+
+13
+00:00:38,570 --> 00:00:41,590
+and what we can see is that we have a printer class
+
+14
+00:00:41,590 --> 00:00:44,270
+which actually has different methods for printing
+
+15
+00:00:44,270 --> 00:00:47,080
+PDF documents, web documents.
+
+16
+00:00:47,080 --> 00:00:50,840
+So probably HTML pages and also print page
+
+17
+00:00:50,840 --> 00:00:54,620
+which may be prints real pages in the real world.
+
+18
+00:00:54,620 --> 00:00:58,880
+We also have a verified data method which probably is called
+
+19
+00:00:58,880 --> 00:01:01,640
+internally to verify the data
+
+20
+00:01:01,640 --> 00:01:04,730
+from any of these print methods here.
+
+21
+00:01:04,730 --> 00:01:07,223
+Now what's the problem with this class?
+
+22
+00:01:08,340 --> 00:01:11,100
+It basically needs to grow whenever
+
+23
+00:01:11,100 --> 00:01:13,570
+we add new functionality.
+
+24
+00:01:13,570 --> 00:01:17,100
+If we also want to print Word documents
+
+25
+00:01:17,100 --> 00:01:19,560
+or Microsoft Excel spreadsheets,
+
+26
+00:01:19,560 --> 00:01:21,720
+we need to add a new method.
+
+27
+00:01:21,720 --> 00:01:26,010
+Whenever we need to call a new method, besides verify data
+
+28
+00:01:26,010 --> 00:01:29,100
+from our print methods, we have to add the logic
+
+29
+00:01:29,100 --> 00:01:31,550
+to all the print methods.
+
+30
+00:01:31,550 --> 00:01:35,430
+So this printer class might have one responsibility.
+
+31
+00:01:35,430 --> 00:01:39,800
+It's about printing data and about generating output
+
+32
+00:01:39,800 --> 00:01:44,300
+but it actually is not closed for modification.
+
+33
+00:01:44,300 --> 00:01:47,130
+We need to go back to it all the time
+
+34
+00:01:47,130 --> 00:01:49,800
+whenever we add new functionality,
+
+35
+00:01:49,800 --> 00:01:53,470
+it's not very extensible and therefore it violates
+
+36
+00:01:53,470 --> 00:01:56,540
+the open-closed principle because it should be closed
+
+37
+00:01:56,540 --> 00:01:59,520
+for modification, which this one isn't.
+
+38
+00:01:59,520 --> 00:02:03,270
+Now this might remind you of this polymorphism example
+
+39
+00:02:03,270 --> 00:02:06,610
+from before where we had these different
+
+40
+00:02:06,610 --> 00:02:10,910
+delivery classes for delivering goods
+
+41
+00:02:10,910 --> 00:02:13,120
+and where we had duplicate code
+
+42
+00:02:13,120 --> 00:02:15,163
+before we utilized polymorphism.
+
+43
+00:02:16,500 --> 00:02:19,470
+Indeed, the open-closed principle is kind of
+
+44
+00:02:19,470 --> 00:02:21,330
+related to that.
+
+45
+00:02:21,330 --> 00:02:24,203
+Instead of having this printer class here,
+
+46
+00:02:25,950 --> 00:02:29,380
+it would be preferable to have code like this,
+
+47
+00:02:29,380 --> 00:02:33,249
+to have, for example, a printer interface,
+
+48
+00:02:33,249 --> 00:02:34,610
+and then a base class
+
+49
+00:02:34,610 --> 00:02:37,010
+which just has this verified data method
+
+50
+00:02:37,010 --> 00:02:40,560
+which probably is shared amongst all classes,
+
+51
+00:02:40,560 --> 00:02:43,800
+but then all of these specific subclasses implement
+
+52
+00:02:43,800 --> 00:02:47,010
+this printer interface, which forces them to have
+
+53
+00:02:47,010 --> 00:02:50,620
+a print method and they extend the base class
+
+54
+00:02:50,620 --> 00:02:54,300
+to then all have a print method which then just does
+
+55
+00:02:54,300 --> 00:02:57,603
+different things, depending on which class it is.
+
+56
+00:02:58,710 --> 00:03:00,830
+The advantages that the base class,
+
+57
+00:03:00,830 --> 00:03:05,040
+the printer implementation can be closed for modification
+
+58
+00:03:05,040 --> 00:03:06,600
+at some point.
+
+59
+00:03:06,600 --> 00:03:09,840
+Once the API is finished, we close it.
+
+60
+00:03:09,840 --> 00:03:13,200
+Of course we can still edit it if we need to fix bugs
+
+61
+00:03:13,200 --> 00:03:16,070
+but we don't need to edit it all the time
+
+62
+00:03:16,070 --> 00:03:18,270
+just to add new features.
+
+63
+00:03:18,270 --> 00:03:22,510
+Instead to add new features, we extend it.
+
+64
+00:03:22,510 --> 00:03:26,289
+And that of course is what the open-closed principle says,
+
+65
+00:03:26,289 --> 00:03:28,089
+a class should be open for extension
+
+66
+00:03:29,166 --> 00:03:31,970
+and we can build brand new printer subclasses,
+
+67
+00:03:31,970 --> 00:03:35,590
+like for example, a Word or an Excel printer,
+
+68
+00:03:35,590 --> 00:03:38,920
+which just extends the printer implementation class
+
+69
+00:03:38,920 --> 00:03:41,540
+and implements the printer class
+
+70
+00:03:41,540 --> 00:03:43,540
+which then just forces us to add
+
+71
+00:03:43,540 --> 00:03:46,090
+a specific print method again.
+
+72
+00:03:46,090 --> 00:03:49,470
+This is how we can follow the open-closed principle.
+
+73
+00:03:49,470 --> 00:03:52,480
+Now why does the open-closed principle help us
+
+74
+00:03:52,480 --> 00:03:53,940
+with clean code?
+
+75
+00:03:53,940 --> 00:03:56,850
+Or why does it help us with clean code more than maybe
+
+76
+00:03:56,850 --> 00:03:58,273
+some other principles?
+
+77
+00:03:59,230 --> 00:04:01,950
+Because this extensibility ensures
+
+78
+00:04:01,950 --> 00:04:05,730
+small classes automatically because otherwise,
+
+79
+00:04:05,730 --> 00:04:10,610
+if we don't extend, if we stick to the big,
+
+80
+00:04:10,610 --> 00:04:13,810
+do it all class instead, then this class,
+
+81
+00:04:13,810 --> 00:04:17,360
+this printer class keeps on growing and growing
+
+82
+00:04:17,360 --> 00:04:19,593
+the more ways of printing we add.
+
+83
+00:04:20,640 --> 00:04:23,750
+On the other hand, if we have multiple smaller classes,
+
+84
+00:04:23,750 --> 00:04:27,766
+we can add more and more features without getting growing
+
+85
+00:04:27,766 --> 00:04:28,766
+and growing clauses.
+
+86
+00:04:29,740 --> 00:04:32,720
+So it helps us with smaller focused classes
+
+87
+00:04:32,720 --> 00:04:35,600
+and it can help prevent code duplication.
+
+88
+00:04:35,600 --> 00:04:38,400
+It can help us stay dry.
+
+89
+00:04:38,400 --> 00:04:39,990
+Don't repeat yourself.
+
+90
+00:04:39,990 --> 00:04:43,290
+The open-closed principle helps us with that as well,
+
+91
+00:04:43,290 --> 00:04:46,920
+because just as shown in the polymorphism example,
+
+92
+00:04:46,920 --> 00:04:48,920
+we have all these classes
+
+93
+00:04:48,920 --> 00:04:51,823
+and we have wide extra code duplication.
+
+94
+00:04:52,900 --> 00:04:57,750
+And of course, both aspects, small classes and dry code
+
+95
+00:04:57,750 --> 00:05:00,830
+are what clean code also is about
+
+96
+00:05:00,830 --> 00:05:04,132
+because that helps us with readability
+
+97
+00:05:04,132 --> 00:05:06,200
+and of course also maintainability
+
+98
+00:05:06,200 --> 00:05:10,030
+but especially the readability and the understandability
+
+99
+00:05:10,030 --> 00:05:15,030
+of the code is what helps us as humans if we analyze code.
+
+100
+00:05:15,090 --> 00:05:17,700
+Instead of diving into this large class
+
+101
+00:05:17,700 --> 00:05:20,470
+and looking for the right method we need,
+
+102
+00:05:20,470 --> 00:05:24,370
+we can just jump to the specific printer class we need
+
+103
+00:05:24,370 --> 00:05:26,780
+and it's crystal clear what it does
+
+104
+00:05:26,780 --> 00:05:29,640
+and all the code in there is crystal clear.
+
+105
+00:05:29,640 --> 00:05:32,480
+And of course, if we then also follow all the other rules
+
+106
+00:05:32,480 --> 00:05:34,950
+for the actual code, which is written in there
+
+107
+00:05:34,950 --> 00:05:38,300
+like for naming and for our methods,
+
+108
+00:05:38,300 --> 00:05:41,683
+but that is why the open-closed principle matters here.
+

@@ -1,0 +1,33 @@
+
+004 Code
+https://github.com/academind/clean-code-course-code/tree/obj-01-why-the-differentiation-matters
+
+005 Code
+https://github.com/academind/clean-code-course-code/tree/obj-02-classes-polymorphism
+
+006 Code
+https://github.com/academind/clean-code-course-code/tree/obj-03-classes-should-be-small
+
+007 Code
+https://github.com/academind/clean-code-course-code/tree/obj-04-cohesion
+
+008 Code
+https://github.com/academind/clean-code-course-code/tree/obj-05-law-of-demeter
+
+010 Code
+https://github.com/academind/clean-code-course-code/tree/obj-06-solid
+
+011 Code
+https://github.com/academind/clean-code-course-code/tree/obj-06-solid
+
+012 Code
+https://github.com/academind/clean-code-course-code/tree/obj-06-solid
+
+013 Code
+https://github.com/academind/clean-code-course-code/tree/obj-06-solid
+
+014 Code
+https://github.com/academind/clean-code-course-code/tree/obj-06-solid
+
+015 Slides-Summary-Sheet
+https://github.com/academind/clean-code-course-code/tree/obj-extra-attachments

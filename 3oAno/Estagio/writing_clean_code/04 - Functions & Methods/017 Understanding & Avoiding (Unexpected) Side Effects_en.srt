@@ -1,0 +1,996 @@
+1
+00:00:02,200 --> 00:00:03,550
+By now, we learned a lot
+
+2
+00:00:03,550 --> 00:00:07,760
+about keeping our list of function parameters short
+
+3
+00:00:07,760 --> 00:00:12,470
+and concise and keeping the function body short and concise.
+
+4
+00:00:12,470 --> 00:00:16,930
+Now, there is another aspect of writing clean functions,
+
+5
+00:00:16,930 --> 00:00:18,600
+which you should keep in mind.
+
+6
+00:00:18,600 --> 00:00:23,600
+And that is that you should try to keep your functions pure.
+
+7
+00:00:23,770 --> 00:00:24,900
+Now, what does that mean though?
+
+8
+00:00:24,900 --> 00:00:27,290
+What is a pure function?
+
+9
+00:00:27,290 --> 00:00:30,340
+A pure function is simply a function,
+
+10
+00:00:30,340 --> 00:00:35,340
+which for the same input generates the same output.
+
+11
+00:00:35,610 --> 00:00:38,880
+So for the same input parameter values,
+
+12
+00:00:38,880 --> 00:00:42,450
+you always get back the same output.
+
+13
+00:00:42,450 --> 00:00:45,350
+And this here would be a simple example.
+
+14
+00:00:45,350 --> 00:00:48,220
+This generateId function.
+
+15
+00:00:48,220 --> 00:00:51,160
+It takes a userName as a parameter.
+
+16
+00:00:51,160 --> 00:00:54,820
+It then combines that with the hard coded string
+
+17
+00:00:54,820 --> 00:00:59,730
+and then it returns this id string, which was generated.
+
+18
+00:00:59,730 --> 00:01:02,300
+Now, as you can see, if you have a look at this code,
+
+19
+00:01:02,300 --> 00:01:06,050
+for the same userName value, like Max,
+
+20
+00:01:06,050 --> 00:01:10,760
+we will always get back exactly the same returned value.
+
+21
+00:01:10,760 --> 00:01:14,760
+This is a function, which is 100% predictable
+
+22
+00:01:14,760 --> 00:01:17,430
+and which, therefore is pure.
+
+23
+00:01:17,430 --> 00:01:19,840
+Now, here's the same function again,
+
+24
+00:01:19,840 --> 00:01:24,020
+now, however, defined as a impure function.
+
+25
+00:01:24,020 --> 00:01:26,650
+This function, unlike the first one,
+
+26
+00:01:26,650 --> 00:01:29,420
+does not always yield the same result
+
+27
+00:01:29,420 --> 00:01:30,710
+for the same input
+
+28
+00:01:30,710 --> 00:01:33,670
+because we do generate a random number,
+
+29
+00:01:33,670 --> 00:01:35,440
+which we convert to a string,
+
+30
+00:01:35,440 --> 00:01:39,240
+which we then combine with the entered input value.
+
+31
+00:01:39,240 --> 00:01:41,230
+So for the same input value,
+
+32
+00:01:41,230 --> 00:01:44,690
+we will always get a different output value here.
+
+33
+00:01:44,690 --> 00:01:48,500
+Hence, this function is not pure.
+
+34
+00:01:48,500 --> 00:01:52,700
+Now, it's not necessarily bad to have impure functions
+
+35
+00:01:52,700 --> 00:01:55,230
+in your code and in your program
+
+36
+00:01:55,230 --> 00:01:57,870
+because sometimes, you just need something like this.
+
+37
+00:01:57,870 --> 00:02:01,000
+Sometimes you might need to generate a random ID
+
+38
+00:02:01,000 --> 00:02:02,220
+and return that.
+
+39
+00:02:02,220 --> 00:02:05,280
+So it's not the case that impure functions
+
+40
+00:02:05,280 --> 00:02:09,690
+are always bad but they are definitely less predicable
+
+41
+00:02:09,690 --> 00:02:11,150
+than pure functions
+
+42
+00:02:11,150 --> 00:02:14,850
+and hence, you should only go for impure functions
+
+43
+00:02:14,850 --> 00:02:17,700
+if you really need that behavior.
+
+44
+00:02:17,700 --> 00:02:19,340
+And that's especially true
+
+45
+00:02:19,340 --> 00:02:21,720
+if we don't just consider the generation
+
+46
+00:02:21,720 --> 00:02:25,210
+of a random value as part of your function
+
+47
+00:02:25,210 --> 00:02:26,920
+but if we specifically have a look
+
+48
+00:02:26,920 --> 00:02:30,200
+at another concept, side effects.
+
+49
+00:02:30,200 --> 00:02:33,870
+Pure functions shouldn't have side effects,
+
+50
+00:02:33,870 --> 00:02:36,810
+which again, does not mean that you are not allowed
+
+51
+00:02:36,810 --> 00:02:38,450
+to have side effects at all
+
+52
+00:02:38,450 --> 00:02:41,140
+but a pure function wouldn't have a side effect
+
+53
+00:02:41,140 --> 00:02:44,450
+and therefore, you might wanna minimize the number
+
+54
+00:02:44,450 --> 00:02:47,330
+of functions that do have side effects.
+
+55
+00:02:47,330 --> 00:02:51,500
+Especially when following a functional programming approach.
+
+56
+00:02:51,500 --> 00:02:54,685
+If you're really trying to strictly follow such an approach,
+
+57
+00:02:54,685 --> 00:02:57,870
+it is quite common and expected
+
+58
+00:02:57,870 --> 00:03:00,550
+that the vast majority of your functions,
+
+59
+00:03:00,550 --> 00:03:03,350
+which you compose and combine together
+
+60
+00:03:03,350 --> 00:03:07,020
+are side effect free and pure.
+
+61
+00:03:07,020 --> 00:03:10,390
+And then you would only have a couple of places
+
+62
+00:03:10,390 --> 00:03:13,590
+in your code where you do have side effects.
+
+63
+00:03:13,590 --> 00:03:14,830
+Now, of course, you don't have
+
+64
+00:03:14,830 --> 00:03:18,060
+to follow the functional programming approach.
+
+65
+00:03:18,060 --> 00:03:20,330
+You could have an object-oriented approach
+
+66
+00:03:20,330 --> 00:03:24,470
+or a mixed approach, an imperative way of writing code
+
+67
+00:03:24,470 --> 00:03:27,450
+and therefore, you don't always have to be that strict
+
+68
+00:03:27,450 --> 00:03:31,050
+but in general, as you will also see over the next minutes,
+
+69
+00:03:31,050 --> 00:03:34,840
+side effects are definitely something you should be aware of
+
+70
+00:03:34,840 --> 00:03:36,943
+when you write clean code.
+
+71
+00:03:36,943 --> 00:03:39,470
+But for that, let's first of all,
+
+72
+00:03:39,470 --> 00:03:43,300
+clarify what actually is a side effect.
+
+73
+00:03:43,300 --> 00:03:45,910
+Well, here's a simple example snippet.
+
+74
+00:03:45,910 --> 00:03:48,350
+This createUser function
+
+75
+00:03:48,350 --> 00:03:50,210
+does what the name implies.
+
+76
+00:03:50,210 --> 00:03:54,540
+It creates a user by instantiating a user object
+
+77
+00:03:54,540 --> 00:03:56,070
+by using the constructor
+
+78
+00:03:56,070 --> 00:03:58,590
+and then it returns the user.
+
+79
+00:03:58,590 --> 00:04:02,380
+So like this, it would be a pure function.
+
+80
+00:04:02,380 --> 00:04:05,890
+It will always give us the same kind of user object
+
+81
+00:04:05,890 --> 00:04:08,250
+whenever we run this function.
+
+82
+00:04:08,250 --> 00:04:11,580
+However, let's now say we have this line of code
+
+83
+00:04:11,580 --> 00:04:13,020
+in the function as well,
+
+84
+00:04:13,020 --> 00:04:16,003
+this startSession line of code.
+
+85
+00:04:16,920 --> 00:04:19,820
+Now, this function, which we call here,
+
+86
+00:04:19,820 --> 00:04:24,550
+is very likely to change the overall state
+
+87
+00:04:24,550 --> 00:04:26,120
+of our program.
+
+88
+00:04:26,120 --> 00:04:28,710
+And that's what we call a side effect.
+
+89
+00:04:28,710 --> 00:04:31,930
+It's an operation, which does not just act
+
+90
+00:04:31,930 --> 00:04:35,560
+on the function inputs and change the function output
+
+91
+00:04:35,560 --> 00:04:38,500
+but which instead changes the overall system
+
+92
+00:04:38,500 --> 00:04:40,643
+or program state.
+
+93
+00:04:40,643 --> 00:04:45,540
+For example, startSession could change some variable outside
+
+94
+00:04:45,540 --> 00:04:47,990
+of this createUser function.
+
+95
+00:04:47,990 --> 00:04:50,230
+And when you have such a side effect,
+
+96
+00:04:50,230 --> 00:04:53,860
+a function is also not considered to be pure
+
+97
+00:04:53,860 --> 00:04:57,190
+because even if it does always return the same value
+
+98
+00:04:57,190 --> 00:04:58,580
+for the same input,
+
+99
+00:04:58,580 --> 00:05:01,840
+if it does something else in addition
+
+100
+00:05:01,840 --> 00:05:04,360
+to the work it does on the inputs,
+
+101
+00:05:04,360 --> 00:05:08,180
+then it's also not considered to be pure.
+
+102
+00:05:08,180 --> 00:05:10,440
+So a pure function is only pure
+
+103
+00:05:10,440 --> 00:05:13,650
+if it always gives us the same output for the same input
+
+104
+00:05:13,650 --> 00:05:17,110
+and it doesn't have any side effects.
+
+105
+00:05:17,110 --> 00:05:20,570
+But what's the problem with such side effects?
+
+106
+00:05:20,570 --> 00:05:23,690
+Again, you won't be able to always avoid them.
+
+107
+00:05:23,690 --> 00:05:27,040
+Indeed, depending on the kind of program you're writing,
+
+108
+00:05:27,040 --> 00:05:29,450
+you might need a lot of side effects
+
+109
+00:05:29,450 --> 00:05:32,610
+because there are a lot of potential side effects,
+
+110
+00:05:32,610 --> 00:05:36,120
+starting sessions, sending HTTP requests,
+
+111
+00:05:36,120 --> 00:05:38,430
+even logging something to the console
+
+112
+00:05:38,430 --> 00:05:40,530
+or showing some message to the user
+
+113
+00:05:40,530 --> 00:05:42,570
+would all be a side effect
+
+114
+00:05:42,570 --> 00:05:45,770
+because it's a change to the state of your system
+
+115
+00:05:45,770 --> 00:05:47,940
+and of your program, right?
+
+116
+00:05:47,940 --> 00:05:49,930
+I mean, if you show something to the user,
+
+117
+00:05:49,930 --> 00:05:53,330
+that's definitely a different state your program is in
+
+118
+00:05:53,330 --> 00:05:56,163
+than a second ago when you didn't show a message.
+
+119
+00:05:56,163 --> 00:05:59,400
+So these changes are everywhere
+
+120
+00:05:59,400 --> 00:06:01,780
+and side effects are everywhere.
+
+121
+00:06:01,780 --> 00:06:04,640
+But side effects do become a problem
+
+122
+00:06:04,640 --> 00:06:07,130
+if they are unexpected.
+
+123
+00:06:07,130 --> 00:06:09,100
+They're not automatically bad.
+
+124
+00:06:09,100 --> 00:06:13,040
+We need them but if your side effect is unexpected,
+
+125
+00:06:13,040 --> 00:06:15,460
+then it is a problem.
+
+126
+00:06:15,460 --> 00:06:18,050
+For example, in this createUser function,
+
+127
+00:06:18,050 --> 00:06:21,290
+you could kind of expect a side effect,
+
+128
+00:06:21,290 --> 00:06:25,300
+maybe createUser implies that the user is also stored
+
+129
+00:06:25,300 --> 00:06:29,670
+in a database and that would also be a side effect.
+
+130
+00:06:29,670 --> 00:06:32,260
+Starting a session could also be a kind
+
+131
+00:06:32,260 --> 00:06:33,910
+of expected side effect.
+
+132
+00:06:33,910 --> 00:06:35,290
+So in this example,
+
+133
+00:06:35,290 --> 00:06:38,660
+it might not be a bad side effect at all.
+
+134
+00:06:38,660 --> 00:06:41,270
+But consider this example here.
+
+135
+00:06:41,270 --> 00:06:44,100
+It's again the generateId function
+
+136
+00:06:44,100 --> 00:06:48,300
+but now it's not just generating and returning an id,
+
+137
+00:06:48,300 --> 00:06:51,480
+it's also assigning that generated id
+
+138
+00:06:51,480 --> 00:06:55,530
+to some global state, to some global variable,
+
+139
+00:06:55,530 --> 00:06:57,190
+which we have in this program.
+
+140
+00:06:57,190 --> 00:06:58,910
+This is a side effect
+
+141
+00:06:58,910 --> 00:07:02,020
+because it's not just work we do on the input and output
+
+142
+00:07:02,020 --> 00:07:04,090
+of this function, it is work we do
+
+143
+00:07:04,090 --> 00:07:07,032
+on some other variable in our program.
+
+144
+00:07:07,032 --> 00:07:09,849
+Now, maybe we need to keep track
+
+145
+00:07:09,849 --> 00:07:11,350
+of that lastAssignedId.
+
+146
+00:07:11,350 --> 00:07:13,930
+Maybe that is some internal work we do
+
+147
+00:07:13,930 --> 00:07:16,860
+but maybe it's also not something we expect
+
+148
+00:07:16,860 --> 00:07:20,780
+when we call a function named generateId.
+
+149
+00:07:20,780 --> 00:07:22,888
+Maybe a simple change in the name
+
+150
+00:07:22,888 --> 00:07:27,310
+to generateUnusedId would suffice here though
+
+151
+00:07:27,310 --> 00:07:29,730
+to make it clear that this function
+
+152
+00:07:29,730 --> 00:07:33,650
+will need to check whether an id has been used or not
+
+153
+00:07:33,650 --> 00:07:36,500
+and that therefore, it might also interact
+
+154
+00:07:36,500 --> 00:07:38,670
+with the global system state.
+
+155
+00:07:38,670 --> 00:07:41,150
+So that could be one possible fix here,
+
+156
+00:07:41,150 --> 00:07:45,010
+instead of just keeping the name generateId like this.
+
+157
+00:07:45,010 --> 00:07:46,970
+Because that is the strategy
+
+158
+00:07:46,970 --> 00:07:50,320
+for avoiding unexpected side effects.
+
+159
+00:07:50,320 --> 00:07:52,750
+As I said, and I really wanna emphasize this,
+
+160
+00:07:52,750 --> 00:07:55,320
+side effects are not necessarily bad
+
+161
+00:07:55,320 --> 00:07:57,280
+but your naming matters.
+
+162
+00:07:57,280 --> 00:08:01,635
+Side effects do become bad if they are unexpected.
+
+163
+00:08:01,635 --> 00:08:05,270
+And therefore, the name of a function should signal
+
+164
+00:08:05,270 --> 00:08:09,410
+or imply that a side effect is likely to occur.
+
+165
+00:08:09,410 --> 00:08:11,900
+Otherwise, it's considered a bad side effect
+
+166
+00:08:11,900 --> 00:08:14,090
+and therefore, not clean code
+
+167
+00:08:14,090 --> 00:08:17,550
+because clean code doesn't do unexpected stuff.
+
+168
+00:08:17,550 --> 00:08:20,670
+Clean code is well, clean, easy to read
+
+169
+00:08:20,670 --> 00:08:22,230
+and easy to understand.
+
+170
+00:08:22,230 --> 00:08:25,140
+And if something happens, which you didn't expect,
+
+171
+00:08:25,140 --> 00:08:27,730
+you clearly did not understand the code,
+
+172
+00:08:27,730 --> 00:08:29,930
+hence the code wasn't clean.
+
+173
+00:08:29,930 --> 00:08:32,860
+So have a look at these example names here, for example.
+
+174
+00:08:32,860 --> 00:08:35,590
+If you see functions named like this,
+
+175
+00:08:35,590 --> 00:08:38,342
+where would you expect a side effect?
+
+176
+00:08:39,900 --> 00:08:43,679
+In saveUser we do expect one I would argue
+
+177
+00:08:43,679 --> 00:08:45,810
+because saveUser implies
+
+178
+00:08:45,810 --> 00:08:48,640
+that this user is probably going to get saved
+
+179
+00:08:48,640 --> 00:08:52,920
+to a database and saving data to a database definitely
+
+180
+00:08:52,920 --> 00:08:54,220
+is a side effect
+
+181
+00:08:54,220 --> 00:08:57,110
+because it does manipulate the overall system
+
+182
+00:08:57,110 --> 00:08:58,263
+and program state.
+
+183
+00:08:59,156 --> 00:09:01,940
+After all, we write a new entry to a database,
+
+184
+00:09:01,940 --> 00:09:03,280
+we change files.
+
+185
+00:09:03,280 --> 00:09:05,920
+This is a crystal clear side effect
+
+186
+00:09:05,920 --> 00:09:08,480
+and we do expect such a side effect
+
+187
+00:09:08,480 --> 00:09:10,853
+for a function named saveUser.
+
+188
+00:09:11,690 --> 00:09:15,550
+On the other hand, if we had a function named isValid,
+
+189
+00:09:15,550 --> 00:09:18,920
+then we do not expect any side effects there.
+
+190
+00:09:18,920 --> 00:09:23,490
+We do expect that this function maybe answers the question
+
+191
+00:09:23,490 --> 00:09:27,070
+whether some input or some email address is valid.
+
+192
+00:09:27,070 --> 00:09:29,065
+It would be much unexpected
+
+193
+00:09:29,065 --> 00:09:32,430
+that this function then sends a message,
+
+194
+00:09:32,430 --> 00:09:34,190
+writes to the file system,
+
+195
+00:09:34,190 --> 00:09:36,040
+shows a message to the user
+
+196
+00:09:36,040 --> 00:09:38,633
+or changes any other program state.
+
+197
+00:09:40,040 --> 00:09:42,237
+Now, what about showMessage?
+
+198
+00:09:42,237 --> 00:09:44,570
+showMessage, per definition,
+
+199
+00:09:44,570 --> 00:09:46,350
+will have a side effect.
+
+200
+00:09:46,350 --> 00:09:48,910
+If we show a message to the user,
+
+201
+00:09:48,910 --> 00:09:52,150
+no matter if that's the terminal or console
+
+202
+00:09:52,150 --> 00:09:55,520
+or if that is an overlay on a website,
+
+203
+00:09:55,520 --> 00:09:57,730
+if we show a message to the user,
+
+204
+00:09:57,730 --> 00:10:01,000
+we are definitely changing the program state
+
+205
+00:10:01,000 --> 00:10:03,460
+because the state will be a different one
+
+206
+00:10:03,460 --> 00:10:05,910
+if we have an overlay on the page
+
+207
+00:10:05,910 --> 00:10:07,430
+than it was a second ago
+
+208
+00:10:07,430 --> 00:10:09,930
+when the overlay was not there.
+
+209
+00:10:09,930 --> 00:10:12,130
+So here, because of that name,
+
+210
+00:10:12,130 --> 00:10:14,870
+a side effect would be expected.
+
+211
+00:10:14,870 --> 00:10:16,630
+Now, what about createUser?
+
+212
+00:10:16,630 --> 00:10:19,680
+Here, I would say you could go either way.
+
+213
+00:10:19,680 --> 00:10:22,950
+You could say that you don't expect a side effect
+
+214
+00:10:22,950 --> 00:10:26,460
+because a function named createUser
+
+215
+00:10:26,460 --> 00:10:28,460
+will probably do just that,
+
+216
+00:10:28,460 --> 00:10:30,620
+create a new user.
+
+217
+00:10:30,620 --> 00:10:34,830
+On the other hand, create is a very wide word
+
+218
+00:10:34,830 --> 00:10:38,350
+with a lot of interpretation you can put into it.
+
+219
+00:10:38,350 --> 00:10:40,820
+Create could mean that saving that user
+
+220
+00:10:40,820 --> 00:10:44,570
+to the database is part of the creation process
+
+221
+00:10:44,570 --> 00:10:47,190
+or that validation of the inputs
+
+222
+00:10:47,190 --> 00:10:49,610
+and showing an error message is part
+
+223
+00:10:49,610 --> 00:10:51,950
+of the creation process.
+
+224
+00:10:51,950 --> 00:10:55,250
+So here, it really comes down to the overall context
+
+225
+00:10:55,250 --> 00:10:58,600
+of the application in which you use this function.
+
+226
+00:10:58,600 --> 00:11:02,350
+A side effect is not necessarily expected I would say
+
+227
+00:11:02,350 --> 00:11:05,200
+but it's also not totally unexpected.
+
+228
+00:11:05,200 --> 00:11:06,680
+And over the last lectures,
+
+229
+00:11:06,680 --> 00:11:09,450
+we indeed, had a function named createUser,
+
+230
+00:11:09,450 --> 00:11:11,873
+which did have various side effects.
+
+231
+00:11:12,870 --> 00:11:15,090
+And therefore, long story short,
+
+232
+00:11:15,090 --> 00:11:16,610
+the idea is simple.
+
+233
+00:11:16,610 --> 00:11:19,040
+It is okay to have impure functions
+
+234
+00:11:19,040 --> 00:11:21,320
+and it is okay to have side effects.
+
+235
+00:11:21,320 --> 00:11:23,510
+But whenever a function is impure,
+
+236
+00:11:23,510 --> 00:11:26,200
+typically because it does have a side effect,
+
+237
+00:11:26,200 --> 00:11:28,830
+that should at least be expected.
+
+238
+00:11:28,830 --> 00:11:32,140
+Your functions should not have unexpected side effects
+
+239
+00:11:32,140 --> 00:11:33,700
+and if you have a side effect
+
+240
+00:11:33,700 --> 00:11:35,430
+or if you need a side effect,
+
+241
+00:11:35,430 --> 00:11:38,160
+you should therefore either choose a function name,
+
+242
+00:11:38,160 --> 00:11:39,550
+which implies that.
+
+243
+00:11:39,550 --> 00:11:41,479
+Then it's absolutely fine
+
+244
+00:11:41,479 --> 00:11:45,130
+or you should move that side effect operation
+
+245
+00:11:45,130 --> 00:11:48,720
+into a different function where it again is expected.
+
+246
+00:11:48,720 --> 00:11:52,120
+This is important to ensure that you have clean code
+
+247
+00:11:52,120 --> 00:11:53,610
+and clean functions
+
+248
+00:11:53,610 --> 00:11:55,890
+because it's definitely not clean code
+
+249
+00:11:55,890 --> 00:11:59,173
+if your functions do something which is not expected.
+

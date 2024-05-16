@@ -1,0 +1,980 @@
+1
+00:00:02,120 --> 00:00:04,040
+Now that we had an extensive look
+
+2
+00:00:04,040 --> 00:00:07,440
+at the function parameters and arguments,
+
+3
+00:00:07,440 --> 00:00:10,210
+let's have a closer look at the function body
+
+4
+00:00:10,210 --> 00:00:12,750
+because when we talk about clean functions
+
+5
+00:00:12,750 --> 00:00:15,030
+and writing clean functions,
+
+6
+00:00:15,030 --> 00:00:16,870
+obviously, the function body
+
+7
+00:00:16,870 --> 00:00:18,910
+is an important part of that.
+
+8
+00:00:18,910 --> 00:00:22,040
+We wanna write functions where the body of functions,
+
+9
+00:00:22,040 --> 00:00:24,750
+which makes up the majority of the function code
+
+10
+00:00:24,750 --> 00:00:26,690
+is written in a clean way.
+
+11
+00:00:26,690 --> 00:00:29,300
+And how do we ensure that our function body,
+
+12
+00:00:29,300 --> 00:00:32,689
+so to code inside of a function is clean?
+
+13
+00:00:32,689 --> 00:00:35,760
+Well, functions should be small.
+
+14
+00:00:35,760 --> 00:00:37,670
+They should be really small
+
+15
+00:00:37,670 --> 00:00:40,150
+because if a function is small
+
+16
+00:00:40,150 --> 00:00:43,350
+it's easier to read and understand than if it's big,
+
+17
+00:00:43,350 --> 00:00:45,240
+if it contains a lot of code.
+
+18
+00:00:45,240 --> 00:00:47,620
+Consider this example here,
+
+19
+00:00:47,620 --> 00:00:51,210
+you're all to find this file attached to this lecture.
+
+20
+00:00:51,210 --> 00:00:53,150
+This is one function
+
+21
+00:00:53,150 --> 00:00:56,040
+with quite a lot of code inside of it.
+
+22
+00:00:56,040 --> 00:00:58,740
+Now, pause the video at this point,
+
+23
+00:00:58,740 --> 00:01:00,790
+and to take a moment to understand
+
+24
+00:01:00,790 --> 00:01:02,740
+or to try to understand
+
+25
+00:01:02,740 --> 00:01:04,150
+what this function does
+
+26
+00:01:04,150 --> 00:01:06,160
+or to at least get an idea
+
+27
+00:01:06,160 --> 00:01:08,290
+of what this function could do.
+
+28
+00:01:08,290 --> 00:01:09,200
+It's again, of course,
+
+29
+00:01:09,200 --> 00:01:10,450
+just a snippet.
+
+30
+00:01:10,450 --> 00:01:12,590
+It's just a dummy example,
+
+31
+00:01:12,590 --> 00:01:15,180
+but it does fulfill a real purpose.
+
+32
+00:01:15,180 --> 00:01:16,800
+So, take a moment to pause
+
+33
+00:01:16,800 --> 00:01:18,913
+and find out what this function does.
+
+34
+00:01:21,720 --> 00:01:23,210
+Were you successful?
+
+35
+00:01:23,210 --> 00:01:25,520
+Did you find out what this function is doing,
+
+36
+00:01:25,520 --> 00:01:26,700
+or do you at least have
+
+37
+00:01:26,700 --> 00:01:29,750
+a rough idea of what this function is doing?
+
+38
+00:01:29,750 --> 00:01:32,240
+It's certainly not impossible to find out,
+
+39
+00:01:32,240 --> 00:01:35,260
+but it will take you a couple of moments, right?
+
+40
+00:01:35,260 --> 00:01:37,720
+You will definitely not look at this function
+
+41
+00:01:37,720 --> 00:01:41,210
+and instantly see what it does in detail.
+
+42
+00:01:41,210 --> 00:01:43,550
+Now, I can tell you what this function does.
+
+43
+00:01:43,550 --> 00:01:47,650
+It's a dummy function that could render some HTML content.
+
+44
+00:01:47,650 --> 00:01:49,280
+And for this it first of all,
+
+45
+00:01:49,280 --> 00:01:51,480
+checks the input and ensures
+
+46
+00:01:51,480 --> 00:01:54,430
+that no script element is being rendered.
+
+47
+00:01:54,430 --> 00:01:55,410
+And if it is,
+
+48
+00:01:55,410 --> 00:01:57,010
+then we throw in the error.
+
+49
+00:01:57,010 --> 00:02:00,400
+Thereafter, the HTML tags are constructed
+
+50
+00:02:00,400 --> 00:02:03,080
+by building a opening and a closing tag.
+
+51
+00:02:03,080 --> 00:02:05,610
+And the opening tag is actually constructed
+
+52
+00:02:05,610 --> 00:02:07,910
+by also adding any attributes
+
+53
+00:02:07,910 --> 00:02:10,910
+which should be added on that HTML element.
+
+54
+00:02:10,910 --> 00:02:13,260
+And then it constructs a template
+
+55
+00:02:13,260 --> 00:02:15,040
+where opening and closing tag
+
+56
+00:02:15,040 --> 00:02:18,770
+are combined with the actual content of that element,
+
+57
+00:02:18,770 --> 00:02:20,690
+so the part between the tags
+
+58
+00:02:20,690 --> 00:02:22,980
+and then that template is in the end
+
+59
+00:02:22,980 --> 00:02:25,410
+attached to some root element,
+
+60
+00:02:25,410 --> 00:02:27,420
+which we get as a parameter.
+
+61
+00:02:27,420 --> 00:02:29,210
+And this root element therefore,
+
+62
+00:02:29,210 --> 00:02:31,690
+actually is kind of an output parameter here,
+
+63
+00:02:31,690 --> 00:02:33,780
+but let's ignore this for a moment here,
+
+64
+00:02:33,780 --> 00:02:35,750
+because of course there can be scenarios
+
+65
+00:02:35,750 --> 00:02:37,450
+where this is acceptable.
+
+66
+00:02:37,450 --> 00:02:40,110
+And in general, this function here
+
+67
+00:02:40,110 --> 00:02:42,040
+uses good naming,
+
+68
+00:02:42,040 --> 00:02:43,410
+good formatting,
+
+69
+00:02:43,410 --> 00:02:45,070
+that's all fine.
+
+70
+00:02:45,070 --> 00:02:46,900
+And still it's not clean
+
+71
+00:02:46,900 --> 00:02:48,810
+because it takes quite some time
+
+72
+00:02:48,810 --> 00:02:50,563
+to understand what's going on.
+
+73
+00:02:51,540 --> 00:02:54,580
+Now, here's an alternative version of that function.
+
+74
+00:02:54,580 --> 00:02:57,210
+Now, many parts of that function code
+
+75
+00:02:57,210 --> 00:02:59,770
+were outsourced into separate functions
+
+76
+00:02:59,770 --> 00:03:01,470
+and therefore the main function,
+
+77
+00:03:01,470 --> 00:03:03,700
+renderContent is pretty lean.
+
+78
+00:03:03,700 --> 00:03:05,640
+And if I were to tell you to understand
+
+79
+00:03:05,640 --> 00:03:07,220
+what this function does,
+
+80
+00:03:07,220 --> 00:03:09,560
+you would probably be able to understand this
+
+81
+00:03:09,560 --> 00:03:12,940
+way quicker than with the example I gave you before,
+
+82
+00:03:12,940 --> 00:03:16,320
+even though the function produces the same result.
+
+83
+00:03:16,320 --> 00:03:17,960
+But by splitting the code
+
+84
+00:03:17,960 --> 00:03:20,960
+into multiple more focused functions,
+
+85
+00:03:20,960 --> 00:03:22,640
+this main function
+
+86
+00:03:22,640 --> 00:03:24,000
+is easier to understand.
+
+87
+00:03:24,000 --> 00:03:26,680
+And also all these extracted functions on their own
+
+88
+00:03:26,680 --> 00:03:28,930
+will be quite easy to understand.
+
+89
+00:03:28,930 --> 00:03:30,260
+It's pretty easy to see
+
+90
+00:03:30,260 --> 00:03:32,600
+and it doesn't take long to understand
+
+91
+00:03:32,600 --> 00:03:34,940
+that when renderContent is called,
+
+92
+00:03:34,940 --> 00:03:37,350
+we validate the element type
+
+93
+00:03:37,350 --> 00:03:39,880
+because the function is even called like that,
+
+94
+00:03:39,880 --> 00:03:42,580
+then we create the renderable content,
+
+95
+00:03:42,580 --> 00:03:44,460
+so the content which would be output,
+
+96
+00:03:44,460 --> 00:03:46,700
+and then we render that on some root element
+
+97
+00:03:46,700 --> 00:03:48,923
+with the render on root function.
+
+98
+00:03:50,700 --> 00:03:51,670
+Now, as I mentioned,
+
+99
+00:03:51,670 --> 00:03:54,620
+this code was split across multiple functions
+
+100
+00:03:54,620 --> 00:03:56,190
+and this can look intimidating
+
+101
+00:03:56,190 --> 00:03:58,800
+because it overall grew of course,
+
+102
+00:03:58,800 --> 00:04:01,640
+but each of these functions is quite straightforward
+
+103
+00:04:01,640 --> 00:04:03,090
+and easy to understand.
+
+104
+00:04:03,090 --> 00:04:05,010
+And the idea of writing clean code
+
+105
+00:04:05,010 --> 00:04:07,570
+is precisely that you don't have to read
+
+106
+00:04:07,570 --> 00:04:09,410
+all the related code.
+
+107
+00:04:09,410 --> 00:04:12,400
+If I need to look just at renderContent,
+
+108
+00:04:12,400 --> 00:04:14,150
+I typically don't need to dive
+
+109
+00:04:14,150 --> 00:04:16,380
+into all these outsourced functions.
+
+110
+00:04:16,380 --> 00:04:18,850
+So I might not even see all that other code.
+
+111
+00:04:18,850 --> 00:04:21,730
+And therefore, if I just consider renderContent,
+
+112
+00:04:21,730 --> 00:04:24,160
+that is way easier to understand
+
+113
+00:04:24,160 --> 00:04:26,150
+than at the example before.
+
+114
+00:04:26,150 --> 00:04:27,940
+And even if I do need to dive
+
+115
+00:04:27,940 --> 00:04:30,160
+into the individual functions thereafter,
+
+116
+00:04:30,160 --> 00:04:32,720
+all these functions are all the written such
+
+117
+00:04:32,720 --> 00:04:35,670
+that they are quite focused and straightforward,
+
+118
+00:04:35,670 --> 00:04:38,383
+and should be relatively easy to understand.
+
+119
+00:04:39,400 --> 00:04:42,400
+And that's why clean functions should be small.
+
+120
+00:04:42,400 --> 00:04:43,490
+And we achieve this
+
+121
+00:04:43,490 --> 00:04:46,603
+by splitting functions into multiple functions.
+
+122
+00:04:47,800 --> 00:04:50,650
+Now, one question you might be asking yourself now
+
+123
+00:04:50,650 --> 00:04:52,510
+is how did I decide
+
+124
+00:04:52,510 --> 00:04:54,300
+what to outsource
+
+125
+00:04:54,300 --> 00:04:58,230
+and which code to put into separate functions?
+
+126
+00:04:58,230 --> 00:05:00,520
+And here we have a simple rule,
+
+127
+00:05:00,520 --> 00:05:03,060
+to write small functions
+
+128
+00:05:03,060 --> 00:05:04,780
+we should write functions
+
+129
+00:05:04,780 --> 00:05:07,423
+that do exactly one thing.
+
+130
+00:05:08,460 --> 00:05:11,190
+But of course that brings up a new question.
+
+131
+00:05:11,190 --> 00:05:12,070
+What is
+
+132
+00:05:12,070 --> 00:05:14,020
+one thing?
+
+133
+00:05:14,020 --> 00:05:17,540
+Because if you have a look at this refactored example,
+
+134
+00:05:17,540 --> 00:05:18,830
+it's easy to argue
+
+135
+00:05:18,830 --> 00:05:21,740
+that this function is doing more than one thing.
+
+136
+00:05:21,740 --> 00:05:23,920
+It's validating the element type,
+
+137
+00:05:23,920 --> 00:05:26,070
+creating renderable content
+
+138
+00:05:26,070 --> 00:05:28,310
+and rendering this on a root element.
+
+139
+00:05:28,310 --> 00:05:29,720
+You could argue that these are
+
+140
+00:05:29,720 --> 00:05:32,083
+three things and not just one thing.
+
+141
+00:05:33,110 --> 00:05:34,910
+Now, of course, in programming,
+
+142
+00:05:34,910 --> 00:05:35,890
+it's quite common
+
+143
+00:05:35,890 --> 00:05:37,500
+that we have functions
+
+144
+00:05:37,500 --> 00:05:40,180
+that kick off multiple operations.
+
+145
+00:05:40,180 --> 00:05:42,810
+The goal is not to write functions
+
+146
+00:05:42,810 --> 00:05:45,950
+where every function has just one line of code.
+
+147
+00:05:45,950 --> 00:05:48,770
+That's unrealistic and also not helpful.
+
+148
+00:05:48,770 --> 00:05:50,440
+You don't wanna clutter your code
+
+149
+00:05:50,440 --> 00:05:52,580
+with millions of functions.
+
+150
+00:05:52,580 --> 00:05:54,150
+Instead, one thing
+
+151
+00:05:54,150 --> 00:05:56,550
+is defined slightly different.
+
+152
+00:05:56,550 --> 00:05:59,070
+When we talk about functions doing one thing
+
+153
+00:05:59,070 --> 00:06:01,290
+we could think about the different operations
+
+154
+00:06:01,290 --> 00:06:02,570
+a function is doing,
+
+155
+00:06:02,570 --> 00:06:06,150
+like validating and saving user input, for example.
+
+156
+00:06:06,150 --> 00:06:08,620
+And then we could argue that we have two operations
+
+157
+00:06:08,620 --> 00:06:09,790
+and that's of course similar
+
+158
+00:06:09,790 --> 00:06:12,580
+to the actual example I showed you a second ago.
+
+159
+00:06:12,580 --> 00:06:15,480
+But we don't look at the different operations.
+
+160
+00:06:15,480 --> 00:06:18,830
+Instead, we combine the idea of doing one thing
+
+161
+00:06:18,830 --> 00:06:21,893
+with the concept of levels of abstraction.
+
+162
+00:06:22,730 --> 00:06:26,530
+This concept of looking at the levels of abstraction
+
+163
+00:06:26,530 --> 00:06:28,950
+of the operations inside of a function,
+
+164
+00:06:28,950 --> 00:06:30,930
+this concept helps us decide
+
+165
+00:06:30,930 --> 00:06:34,600
+when to split a function into multiple functions.
+
+166
+00:06:34,600 --> 00:06:36,090
+Here's an example,
+
+167
+00:06:36,090 --> 00:06:39,260
+email includes @ and saveUser.
+
+168
+00:06:39,260 --> 00:06:41,580
+If we have a look at these two code snippets,
+
+169
+00:06:41,580 --> 00:06:43,250
+then email includes
+
+170
+00:06:43,250 --> 00:06:47,380
+is a pretty low level API operation on a string.
+
+171
+00:06:47,380 --> 00:06:48,330
+In JavaScript,
+
+172
+00:06:48,330 --> 00:06:50,010
+it's a built-in method,
+
+173
+00:06:50,010 --> 00:06:51,820
+which we can call on strings
+
+174
+00:06:51,820 --> 00:06:53,080
+to check if a string
+
+175
+00:06:53,080 --> 00:06:55,733
+contains a certain character or text.
+
+176
+00:06:57,008 --> 00:06:58,260
+saveUser on the other hand
+
+177
+00:06:58,260 --> 00:06:59,810
+is pretty high level.
+
+178
+00:06:59,810 --> 00:07:02,860
+It's a developer defined function for saving a user.
+
+179
+00:07:02,860 --> 00:07:06,810
+We're not using some low level built-in API here.
+
+180
+00:07:06,810 --> 00:07:09,530
+That's what levels of abstraction are about.
+
+181
+00:07:09,530 --> 00:07:12,140
+We got high and low levels of abstraction
+
+182
+00:07:12,140 --> 00:07:14,620
+and a broad band with in between.
+
+183
+00:07:14,620 --> 00:07:17,490
+And high level operations would be operations
+
+184
+00:07:17,490 --> 00:07:20,430
+where we just called some function or method,
+
+185
+00:07:20,430 --> 00:07:21,910
+which has a descriptive name
+
+186
+00:07:21,910 --> 00:07:23,950
+and then does something.
+
+187
+00:07:23,950 --> 00:07:26,790
+Now, a low level operation, on the other hand,
+
+188
+00:07:26,790 --> 00:07:31,040
+really dives into the low level API methods
+
+189
+00:07:31,040 --> 00:07:33,690
+or operations, a certain programming language
+
+190
+00:07:33,690 --> 00:07:35,560
+or framework offers.
+
+191
+00:07:35,560 --> 00:07:37,050
+In the case of isEmail,
+
+192
+00:07:37,050 --> 00:07:39,160
+there's higher level operation here.
+
+193
+00:07:39,160 --> 00:07:41,920
+We don't control how the email is validated,
+
+194
+00:07:41,920 --> 00:07:44,770
+we don't know what is actually going on in there,
+
+195
+00:07:44,770 --> 00:07:46,910
+we just want the email to be validated.
+
+196
+00:07:46,910 --> 00:07:48,783
+We're just interested in the result.
+
+197
+00:07:49,620 --> 00:07:51,310
+Now, with the low level example
+
+198
+00:07:51,310 --> 00:07:54,230
+we do control how the email is validated.
+
+199
+00:07:54,230 --> 00:07:55,630
+This is the concrete code
+
+200
+00:07:55,630 --> 00:07:58,710
+which decides whether something is valid or not.
+
+201
+00:07:58,710 --> 00:08:02,240
+But the interesting thing is that with the low level example
+
+202
+00:08:02,240 --> 00:08:04,630
+it's not even clear that we're talking about
+
+203
+00:08:04,630 --> 00:08:06,230
+email validation.
+
+204
+00:08:06,230 --> 00:08:10,090
+Includes is a method we can call on any string.
+
+205
+00:08:10,090 --> 00:08:12,800
+We, as a developer, add extra meaning
+
+206
+00:08:12,800 --> 00:08:14,570
+by interpreting the result.
+
+207
+00:08:14,570 --> 00:08:17,040
+If I call includes @ on an email,
+
+208
+00:08:17,040 --> 00:08:19,650
+sure, I wanna validate whether that is an email,
+
+209
+00:08:19,650 --> 00:08:22,350
+but that's some extra meaning I, as a developer,
+
+210
+00:08:22,350 --> 00:08:23,980
+add to this operation.
+
+211
+00:08:23,980 --> 00:08:28,260
+It's not obvious by the operation or the method name itself.
+
+212
+00:08:28,260 --> 00:08:32,150
+Includes is a name which does not imply any meaning
+
+213
+00:08:32,150 --> 00:08:34,850
+other than that a string includes a certain character.
+
+214
+00:08:34,850 --> 00:08:37,100
+isEmail on the other hand,
+
+215
+00:08:37,100 --> 00:08:40,280
+is easy to read and there is no room for interpretation.
+
+216
+00:08:40,280 --> 00:08:42,900
+If I call a function called isEmail,
+
+217
+00:08:42,900 --> 00:08:44,460
+it's clear that I wanna find out
+
+218
+00:08:44,460 --> 00:08:46,370
+if something is an email or not.
+
+219
+00:08:46,370 --> 00:08:49,130
+I wanna get back true or false here.
+
+220
+00:08:49,130 --> 00:08:51,920
+Now for includes @, it's technically clear
+
+221
+00:08:51,920 --> 00:08:54,790
+that it checks for the existence of a @ symbol
+
+222
+00:08:54,790 --> 00:08:55,960
+in some string,
+
+223
+00:08:55,960 --> 00:08:57,550
+but the interpretation
+
+224
+00:08:57,550 --> 00:09:00,370
+that this means that a email address is valid
+
+225
+00:09:00,370 --> 00:09:03,270
+is something which must be added by the reader.
+
+226
+00:09:03,270 --> 00:09:05,340
+That's why this is lower level.
+
+227
+00:09:05,340 --> 00:09:07,820
+We have to add the meaning to that.
+
+228
+00:09:07,820 --> 00:09:09,670
+For higher level operations,
+
+229
+00:09:09,670 --> 00:09:13,170
+the meaning is baked into the operation so to say.
+
+230
+00:09:13,170 --> 00:09:14,620
+So that's the general difference
+
+231
+00:09:14,620 --> 00:09:17,470
+between higher level and lower level operations.
+
+232
+00:09:17,470 --> 00:09:19,580
+In one case you just know the result,
+
+233
+00:09:19,580 --> 00:09:22,340
+you just know which task should be executed,
+
+234
+00:09:22,340 --> 00:09:23,740
+in the low level case,
+
+235
+00:09:23,740 --> 00:09:26,230
+you know the actual work that's being done
+
+236
+00:09:26,230 --> 00:09:27,900
+and it's your job to understand
+
+237
+00:09:27,900 --> 00:09:29,400
+why this work is being done
+
+238
+00:09:29,400 --> 00:09:31,053
+and what the goal of that is.
+
+239
+00:09:31,900 --> 00:09:33,540
+Now, the message here is not
+
+240
+00:09:33,540 --> 00:09:36,130
+that you should write high level code only.
+
+241
+00:09:36,130 --> 00:09:39,450
+Low level code can also be quite understandable
+
+242
+00:09:39,450 --> 00:09:41,490
+if you write it in the right place.
+
+243
+00:09:41,490 --> 00:09:43,760
+And that's what we're going to dive in next.
+
+244
+00:09:43,760 --> 00:09:47,350
+Why exactly do these levels of abstraction matter
+
+245
+00:09:47,350 --> 00:09:49,433
+and when should you write which code?
+

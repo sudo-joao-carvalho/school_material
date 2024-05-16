@@ -1,0 +1,656 @@
+1
+00:00:02,220 --> 00:00:05,260
+By now we had a look at a couple of rules
+
+2
+00:00:05,260 --> 00:00:06,710
+that you should consider
+
+3
+00:00:06,710 --> 00:00:09,520
+when you pick names for your variables,
+
+4
+00:00:09,520 --> 00:00:11,840
+functions or classes.
+
+5
+00:00:11,840 --> 00:00:15,810
+There also are a couple of pitfalls you should be aware of,
+
+6
+00:00:15,810 --> 00:00:18,650
+a couple of errors which are easy to make.
+
+7
+00:00:18,650 --> 00:00:20,670
+Now here's one thing which I already mentioned,
+
+8
+00:00:20,670 --> 00:00:22,090
+but it's really important.
+
+9
+00:00:22,090 --> 00:00:26,125
+Don't include redundant information in names.
+
+10
+00:00:26,125 --> 00:00:28,710
+userWithNameAndAge is pretty bad
+
+11
+00:00:28,710 --> 00:00:30,430
+if you create a user like this,
+
+12
+00:00:30,430 --> 00:00:33,660
+because it's kind of obvious what's in this user.
+
+13
+00:00:33,660 --> 00:00:36,660
+And if we would wanna stick with this pattern,
+
+14
+00:00:36,660 --> 00:00:39,830
+we could come up with super long variable names
+
+15
+00:00:39,830 --> 00:00:43,160
+if that user would not just have a name and age,
+
+16
+00:00:43,160 --> 00:00:47,810
+but maybe also hobbies, a role, a first and a last name,
+
+17
+00:00:47,810 --> 00:00:50,670
+and so on, you get the point.
+
+18
+00:00:50,670 --> 00:00:53,110
+So this is too specific.
+
+19
+00:00:53,110 --> 00:00:57,690
+Yes, names have the purpose of making us understand code
+
+20
+00:00:57,690 --> 00:01:01,780
+without diving into the details of a certain implementation,
+
+21
+00:01:01,780 --> 00:01:05,010
+but that does not mean that we wanna describe everything
+
+22
+00:01:05,010 --> 00:01:06,330
+with a variable name.
+
+23
+00:01:06,330 --> 00:01:09,420
+This is too much information which doesn't help us.
+
+24
+00:01:09,420 --> 00:01:11,060
+In most code snippets,
+
+25
+00:01:11,060 --> 00:01:13,540
+it's probably enough to quickly understand
+
+26
+00:01:13,540 --> 00:01:15,140
+that we're storing a user,
+
+27
+00:01:15,140 --> 00:01:18,350
+not that it's a user with name and age.
+
+28
+00:01:18,350 --> 00:01:20,740
+If we wanna access that information,
+
+29
+00:01:20,740 --> 00:01:22,830
+modern IDEs and editors
+
+30
+00:01:22,830 --> 00:01:25,140
+will give us auto-completion anyways,
+
+31
+00:01:25,140 --> 00:01:26,870
+and we can also simply expect
+
+32
+00:01:26,870 --> 00:01:29,400
+certain fields to be in that object
+
+33
+00:01:29,400 --> 00:01:31,480
+given the fact that it's named user,
+
+34
+00:01:31,480 --> 00:01:34,440
+it's very likely to have a name after all.
+
+35
+00:01:34,440 --> 00:01:38,450
+Hence better names here would be just user,
+
+36
+00:01:38,450 --> 00:01:42,370
+or if we wanna be more specific because it makes sense,
+
+37
+00:01:42,370 --> 00:01:46,600
+maybe it's a new user, because maybe this code gets executed
+
+38
+00:01:46,600 --> 00:01:48,770
+in some part of our code
+
+39
+00:01:48,770 --> 00:01:52,600
+where we are only operating on a newly created user,
+
+40
+00:01:52,600 --> 00:01:55,560
+and that information might be important.
+
+41
+00:01:55,560 --> 00:01:59,140
+Or maybe it's a logged in user, and we wanna reflect that,
+
+42
+00:01:59,140 --> 00:02:00,200
+and we wanna make sure
+
+43
+00:02:00,200 --> 00:02:02,380
+that everyone reading the code knows
+
+44
+00:02:02,380 --> 00:02:04,920
+that for this user, you don't need to check
+
+45
+00:02:04,920 --> 00:02:08,240
+whether he or she is logged in for example.
+
+46
+00:02:08,240 --> 00:02:10,820
+These could be variations which makes sense,
+
+47
+00:02:10,820 --> 00:02:15,270
+userWithNameAndAge doesn't make too much sense.
+
+48
+00:02:15,270 --> 00:02:19,793
+Also avoid slang, unclear abbreviations, and disinformation.
+
+49
+00:02:21,610 --> 00:02:25,010
+You want avoid slang like this for example.
+
+50
+00:02:25,010 --> 00:02:26,520
+It might be funny to you,
+
+51
+00:02:26,520 --> 00:02:28,050
+it might make sense to you,
+
+52
+00:02:28,050 --> 00:02:30,820
+maybe also to you and your team,
+
+53
+00:02:30,820 --> 00:02:33,360
+but overall, it's not too helpful.
+
+54
+00:02:33,360 --> 00:02:35,870
+And if I dive into this project
+
+55
+00:02:35,870 --> 00:02:39,310
+and I have not been part of the team right from the start,
+
+56
+00:02:39,310 --> 00:02:43,480
+I don't immediately understand what these methods are doing.
+
+57
+00:02:43,480 --> 00:02:45,470
+diePlease, for example,
+
+58
+00:02:45,470 --> 00:02:48,590
+sounds like the product is about to be deleted,
+
+59
+00:02:48,590 --> 00:02:51,370
+but I can't be 100% sure about that
+
+60
+00:02:51,370 --> 00:02:53,630
+unless I dive into the code.
+
+61
+00:02:53,630 --> 00:02:55,810
+So instead, don't use slang,
+
+62
+00:02:55,810 --> 00:02:57,870
+use objective, clear names,
+
+63
+00:02:57,870 --> 00:03:01,160
+like remove or sendErrorMessage here.
+
+64
+00:03:01,160 --> 00:03:04,900
+Unclear abbreviations can also be a big issue.
+
+65
+00:03:04,900 --> 00:03:07,050
+Consider these examples here,
+
+66
+00:03:07,050 --> 00:03:12,050
+message n, and then ymdt equals something.
+
+67
+00:03:12,270 --> 00:03:16,500
+The second line is probably some date snapshot,
+
+68
+00:03:16,500 --> 00:03:18,210
+but it's hard to reason about it,
+
+69
+00:03:18,210 --> 00:03:22,090
+it's not clear what is what, at least not immediately.
+
+70
+00:03:22,090 --> 00:03:24,660
+So here, clear names help a lot.
+
+71
+00:03:24,660 --> 00:03:26,790
+If we use newUser instead of n,
+
+72
+00:03:26,790 --> 00:03:29,830
+it's clear that we're sending a message to a new user,
+
+73
+00:03:29,830 --> 00:03:31,490
+and not to something.
+
+74
+00:03:31,490 --> 00:03:34,430
+And if we name the variable dateWithTimeZone,
+
+75
+00:03:34,430 --> 00:03:35,810
+or something like that,
+
+76
+00:03:35,810 --> 00:03:40,170
+it's also much clearer what's inside of that variable.
+
+77
+00:03:40,170 --> 00:03:43,740
+Last but not least, disinformation should also be avoided.
+
+78
+00:03:43,740 --> 00:03:45,900
+And I have seen code like this.
+
+79
+00:03:45,900 --> 00:03:47,740
+We have all seen code like this.
+
+80
+00:03:47,740 --> 00:03:50,140
+We maybe even wrote code like this.
+
+81
+00:03:50,140 --> 00:03:52,160
+What's the problem here?
+
+82
+00:03:52,160 --> 00:03:55,940
+Well, the first line of code has a variable named userList,
+
+83
+00:03:55,940 --> 00:03:57,650
+but this isn't a list,
+
+84
+00:03:57,650 --> 00:04:02,090
+it's a JavaScript object, or close to a Python dictionary.
+
+85
+00:04:02,090 --> 00:04:03,870
+It's definitely not an array,
+
+86
+00:04:03,870 --> 00:04:06,400
+there are no square brackets.
+
+87
+00:04:06,400 --> 00:04:09,890
+allAccounts implies that we have, well,
+
+88
+00:04:09,890 --> 00:04:11,480
+all accounts,
+
+89
+00:04:11,480 --> 00:04:13,810
+but instead it looks like we're filtering
+
+90
+00:04:13,810 --> 00:04:15,220
+for certain accounts.
+
+91
+00:04:15,220 --> 00:04:16,630
+So by definition,
+
+92
+00:04:16,630 --> 00:04:19,470
+we probably don't have all accounts,
+
+93
+00:04:19,470 --> 00:04:21,640
+at least, it's misleading.
+
+94
+00:04:21,640 --> 00:04:24,190
+So better names would be userMap,
+
+95
+00:04:24,190 --> 00:04:27,840
+or just user if we store some object or map
+
+96
+00:04:27,840 --> 00:04:30,290
+in that variable instead of a list.
+
+97
+00:04:30,290 --> 00:04:34,740
+And filteredAccounts makes more sense than accounts.filter.
+
+98
+00:04:34,740 --> 00:04:37,470
+Of course, depending on the application we're writing,
+
+99
+00:04:37,470 --> 00:04:40,750
+we might also be able to replace filteredAccounts
+
+100
+00:04:40,750 --> 00:04:42,220
+with a better name.
+
+101
+00:04:42,220 --> 00:04:45,910
+Maybe it's just the user accounts who have a paid plan,
+
+102
+00:04:45,910 --> 00:04:48,000
+then we could name it, paid accounts,
+
+103
+00:04:48,000 --> 00:04:50,640
+making it clear for what we're filtering.
+
+104
+00:04:50,640 --> 00:04:53,803
+But it's all better than allAccounts for sure.
+
+105
+00:04:54,670 --> 00:04:58,500
+Also make sure that you work with distinctive names.
+
+106
+00:04:58,500 --> 00:05:01,470
+Let's say you work with some analytics class
+
+107
+00:05:01,470 --> 00:05:04,550
+which you used to create an analytics object,
+
+108
+00:05:04,550 --> 00:05:08,150
+and now this class exposes a couple of methods to you,
+
+109
+00:05:08,150 --> 00:05:12,275
+getDailyData, and you pass a day into the method,
+
+110
+00:05:12,275 --> 00:05:13,420
+getDayData,
+
+111
+00:05:13,420 --> 00:05:16,280
+getRawDailyData with a day argument,
+
+112
+00:05:16,280 --> 00:05:19,730
+getParsedDailyData with a day argument.
+
+113
+00:05:19,730 --> 00:05:21,950
+What are these things doing?
+
+114
+00:05:21,950 --> 00:05:23,800
+Don't write code like this.
+
+115
+00:05:23,800 --> 00:05:27,100
+These methods all sound very familiar.
+
+116
+00:05:27,100 --> 00:05:29,760
+It's very hard to tell what the different methods do
+
+117
+00:05:29,760 --> 00:05:31,730
+and which method you wanna use.
+
+118
+00:05:31,730 --> 00:05:32,990
+And therefore, again,
+
+119
+00:05:32,990 --> 00:05:35,730
+if you are the person diving into that code
+
+120
+00:05:35,730 --> 00:05:37,570
+or working with that code,
+
+121
+00:05:37,570 --> 00:05:39,780
+you have to dive into these methods first
+
+122
+00:05:39,780 --> 00:05:42,700
+to understand which method you now need to call,
+
+123
+00:05:42,700 --> 00:05:45,033
+or what could be causing a certain bug.
+
+124
+00:05:45,900 --> 00:05:50,310
+So instead, use distinctive names like getDailyReport
+
+125
+00:05:50,310 --> 00:05:52,520
+if this maybe doesn't return the data,
+
+126
+00:05:52,520 --> 00:05:56,170
+but some PDF or Microsoft Excel report.
+
+127
+00:05:56,170 --> 00:05:59,550
+getDataForToday makes more sense than getDayData,
+
+128
+00:05:59,550 --> 00:06:02,340
+because it's clear that it's the data for today.
+
+129
+00:06:02,340 --> 00:06:04,350
+getRawDailyData make sense,
+
+130
+00:06:04,350 --> 00:06:06,640
+but now it doesn't clash with the other names,
+
+131
+00:06:06,640 --> 00:06:10,630
+because the other names are very clear and distinctive now.
+
+132
+00:06:10,630 --> 00:06:13,980
+So now it's very easy to tell what the different methods do,
+
+133
+00:06:13,980 --> 00:06:17,063
+and therefore working with this code becomes much easier.
+
+134
+00:06:18,210 --> 00:06:21,220
+Now the last pitfall, or the last thing,
+
+135
+00:06:21,220 --> 00:06:23,130
+the last concept to be aware of,
+
+136
+00:06:23,130 --> 00:06:27,350
+is that you should stay consistent when naming things.
+
+137
+00:06:27,350 --> 00:06:30,730
+For example, let's say you are writing a function
+
+138
+00:06:30,730 --> 00:06:34,600
+which retrieves some data, let's say a list of users.
+
+139
+00:06:34,600 --> 00:06:37,970
+You could name that function, getUsers, fetchUsers,
+
+140
+00:06:37,970 --> 00:06:39,420
+or retrieveUsers.
+
+141
+00:06:40,400 --> 00:06:43,200
+They all kind of describe the same thing,
+
+142
+00:06:43,200 --> 00:06:45,970
+and all three names would be fine.
+
+143
+00:06:45,970 --> 00:06:48,350
+You can go with either of these options,
+
+144
+00:06:48,350 --> 00:06:51,470
+but then stick with it, be consistent.
+
+145
+00:06:51,470 --> 00:06:55,840
+Throughout your entire program, always use the same pattern.
+
+146
+00:06:55,840 --> 00:06:58,810
+If you went with get_users in one place,
+
+147
+00:06:58,810 --> 00:07:01,710
+also use get_products in another place,
+
+148
+00:07:01,710 --> 00:07:04,620
+and don't have fetch_products in one class,
+
+149
+00:07:04,620 --> 00:07:06,810
+and get_users in another class.
+
+150
+00:07:06,810 --> 00:07:09,150
+It will not be obvious if these methods
+
+151
+00:07:09,150 --> 00:07:11,110
+do generally the same thing,
+
+152
+00:07:11,110 --> 00:07:14,470
+or if there is a key difference between getting and fetching
+
+153
+00:07:14,470 --> 00:07:16,350
+in your program.
+
+154
+00:07:16,350 --> 00:07:20,080
+So be consistent and stick to the names you go with.
+
+155
+00:07:20,080 --> 00:07:22,180
+If you then decide that you don't like the name,
+
+156
+00:07:22,180 --> 00:07:23,630
+you can always change it,
+
+157
+00:07:23,630 --> 00:07:27,610
+but it will probably not be the get, fetch or retrieve part
+
+158
+00:07:27,610 --> 00:07:30,730
+which you don't like, but the part thereafter.
+
+159
+00:07:30,730 --> 00:07:32,170
+And that's really it.
+
+160
+00:07:32,170 --> 00:07:35,860
+These are the core rules, the core ideas and concepts,
+
+161
+00:07:35,860 --> 00:07:39,550
+and the core pitfalls and problems you should be aware of
+
+162
+00:07:39,550 --> 00:07:43,130
+and you should consider when naming things.
+
+163
+00:07:43,130 --> 00:07:45,920
+So therefore, let's now dive into a couple of demos,
+
+164
+00:07:45,920 --> 00:07:48,103
+and of course also, your challenge.
+

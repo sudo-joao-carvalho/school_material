@@ -1,0 +1,38 @@
+named pipes usados para poder comunicar entre ficheiros que n estao relacionados ao contrario dos unnamed pipes
+
+PROGRAMA 1   <--------------------  PROGRAMA 2
+(ler)               (pipe)          (escrever)
+
+o programa que cria o fifo é o programa que vai ler
+
+PROGRAMA 1
+
+fdecho = open("fifoecho", modo de leitura)
+
+read() ou write() consoante o modo de leitura do fifo
+close()
+unlink()
+
+PROGRAMA 2
+
+open()
+write()
+close(fdecho)
+
+-------------------------------------------------------------------------------------------------------------------------------
+Quando eu quero mandar uma mensagem de volta e tem varios processos iguais a serem executados como vou saber para qual mandar?
+
+aquando o envio da primeira mensagem, enviar juntamente com a mensagem uma struct que tem o pid do processo
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+MODOS DE LEITURA
+-> O_RDONLY (se n meter nada a frente é bloqueante)
+-> O_WRONLY
+-> 
+
+
+TP 
+
+COMO VER SE SO EXISTE UM BACKEND A CORRER?
+makefifo da return a -1 quando ja existe

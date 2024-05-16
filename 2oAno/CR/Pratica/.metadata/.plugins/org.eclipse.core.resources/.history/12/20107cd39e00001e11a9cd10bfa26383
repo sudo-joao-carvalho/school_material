@@ -1,0 +1,20 @@
+package com.sample;
+
+public class Divisao {
+
+	private String tipo;
+	
+	public Divisao(String tipo) {
+		super();
+		this.tipo = tipo;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
+}

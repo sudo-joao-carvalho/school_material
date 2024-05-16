@@ -1,0 +1,364 @@
+1
+00:00:02,200 --> 00:00:03,997
+So before we explore any bad
+
+2
+00:00:03,997 --> 00:00:06,790
+or dirty code, let's dive right in.
+
+3
+00:00:06,790 --> 00:00:10,790
+How do we name things correctly in our code?
+
+4
+00:00:10,790 --> 00:00:14,200
+Well, let's differentiate between these three main blocks,
+
+5
+00:00:14,200 --> 00:00:15,170
+which I outlined
+
+6
+00:00:15,170 --> 00:00:18,100
+and let's have a look at the different rules.
+
+7
+00:00:18,100 --> 00:00:19,840
+Variables and constants
+
+8
+00:00:19,840 --> 00:00:22,640
+and of course, also properties and objects,
+
+9
+00:00:22,640 --> 00:00:24,880
+which would be in the same category,
+
+10
+00:00:24,880 --> 00:00:27,610
+are all data containers you could say.
+
+11
+00:00:27,610 --> 00:00:29,688
+We use them to store some data.
+
+12
+00:00:29,688 --> 00:00:32,780
+That could be some data entered by a user,
+
+13
+00:00:32,780 --> 00:00:35,180
+for example, in a web application.
+
+14
+00:00:35,180 --> 00:00:38,820
+It could be the result of validating that user input.
+
+15
+00:00:38,820 --> 00:00:40,600
+It could be a list of products,
+
+16
+00:00:40,600 --> 00:00:44,170
+a single product, anything like that.
+
+17
+00:00:44,170 --> 00:00:46,860
+Here, for the names of these variables,
+
+18
+00:00:46,860 --> 00:00:48,790
+constants and properties,
+
+19
+00:00:48,790 --> 00:00:52,230
+we typically wanna use nouns or short phrases
+
+20
+00:00:52,230 --> 00:00:55,550
+with adjectives, which describe what's inside
+
+21
+00:00:55,550 --> 00:00:57,370
+of the data container.
+
+22
+00:00:57,370 --> 00:01:02,220
+For example, something like userData or just user.
+
+23
+00:01:02,220 --> 00:01:05,580
+Something like isValid if we store a Boolean.
+
+24
+00:01:05,580 --> 00:01:06,960
+These would be good names
+
+25
+00:01:06,960 --> 00:01:09,590
+and we are going to see way more examples
+
+26
+00:01:09,590 --> 00:01:10,670
+throughout this section.
+
+27
+00:01:10,670 --> 00:01:12,390
+No worries.
+
+28
+00:01:12,390 --> 00:01:14,600
+So that's how we wanna name our variables
+
+29
+00:01:14,600 --> 00:01:16,390
+and constants and properties.
+
+30
+00:01:16,390 --> 00:01:20,226
+We wanna describe what is being stored in them.
+
+31
+00:01:20,226 --> 00:01:23,140
+Now, when it comes to functions and methods,
+
+32
+00:01:23,140 --> 00:01:24,720
+the idea is a different one.
+
+33
+00:01:24,720 --> 00:01:28,520
+Here, we don't store something in that function,
+
+34
+00:01:28,520 --> 00:01:30,090
+I mean, there is code inside of it
+
+35
+00:01:30,090 --> 00:01:33,390
+but that code executes once a function is called
+
+36
+00:01:33,390 --> 00:01:35,030
+and therefore, in the end,
+
+37
+00:01:35,030 --> 00:01:38,290
+functions and methods are, of course, commands,
+
+38
+00:01:38,290 --> 00:01:40,440
+which we can execute on demand
+
+39
+00:01:40,440 --> 00:01:43,395
+or we calculate values which we return.
+
+40
+00:01:43,395 --> 00:01:48,395
+So there are commands or calculated values you could say.
+
+41
+00:01:48,430 --> 00:01:50,610
+For example, we could have a function
+
+42
+00:01:50,610 --> 00:01:52,810
+which sends data to a server.
+
+43
+00:01:52,810 --> 00:01:54,610
+We could have a function or method
+
+44
+00:01:54,610 --> 00:01:56,992
+which validates some user input.
+
+45
+00:01:56,992 --> 00:02:00,430
+And therefore, for function and method names,
+
+46
+00:02:00,430 --> 00:02:02,660
+we typically go with verbs
+
+47
+00:02:02,660 --> 00:02:06,200
+or again, short phrases with adjectives.
+
+48
+00:02:06,200 --> 00:02:09,250
+So here we could have something like sendData
+
+49
+00:02:09,250 --> 00:02:11,920
+as a name for the function which sends function
+
+50
+00:02:11,920 --> 00:02:13,120
+to a server.
+
+51
+00:02:13,120 --> 00:02:16,480
+Or inputIsValid for the validation function.
+
+52
+00:02:16,480 --> 00:02:18,720
+Maybe also just isValid.
+
+53
+00:02:18,720 --> 00:02:20,200
+This would also be okay.
+
+54
+00:02:20,200 --> 00:02:21,840
+So here we could have the same name
+
+55
+00:02:21,840 --> 00:02:23,790
+as for the variable on the left
+
+56
+00:02:23,790 --> 00:02:25,870
+because we wanna describe a value,
+
+57
+00:02:25,870 --> 00:02:28,320
+which is produced by the function here then.
+
+58
+00:02:28,320 --> 00:02:30,220
+Though I will say that Booleans
+
+59
+00:02:30,220 --> 00:02:31,880
+are a special case here.
+
+60
+00:02:31,880 --> 00:02:35,310
+If we had a function which produces a user object,
+
+61
+00:02:35,310 --> 00:02:38,780
+for example, we might wanna call that function getUser
+
+62
+00:02:38,780 --> 00:02:41,910
+or createUser or something like that.
+
+63
+00:02:41,910 --> 00:02:43,990
+But again, you will see more examples
+
+64
+00:02:43,990 --> 00:02:47,410
+for these different scenarios throughout this section.
+
+65
+00:02:47,410 --> 00:02:49,520
+Now, when it comes to naming classes,
+
+66
+00:02:49,520 --> 00:02:51,230
+it's important to understand
+
+67
+00:02:51,230 --> 00:02:54,520
+and keep in mind that we use classes in our code
+
+68
+00:02:54,520 --> 00:02:57,900
+to create things, to create objects.
+
+69
+00:02:57,900 --> 00:03:00,450
+For example, a user object or a product
+
+70
+00:03:00,450 --> 00:03:02,850
+or an HTTP request body,
+
+71
+00:03:02,850 --> 00:03:05,960
+which we wanna parse, something like this.
+
+72
+00:03:05,960 --> 00:03:08,490
+And therefore, for naming classes,
+
+73
+00:03:08,490 --> 00:03:12,820
+we also use nouns or short phrases with nouns.
+
+74
+00:03:12,820 --> 00:03:16,160
+So simply multiple nouns combined with each other.
+
+75
+00:03:16,160 --> 00:03:19,400
+Something like User or RequestBody,
+
+76
+00:03:19,400 --> 00:03:22,581
+which would be these multiple nouns being combined.
+
+77
+00:03:22,581 --> 00:03:25,270
+That's how we wanna use classes.
+
+78
+00:03:25,270 --> 00:03:27,880
+And if you keep these basic rules in mind,
+
+79
+00:03:27,880 --> 00:03:29,930
+you've already got a good foundation
+
+80
+00:03:29,930 --> 00:03:32,070
+for naming your code correctly,
+
+81
+00:03:32,070 --> 00:03:35,080
+for naming the things in your code correctly.
+
+82
+00:03:35,080 --> 00:03:36,570
+But of course, we're now also going
+
+83
+00:03:36,570 --> 00:03:39,714
+to explore the different niche cases, variations
+
+84
+00:03:39,714 --> 00:03:42,670
+and then also how to pick the best noun
+
+85
+00:03:42,670 --> 00:03:46,297
+for a given value being stored in a variable, for example.
+
+86
+00:03:46,297 --> 00:03:49,330
+Because using a noun is just the start.
+
+87
+00:03:49,330 --> 00:03:51,075
+Of course, you wanna use the best noun,
+
+88
+00:03:51,075 --> 00:03:55,080
+which best describes what's inside a variable
+
+89
+00:03:55,080 --> 00:03:57,610
+or what's inside a function and so on.
+
+90
+00:03:57,610 --> 00:03:59,750
+So that's, of course, what we're going to explore
+
+91
+00:03:59,750 --> 00:04:00,950
+throughout this section.
+

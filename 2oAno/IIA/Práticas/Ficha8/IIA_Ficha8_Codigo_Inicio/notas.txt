@@ -1,0 +1,8 @@
+Ficha 8 - Algoritmos Evolucionários
+    -> Melhoramento iterativo de N solucoes(populacao)(individuais/cromossomas)
+    -> Novas solucoes geradas por:
+        -> Método de selecao: escolher as de melhor qualidade (torneio)
+        -> Operador de recombinacao(ou crossover) pr [70%-90%] (1 ponto de corte)
+        -> Operador de Mutacao pm [0.1%-5%]
+
+    -> Nº de iteracoes ~= Nº geracoes

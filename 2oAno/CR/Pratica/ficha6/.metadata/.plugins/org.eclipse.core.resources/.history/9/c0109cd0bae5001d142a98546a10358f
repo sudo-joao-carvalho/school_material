@@ -1,0 +1,27 @@
+package com.sample;
+
+public class Paciente {
+	
+	private final String id;
+	private final String nome;
+	private final int idade;
+	private String sintomas;
+	
+	public Paciente(String id, String nome, int idade, String sintomas) {
+		this.id = id;
+		this.nome = nome;
+		this.idade = idade;
+		this.sintomas = sintomas;
+	}
+	
+	public String getID() {return this.id;}
+	//public void setID(String id) {this.id = id;}
+	public String getNome() {return this.nome;}
+	//public void setNome(String nome) {this.nome = nome;}
+	public int getIdade() {return this.idade;}
+	//public void setIDade(int idade) {this.idade = idade;}
+	public String getSintomas() {return this.sintomas;}
+	public void setSintomas(String sintomas) {this.sintomas = sintomas;}
+	
+
+}

@@ -1,0 +1,260 @@
+1
+00:00:02,320 --> 00:00:05,610
+This course section is about staying clean.
+
+2
+00:00:05,610 --> 00:00:07,950
+I want to ensure that you're really able
+
+3
+00:00:07,950 --> 00:00:09,450
+to apply what you learned
+
+4
+00:00:09,450 --> 00:00:13,170
+and that you can take the next step and write better code
+
+5
+00:00:13,170 --> 00:00:15,280
+than you maybe did before.
+
+6
+00:00:15,280 --> 00:00:17,280
+And for that, the most important rule,
+
+7
+00:00:17,280 --> 00:00:18,609
+which you must not forget.
+
+8
+00:00:18,609 --> 00:00:23,609
+Clean code is equal to readable and understandable code.
+
+9
+00:00:24,150 --> 00:00:26,310
+Whatever helps this goal.
+
+10
+00:00:26,310 --> 00:00:29,500
+So whenever you do something which improves readability
+
+11
+00:00:29,500 --> 00:00:33,570
+and understandability, it makes your code cleaner.
+
+12
+00:00:33,570 --> 00:00:35,670
+This is really important to keep in mind.
+
+13
+00:00:35,670 --> 00:00:38,920
+It's not about checking 10 different rules
+
+14
+00:00:38,920 --> 00:00:40,890
+which you apply to your code.
+
+15
+00:00:40,890 --> 00:00:45,030
+It is about writing readable and understandable code.
+
+16
+00:00:45,030 --> 00:00:47,030
+That is the ultimate goal.
+
+17
+00:00:47,030 --> 00:00:48,630
+Don't forget this.
+
+18
+00:00:48,630 --> 00:00:51,670
+Also, don't forget that whilst we didn't focus
+
+19
+00:00:51,670 --> 00:00:54,740
+on a specific programming paradigm or style
+
+20
+00:00:54,740 --> 00:00:56,323
+or language in this course,
+
+21
+00:00:56,323 --> 00:00:58,940
+the rules and concepts taught in this course
+
+22
+00:00:58,940 --> 00:01:00,430
+will always apply.
+
+23
+00:01:00,430 --> 00:01:03,380
+You always want to have readable and meaningful names.
+
+24
+00:01:03,380 --> 00:01:05,720
+You always want to have slim, concise
+
+25
+00:01:05,720 --> 00:01:06,990
+and clean functions.
+
+26
+00:01:06,990 --> 00:01:10,100
+And you always want to have an understandable control flow
+
+27
+00:01:10,100 --> 00:01:12,270
+and no nested if statements.
+
+28
+00:01:12,270 --> 00:01:15,340
+So this all always applies.
+
+29
+00:01:15,340 --> 00:01:17,120
+Now, this course didn't focus
+
+30
+00:01:17,120 --> 00:01:19,530
+on a specific programming paradigm
+
+31
+00:01:19,530 --> 00:01:21,930
+like object oriented programming,
+
+32
+00:01:21,930 --> 00:01:24,140
+instead, what you learned, as I just mentioned,
+
+33
+00:01:24,140 --> 00:01:25,970
+will always apply.
+
+34
+00:01:25,970 --> 00:01:30,110
+Nonetheless, of course also keep paradigm specific
+
+35
+00:01:30,110 --> 00:01:33,850
+or programming language specific conventions, style guides,
+
+36
+00:01:33,850 --> 00:01:35,200
+and rules in mind,
+
+37
+00:01:35,200 --> 00:01:39,290
+and apply them in combination with what you learn here.
+
+38
+00:01:39,290 --> 00:01:40,890
+For Python, for example,
+
+39
+00:01:40,890 --> 00:01:42,920
+follow the PEP 8 aid style guide
+
+40
+00:01:42,920 --> 00:01:45,800
+so that you follow all the common best practices
+
+41
+00:01:45,800 --> 00:01:50,350
+for the specific language and style you use.
+
+42
+00:01:50,350 --> 00:01:53,640
+And then in addition, of course, apply what you learn here
+
+43
+00:01:53,640 --> 00:01:56,860
+to ensure that you're not just following some style guide,
+
+44
+00:01:56,860 --> 00:01:59,773
+but that you do everything to write clean code.
+
+45
+00:02:00,670 --> 00:02:03,710
+Also keep in mind what I said in the first course section
+
+46
+00:02:03,710 --> 00:02:06,570
+about clean code and patterns and principles.
+
+47
+00:02:06,570 --> 00:02:10,009
+Not all patterns and principles help you with clean code.
+
+48
+00:02:10,009 --> 00:02:12,840
+I mean, they will always help to some extent,
+
+49
+00:02:12,840 --> 00:02:16,170
+but often they focus on giving you a clean architecture
+
+50
+00:02:16,170 --> 00:02:19,370
+or on keeping your code extensible and maintainable.
+
+51
+00:02:19,370 --> 00:02:22,650
+And that of course is important, don't get me wrong.
+
+52
+00:02:22,650 --> 00:02:23,980
+But for clean code,
+
+53
+00:02:23,980 --> 00:02:26,220
+there are more important principles
+
+54
+00:02:26,220 --> 00:02:27,930
+and less important principles.
+
+55
+00:02:27,930 --> 00:02:31,290
+And I had a look at some of the most important principles
+
+56
+00:02:31,290 --> 00:02:32,420
+throughout this course.
+
+57
+00:02:32,420 --> 00:02:34,650
+So always also keep that in mind.
+
+58
+00:02:34,650 --> 00:02:37,550
+Of course you want to follow all the best practices
+
+59
+00:02:37,550 --> 00:02:40,390
+and principles for your given programming language
+
+60
+00:02:40,390 --> 00:02:41,640
+or framework,
+
+61
+00:02:41,640 --> 00:02:44,670
+but for clean code also always keep in mind
+
+62
+00:02:44,670 --> 00:02:47,310
+that not all principles will automatically
+
+63
+00:02:47,310 --> 00:02:48,730
+give you clean code.
+
+64
+00:02:48,730 --> 00:02:51,890
+This is important because it's easy to write bad code,
+
+65
+00:02:51,890 --> 00:02:54,723
+even though you follow all these principles.
+

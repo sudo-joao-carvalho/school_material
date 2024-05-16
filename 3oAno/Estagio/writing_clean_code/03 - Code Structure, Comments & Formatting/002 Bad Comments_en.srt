@@ -1,0 +1,360 @@
+1
+00:00:02,130 --> 00:00:04,590
+So, what can we say about comments?
+
+2
+00:00:04,590 --> 00:00:06,930
+Well, just one main thing.
+
+3
+00:00:06,930 --> 00:00:09,360
+Typically, you wanna avoid them.
+
+4
+00:00:09,360 --> 00:00:12,380
+Of course, there are a couple of exceptions though,
+
+5
+00:00:12,380 --> 00:00:16,000
+but indeed, a lot of comments are just bad,
+
+6
+00:00:16,000 --> 00:00:18,470
+for example because they simply convey
+
+7
+00:00:18,470 --> 00:00:20,390
+redundant information.
+
+8
+00:00:20,390 --> 00:00:22,670
+Have a look at this code snippet.
+
+9
+00:00:22,670 --> 00:00:25,300
+The comments you see here are pretty much redundant.
+
+10
+00:00:25,300 --> 00:00:27,010
+For example, this comment,
+
+11
+00:00:27,010 --> 00:00:29,500
+the database engine to what you we wanna connect.
+
+12
+00:00:29,500 --> 00:00:31,650
+Well, if that's what we have here,
+
+13
+00:00:31,650 --> 00:00:34,400
+why don't we just name it dbEngine
+
+14
+00:00:35,500 --> 00:00:39,753
+and use that name in our code instead of dbDriver.
+
+15
+00:00:40,950 --> 00:00:42,910
+Also, these comments here,
+
+16
+00:00:42,910 --> 00:00:47,130
+connect to the SQL Driver if driver is set to SQL.
+
+17
+00:00:47,130 --> 00:00:48,630
+Well, this should be obvious.
+
+18
+00:00:48,630 --> 00:00:52,660
+If you use proper names, as we now do in this example,
+
+19
+00:00:52,660 --> 00:00:55,200
+you shouldn't need any explanatory comments
+
+20
+00:00:55,200 --> 00:00:58,550
+because the names should be self-explanatory already.
+
+21
+00:00:58,550 --> 00:01:02,010
+And this code reads just fine without comments.
+
+22
+00:01:02,010 --> 00:01:04,450
+Actually, the comments even make it a bit harder
+
+23
+00:01:04,450 --> 00:01:08,000
+to understand it because there is extra text to read
+
+24
+00:01:08,000 --> 00:01:10,380
+and you will probably not skip this text
+
+25
+00:01:10,380 --> 00:01:11,830
+if you go through the code
+
+26
+00:01:11,830 --> 00:01:14,510
+because it might contain important information.
+
+27
+00:01:14,510 --> 00:01:17,250
+So here you have a great example where comments
+
+28
+00:01:17,250 --> 00:01:19,873
+actually make it harder to understand the code.
+
+29
+00:01:20,850 --> 00:01:23,760
+Another kind of bad comments would be dividers
+
+30
+00:01:23,760 --> 00:01:27,550
+or comments that simply mark a block of code.
+
+31
+00:01:27,550 --> 00:01:30,510
+Again, here's an example from the same file.
+
+32
+00:01:30,510 --> 00:01:32,630
+I got these big markers here,
+
+33
+00:01:32,630 --> 00:01:35,460
+which basically just inform the developer
+
+34
+00:01:35,460 --> 00:01:37,050
+going through this code file
+
+35
+00:01:37,050 --> 00:01:39,000
+that we're defining a couple of globals
+
+36
+00:01:39,000 --> 00:01:40,960
+and then a couple of classes.
+
+37
+00:01:40,960 --> 00:01:42,980
+Well, again, this should be obvious.
+
+38
+00:01:42,980 --> 00:01:45,050
+I mean, we don't have to tell anyone
+
+39
+00:01:45,050 --> 00:01:46,890
+that we're defining a couple of classes.
+
+40
+00:01:46,890 --> 00:01:48,830
+We can tell by the class keyword.
+
+41
+00:01:48,830 --> 00:01:51,540
+So comments like this also should be redundant.
+
+42
+00:01:51,540 --> 00:01:54,530
+And if you feel the need for introducing them,
+
+43
+00:01:54,530 --> 00:01:57,840
+then you might simply have too much code in one file
+
+44
+00:01:57,840 --> 00:02:00,020
+and you might wanna consider splitting your code
+
+45
+00:02:00,020 --> 00:02:02,670
+across multiple files instead.
+
+46
+00:02:02,670 --> 00:02:07,110
+Amongst the worst kinds of comments are misleading comments.
+
+47
+00:02:07,110 --> 00:02:10,090
+For example, consider this comment here.
+
+48
+00:02:10,090 --> 00:02:11,980
+We say that we're updating a user,
+
+49
+00:02:11,980 --> 00:02:15,320
+but actually the name implies that we're inserting a user,
+
+50
+00:02:15,320 --> 00:02:17,360
+which is not the same as updating.
+
+51
+00:02:17,360 --> 00:02:18,630
+So what are we doing,
+
+52
+00:02:18,630 --> 00:02:21,640
+what the comment says or what the name says?
+
+53
+00:02:21,640 --> 00:02:24,220
+So all of a sudden, a name which was good
+
+54
+00:02:24,220 --> 00:02:26,370
+now is a name we have to question
+
+55
+00:02:26,370 --> 00:02:28,610
+and we have to dive into the insert method
+
+56
+00:02:28,610 --> 00:02:30,640
+to see what it really does.
+
+57
+00:02:30,640 --> 00:02:31,810
+So that's a great example
+
+58
+00:02:31,810 --> 00:02:34,060
+where a comment does not help us at all.
+
+59
+00:02:34,060 --> 00:02:37,230
+If the insert method would really be updating a user,
+
+60
+00:02:37,230 --> 00:02:38,950
+we, of course, should rename it.
+
+61
+00:02:38,950 --> 00:02:40,650
+And if we can't rename it,
+
+62
+00:02:40,650 --> 00:02:44,740
+because it's from some badly written third-party library
+
+63
+00:02:44,740 --> 00:02:46,330
+or for whatever reason,
+
+64
+00:02:46,330 --> 00:02:48,330
+then we should at least update the comment
+
+65
+00:02:48,330 --> 00:02:51,850
+to be something like this where it now really makes it clear
+
+66
+00:02:51,850 --> 00:02:54,250
+that the comment is right and not the method.
+
+67
+00:02:54,250 --> 00:02:56,510
+Of course, we should still rename the method
+
+68
+00:02:56,510 --> 00:02:58,620
+as soon as possible though.
+
+69
+00:02:58,620 --> 00:03:01,110
+Now, another practice which you see quite often
+
+70
+00:03:01,110 --> 00:03:02,750
+is commented-out code.
+
+71
+00:03:02,750 --> 00:03:05,850
+And I will say I myself do comment-out code,
+
+72
+00:03:05,850 --> 00:03:08,000
+for example in some of my other courses,
+
+73
+00:03:08,000 --> 00:03:12,170
+to keep it around for reference or to, well, keep it inside
+
+74
+00:03:12,170 --> 00:03:14,840
+whilst we maybe replace it with new code.
+
+75
+00:03:14,840 --> 00:03:16,580
+I'm fine with doing that,
+
+76
+00:03:16,580 --> 00:03:19,300
+but you shouldn't permanently comment-out code.
+
+77
+00:03:19,300 --> 00:03:21,880
+If you really have code which you don't need anymore,
+
+78
+00:03:21,880 --> 00:03:23,440
+you should just remove it.
+
+79
+00:03:23,440 --> 00:03:26,470
+Nowadays, we should be using version control systems
+
+80
+00:03:26,470 --> 00:03:29,880
+like Git anyways and therefore we can always bring back
+
+81
+00:03:29,880 --> 00:03:32,100
+deleted code if we really need it.
+
+82
+00:03:32,100 --> 00:03:34,420
+So don't be afraid of deleting code.
+
+83
+00:03:34,420 --> 00:03:36,990
+Just do it if you don't need it anymore.
+
+84
+00:03:36,990 --> 00:03:39,410
+So instead of keeping around code like this,
+
+85
+00:03:39,410 --> 00:03:41,190
+we should just delete it
+
+86
+00:03:41,190 --> 00:03:43,240
+and then simply commit this change.
+
+87
+00:03:43,240 --> 00:03:45,530
+And assuming that we also committed changes
+
+88
+00:03:45,530 --> 00:03:46,720
+before we deleted it,
+
+89
+00:03:46,720 --> 00:03:48,860
+we can always go back to these older states
+
+90
+00:03:48,860 --> 00:03:50,453
+if we need that code again.
+

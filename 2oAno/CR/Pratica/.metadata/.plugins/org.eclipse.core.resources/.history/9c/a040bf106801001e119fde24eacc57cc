@@ -1,0 +1,29 @@
+package com.sample;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Log {
+	
+	private static List<String> log = new ArrayList<>();
+	private static int num = 0;
+	
+	private static boolean logDisplayed = false;
+	
+	public Log(String logEntry) {
+		log.add("LOG " + ++num + ": " + logEntry + "\n");
+	}
+	
+	public static String getLog() {return log.toString();}
+	
+	public static void displayLog() {
+		if (!logDisplayed) {
+			System.out.println();
+			//for (String entry : log) {
+				System.out.println(this.getLog());
+			//}
+			logDisplayed = true;
+		}
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.sample;
+
+public class Alarme {
+
+	Divisao divisaoInvadida;
+	
+	public Alarme(Divisao divisaoInvadida) {
+		super();
+		this.divisaoInvadida = divisaoInvadida;
+	}
+
+	public Divisao getDivisaoInvadida() {
+		return divisaoInvadida;
+	}
+
+	public void setDivisaoInvadida(Divisao divisaoInvadida) {
+		this.divisaoInvadida = divisaoInvadida;
+	}
+	
+	
+	
+}

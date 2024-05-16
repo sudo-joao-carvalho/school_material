@@ -1,0 +1,6 @@
+# ninja log v5
+1	222	1666948598671678279	CMakeFiles/ficha3_ex7.dir/main.cpp.o	c0576a6520db8193
+1	254	1666948445071999423	CMakeFiles/ficha3_ex7.dir/pessoa.cpp.o	c6ae7a44e68864d6
+2	251	1666948445069002992	CMakeFiles/ficha3_ex7.dir/conta.cpp.o	76e541757dbebbc2
+1	250	1666948566210860592	CMakeFiles/ficha3_ex7.dir/banco.cpp.o	ecee1400bebeea4c
+223	251	1666948598701685538	ficha3_ex7	535e846f58ad1f8d

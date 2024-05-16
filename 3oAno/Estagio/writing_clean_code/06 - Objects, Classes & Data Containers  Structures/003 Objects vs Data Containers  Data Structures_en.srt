@@ -1,0 +1,328 @@
+1
+00:00:02,100 --> 00:00:04,880
+So now, with all of that out of the way,
+
+2
+00:00:04,880 --> 00:00:09,370
+let's dive into the first important concept I wanna cover
+
+3
+00:00:09,370 --> 00:00:10,730
+in this section.
+
+4
+00:00:10,730 --> 00:00:14,050
+And that's the difference between real objects
+
+5
+00:00:14,050 --> 00:00:16,250
+and data structures.
+
+6
+00:00:16,250 --> 00:00:20,810
+Though I also wanna already make it clear that both terms,
+
+7
+00:00:20,810 --> 00:00:25,690
+real objects and data structures, are made up terms.
+
+8
+00:00:25,690 --> 00:00:28,630
+These are not official terms you will find anywhere,
+
+9
+00:00:28,630 --> 00:00:30,430
+but this is simply a differentiation
+
+10
+00:00:30,430 --> 00:00:32,490
+which you sometimes find out there,
+
+11
+00:00:32,490 --> 00:00:35,820
+which can make sense when you're working with objects.
+
+12
+00:00:35,820 --> 00:00:38,170
+So what is the difference between real objects
+
+13
+00:00:38,170 --> 00:00:41,320
+and data structures or data containers,
+
+14
+00:00:41,320 --> 00:00:42,743
+as we could also call it?
+
+15
+00:00:43,620 --> 00:00:48,610
+A real object hides its internals, its properties,
+
+16
+00:00:48,610 --> 00:00:51,390
+for example, by making them private,
+
+17
+00:00:51,390 --> 00:00:56,390
+and it just exposes a public API, a couple of methods,
+
+18
+00:00:56,400 --> 00:01:00,330
+which allow you to do various things with this object.
+
+19
+00:01:00,330 --> 00:01:02,020
+And with these methods,
+
+20
+00:01:02,020 --> 00:01:04,510
+I don't just mean getters and setters
+
+21
+00:01:04,510 --> 00:01:06,270
+for these hidden properties.
+
+22
+00:01:06,270 --> 00:01:08,260
+I mean real abstractions,
+
+23
+00:01:08,260 --> 00:01:11,160
+so methods which do more complex things
+
+24
+00:01:11,160 --> 00:01:13,010
+than just setting a property
+
+25
+00:01:13,010 --> 00:01:16,090
+and therefore, acting as a proxy.
+
+26
+00:01:16,090 --> 00:01:18,620
+Data containers or data structures,
+
+27
+00:01:18,620 --> 00:01:23,390
+on the other hand, are simple objects where the properties
+
+28
+00:01:23,390 --> 00:01:26,420
+and internals are made available publicly
+
+29
+00:01:26,420 --> 00:01:31,040
+and where we have almost no public API besides that,
+
+30
+00:01:31,040 --> 00:01:32,963
+almost no methods.
+
+31
+00:01:33,980 --> 00:01:36,670
+Therefore real objects matter a lot
+
+32
+00:01:36,670 --> 00:01:40,020
+if you're following an object-oriented programming style,
+
+33
+00:01:40,020 --> 00:01:41,300
+And even if you don't,
+
+34
+00:01:41,300 --> 00:01:44,560
+some real objects could be helpful for encapsulating
+
+35
+00:01:44,560 --> 00:01:46,420
+and grouping logic together
+
+36
+00:01:46,420 --> 00:01:50,160
+and today contain your core business logic, therefore.
+
+37
+00:01:50,160 --> 00:01:53,920
+On the other hand, data containers are really just that.
+
+38
+00:01:53,920 --> 00:01:56,020
+These are objects which are just used
+
+39
+00:01:56,020 --> 00:01:58,343
+to store and transport data.
+
+40
+00:01:59,260 --> 00:02:02,600
+For real objects, as I mentioned a couple of seconds ago,
+
+41
+00:02:02,600 --> 00:02:05,700
+we prefer abstractions over concretions,
+
+42
+00:02:05,700 --> 00:02:08,199
+which is a fancy term which simply means
+
+43
+00:02:08,199 --> 00:02:13,200
+that we wanna expose methods which define a certain task
+
+44
+00:02:13,490 --> 00:02:15,790
+that should be done, and then we don't care
+
+45
+00:02:15,790 --> 00:02:19,260
+about how the object executes this task.
+
+46
+00:02:19,260 --> 00:02:22,640
+Whereas, a data container doesn't really have any methods,
+
+47
+00:02:22,640 --> 00:02:25,330
+and therefore, there we just have the concrete data,
+
+48
+00:02:25,330 --> 00:02:26,850
+which is stored inside of it,
+
+49
+00:02:26,850 --> 00:02:29,850
+and we can utilize that data in the places
+
+50
+00:02:29,850 --> 00:02:32,650
+where we get access to the data container.
+
+51
+00:02:32,650 --> 00:02:35,370
+So we don't tell the container to do something
+
+52
+00:02:35,370 --> 00:02:37,380
+as we would to do it with a real object.
+
+53
+00:02:37,380 --> 00:02:40,870
+We just can use it however we need to use it.
+
+54
+00:02:40,870 --> 00:02:44,350
+And for example, here we have a database class
+
+55
+00:02:44,350 --> 00:02:47,240
+which could be used to create real objects
+
+56
+00:02:47,240 --> 00:02:49,700
+because it's hiding its internals
+
+57
+00:02:49,700 --> 00:02:52,090
+and it then has a public API
+
+58
+00:02:52,090 --> 00:02:55,600
+which abstracts away the internals.
+
+59
+00:02:55,600 --> 00:02:59,580
+Connect and disconnect are pretty high level methods,
+
+60
+00:02:59,580 --> 00:03:03,610
+which then internally do everything to set up a connection
+
+61
+00:03:03,610 --> 00:03:05,710
+or to close a connection.
+
+62
+00:03:05,710 --> 00:03:09,420
+And we don't know what exactly the class will do internally
+
+63
+00:03:09,420 --> 00:03:11,790
+if we just call these methods.
+
+64
+00:03:11,790 --> 00:03:14,520
+That is what abstraction means.
+
+65
+00:03:14,520 --> 00:03:18,690
+We just connect to a database, which is an abstract concept,
+
+66
+00:03:18,690 --> 00:03:22,170
+and how exactly that works is hidden away from us
+
+67
+00:03:22,170 --> 00:03:24,310
+and is not our business
+
+68
+00:03:24,310 --> 00:03:27,343
+if we are using such a database object.
+
+69
+00:03:28,200 --> 00:03:31,610
+On the other hand, this user credentials clause here
+
+70
+00:03:31,610 --> 00:03:33,840
+could be used to simply create
+
+71
+00:03:33,840 --> 00:03:36,640
+a user credentials data container.
+
+72
+00:03:36,640 --> 00:03:38,610
+All the data is exposed publicly.
+
+73
+00:03:38,610 --> 00:03:42,100
+We have no methods, and we could just use objects
+
+74
+00:03:42,100 --> 00:03:46,400
+based on this class to pass credentials around, for example,
+
+75
+00:03:46,400 --> 00:03:50,513
+for example, as a parameter to a function or a method.
+
+76
+00:03:51,590 --> 00:03:54,460
+And that's the difference between real objects
+
+77
+00:03:54,460 --> 00:03:55,970
+and data containers.
+
+78
+00:03:55,970 --> 00:04:00,200
+We can use classes for both to define these objects,
+
+79
+00:04:00,200 --> 00:04:03,600
+but then how we use them differs.
+
+80
+00:04:03,600 --> 00:04:05,090
+And now of course, the question
+
+81
+00:04:05,090 --> 00:04:07,490
+is why does this matter at all?
+
+82
+00:04:07,490 --> 00:04:09,003
+Why should you care?
+

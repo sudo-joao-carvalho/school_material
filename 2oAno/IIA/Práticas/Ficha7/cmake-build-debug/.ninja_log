@@ -1,0 +1,21 @@
+# ninja log v5
+1	31	1669385916076997501	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/funcao.c.o	41a815a4d9542d9c
+1	41	1669385916085541038	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/algoritmo.c.o	821ec899bb503e1f
+26	57	1669386097356745083	Ficha7	c46978c1dc109d47
+0	26	1669386097324063205	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/main.c.o	debecf2a89cbb3d6
+1	41	1669385916087056480	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/utils.c.o	be0d7b1d88d1883
+1	39	1669386900126209461	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/algoritmo.c.o	821ec899bb503e1f
+1	39	1669386900127040744	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/main.c.o	debecf2a89cbb3d6
+39	72	1669386900160270408	Ficha7	c46978c1dc109d47
+0	29	1669387224896246264	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/algoritmo.c.o	821ec899bb503e1f
+1	29	1669387224896593136	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/main.c.o	debecf2a89cbb3d6
+29	60	1669387224928521311	Ficha7	c46978c1dc109d47
+0	24	1669991277609075625	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/algoritmo.c.o	821ec899bb503e1f
+24	57	1669991277642033319	Ficha7	c46978c1dc109d47
+1	25	1669991614927173409	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/main.c.o	debecf2a89cbb3d6
+0	33	1669991627310787260	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/main.c.o	debecf2a89cbb3d6
+1	27	1669991705208248469	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/main.c.o	debecf2a89cbb3d6
+1	27	1669991705208620501	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/algoritmo.c.o	821ec899bb503e1f
+27	57	1669991705239260346	Ficha7	c46978c1dc109d47
+0	25	1669991777352095433	CMakeFiles/Ficha7.dir/CodigoTrepaColinas/algoritmo.c.o	821ec899bb503e1f
+25	57	1669991777384182029	Ficha7	c46978c1dc109d47

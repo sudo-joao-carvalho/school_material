@@ -1,0 +1,1016 @@
+1
+00:00:02,060 --> 00:00:03,150
+Now up to this point,
+
+2
+00:00:03,150 --> 00:00:05,590
+I showed you a lot of theory
+
+3
+00:00:05,590 --> 00:00:08,490
+and I talked about different levels of abstraction.
+
+4
+00:00:08,490 --> 00:00:11,510
+And I did show you some examples on the slides,
+
+5
+00:00:11,510 --> 00:00:14,200
+but now it's time for a real code demo
+
+6
+00:00:14,200 --> 00:00:18,230
+to make sure that this is all really crystal clear.
+
+7
+00:00:18,230 --> 00:00:21,090
+Here, we have a function createUser,
+
+8
+00:00:21,090 --> 00:00:22,960
+which takes the email and the password.
+
+9
+00:00:22,960 --> 00:00:26,680
+And we could also refactor this to take just one parameter
+
+10
+00:00:26,680 --> 00:00:30,140
+with an email and password field in a map, for example,
+
+11
+00:00:30,140 --> 00:00:33,380
+but I'm actually happy with the number of parameters
+
+12
+00:00:33,380 --> 00:00:37,300
+instead it's the function body on which I wanna focus here.
+
+13
+00:00:37,300 --> 00:00:41,950
+And we see this is obviously not a super long function
+
+14
+00:00:41,950 --> 00:00:44,410
+and reading and understanding it probably
+
+15
+00:00:44,410 --> 00:00:46,450
+won't take you too long.
+
+16
+00:00:46,450 --> 00:00:49,710
+Still it can be faster, I would argue.
+
+17
+00:00:49,710 --> 00:00:52,510
+Because we are doing a couple of different things here.
+
+18
+00:00:52,510 --> 00:00:54,557
+We are doing more than one thing,
+
+19
+00:00:54,557 --> 00:00:57,910
+and we have different levels of abstraction.
+
+20
+00:00:57,910 --> 00:01:01,650
+We have all this low level validation code up here.
+
+21
+00:01:01,650 --> 00:01:04,900
+We have the low level error output code,
+
+22
+00:01:04,900 --> 00:01:08,280
+but then we have the higher level insert call
+
+23
+00:01:08,280 --> 00:01:10,180
+on some database object.
+
+24
+00:01:10,180 --> 00:01:14,170
+We don't write the SQL query on our own here for example,
+
+25
+00:01:14,170 --> 00:01:16,930
+that would be lower level and we're not doing that.
+
+26
+00:01:16,930 --> 00:01:20,660
+So we definitely have mixed levels of abstraction here.
+
+27
+00:01:20,660 --> 00:01:24,350
+And in addition to these mixed levels of abstraction,
+
+28
+00:01:24,350 --> 00:01:29,310
+we also clearly have a too big distance between the name
+
+29
+00:01:29,310 --> 00:01:32,750
+of the function createUser and the actual work
+
+30
+00:01:32,750 --> 00:01:34,260
+we're doing in there.
+
+31
+00:01:34,260 --> 00:01:36,380
+This low level validation code,
+
+32
+00:01:36,380 --> 00:01:39,860
+where we check for an at symbol in the email,
+
+33
+00:01:39,860 --> 00:01:43,360
+that error message console log statement here
+
+34
+00:01:43,360 --> 00:01:47,530
+that is all too far away from the name, createUser.
+
+35
+00:01:47,530 --> 00:01:49,230
+If we read this code,
+
+36
+00:01:49,230 --> 00:01:51,750
+we have to think about the code
+
+37
+00:01:51,750 --> 00:01:53,840
+to come up with an interpretation.
+
+38
+00:01:53,840 --> 00:01:57,030
+It's not obvious by the name of the function
+
+39
+00:01:57,030 --> 00:02:00,890
+that checking for an at sign means that we're validating.
+
+40
+00:02:00,890 --> 00:02:04,160
+We at least have to think about that for a second.
+
+41
+00:02:04,160 --> 00:02:06,740
+The same for this console log statement.
+
+42
+00:02:06,740 --> 00:02:09,680
+It's not obvious that we're showing an error message here.
+
+43
+00:02:09,680 --> 00:02:11,570
+This is only clear if we have a look
+
+44
+00:02:11,570 --> 00:02:13,410
+at the surrounding code as well.
+
+45
+00:02:13,410 --> 00:02:16,500
+It's not enough to just have a look at the function name,
+
+46
+00:02:16,500 --> 00:02:19,420
+hence the distance is too big.
+
+47
+00:02:19,420 --> 00:02:23,140
+And if we would consider our rules of thumb here,
+
+48
+00:02:23,140 --> 00:02:25,860
+both rules would apply.
+
+49
+00:02:25,860 --> 00:02:29,150
+For one we got multiple validation steps,
+
+50
+00:02:29,150 --> 00:02:30,570
+which we could extract.
+
+51
+00:02:30,570 --> 00:02:32,890
+So that left side applies.
+
+52
+00:02:32,890 --> 00:02:36,490
+We have multiple lines of code or multiple parts
+
+53
+00:02:36,490 --> 00:02:39,340
+in the code, which deal with the same operation
+
+54
+00:02:39,340 --> 00:02:41,510
+or with a related operation.
+
+55
+00:02:41,510 --> 00:02:44,080
+Also down there for creating a user
+
+56
+00:02:44,080 --> 00:02:45,580
+and then saving that user.
+
+57
+00:02:45,580 --> 00:02:48,820
+That's also kind of related, you could argue.
+
+58
+00:02:48,820 --> 00:02:51,370
+And in addition, we got code that requires
+
+59
+00:02:51,370 --> 00:02:54,250
+some more interpretation than surrounding code.
+
+60
+00:02:54,250 --> 00:02:57,950
+This entire validation error handling part,
+
+61
+00:02:57,950 --> 00:03:01,340
+as I just explained, requires more interpretation
+
+62
+00:03:01,340 --> 00:03:03,250
+than this code down there.
+
+63
+00:03:03,250 --> 00:03:06,820
+Especially calling insert on a database object
+
+64
+00:03:06,820 --> 00:03:09,400
+requires very little interpretation
+
+65
+00:03:09,400 --> 00:03:12,040
+because it is pretty clear what it does.
+
+66
+00:03:12,040 --> 00:03:15,700
+It requires definitely less thinking from our side,
+
+67
+00:03:15,700 --> 00:03:19,430
+than this validation code at the beginning of this function.
+
+68
+00:03:19,430 --> 00:03:23,210
+Hence we got multiple strong signs that we should refactor
+
+69
+00:03:23,210 --> 00:03:27,240
+and split this function to make it cleaner.
+
+70
+00:03:27,240 --> 00:03:30,310
+So how could we rewrite this function now?
+
+71
+00:03:30,310 --> 00:03:32,750
+Well, let's do it together step by step.
+
+72
+00:03:32,750 --> 00:03:36,270
+And of course, feel free to try this on your own first.
+
+73
+00:03:36,270 --> 00:03:38,800
+You can pause the video and try coming up
+
+74
+00:03:38,800 --> 00:03:43,180
+with multiple functions instead of this one single function,
+
+75
+00:03:43,180 --> 00:03:45,820
+which work together such that all the functions
+
+76
+00:03:45,820 --> 00:03:47,930
+are very readable.
+
+77
+00:03:47,930 --> 00:03:49,610
+Here's your chance to pause the video
+
+78
+00:03:49,610 --> 00:03:51,570
+and try this on your own thereafter
+
+79
+00:03:51,570 --> 00:03:53,093
+we're going to do it together.
+
+80
+00:03:54,320 --> 00:03:56,050
+So were you successful?
+
+81
+00:03:56,050 --> 00:03:57,753
+Let's refactor this together.
+
+82
+00:03:58,670 --> 00:04:01,470
+Now we have these different levels of abstraction.
+
+83
+00:04:01,470 --> 00:04:04,620
+So I think one obvious first step
+
+84
+00:04:04,620 --> 00:04:07,820
+would be that we remove this validation logic
+
+85
+00:04:07,820 --> 00:04:10,100
+from this create user function.
+
+86
+00:04:10,100 --> 00:04:13,320
+We can cut it and add a new function below,
+
+87
+00:04:13,320 --> 00:04:16,620
+createUser to have to readable top to bottom flow
+
+88
+00:04:16,620 --> 00:04:21,237
+we learned about and named his InputIsNotValid for example,
+
+89
+00:04:23,270 --> 00:04:26,190
+and we take the email and the password here
+
+90
+00:04:27,540 --> 00:04:31,340
+and simply returned a result of the check which we cut.
+
+91
+00:04:31,340 --> 00:04:34,020
+And then here we call if InputIsNotValid
+
+92
+00:04:34,020 --> 00:04:37,050
+for email and password and therefore,
+
+93
+00:04:37,050 --> 00:04:40,150
+we have a very readable createUser function.
+
+94
+00:04:40,150 --> 00:04:42,470
+This now reads smoothly.
+
+95
+00:04:42,470 --> 00:04:45,330
+If InputIsNotValid for the email and password,
+
+96
+00:04:45,330 --> 00:04:48,060
+then we console log this and return.
+
+97
+00:04:48,060 --> 00:04:52,050
+Otherwise, if we didn't return this code executes.
+
+98
+00:04:52,050 --> 00:04:54,970
+So now this function is already more readable
+
+99
+00:04:54,970 --> 00:04:58,400
+just because we added this new function here.
+
+100
+00:04:58,400 --> 00:05:00,820
+And if you don't like the negative wording here,
+
+101
+00:05:00,820 --> 00:05:03,623
+you could, of course, all the named is InputIsValid
+
+102
+00:05:04,610 --> 00:05:08,220
+and reverse these check, wherever email is.
+
+103
+00:05:08,220 --> 00:05:12,940
+Truthy, and the email includes the at symbol
+
+104
+00:05:13,880 --> 00:05:18,880
+and we do have a password and trimming the password
+
+105
+00:05:19,470 --> 00:05:24,120
+and checking that trim password with that is not equal
+
+106
+00:05:24,120 --> 00:05:25,280
+to an empty string.
+
+107
+00:05:25,280 --> 00:05:26,880
+Then this would be valid.
+
+108
+00:05:26,880 --> 00:05:29,570
+And then here we could call InputIsValid
+
+109
+00:05:29,570 --> 00:05:32,210
+and check for the opposite here.
+
+110
+00:05:32,210 --> 00:05:35,270
+So if not InputIsValid for email and password,
+
+111
+00:05:35,270 --> 00:05:38,650
+then we do this, but that's just a wording thing.
+
+112
+00:05:38,650 --> 00:05:41,460
+The main thing is that we extracted our logic
+
+113
+00:05:41,460 --> 00:05:44,150
+and moved it into a different function.
+
+114
+00:05:44,150 --> 00:05:48,770
+Hence this level of abstraction is now in its own function
+
+115
+00:05:48,770 --> 00:05:51,960
+where we now have one equal level of abstraction.
+
+116
+00:05:51,960 --> 00:05:55,430
+This code here is all on the same level of abstraction.
+
+117
+00:05:55,430 --> 00:05:58,980
+And hence here, we actually still have some mixed levels,
+
+118
+00:05:58,980 --> 00:06:01,130
+but at least the input validation
+
+119
+00:06:01,130 --> 00:06:05,560
+is now on a kind of similar level as this code down there.
+
+120
+00:06:05,560 --> 00:06:07,480
+So it is an improvement.
+
+121
+00:06:07,480 --> 00:06:10,780
+It's not the last improvement we can make, though.
+
+122
+00:06:10,780 --> 00:06:13,840
+For one there will be more extraction possibilities
+
+123
+00:06:13,840 --> 00:06:17,950
+in this code, but even if we have a look at InputIsValid,
+
+124
+00:06:17,950 --> 00:06:20,340
+we could argue that we are doing more
+
+125
+00:06:20,340 --> 00:06:22,040
+than one operation here.
+
+126
+00:06:22,040 --> 00:06:25,150
+We could argue that we are doing four operations.
+
+127
+00:06:25,150 --> 00:06:27,870
+We check whether the email address is truthy.
+
+128
+00:06:27,870 --> 00:06:30,420
+We check whether it includes the at symbol,
+
+129
+00:06:30,420 --> 00:06:33,080
+whether the password exists and if it exists,
+
+130
+00:06:33,080 --> 00:06:34,700
+whether it is not empty.
+
+131
+00:06:34,700 --> 00:06:37,480
+So we are doing four things down there,
+
+132
+00:06:37,480 --> 00:06:42,170
+but we are doing them on the same level of abstraction.
+
+133
+00:06:42,170 --> 00:06:44,853
+And hence we could leave it like this.
+
+134
+00:06:46,070 --> 00:06:48,200
+Therefore let's focus on the rest
+
+135
+00:06:48,200 --> 00:06:50,690
+of this createUser function.
+
+136
+00:06:50,690 --> 00:06:54,700
+There we still have other levels of abstraction in there.
+
+137
+00:06:54,700 --> 00:06:58,480
+For example, logging this error here.
+
+138
+00:06:58,480 --> 00:07:00,460
+This is a low level operation
+
+139
+00:07:00,460 --> 00:07:03,670
+using the built in console log functionality,
+
+140
+00:07:03,670 --> 00:07:07,490
+which JavaScript offers both in Node.js
+
+141
+00:07:07,490 --> 00:07:09,960
+as well as in the browser.
+
+142
+00:07:09,960 --> 00:07:12,240
+Therefore, we could outsource this as well
+
+143
+00:07:12,240 --> 00:07:16,770
+and add a new function, show error,
+
+144
+00:07:16,770 --> 00:07:19,483
+or show error message for example,
+
+145
+00:07:20,910 --> 00:07:23,680
+where we take the message as an argument
+
+146
+00:07:23,680 --> 00:07:26,630
+and where we then console log a message
+
+147
+00:07:26,630 --> 00:07:29,300
+and advantage of creating this separate function
+
+148
+00:07:29,300 --> 00:07:31,420
+also would be that we could use
+
+149
+00:07:31,420 --> 00:07:34,180
+it in different places of our program
+
+150
+00:07:34,180 --> 00:07:37,230
+if we need to show errors in different places.
+
+151
+00:07:37,230 --> 00:07:41,240
+And if we ever decide that console log is not the mechanism
+
+152
+00:07:41,240 --> 00:07:42,600
+we wanna continue with,
+
+153
+00:07:42,600 --> 00:07:46,380
+we can easily use a different error logging mechanism,
+
+154
+00:07:46,380 --> 00:07:49,110
+and we only need to change it in one place
+
+155
+00:07:49,110 --> 00:07:52,690
+in this function instead of in multiple places.
+
+156
+00:07:52,690 --> 00:07:53,960
+So that's another reason
+
+157
+00:07:53,960 --> 00:07:57,423
+why creating a separate function here might make sense.
+
+158
+00:07:58,420 --> 00:08:02,310
+And now here we could simply call, showErrorMessage,
+
+159
+00:08:02,310 --> 00:08:06,970
+which again is on a higher level than console log in.
+
+160
+00:08:06,970 --> 00:08:09,510
+Now what about the code down there?
+
+161
+00:08:09,510 --> 00:08:11,770
+This is definitely on a higher level
+
+162
+00:08:11,770 --> 00:08:15,850
+than our validation checks here or console log,
+
+163
+00:08:15,850 --> 00:08:18,970
+but we could argue it's not on the same high level
+
+164
+00:08:18,970 --> 00:08:21,970
+as this code, but this is also something you
+
+165
+00:08:21,970 --> 00:08:24,400
+can always argue about.
+
+166
+00:08:24,400 --> 00:08:27,830
+But we could, for example, create a new function
+
+167
+00:08:27,830 --> 00:08:32,280
+which we name saveUser, where we take an email and password
+
+168
+00:08:32,280 --> 00:08:35,980
+as our argument and where we then take this code
+
+169
+00:08:37,520 --> 00:08:39,220
+and move it into this function.
+
+170
+00:08:39,220 --> 00:08:42,610
+Though we could argue whether the creation of the object
+
+171
+00:08:42,610 --> 00:08:44,570
+should really be in this function.
+
+172
+00:08:44,570 --> 00:08:47,130
+Alternatively, we could take the finished user
+
+173
+00:08:47,130 --> 00:08:50,650
+as an argument here and just do the database insertion.
+
+174
+00:08:50,650 --> 00:08:53,190
+Here I'm doing both, but again this is something
+
+175
+00:08:53,190 --> 00:08:56,100
+we could argue about and general when it comes
+
+176
+00:08:56,100 --> 00:08:59,950
+to writing clean code, even though we have a couple of rules
+
+177
+00:08:59,950 --> 00:09:02,470
+and concepts we can take into account,
+
+178
+00:09:02,470 --> 00:09:04,380
+it always will also come down
+
+179
+00:09:04,380 --> 00:09:06,660
+to a certain amount of personal preference
+
+180
+00:09:06,660 --> 00:09:09,810
+and it will leave room for discussion.
+
+181
+00:09:09,810 --> 00:09:12,080
+Nonetheless, here we could now call,
+
+182
+00:09:12,080 --> 00:09:16,040
+saveUser and forward to email and password here.
+
+183
+00:09:16,040 --> 00:09:18,390
+And therefore this createUser function
+
+184
+00:09:18,390 --> 00:09:21,960
+is definitely way more readable than before.
+
+185
+00:09:21,960 --> 00:09:24,430
+Now this function, as we have it here
+
+186
+00:09:24,430 --> 00:09:28,070
+could still be split up even more though,
+
+187
+00:09:28,070 --> 00:09:31,670
+because you could argue that all these operations,
+
+188
+00:09:31,670 --> 00:09:34,620
+all these lines of codes we have entry and user
+
+189
+00:09:34,620 --> 00:09:39,230
+are still not necessarily on the same level of abstraction
+
+190
+00:09:39,230 --> 00:09:43,930
+and also not all exactly one level below the function name,
+
+191
+00:09:43,930 --> 00:09:48,860
+implied level of abstraction, saveUser probably is.
+
+192
+00:09:48,860 --> 00:09:49,870
+That should be fine.
+
+193
+00:09:49,870 --> 00:09:53,030
+It makes sense that as part of creating a user,
+
+194
+00:09:53,030 --> 00:09:56,600
+we save a user, but this entire validation
+
+195
+00:09:56,600 --> 00:09:58,410
+overall makes sense.
+
+196
+00:09:58,410 --> 00:10:00,760
+But the individual steps which are involved
+
+197
+00:10:00,760 --> 00:10:04,990
+are actually on a lower level, checking the input validity
+
+198
+00:10:04,990 --> 00:10:08,720
+and showing an error message that is not necessarily
+
+199
+00:10:08,720 --> 00:10:13,053
+the same level of abstraction as just calling saveUser.
+
+200
+00:10:14,020 --> 00:10:17,910
+Therefore, we could argue that we want one extra function,
+
+201
+00:10:17,910 --> 00:10:19,260
+which we extract.
+
+202
+00:10:19,260 --> 00:10:23,800
+The let's say validateInput function,
+
+203
+00:10:23,800 --> 00:10:28,040
+where we take the email entity password as a parameter
+
+204
+00:10:28,040 --> 00:10:31,713
+and where we then in the end run this code here.
+
+205
+00:10:33,270 --> 00:10:36,120
+So that we become call validateInput here
+
+206
+00:10:37,560 --> 00:10:39,450
+and forward email and password,
+
+207
+00:10:39,450 --> 00:10:43,370
+instead of doing these steps in createUser.
+
+208
+00:10:43,370 --> 00:10:46,120
+Of course we can't just replace it like this though,
+
+209
+00:10:46,120 --> 00:10:50,370
+because returning here in validateInput will not return
+
+210
+00:10:50,370 --> 00:10:53,410
+and create user and will therefore not cancel
+
+211
+00:10:53,410 --> 00:10:56,040
+the rest of this function.
+
+212
+00:10:56,040 --> 00:10:58,390
+So therefore we could, for example,
+
+213
+00:10:58,390 --> 00:11:02,550
+switch and not show the error message here and return
+
+214
+00:11:02,550 --> 00:11:05,980
+because we could also argue that showing the error message
+
+215
+00:11:05,980 --> 00:11:09,000
+is not necessarily something we wanna do directly
+
+216
+00:11:09,000 --> 00:11:11,170
+invalidate input, because there we should
+
+217
+00:11:11,170 --> 00:11:13,280
+really just validate, but instead
+
+218
+00:11:13,280 --> 00:11:14,880
+we could throw an error here.
+
+219
+00:11:14,880 --> 00:11:19,800
+We could throw a new error where we have our invalidInput
+
+220
+00:11:20,960 --> 00:11:22,930
+messaged as an error message.
+
+221
+00:11:22,930 --> 00:11:25,410
+This is how we could do this in JavaScript,
+
+222
+00:11:25,410 --> 00:11:28,800
+there is a built in error object, which we can instantiate
+
+223
+00:11:28,800 --> 00:11:31,930
+and then throw with the throw keyword.
+
+224
+00:11:31,930 --> 00:11:35,580
+And if we do that, this error would bubble up,
+
+225
+00:11:35,580 --> 00:11:38,020
+would therefore also reach this function.
+
+226
+00:11:38,020 --> 00:11:39,550
+And if it's not handled here,
+
+227
+00:11:39,550 --> 00:11:44,220
+it would cancel this function and bubble up even further.
+
+228
+00:11:44,220 --> 00:11:47,330
+And now it would be somewhere above this function.
+
+229
+00:11:47,330 --> 00:11:49,410
+So where we call, createUser,
+
+230
+00:11:49,410 --> 00:11:51,690
+where we should handle this error
+
+231
+00:11:51,690 --> 00:11:54,970
+and where we then should call, showErrorMessage.
+
+232
+00:11:54,970 --> 00:11:58,820
+And that indeed is a code structure that might make sense.
+
+233
+00:11:58,820 --> 00:12:02,393
+And that would be the cleanest possible code here.
+
+234
+00:12:03,580 --> 00:12:07,320
+So for example, depending on which kind of application
+
+235
+00:12:07,320 --> 00:12:08,630
+we are building,
+
+236
+00:12:08,630 --> 00:12:11,660
+we could have a handleCreateUserRequest function
+
+237
+00:12:11,660 --> 00:12:16,500
+somewhere in our project code where we do call createUser
+
+238
+00:12:16,500 --> 00:12:18,820
+and we therefore here handle this error
+
+239
+00:12:18,820 --> 00:12:20,920
+and show this error message.
+
+240
+00:12:20,920 --> 00:12:24,270
+And this might be the cleanest way of writing this all
+
+241
+00:12:24,270 --> 00:12:25,650
+because now if we go back
+
+242
+00:12:25,650 --> 00:12:28,150
+to the original createUser function,
+
+243
+00:12:28,150 --> 00:12:30,790
+we see that we only have two operations in there,
+
+244
+00:12:30,790 --> 00:12:33,490
+which are on the same level of abstraction
+
+245
+00:12:33,490 --> 00:12:36,100
+and which both belong to createUser
+
+246
+00:12:36,100 --> 00:12:39,400
+and are one level below the level
+
+247
+00:12:39,400 --> 00:12:42,150
+of abstraction implied by createUser.
+
+248
+00:12:42,150 --> 00:12:45,500
+It makes sense that as part of creating a user,
+
+249
+00:12:45,500 --> 00:12:48,840
+we validate the input and we then save the user.
+
+250
+00:12:48,840 --> 00:12:52,250
+And hence, this is the final form of this function,
+
+251
+00:12:52,250 --> 00:12:54,640
+which I would call clean.
+
+252
+00:12:54,640 --> 00:12:58,110
+Obviously these were a lot of refactorings
+
+253
+00:12:58,110 --> 00:13:02,780
+and we did extract quite a lot of functions as part of that,
+
+254
+00:13:02,780 --> 00:13:07,273
+but that is what writing clean code is all about in the end.
+

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TeoNavigationController</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_1">Fragment 1</string>
+    <string name="button_1">Button 1</string>
+    <string name="fragment_2">Fragment 2</string>
+    <string name="fragment_3">Fragment 3</string>
+    <string name="msg_begin">Begin</string>
+    <string name="msg_order_from">Order from: --</string>
+</resources>

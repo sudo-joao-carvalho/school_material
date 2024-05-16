@@ -1,0 +1,28 @@
+3.1. Nome: Marcar consultas e exames
+3.2. Atores: Utente, Médico, Enfermeiro, Pessoal Administrativo
+3.3. Objetivo: Permitir ao utente marcar consultas e exames com os médicos e enfermeiros disponíveis.
+3.4. Pré-Condições:
+
+Utente deve estar registado no sistema
+Médico e enfermeiro devem estar disponíveis na data/horário pretendido pelo utente
+3.5. Pós-Condições:
+Marcação de consulta/exame registada no sistema
+Utente e médico/enfermeiro notificados da marcação
+3.6. Fluxo de eventos:
+3.7. Cenário principal:
+Utente acede ao sistema e seleciona a opção de marcar consulta ou exame.
+Sistema apresenta a lista de médicos e enfermeiros disponíveis.
+Utente seleciona o médico ou enfermeiro desejado e a data/horário pretendido.
+Sistema verifica a disponibilidade do médico/enfermeiro na data/horário selecionado.
+Se o médico/enfermeiro estiver disponível, o sistema confirma a marcação com o utente e notifica o médico/enfermeiro.
+Se o médico/enfermeiro não estiver disponível, o sistema apresenta as alternativas disponíveis para o utente.
+Utente confirma a marcação e o sistema regista a consulta/exame no sistema.
+Utente e médico/enfermeiro recebem notificação da marcação.
+3.8. Cenários alternativos:
+No passo 5, se o médico/enfermeiro não estiver disponível, o sistema apresenta as alternativas disponíveis para o utente. Se o utente não estiver satisfeito com as alternativas apresentadas, o processo é cancelado.
+No passo 7, se o utente não confirmar a marcação, o processo é cancelado.
+3.9. Casos de uso relacionados:
+Consultar horários de médicos e enfermeiros
+Cancelar consulta ou exame
+Registrar resultado de exame
+Visualizar histórico de consultas e exames

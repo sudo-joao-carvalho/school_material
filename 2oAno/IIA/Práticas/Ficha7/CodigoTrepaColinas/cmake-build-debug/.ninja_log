@@ -1,0 +1,18 @@
+# ninja log v5
+1	20	1670250047663692691	CMakeFiles/CodigoTrepaColinas.dir/funcao.c.o	30a96e43131ea710
+0	30	1670250047672630594	CMakeFiles/CodigoTrepaColinas.dir/algoritmo.c.o	fa23bbc38dd14066
+1	31	1670250047674502497	CMakeFiles/CodigoTrepaColinas.dir/utils.c.o	33508f90c763d4ae
+1	34	1670250047677662631	CMakeFiles/CodigoTrepaColinas.dir/main.c.o	8b6d1f07e0477d2c
+34	67	1670250047711751313	CodigoTrepaColinas	e8408f97d92c75f5
+0	34	1670254120704839133	CMakeFiles/CodigoTrepaColinas.dir/utils.c.o	33508f90c763d4ae
+34	64	1670254120735925948	CodigoTrepaColinas	e8408f97d92c75f5
+2	147	1670263268332446039	CMakeFiles/CodigoTrepaColinas.dir/utils.c.o	33508f90c763d4ae
+148	184	1670263268371039172	CodigoTrepaColinas	e8408f97d92c75f5
+1	47	1670266561314925417	CMakeFiles/CodigoTrepaColinas.dir/algoritmo.c.o	fa23bbc38dd14066
+47	83	1670266561353107326	CodigoTrepaColinas	e8408f97d92c75f5
+0	29	1670266579015750300	CMakeFiles/CodigoTrepaColinas.dir/algoritmo.c.o	fa23bbc38dd14066
+29	60	1670266579047606632	CodigoTrepaColinas	e8408f97d92c75f5
+0	28	1670266596975700360	CMakeFiles/CodigoTrepaColinas.dir/algoritmo.c.o	fa23bbc38dd14066
+28	62	1670266597010465885	CodigoTrepaColinas	e8408f97d92c75f5
+0	28	1670287257439194566	CMakeFiles/CodigoTrepaColinas.dir/algoritmo.c.o	fa23bbc38dd14066
+28	60	1670287257472467392	CodigoTrepaColinas	e8408f97d92c75f5

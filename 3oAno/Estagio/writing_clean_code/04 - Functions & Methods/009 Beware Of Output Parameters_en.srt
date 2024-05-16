@@ -1,0 +1,384 @@
+1
+00:00:02,160 --> 00:00:04,800
+Now, the number of parameters matter
+
+2
+00:00:04,800 --> 00:00:08,850
+but in addition, it's also the kind of parameters.
+
+3
+00:00:08,850 --> 00:00:11,520
+And there's one specific kind of parameter,
+
+4
+00:00:11,520 --> 00:00:13,550
+which you absolutely wanna avoid
+
+5
+00:00:13,550 --> 00:00:17,580
+and that would be the output parameter.
+
+6
+00:00:17,580 --> 00:00:20,420
+Now, you should try to avoid output parameters
+
+7
+00:00:20,420 --> 00:00:25,070
+or output arguments, especially if they are unexpected.
+
+8
+00:00:25,070 --> 00:00:27,610
+And I have this second part here
+
+9
+00:00:27,610 --> 00:00:30,440
+because in some cases, especially when working
+
+10
+00:00:30,440 --> 00:00:33,490
+with certain third-party libraries or frameworks,
+
+11
+00:00:33,490 --> 00:00:35,220
+you can't avoid them.
+
+12
+00:00:35,220 --> 00:00:38,040
+But they should never be unexpected.
+
+13
+00:00:38,040 --> 00:00:39,930
+Take this as an example.
+
+14
+00:00:39,930 --> 00:00:41,890
+We have a function, which we call,
+
+15
+00:00:41,890 --> 00:00:43,040
+which is named createId
+
+16
+00:00:44,037 --> 00:00:45,436
+and which takes a user.
+
+17
+00:00:45,436 --> 00:00:49,210
+Now, let's assume that this function internally
+
+18
+00:00:49,210 --> 00:00:52,050
+then adds an ID field
+
+19
+00:00:52,050 --> 00:00:55,700
+to that user object which it receives as an input.
+
+20
+00:00:55,700 --> 00:00:57,300
+And that would be not great
+
+21
+00:00:57,300 --> 00:01:00,840
+because then the user, which is passed into the function,
+
+22
+00:01:00,840 --> 00:01:03,290
+gets modified by the function.
+
+23
+00:01:03,290 --> 00:01:05,950
+So the function doesn't return the ID
+
+24
+00:01:05,950 --> 00:01:08,180
+for the user, which was passed in.
+
+25
+00:01:08,180 --> 00:01:11,090
+Instead, it manipulates the user object,
+
+26
+00:01:11,090 --> 00:01:12,480
+which it received.
+
+27
+00:01:12,480 --> 00:01:14,640
+Here's the full example in code.
+
+28
+00:01:14,640 --> 00:01:16,370
+It's a createId function
+
+29
+00:01:16,370 --> 00:01:19,100
+and internally, it manipulates the value
+
+30
+00:01:19,100 --> 00:01:23,420
+which it receives and adds an id field with a certain value.
+
+31
+00:01:23,420 --> 00:01:26,120
+So if you pass user to createId,
+
+32
+00:01:26,120 --> 00:01:28,460
+it simply will have that id thereafter
+
+33
+00:01:28,460 --> 00:01:31,300
+and this is not necessarily obvious.
+
+34
+00:01:31,300 --> 00:01:34,880
+We might not expect the user to be edited.
+
+35
+00:01:34,880 --> 00:01:38,480
+We might have expected that we can simply call createId
+
+36
+00:01:38,480 --> 00:01:41,250
+and get back an id which we store in a constant
+
+37
+00:01:41,250 --> 00:01:43,370
+but that's not what this function is doing
+
+38
+00:01:43,370 --> 00:01:46,520
+and therefore, this is not really clean code.
+
+39
+00:01:46,520 --> 00:01:48,680
+It has a output parameter
+
+40
+00:01:48,680 --> 00:01:52,900
+because it actually outputs the results of its work,
+
+41
+00:01:52,900 --> 00:01:55,360
+in this case, generating the id
+
+42
+00:01:55,360 --> 00:01:58,110
+as part of the parameter which it received.
+
+43
+00:01:58,110 --> 00:01:59,960
+It manipulates the parameter
+
+44
+00:01:59,960 --> 00:02:02,750
+instead of returning a new value.
+
+45
+00:02:02,750 --> 00:02:04,890
+You generally wanna avoid this
+
+46
+00:02:04,890 --> 00:02:07,720
+and you especially wanna avoid having functions,
+
+47
+00:02:07,720 --> 00:02:11,430
+which don't sound like they're doing what they are doing.
+
+48
+00:02:11,430 --> 00:02:15,680
+It might be better if your function would be named addId
+
+49
+00:02:15,680 --> 00:02:17,751
+instead of createId.
+
+50
+00:02:17,751 --> 00:02:21,830
+So let's say it still does what it does internally
+
+51
+00:02:21,830 --> 00:02:25,270
+but now, the name addId makes it more obvious
+
+52
+00:02:25,270 --> 00:02:28,830
+that it adds an ID to the user, which we pass in.
+
+53
+00:02:28,830 --> 00:02:31,060
+It doesn't just create an ID
+
+54
+00:02:31,060 --> 00:02:33,430
+where we then could reasonably expect
+
+55
+00:02:33,430 --> 00:02:36,030
+that the ID's returned but instead,
+
+56
+00:02:36,030 --> 00:02:37,130
+addId makes it very obvious
+
+57
+00:02:37,130 --> 00:02:39,807
+that the user is likely to be edited.
+
+58
+00:02:39,807 --> 00:02:42,630
+Hence here, we still have an output parameter
+
+59
+00:02:42,630 --> 00:02:44,560
+but at least it's more expected.
+
+60
+00:02:44,560 --> 00:02:46,269
+So it would be okay.
+
+61
+00:02:46,269 --> 00:02:48,140
+It still might be even cleaner
+
+62
+00:02:48,140 --> 00:02:51,130
+to not use output parameters in the first place
+
+63
+00:02:51,130 --> 00:02:53,450
+but if you can't do it any other way,
+
+64
+00:02:53,450 --> 00:02:55,270
+then at least make it obvious
+
+65
+00:02:55,270 --> 00:02:57,938
+that you do have an output parameter.
+
+66
+00:02:57,938 --> 00:03:00,690
+Now, an even cleaner solution, by the way,
+
+67
+00:03:00,690 --> 00:03:03,680
+might be to use an object-oriented approach
+
+68
+00:03:03,680 --> 00:03:05,450
+where you have a user object
+
+69
+00:03:05,450 --> 00:03:08,316
+on which you call addId without any arguments.
+
+70
+00:03:08,316 --> 00:03:10,930
+Then this would be very obvious
+
+71
+00:03:10,930 --> 00:03:14,240
+that this probably edits the existing user
+
+72
+00:03:14,240 --> 00:03:16,670
+and here, it would therefore not be unexpected.
+
+73
+00:03:16,670 --> 00:03:19,990
+After all, here we don't even have a parameter,
+
+74
+00:03:19,990 --> 00:03:23,130
+so we definitely also don't have an output parameter
+
+75
+00:03:23,130 --> 00:03:25,370
+in here because there is no parameter at all.
+
+76
+00:03:25,370 --> 00:03:27,980
+So this function is totally understandable
+
+77
+00:03:27,980 --> 00:03:30,390
+and doesn't do anything strange things.
+
+78
+00:03:30,390 --> 00:03:33,230
+Here's a full pseudo example in code.
+
+79
+00:03:33,230 --> 00:03:36,060
+We have the User class with the addId method
+
+80
+00:03:36,060 --> 00:03:39,280
+and here, we don't have any unexpected behavior.
+
+81
+00:03:39,280 --> 00:03:40,790
+Instead here, it's pretty clear
+
+82
+00:03:40,790 --> 00:03:43,963
+what this method does to the customer object here.
+
+83
+00:03:45,190 --> 00:03:47,500
+And therefore, long story short,
+
+84
+00:03:47,500 --> 00:03:51,720
+the best case is to avoid output arguments, if possible.
+
+85
+00:03:51,720 --> 00:03:53,160
+But if you need them,
+
+86
+00:03:53,160 --> 00:03:55,290
+do it as we showed it here in the middle
+
+87
+00:03:55,290 --> 00:03:57,590
+with a clearly named function
+
+88
+00:03:57,590 --> 00:03:59,620
+and avoid having function names
+
+89
+00:03:59,620 --> 00:04:02,000
+which don't make it clear what you're doing
+
+90
+00:04:02,000 --> 00:04:03,320
+inside of the function
+
+91
+00:04:03,320 --> 00:04:06,790
+because output parameters can be super confusing
+
+92
+00:04:06,790 --> 00:04:08,380
+and lead to bugs.
+
+93
+00:04:08,380 --> 00:04:11,350
+I mean, after all, you are editing a value
+
+94
+00:04:11,350 --> 00:04:13,290
+which was passed into a function
+
+95
+00:04:13,290 --> 00:04:16,279
+and that's generally not something you expect
+
+96
+00:04:16,279 --> 00:04:17,343
+from a function.
+

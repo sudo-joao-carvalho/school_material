@@ -1,0 +1,92 @@
+1
+00:00:02,060 --> 00:00:03,990
+Now that we saw many examples,
+
+2
+00:00:03,990 --> 00:00:05,380
+learned about many rules,
+
+3
+00:00:05,380 --> 00:00:08,970
+and saw a complete transformation step by step in action
+
+4
+00:00:08,970 --> 00:00:12,350
+in the last lecture, it's time for your challenge,
+
+5
+00:00:12,350 --> 00:00:15,600
+time for you to apply what you learned.
+
+6
+00:00:15,600 --> 00:00:18,650
+And for this attached, you'll find this example code,
+
+7
+00:00:18,650 --> 00:00:20,420
+again written in Python,
+
+8
+00:00:20,420 --> 00:00:23,840
+and again you can execute it but you don't have to.
+
+9
+00:00:23,840 --> 00:00:27,720
+Instead, you should understand what this code does,
+
+10
+00:00:27,720 --> 00:00:30,450
+and then you should find all the places
+
+11
+00:00:30,450 --> 00:00:33,380
+where you're not happy with a certain name.
+
+12
+00:00:33,380 --> 00:00:36,880
+No matter if it's a class name, if it's a variable name,
+
+13
+00:00:36,880 --> 00:00:39,920
+a function name, a method name, whatever it is.
+
+14
+00:00:39,920 --> 00:00:43,830
+Now, I will say right away, not all names in here are bad.
+
+15
+00:00:43,830 --> 00:00:46,490
+There are names which are absolutely fine.
+
+16
+00:00:46,490 --> 00:00:48,540
+You can still, of course, come up with other names
+
+17
+00:00:48,540 --> 00:00:51,340
+if you prefer it, but of course most importantly,
+
+18
+00:00:51,340 --> 00:00:53,390
+you should focus on the bad names
+
+19
+00:00:53,390 --> 00:00:57,170
+and you should come up with better alternatives.
+
+20
+00:00:57,170 --> 00:01:00,590
+Once you did that, have a look at my solution video
+
+21
+00:01:00,590 --> 00:01:03,060
+to see which bad names I identified
+
+22
+00:01:03,060 --> 00:01:05,200
+and which better names I came up with
+
+23
+00:01:05,200 --> 00:01:09,053
+so that you get a feeling for how I tackled and solved this.
+

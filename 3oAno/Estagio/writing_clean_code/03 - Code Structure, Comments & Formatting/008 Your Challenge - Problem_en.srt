@@ -1,0 +1,88 @@
+1
+00:00:02,130 --> 00:00:03,469
+Now we saw all the rules,
+
+2
+00:00:03,469 --> 00:00:05,130
+we had a look at all the rules,
+
+3
+00:00:05,130 --> 00:00:07,240
+and I showed you a couple of examples
+
+4
+00:00:07,240 --> 00:00:09,520
+now it's time for your challenge.
+
+5
+00:00:09,520 --> 00:00:12,180
+So I had to find a challenge py file
+
+6
+00:00:12,180 --> 00:00:13,860
+it's therefore written in Python
+
+7
+00:00:13,860 --> 00:00:16,470
+and this file has some code,
+
+8
+00:00:16,470 --> 00:00:17,900
+you can execute it
+
+9
+00:00:17,900 --> 00:00:19,650
+though I would say it would fail,
+
+10
+00:00:19,650 --> 00:00:21,960
+you can fix it and you'll find
+
+11
+00:00:21,960 --> 00:00:24,780
+ideas on how to fix it in the code file
+
+12
+00:00:24,780 --> 00:00:29,020
+but the main priority is not that you fix this file,
+
+13
+00:00:29,020 --> 00:00:32,009
+that you can execute it, but that you fix
+
+14
+00:00:32,009 --> 00:00:35,430
+the comments and the formatting in the file.
+
+15
+00:00:35,430 --> 00:00:39,330
+Not everything is wrong indeed it isn't too bad
+
+16
+00:00:39,330 --> 00:00:42,560
+but there are a couple of things which can be improved.
+
+17
+00:00:42,560 --> 00:00:45,730
+And I want you to go through this file have a look
+
+18
+00:00:45,730 --> 00:00:48,010
+at all the different comments and the formatting
+
+19
+00:00:48,010 --> 00:00:49,520
+and the code you see here,
+
+20
+00:00:49,520 --> 00:00:52,560
+and see how you could improve it.
+
+21
+00:00:52,560 --> 00:00:55,690
+And then of course compare your solution to mine,
+
+22
+00:00:55,690 --> 00:00:59,283
+so that you also see how I transformed this file.
+

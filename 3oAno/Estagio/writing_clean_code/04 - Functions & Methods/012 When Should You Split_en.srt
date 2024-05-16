@@ -1,0 +1,232 @@
+1
+00:00:00,150 --> 00:00:01,460
+Now in the last lecture,
+
+2
+00:00:01,460 --> 00:00:04,420
+I talked about these levels of abstraction.
+
+3
+00:00:04,420 --> 00:00:08,620
+And maybe it's already clear, at least to a certain extent,
+
+4
+00:00:08,620 --> 00:00:12,390
+how exactly that's all meant to work and how that helps you.
+
+5
+00:00:12,390 --> 00:00:14,470
+But it can also be intimidating.
+
+6
+00:00:14,470 --> 00:00:17,930
+You might not be sure whether you can always determine
+
+7
+00:00:17,930 --> 00:00:21,540
+if there are mixed levels of abstraction or not.
+
+8
+00:00:21,540 --> 00:00:23,420
+Now that's no problem though.
+
+9
+00:00:23,420 --> 00:00:26,370
+Of course, for one, that is also something
+
+10
+00:00:26,370 --> 00:00:28,160
+that comes with experience,
+
+11
+00:00:28,160 --> 00:00:30,630
+and it already is a good first step
+
+12
+00:00:30,630 --> 00:00:32,479
+if you think about your code
+
+13
+00:00:32,479 --> 00:00:34,670
+and you at least consider splitting it,
+
+14
+00:00:34,670 --> 00:00:37,210
+even if you then make the wrong decision.
+
+15
+00:00:37,210 --> 00:00:39,870
+I mean, what is the wrong decision anyways?
+
+16
+00:00:39,870 --> 00:00:42,420
+It's your code and you are trying your best
+
+17
+00:00:42,420 --> 00:00:45,260
+to make it as readable as possible.
+
+18
+00:00:45,260 --> 00:00:48,860
+But in addition, I also got a rule of thumb for you,
+
+19
+00:00:48,860 --> 00:00:51,490
+or actually two rules of thumb,
+
+20
+00:00:51,490 --> 00:00:55,630
+which help you decide whether to split your code or not.
+
+21
+00:00:55,630 --> 00:00:57,930
+You wanna split a function,
+
+22
+00:00:57,930 --> 00:01:00,720
+or at least consider breaking up a function
+
+23
+00:01:00,720 --> 00:01:04,930
+into multiple functions, if you can extract code,
+
+24
+00:01:04,930 --> 00:01:09,790
+multiple lines of code, that work on the same functionality.
+
+25
+00:01:09,790 --> 00:01:12,870
+For example, if you have a function which calls
+
+26
+00:01:12,870 --> 00:01:17,210
+both setAge and setName, you could consider merging this
+
+27
+00:01:17,210 --> 00:01:20,100
+into one function, a new function,
+
+28
+00:01:20,100 --> 00:01:22,120
+or a new method in this case,
+
+29
+00:01:22,120 --> 00:01:24,580
+which you outsource from that function
+
+30
+00:01:24,580 --> 00:01:26,800
+in which it was originally.
+
+31
+00:01:26,800 --> 00:01:28,870
+So that in your original function,
+
+32
+00:01:28,870 --> 00:01:32,430
+you now only have to call one other function,
+
+33
+00:01:32,430 --> 00:01:34,280
+which then does the actual work
+
+34
+00:01:34,280 --> 00:01:36,890
+of setting an age and a name.
+
+35
+00:01:36,890 --> 00:01:39,500
+So whenever you have an opportunity like this
+
+36
+00:01:39,500 --> 00:01:42,900
+to remove a block of code from one function
+
+37
+00:01:42,900 --> 00:01:45,020
+and put it into another function,
+
+38
+00:01:45,020 --> 00:01:46,653
+you could consider doing that.
+
+39
+00:01:47,810 --> 00:01:51,260
+The other rule of thumb which I have for you
+
+40
+00:01:51,260 --> 00:01:53,500
+is that you want to extract code
+
+41
+00:01:53,500 --> 00:01:57,450
+that requires more interpretation than the surrounding code.
+
+42
+00:01:57,450 --> 00:01:59,860
+And that again is directly related
+
+43
+00:01:59,860 --> 00:02:02,240
+to these levels of abstraction.
+
+44
+00:02:02,240 --> 00:02:05,290
+If we have a look at this good old example here,
+
+45
+00:02:05,290 --> 00:02:09,380
+then we can easily see that this email.includes check
+
+46
+00:02:09,380 --> 00:02:12,340
+requires more interpretation from our side
+
+47
+00:02:12,340 --> 00:02:14,760
+than having a look at saveNewUser.
+
+48
+00:02:14,760 --> 00:02:17,780
+There it's directly obvious what this does
+
+49
+00:02:17,780 --> 00:02:18,910
+and why we're doing this.
+
+50
+00:02:18,910 --> 00:02:22,480
+For email.includes, we have to add the extra meaning
+
+51
+00:02:22,480 --> 00:02:25,530
+of email validation being done here.
+
+52
+00:02:25,530 --> 00:02:28,930
+So changing it to this code would bring it all back
+
+53
+00:02:28,930 --> 00:02:33,250
+onto the same level of abstraction and on the same level
+
+54
+00:02:33,250 --> 00:02:36,150
+of required interpretation, you could say.
+
+55
+00:02:36,150 --> 00:02:38,720
+Because now we can easily read this code
+
+56
+00:02:38,720 --> 00:02:42,580
+and the interpretation is all baked into the names.
+
+57
+00:02:42,580 --> 00:02:45,560
+So you can also just have a look at these rules
+
+58
+00:02:45,560 --> 00:02:49,033
+when it comes to deciding whether you wanna split or not.
+

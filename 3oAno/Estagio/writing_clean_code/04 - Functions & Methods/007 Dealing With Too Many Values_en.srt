@@ -1,0 +1,368 @@
+1
+00:00:02,070 --> 00:00:04,110
+Now, we will dive into the functions
+
+2
+00:00:04,110 --> 00:00:06,840
+which are a bit harder to understand.
+
+3
+00:00:06,840 --> 00:00:08,400
+For example, this example.
+
+4
+00:00:08,400 --> 00:00:11,590
+We have a User class with a constructor function,
+
+5
+00:00:11,590 --> 00:00:14,950
+where we assign name, age, and email.
+
+6
+00:00:14,950 --> 00:00:17,510
+Now, this can be instantiated like this.
+
+7
+00:00:17,510 --> 00:00:20,480
+And if we read this code, it is kind of obvious
+
+8
+00:00:20,480 --> 00:00:23,180
+that it's the name, the age, and the email address.
+
+9
+00:00:23,180 --> 00:00:25,450
+If we write this code, however,
+
+10
+00:00:25,450 --> 00:00:28,350
+our IDE will definitely give us some help.
+
+11
+00:00:28,350 --> 00:00:30,840
+So it's not too hard to fill this out,
+
+12
+00:00:30,840 --> 00:00:34,150
+but it is not 100% obvious in general
+
+13
+00:00:34,150 --> 00:00:37,280
+that the name field will be the first argument,
+
+14
+00:00:37,280 --> 00:00:40,870
+then the age, and then the email address.
+
+15
+00:00:40,870 --> 00:00:44,040
+This is not something we can take for granted.
+
+16
+00:00:44,040 --> 00:00:45,600
+It would not be unexpected
+
+17
+00:00:45,600 --> 00:00:48,000
+if the email field would be first,
+
+18
+00:00:48,000 --> 00:00:50,470
+and therefore it's not too hard to call this,
+
+19
+00:00:50,470 --> 00:00:53,910
+because of this IDE support, but it might be even better
+
+20
+00:00:53,910 --> 00:00:56,910
+if we don't need that IDE support like this at all,
+
+21
+00:00:56,910 --> 00:00:58,870
+if we don't constantly have to look
+
+22
+00:00:58,870 --> 00:01:01,630
+at which value goes where.
+
+23
+00:01:01,630 --> 00:01:05,349
+And therefore, to actually improve the readability
+
+24
+00:01:05,349 --> 00:01:08,050
+and usability of this function,
+
+25
+00:01:08,050 --> 00:01:10,440
+which a constructor function still is in the end,
+
+26
+00:01:10,440 --> 00:01:13,150
+we could rewrite this example like this.
+
+27
+00:01:13,150 --> 00:01:16,690
+Here, we have our User class still,
+
+28
+00:01:16,690 --> 00:01:18,760
+but now it doesn't take three arguments
+
+29
+00:01:18,760 --> 00:01:21,400
+in the constructor, but just one.
+
+30
+00:01:21,400 --> 00:01:25,190
+But that one argument is a simple data container,
+
+31
+00:01:25,190 --> 00:01:28,830
+an object or a map, which has various fields
+
+32
+00:01:28,830 --> 00:01:31,410
+which we then use to extract the values
+
+33
+00:01:31,410 --> 00:01:33,160
+for name, age, and email,
+
+34
+00:01:33,160 --> 00:01:36,530
+but now the advantage is that when we call this function,
+
+35
+00:01:36,530 --> 00:01:39,000
+when we instantiate this class down here,
+
+36
+00:01:39,000 --> 00:01:42,760
+we just pass in such a object here in JavaScript,
+
+37
+00:01:42,760 --> 00:01:45,880
+a hash map or a dictionary in other languages,
+
+38
+00:01:45,880 --> 00:01:49,030
+and the order does now totally not matter.
+
+39
+00:01:49,030 --> 00:01:52,130
+It doesn't matter if we have name, email, age here
+
+40
+00:01:52,130 --> 00:01:53,680
+or email, age, name
+
+41
+00:01:53,680 --> 00:01:57,720
+because we now extract the values by identifier name,
+
+42
+00:01:57,720 --> 00:02:01,030
+by key in the end, like we're doing it here.
+
+43
+00:02:01,030 --> 00:02:03,800
+So now, we don't have to worry about the order anymore.
+
+44
+00:02:03,800 --> 00:02:07,210
+And if we see this code, it's all the even more readable.
+
+45
+00:02:07,210 --> 00:02:10,850
+It's now 100% obvious that Max is the name
+
+46
+00:02:10,850 --> 00:02:13,880
+and not, for example, just the first name,
+
+47
+00:02:13,880 --> 00:02:15,870
+which is something we could have thought
+
+48
+00:02:15,870 --> 00:02:17,760
+with this first example here.
+
+49
+00:02:17,760 --> 00:02:19,960
+It's not clear whether that is the username,
+
+50
+00:02:19,960 --> 00:02:21,850
+the full name, or the first name.
+
+51
+00:02:21,850 --> 00:02:24,680
+Here, it's clear. It's the name in general.
+
+52
+00:02:24,680 --> 00:02:26,440
+So the username probably.
+
+53
+00:02:26,440 --> 00:02:29,040
+And therefore, this is how we could replace
+
+54
+00:02:29,040 --> 00:02:32,080
+multiple parameters with one parameter
+
+55
+00:02:32,080 --> 00:02:36,470
+by simply using an object or a map as that one parameter.
+
+56
+00:02:36,470 --> 00:02:39,180
+That allows us to technically still feed in
+
+57
+00:02:39,180 --> 00:02:43,240
+more than one value, but in a more structured way.
+
+58
+00:02:43,240 --> 00:02:46,410
+And this is therefore your go-to solution
+
+59
+00:02:46,410 --> 00:02:50,070
+if you have a function which needs multiple pieces of data,
+
+60
+00:02:50,070 --> 00:02:53,440
+which is totally normal, but where at the same time,
+
+61
+00:02:53,440 --> 00:02:55,690
+you don't want to have an endless
+
+62
+00:02:55,690 --> 00:02:58,510
+or unstructured list of arguments.
+
+63
+00:02:58,510 --> 00:03:02,700
+Then, you can simply refactor this to just use one argument,
+
+64
+00:03:02,700 --> 00:03:05,940
+which then in turn is a structured data container,
+
+65
+00:03:05,940 --> 00:03:08,490
+like a map or an object.
+
+66
+00:03:08,490 --> 00:03:10,190
+Here's a similar example.
+
+67
+00:03:10,190 --> 00:03:12,220
+I have this compare function,
+
+68
+00:03:12,220 --> 00:03:16,440
+which takes two values and then the comparator argument,
+
+69
+00:03:16,440 --> 00:03:19,460
+which in the end defines which kind of comparison is made.
+
+70
+00:03:19,460 --> 00:03:21,810
+And, again, this is very hard to call.
+
+71
+00:03:21,810 --> 00:03:24,850
+It's not obvious whether that comparator
+
+72
+00:03:24,850 --> 00:03:27,480
+should be the first or the last value,
+
+73
+00:03:27,480 --> 00:03:31,360
+and hence, this function could also be rewritten like this.
+
+74
+00:03:31,360 --> 00:03:33,670
+Now, it takes just one argument,
+
+75
+00:03:33,670 --> 00:03:38,130
+which again is such a object or map of key value pairs,
+
+76
+00:03:38,130 --> 00:03:40,500
+where it's now much easier to identify
+
+77
+00:03:40,500 --> 00:03:42,600
+what the first and second value is
+
+78
+00:03:42,600 --> 00:03:46,620
+and which kind of comparison operation is being performed.
+
+79
+00:03:46,620 --> 00:03:49,160
+And, again, the order does not matter here.
+
+80
+00:03:49,160 --> 00:03:51,660
+We could also have comparator here
+
+81
+00:03:51,660 --> 00:03:53,730
+as a first key value pair
+
+82
+00:03:53,730 --> 00:03:56,650
+because it's all in the same single argument.
+
+83
+00:03:56,650 --> 00:03:58,830
+It's just a map and object here
+
+84
+00:03:58,830 --> 00:04:00,860
+where this data is grouped together,
+
+85
+00:04:00,860 --> 00:04:03,480
+and in there, the order does not matter at all
+
+86
+00:04:03,480 --> 00:04:07,700
+because we extract the values by key anyways.
+
+87
+00:04:07,700 --> 00:04:10,620
+So that is how we could avoid having functions
+
+88
+00:04:10,620 --> 00:04:13,010
+with three or more arguments.
+
+89
+00:04:13,010 --> 00:04:16,329
+Because whilst three arguments can be acceptable
+
+90
+00:04:16,329 --> 00:04:19,880
+in rare cases, it's almost always the case
+
+91
+00:04:19,880 --> 00:04:22,910
+that rewriting it like this is way easier
+
+92
+00:04:22,910 --> 00:04:24,683
+to grasp and understand.
+

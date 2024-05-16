@@ -1,0 +1,97 @@
+package com.sample.rules
+
+import com.sample.Paciente;
+import com.sample.Sintoma;
+ 
+rule "exantema 1"
+salience 100
+    when
+        $p: Paciente(idade >= 15, diagnostico == "")
+        	
+        $s1:	Sintoma(sintoma == "febre", idPaciente == $p.getId())
+        $s2:	Sintoma(sintoma == "manchas", idPaciente == $p.getId())
+        $s3:	Sintoma(sintoma == "dores", idPaciente == $p.getId())
+    then
+        $p.setDiagnostico("exantema 1");
+        update($p);
+        System.out.println("O Paciente " + $p.getNome() + " foi diagnosticado com Exantema 1");
+end
+
+rule "exantema 2"
+salience 90
+	when
+		$p: Paciente(idade < 15, diagnostico == "")
+		
+		$s1:	Sintoma(sintoma == "febre", idPaciente == $p.getId())
+		$s2:	Sintoma(sintoma == "manchas", idPaciente == $p.getId())
+		
+	then
+		$p.setDiagnostico("exantema 2");
+		update($p);
+		System.out.println("O Paciente " + $p.getNome() + " foi diagnosticado com Exantema 2");
+		
+end
+
+rule "gripe"
+salience 90
+	when
+		$p: Paciente(diagnostico == "")
+		
+		$s1:	Sintoma(sintoma == "febre", idPaciente == $p.getId())
+		$s2:	Sintoma(sintoma == "dores", idPaciente == $p.getId())
+		
+	then
+		$p.setDiagnostico("gripe");
+		update($p);
+		System.out.println("O Paciente " + $p.getNome() + " foi diagnosticado com Gripe");
+		
+end
+
+rule "resfriado"
+salience 80
+	when
+		$p: Paciente(diagnostico == "")
+		
+		$s1:	Sintoma(sintoma == "febre", idPaciente == $p.getId())
+		
+	then
+		$p.setDiagnostico("resfriado");
+		update($p);
+		System.out.println("O Paciente " + $p.getNome() + " foi diagnosticado com Resfriado");
+		
+end
+
+rule "nao tem sintomas"
+salience 0
+	when
+		$p: Paciente(diagnostico == "")
+		
+		forall($s:Sintoma(idPaciente!=$p.getId()))
+		
+	then
+		$p.setDiagnostico("nao tem sintomas");
+		update($p);
+		System.out.println("O Paciente " + $p.getNome() + " não tem sintomas");
+		
+end
+
+rule "diagnostico"
+salience 0
+	when 
+		$p: Paciente()
+		forall($s:Sintoma(idPaciente == $p.getId()))
+		
+	then
+		System.out.println();
+		System.out.println("Paciente " + $p.getId() + ": \n\tNome: " + $p.getNome() + "\n\tDiagnostico: " + $p.getDiagnostico());
+		
+end
+
+
+
+
+
+
+
+
+	

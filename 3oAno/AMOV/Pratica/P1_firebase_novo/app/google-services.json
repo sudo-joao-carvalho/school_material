@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "641484539984",
+    "project_id": "p1japcamovfirebase",
+    "storage_bucket": "p1japcamovfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641484539984:android:dd9d36fc48065be6ee2955",
+        "android_client_info": {
+          "package_name": "pt.isec.amov.japc.p1_firebase_novo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641484539984-4kn5lf9g2134vaaf2poan2rueu4usfmg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pt.isec.amov.japc.p1_firebase_novo",
+            "certificate_hash": "2bb952800a1f7b6b7c47d330f9258b5d573123bc"
+          }
+        },
+        {
+          "client_id": "641484539984-e2e3p1gp47qnjpmt60qel2i5i8sbstsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbTquRAvLWv0JPraWM-0HmORXqMAO9Tpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641484539984-e2e3p1gp47qnjpmt60qel2i5i8sbstsr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

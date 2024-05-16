@@ -1,0 +1,9 @@
+package com.sample;
+
+public class Log {
+	
+	private static List<String> log
+	
+	public Log(String)
+
+}

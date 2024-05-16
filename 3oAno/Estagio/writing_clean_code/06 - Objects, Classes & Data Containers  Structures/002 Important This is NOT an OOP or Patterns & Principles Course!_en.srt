@@ -1,0 +1,184 @@
+1
+00:00:02,190 --> 00:00:05,470
+Now, before we dive into the different aspects
+
+2
+00:00:05,470 --> 00:00:07,200
+I wanna cover in this section,
+
+3
+00:00:07,200 --> 00:00:09,660
+let me make one thing very clear.
+
+4
+00:00:09,660 --> 00:00:12,570
+This course section will not teach you
+
+5
+00:00:12,570 --> 00:00:15,320
+Object Oriented Programming.
+
+6
+00:00:15,320 --> 00:00:16,980
+It will not teach you that.
+
+7
+00:00:16,980 --> 00:00:19,260
+This is not the focus of this section
+
+8
+00:00:19,260 --> 00:00:22,060
+and not the focus of this overall course.
+
+9
+00:00:22,060 --> 00:00:23,640
+The idea of this course
+
+10
+00:00:23,640 --> 00:00:27,300
+is to give you general concepts and rules and ideas,
+
+11
+00:00:27,300 --> 00:00:29,850
+which you can follow to write Clean Code
+
+12
+00:00:29,850 --> 00:00:33,110
+no matter how you write your code.
+
+13
+00:00:33,110 --> 00:00:36,710
+This course is not focused on Object Oriented Programming.
+
+14
+00:00:36,710 --> 00:00:39,410
+And this section isn't either.
+
+15
+00:00:39,410 --> 00:00:42,780
+We are going to explore various concepts
+
+16
+00:00:42,780 --> 00:00:46,390
+which come from the Object Oriented Programming world
+
+17
+00:00:46,390 --> 00:00:48,400
+and which apply to classes.
+
+18
+00:00:48,400 --> 00:00:51,640
+But as I mentioned before, this will matter to you
+
+19
+00:00:51,640 --> 00:00:54,240
+if you're working with classes in any way,
+
+20
+00:00:54,240 --> 00:00:56,730
+even if you don't build your entire project
+
+21
+00:00:56,730 --> 00:00:59,210
+in an Object Oriented way.
+
+22
+00:00:59,210 --> 00:01:03,000
+Therefore we're also not going to dive into all possible
+
+23
+00:01:03,000 --> 00:01:07,110
+Object Oriented Programming Patterns and Practices.
+
+24
+00:01:07,110 --> 00:01:11,090
+I am going to cover some important core principles
+
+25
+00:01:11,090 --> 00:01:12,710
+which you should be aware of,
+
+26
+00:01:12,710 --> 00:01:14,870
+but this will not be a deep dive
+
+27
+00:01:14,870 --> 00:01:18,330
+Object Oriented Programming section in general.
+
+28
+00:01:18,330 --> 00:01:20,820
+That's simply not the idea behind the course.
+
+29
+00:01:20,820 --> 00:01:23,840
+The idea is to give you all the core tools
+
+30
+00:01:23,840 --> 00:01:26,260
+you need to write Clean Code.
+
+31
+00:01:26,260 --> 00:01:28,740
+And for data of course we must not forget
+
+32
+00:01:28,740 --> 00:01:32,330
+that Clean Code is simply code which is written
+
+33
+00:01:32,330 --> 00:01:37,050
+such that it's readable and easy to understand by humans.
+
+34
+00:01:37,050 --> 00:01:39,990
+Now, all of these patterns and principles which exist,
+
+35
+00:01:39,990 --> 00:01:41,400
+they help you write code
+
+36
+00:01:41,400 --> 00:01:43,670
+which has maintainable and extensible.
+
+37
+00:01:43,670 --> 00:01:46,350
+Of course there is a relation to clean Code.
+
+38
+00:01:46,350 --> 00:01:48,680
+If you follow these patterns and principles,
+
+39
+00:01:48,680 --> 00:01:51,100
+you tend to end up with Clean Code,
+
+40
+00:01:51,100 --> 00:01:53,570
+but you could also follow a lot of these principles
+
+41
+00:01:53,570 --> 00:01:55,760
+and still write bad code.
+
+42
+00:01:55,760 --> 00:01:59,190
+That's why we definitely focus on the Clean Code part here
+
+43
+00:01:59,190 --> 00:02:03,260
+instead of covering all possible patterns and principles.
+
+44
+00:02:03,260 --> 00:02:06,720
+If you are interested in all these patterns and principles
+
+45
+00:02:06,720 --> 00:02:10,580
+a course focusing on just Object Oriented Programming
+
+46
+00:02:10,580 --> 00:02:12,823
+is of course the course you wanna take.
+

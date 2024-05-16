@@ -1,0 +1,128 @@
+1
+00:00:02,090 --> 00:00:05,200
+In order to write clean code and functions,
+
+2
+00:00:05,200 --> 00:00:10,200
+it is important that we reflect on what makes up a function.
+
+3
+00:00:10,440 --> 00:00:14,390
+And for that, we should probably look at a function,
+
+4
+00:00:14,390 --> 00:00:19,360
+for example, this dummy example add function here.
+
+5
+00:00:19,360 --> 00:00:21,230
+And just as a side note,
+
+6
+00:00:21,230 --> 00:00:25,410
+when I say function and what I show throughout this module
+
+7
+00:00:25,410 --> 00:00:28,270
+will also always apply to methods
+
+8
+00:00:28,270 --> 00:00:33,100
+since methods are really just functions inside of an object.
+
+9
+00:00:33,100 --> 00:00:35,350
+So this is a function or method.
+
+10
+00:00:35,350 --> 00:00:37,660
+And of course we cannot just define this function
+
+11
+00:00:37,660 --> 00:00:39,820
+and write the code for this function.
+
+12
+00:00:39,820 --> 00:00:42,140
+We can also call this function
+
+13
+00:00:42,140 --> 00:00:44,800
+which could look something like this.
+
+14
+00:00:44,800 --> 00:00:46,560
+And when we talk about clean code,
+
+15
+00:00:46,560 --> 00:00:48,840
+both parts should be clean.
+
+16
+00:00:48,840 --> 00:00:51,150
+Calling the function should be readable
+
+17
+00:00:51,150 --> 00:00:53,590
+and also easy for us as a developer.
+
+18
+00:00:53,590 --> 00:00:55,720
+If we are calling a function,
+
+19
+00:00:55,720 --> 00:00:57,880
+we wanna have an easy time doing so.
+
+20
+00:00:57,880 --> 00:01:01,230
+For example, the argument order should be clear.
+
+21
+00:01:01,230 --> 00:01:03,910
+And of course, working with the function,
+
+22
+00:01:03,910 --> 00:01:06,310
+writing code in an existing function,
+
+23
+00:01:06,310 --> 00:01:09,930
+maintaining existing functions should also be easy.
+
+24
+00:01:09,930 --> 00:01:13,190
+So the function body, the definition of a function,
+
+25
+00:01:13,190 --> 00:01:14,693
+should also be readable.
+
+26
+00:01:15,550 --> 00:01:19,060
+So therefore, it's the number and order of arguments
+
+27
+00:01:19,060 --> 00:01:22,290
+which matters to us because that defines how easy
+
+28
+00:01:22,290 --> 00:01:25,250
+and readable it is to call a function.
+
+29
+00:01:25,250 --> 00:01:29,230
+And it's the length of the function body, the amount of code
+
+30
+00:01:29,230 --> 00:01:31,990
+we have inside of a function which matters.
+
+31
+00:01:31,990 --> 00:01:33,380
+And in this section,
+
+32
+00:01:33,380 --> 00:01:36,563
+we are going to have a look at both aspects.
+

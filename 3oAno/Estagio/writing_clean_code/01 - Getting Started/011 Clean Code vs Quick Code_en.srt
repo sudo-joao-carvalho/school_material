@@ -1,0 +1,464 @@
+1
+00:00:02,120 --> 00:00:04,530
+I know we all wanna get started
+
+2
+00:00:04,530 --> 00:00:06,580
+diving into these sections
+
+3
+00:00:06,580 --> 00:00:08,980
+where we learn about the different pain points
+
+4
+00:00:08,980 --> 00:00:11,090
+and their remedies.
+
+5
+00:00:11,090 --> 00:00:13,380
+However, you still have to be patient
+
+6
+00:00:13,380 --> 00:00:16,930
+because writing clean code takes time.
+
+7
+00:00:16,930 --> 00:00:18,500
+It's written over time,
+
+8
+00:00:18,500 --> 00:00:21,760
+and of course you want to write your best code
+
+9
+00:00:21,760 --> 00:00:23,240
+right from the beginning.
+
+10
+00:00:23,240 --> 00:00:25,220
+You're starting a new project,
+
+11
+00:00:25,220 --> 00:00:27,860
+and especially after taking this course,
+
+12
+00:00:27,860 --> 00:00:31,200
+you probably want to write to cleanest code possible
+
+13
+00:00:31,200 --> 00:00:32,870
+right from the start.
+
+14
+00:00:32,870 --> 00:00:34,880
+The thing just is you will notice
+
+15
+00:00:34,880 --> 00:00:36,610
+that you will always find ways
+
+16
+00:00:36,610 --> 00:00:38,970
+of improving your code over time.
+
+17
+00:00:38,970 --> 00:00:41,730
+You will never write the best possible code
+
+18
+00:00:41,730 --> 00:00:43,190
+right at the start,
+
+19
+00:00:43,190 --> 00:00:45,740
+also because your project of course
+
+20
+00:00:45,740 --> 00:00:47,930
+typically evolves over time.
+
+21
+00:00:47,930 --> 00:00:51,180
+You don't have a project which you just write once
+
+22
+00:00:51,180 --> 00:00:54,980
+and where you then never need to go back to your code.
+
+23
+00:00:54,980 --> 00:00:57,100
+You might need to fix bugs,
+
+24
+00:00:57,100 --> 00:00:59,610
+you might need to add new features.
+
+25
+00:00:59,610 --> 00:01:03,050
+And whilst doing that you will change your code
+
+26
+00:01:03,050 --> 00:01:06,040
+and you might be able to improve your code.
+
+27
+00:01:06,040 --> 00:01:09,260
+So always question your existing code
+
+28
+00:01:09,260 --> 00:01:11,360
+and try to improve it.
+
+29
+00:01:11,360 --> 00:01:16,150
+Refactor a lot because refactoring is your key friend
+
+30
+00:01:16,150 --> 00:01:18,503
+when it comes to writing clean code.
+
+31
+00:01:19,410 --> 00:01:21,440
+Because when you write clean code
+
+32
+00:01:21,440 --> 00:01:23,620
+you typically start on a project,
+
+33
+00:01:23,620 --> 00:01:25,760
+you plan your project of course,
+
+34
+00:01:25,760 --> 00:01:28,400
+the data entities you want to use and so on.
+
+35
+00:01:28,400 --> 00:01:30,470
+But then when you start writing code
+
+36
+00:01:30,470 --> 00:01:33,080
+you implement feature by feature,
+
+37
+00:01:33,080 --> 00:01:35,150
+but often you will then find a way
+
+38
+00:01:35,150 --> 00:01:37,730
+of improving the feature you just worked on,
+
+39
+00:01:37,730 --> 00:01:40,070
+and hence you refactor it.
+
+40
+00:01:40,070 --> 00:01:42,370
+Then you continue and you find a way
+
+41
+00:01:42,370 --> 00:01:45,040
+of improving that last feature you worked on.
+
+42
+00:01:45,040 --> 00:01:47,910
+And this is a totally normal flow.
+
+43
+00:01:47,910 --> 00:01:50,530
+Even once you're done with your prototype
+
+44
+00:01:50,530 --> 00:01:52,510
+or your release candidate,
+
+45
+00:01:52,510 --> 00:01:54,290
+you should review your code,
+
+46
+00:01:54,290 --> 00:01:58,520
+and then of course also again, improve it where possible.
+
+47
+00:01:58,520 --> 00:02:02,010
+So writing clean code is an iterative process
+
+48
+00:02:02,010 --> 00:02:03,880
+and you're never done with it.
+
+49
+00:02:03,880 --> 00:02:06,550
+You will always find ways of improving code,
+
+50
+00:02:06,550 --> 00:02:08,470
+or as you add more features
+
+51
+00:02:08,470 --> 00:02:10,490
+you might need to change your code
+
+52
+00:02:10,490 --> 00:02:14,000
+because it doesn't work with that new feature otherwise.
+
+53
+00:02:14,000 --> 00:02:16,610
+So you should embrace refactoring.
+
+54
+00:02:16,610 --> 00:02:18,750
+And I know from other courses
+
+55
+00:02:18,750 --> 00:02:21,880
+that refactoring can be frustrating.
+
+56
+00:02:21,880 --> 00:02:24,680
+I had students who really complained about the fact
+
+57
+00:02:24,680 --> 00:02:27,290
+that we did refactoring my courses.
+
+58
+00:02:27,290 --> 00:02:28,680
+The thing just is
+
+59
+00:02:28,680 --> 00:02:31,780
+refactoring is a totally normal thing
+
+60
+00:02:31,780 --> 00:02:33,530
+to do during development
+
+61
+00:02:33,530 --> 00:02:38,290
+because you save time tomorrow if you refactor today.
+
+62
+00:02:38,290 --> 00:02:42,040
+If you continuously improve and question your code
+
+63
+00:02:42,040 --> 00:02:44,430
+you will have better code tomorrow,
+
+64
+00:02:44,430 --> 00:02:47,040
+which will speed you up tomorrow.
+
+65
+00:02:47,040 --> 00:02:48,610
+In addition a code base
+
+66
+00:02:48,610 --> 00:02:51,790
+can really only survive and stay maintainable
+
+67
+00:02:51,790 --> 00:02:56,060
+if you continuously question and improve and refactor it,
+
+68
+00:02:56,060 --> 00:02:58,663
+otherwise it will not age well.
+
+69
+00:02:59,530 --> 00:03:01,100
+As a pro tip,
+
+70
+00:03:01,100 --> 00:03:03,350
+always try to improve the code
+
+71
+00:03:03,350 --> 00:03:05,730
+whenever you change something in there.
+
+72
+00:03:05,730 --> 00:03:07,650
+Even if you change something else,
+
+73
+00:03:07,650 --> 00:03:10,060
+try to find a place in your code
+
+74
+00:03:10,060 --> 00:03:12,390
+where you can improve a code,
+
+75
+00:03:12,390 --> 00:03:14,250
+maybe improve a function
+
+76
+00:03:14,250 --> 00:03:15,570
+with all the tools
+
+77
+00:03:15,570 --> 00:03:17,480
+you're going to learn throughout this course,
+
+78
+00:03:17,480 --> 00:03:18,710
+because this will ensure
+
+79
+00:03:18,710 --> 00:03:21,520
+that your code base is always healthy.
+
+80
+00:03:21,520 --> 00:03:23,550
+Because there is a big danger.
+
+81
+00:03:23,550 --> 00:03:27,500
+I'm of course aware that we're all always under pressure.
+
+82
+00:03:27,500 --> 00:03:29,810
+There never is time to do it right,
+
+83
+00:03:29,810 --> 00:03:32,060
+we just have to do it in some way.
+
+84
+00:03:32,060 --> 00:03:35,480
+And therefore we are inclined to write quick code
+
+85
+00:03:35,480 --> 00:03:37,970
+instead of good and clean code.
+
+86
+00:03:37,970 --> 00:03:41,750
+However, consider this example made up plot,
+
+87
+00:03:41,750 --> 00:03:44,340
+which is not too unrealistic.
+
+88
+00:03:44,340 --> 00:03:47,220
+If we plot the amount of code output,
+
+89
+00:03:47,220 --> 00:03:48,540
+so the code we write,
+
+90
+00:03:48,540 --> 00:03:50,950
+the new features we add to a project,
+
+91
+00:03:50,950 --> 00:03:54,720
+against the time for which our project exists
+
+92
+00:03:54,720 --> 00:03:58,320
+in weeks or months or even years,
+
+93
+00:03:58,320 --> 00:04:00,590
+if we only write dirty code
+
+94
+00:04:00,590 --> 00:04:02,840
+and we just write code which works
+
+95
+00:04:02,840 --> 00:04:04,790
+but which isn't really clean,
+
+96
+00:04:04,790 --> 00:04:06,560
+we'll be able to pump out
+
+97
+00:04:06,560 --> 00:04:09,130
+a lot of code and features initially,
+
+98
+00:04:09,130 --> 00:04:11,470
+but over time that will decline
+
+99
+00:04:11,470 --> 00:04:13,980
+because our code base becomes a burden
+
+100
+00:04:13,980 --> 00:04:16,050
+and it becomes hard to maintain,
+
+101
+00:04:16,050 --> 00:04:18,800
+and adding new features and fixing bugs
+
+102
+00:04:18,800 --> 00:04:20,760
+becomes harder over time.
+
+103
+00:04:20,760 --> 00:04:24,060
+And this is not some unrealistic made up scenario.
+
+104
+00:04:24,060 --> 00:04:26,350
+There are lots of projects out there
+
+105
+00:04:26,350 --> 00:04:28,510
+which had to be rewritten from scratch
+
+106
+00:04:28,510 --> 00:04:29,960
+at some point of time
+
+107
+00:04:29,960 --> 00:04:32,340
+because they became unmaintainable
+
+108
+00:04:32,340 --> 00:04:35,223
+simply because they were not using clean code.
+
+109
+00:04:36,110 --> 00:04:38,540
+If you are using clean code on the other hand,
+
+110
+00:04:38,540 --> 00:04:40,510
+you are slower initially
+
+111
+00:04:40,510 --> 00:04:42,980
+but over time you become more productive
+
+112
+00:04:42,980 --> 00:04:46,610
+because adding new features is very easy in the future
+
+113
+00:04:46,610 --> 00:04:50,430
+and you profit and benefit from your clean code.
+
+114
+00:04:50,430 --> 00:04:54,200
+So that's why writing clean code is key and important
+
+115
+00:04:54,200 --> 00:04:56,390
+and why it should be a priority
+
+116
+00:04:56,390 --> 00:04:58,923
+in any project you are going to start.
+

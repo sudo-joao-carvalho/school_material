@@ -1,0 +1,21 @@
+package com.sample;
+
+public class EntidadeDetetada {
+	
+	Divisao divisao;
+
+	public EntidadeDetetada(Divisao divisao) {
+		super();
+		this.divisao = divisao;
+	}
+
+	public Divisao getDivisao() {
+		return divisao;
+	}
+
+	public void setDivisao(Divisao divisao) {
+		this.divisao = divisao;
+	}
+	
+	
+}

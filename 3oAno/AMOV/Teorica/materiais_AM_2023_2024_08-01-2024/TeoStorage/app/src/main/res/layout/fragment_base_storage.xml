@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.BaseStorageFragment">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:autoSizeMaxTextSize="32sp"
+        app:autoSizeMinTextSize="20sp"
+        app:autoSizeTextType="uniform"
+        android:fontFamily="@font/font1"
+        android:gravity="center_horizontal|bottom"
+        android:maxLines="1"
+        android:padding="16dp"
+        android:text="@string/tipo_de_storage"
+        android:textColor="#d5ddef" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:autoSizeMaxTextSize="28sp"
+        app:autoSizeMinTextSize="16sp"
+        app:autoSizeTextType="uniform"
+        android:fontFamily="@font/font1"
+        android:maxLines="1"
+        android:text="@string/button_1" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:autoSizeMaxTextSize="28sp"
+        app:autoSizeMinTextSize="16sp"
+        app:autoSizeTextType="uniform"
+        android:fontFamily="@font/font1"
+        android:maxLines="1"
+        android:text="@string/button_2" />
+
+</LinearLayout>

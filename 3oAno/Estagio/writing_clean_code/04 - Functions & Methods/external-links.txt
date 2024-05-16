@@ -1,0 +1,42 @@
+
+004 Code
+https://github.com/academind/clean-code-course-code/tree/functions-01-refactoring-function-parameters
+
+005 Code
+https://github.com/academind/clean-code-course-code/tree/functions-02-when-one-parameter-is-just-right
+
+006 Code
+https://github.com/academind/clean-code-course-code/tree/functions-03-two-parameters
+
+007 Code
+https://github.com/academind/clean-code-course-code/tree/functions-04-dealing-with-too-many-values
+
+008 Code
+https://github.com/academind/clean-code-course-code/tree/functions-05-dynamic-parameters
+
+009 Code
+https://github.com/academind/clean-code-course-code/tree/functions-06-output-parameters
+
+010 Code
+https://github.com/academind/clean-code-course-code/tree/functions-07-small-do-one-thing
+
+013 Code
+https://github.com/academind/clean-code-course-code/tree/functions-08-demo-challenge
+
+015 Code
+https://github.com/academind/clean-code-course-code/tree/functions-09-dry
+
+016 Code
+https://github.com/academind/clean-code-course-code/tree/functions-10-avoid-useless-splitting
+
+017 Code
+https://github.com/academind/clean-code-course-code/tree/functions-11-side-effects
+
+018 Code
+https://github.com/academind/clean-code-course-code/tree/functions-12-side-effects-challenge
+
+019 Code
+https://github.com/academind/clean-code-course-code/tree/functions-13-unit-testing
+
+020 Slides-Summary-Sheet
+https://github.com/academind/clean-code-course-code/tree/functions-extra-attachments

@@ -1,0 +1,60 @@
+package com.sample;
+
+import org.kie.api.KieServices;
+import org.kie.api.runtime.KieContainer;
+import org.kie.api.runtime.KieSession;
+
+/**
+ * This is a sample class to launch a rule.
+ */
+public class DroolsTest {
+
+    public static final void main(String[] args) {
+        try {
+            // load up the knowledge base
+	        KieServices ks = KieServices.Factory.get();
+    	    KieContainer kContainer = ks.getKieClasspathContainer();
+        	KieSession kSession = kContainer.newKieSession("ksession-rules");
+        	
+        	//Criar divisoes
+        	Divisao d1 = new Divisao ("cozinha");
+        	Divisao d2 = new Divisao ("escritorio"); 
+        	Divisao d3 = new Divisao ("sala");
+        	Divisao d4 = new Divisao ("ginasio");
+        	kSession.insert( d1 );
+        	kSession.insert( d2 );
+        	kSession.insert( d3 );
+        	kSession.insert( d4 );
+        	
+        	//Adicionar sensores
+        	Sensor sens1 = new Sensor( d1, false );
+        	Sensor sens2 = new Sensor( d2, false );
+        	Sensor sens3 = new Sensor( d3, false );
+        	kSession.insert( sens1 );
+        	kSession.insert( sens2 );
+        	kSession.insert( sens3 );
+        	
+        	//Adicionar cameras
+        	Camera cam1 = new Camera( d1, false );
+        	Camera cam2 = new Camera( d2, false );
+        	Camera cam3 = new Camera( d3, false );
+        	kSession.insert( cam1 );
+        	kSession.insert( cam2 );
+        	kSession.insert( cam3 );
+        	
+        	//Adicionar entidades
+        	EntidadeDetetada ed1 = new EntidadeDetetada (d1, "Unknown", "Humano", false);
+        	EntidadeDetetada ed4 = new EntidadeDetetada (d1, "Unknown", "Humano", false);
+        	//EntidadeDetetada ed2 = new EntidadeDetetada (d2, "Cao", "Animal", false);
+        	//EntidadeDetetada ed3 = new EntidadeDetetada (d3, "Mae", "Humano", false);
+        	//kSession.insert( ed1 );
+        	//kSession.insert( ed2 );
+        	kSession.insert( ed3 );
+        	kSession.fireAllRules();
+
+        } catch (Throwable t) {
+            t.printStackTrace();
+        }
+    }
+
+}

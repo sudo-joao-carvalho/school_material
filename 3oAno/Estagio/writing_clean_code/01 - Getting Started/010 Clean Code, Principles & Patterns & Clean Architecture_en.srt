@@ -1,0 +1,300 @@
+1
+00:00:02,130 --> 00:00:04,800
+So we know that what you learn in this course
+
+2
+00:00:04,800 --> 00:00:08,270
+will apply no matter which kind of code you'll write.
+
+3
+00:00:08,270 --> 00:00:11,320
+But of course you might know that there are a lot
+
+4
+00:00:11,320 --> 00:00:13,520
+of patterns and principles out there.
+
+5
+00:00:13,520 --> 00:00:17,150
+Some specific for a specific programming language,
+
+6
+00:00:17,150 --> 00:00:20,220
+some specific for a specific framework,
+
+7
+00:00:20,220 --> 00:00:24,340
+and some specific to a specific programming paradigm.
+
+8
+00:00:24,340 --> 00:00:27,380
+How are these patterns and principles then related
+
+9
+00:00:27,380 --> 00:00:29,650
+to the idea of writing Clean Code?
+
+10
+00:00:29,650 --> 00:00:32,549
+Should you always follow them all to ensure
+
+11
+00:00:32,549 --> 00:00:34,860
+that you do write Clean Code?
+
+12
+00:00:34,860 --> 00:00:36,970
+For this it is important to keep in mind
+
+13
+00:00:36,970 --> 00:00:39,090
+that Clean Code is code
+
+14
+00:00:39,090 --> 00:00:42,010
+which is readable and easy to understand.
+
+15
+00:00:42,010 --> 00:00:45,500
+That is the main thing you have to keep in mind
+
+16
+00:00:45,500 --> 00:00:47,730
+when writing Clean Code.
+
+17
+00:00:47,730 --> 00:00:49,634
+Now all these patterns and principles out there
+
+18
+00:00:49,634 --> 00:00:53,260
+are focused on ensuring that you write code
+
+19
+00:00:53,260 --> 00:00:55,970
+which is extensible and maintainable.
+
+20
+00:00:55,970 --> 00:00:57,010
+Of course,
+
+21
+00:00:57,010 --> 00:00:58,370
+there is a connection.
+
+22
+00:00:58,370 --> 00:01:00,735
+Of course if you follow these patterns and principles,
+
+23
+00:01:00,735 --> 00:01:03,510
+that can help with writing Clean Code.
+
+24
+00:01:03,510 --> 00:01:05,030
+On the other hand,
+
+25
+00:01:05,030 --> 00:01:07,270
+if you name things poorly,
+
+26
+00:01:07,270 --> 00:01:09,820
+if you format things poorly,
+
+27
+00:01:09,820 --> 00:01:12,560
+if you have functions which are super clunky
+
+28
+00:01:12,560 --> 00:01:14,279
+and messed up and hard to read,
+
+29
+00:01:14,279 --> 00:01:17,025
+you can follow all these patterns and principles
+
+30
+00:01:17,025 --> 00:01:20,110
+and you would still not have Clean Code.
+
+31
+00:01:20,110 --> 00:01:23,100
+So this course really focuses on what makes up Clean Code,
+
+32
+00:01:23,100 --> 00:01:27,076
+not on all possible patterns and principles you could learn.
+
+33
+00:01:27,076 --> 00:01:30,030
+Of course there are some which matter a lot
+
+34
+00:01:30,030 --> 00:01:31,860
+when it comes to writing Clean Code,
+
+35
+00:01:31,860 --> 00:01:33,975
+and I will therefore cover them in the course,
+
+36
+00:01:33,975 --> 00:01:37,440
+but some other principles are not as important
+
+37
+00:01:37,440 --> 00:01:40,080
+from a Clean Code perspective.
+
+38
+00:01:40,080 --> 00:01:42,510
+And there's one other differentiation I wanna dive in.
+
+39
+00:01:42,510 --> 00:01:46,470
+And that would be Clean Code versus Clean Architecture.
+
+40
+00:01:46,470 --> 00:01:48,736
+We can also make a differentiation here.
+
+41
+00:01:48,736 --> 00:01:51,076
+Just as with the patterns and principles,
+
+42
+00:01:51,076 --> 00:01:53,930
+of course there is a connection.
+
+43
+00:01:53,930 --> 00:01:57,900
+But, Clean Code is really about writing guess what?
+
+44
+00:01:57,900 --> 00:01:58,733
+Clean Code.
+
+45
+00:01:58,733 --> 00:02:00,880
+It's about the code you write.
+
+46
+00:02:00,880 --> 00:02:02,730
+Now a Clean Architecture
+
+47
+00:02:02,730 --> 00:02:06,200
+is about how you structure your project,
+
+48
+00:02:06,200 --> 00:02:09,130
+how you separate your entities,
+
+49
+00:02:09,130 --> 00:02:10,820
+how you store your data.
+
+50
+00:02:10,820 --> 00:02:11,830
+It's in the end,
+
+51
+00:02:11,830 --> 00:02:15,540
+you could say where to write which code.
+
+52
+00:02:15,540 --> 00:02:18,039
+Do you use dependency injection or not?
+
+53
+00:02:18,039 --> 00:02:21,330
+These are questions you ask yourself
+
+54
+00:02:21,330 --> 00:02:24,110
+when thinking about a Clean Architecture.
+
+55
+00:02:24,110 --> 00:02:26,800
+And that's a different thing than Clean Code.
+
+56
+00:02:26,800 --> 00:02:29,343
+and Clean Architecture also depends a lot on
+
+57
+00:02:29,343 --> 00:02:32,030
+which programming paradigm you're following,
+
+58
+00:02:32,030 --> 00:02:35,450
+and which programming language you're using.
+
+59
+00:02:35,450 --> 00:02:38,720
+With Clean Code we focus on single code snippets.
+
+60
+00:02:38,720 --> 00:02:40,590
+Single files you could say.
+
+61
+00:02:40,590 --> 00:02:43,740
+With Clean Architecture we focus on the overall project
+
+62
+00:02:43,740 --> 00:02:45,340
+and how to model our data
+
+63
+00:02:45,340 --> 00:02:47,410
+and how to distribute our code.
+
+64
+00:02:47,410 --> 00:02:49,863
+And this course therefore is about Clean Code.
+
+65
+00:02:49,863 --> 00:02:53,253
+We'll not focus on things like the repository pattern
+
+66
+00:02:53,253 --> 00:02:54,980
+or anything like that,
+
+67
+00:02:54,980 --> 00:02:57,914
+because that is not really related to Clean Code.
+
+68
+00:02:57,914 --> 00:03:00,590
+It doesn't matter where you access
+
+69
+00:03:00,590 --> 00:03:02,200
+your database for example,
+
+70
+00:03:02,200 --> 00:03:03,963
+from a Clean Code perspective.
+
+71
+00:03:03,963 --> 00:03:06,350
+From a Clean Architecture perspective,
+
+72
+00:03:06,350 --> 00:03:07,470
+that could matter,
+
+73
+00:03:07,470 --> 00:03:10,340
+and you should therefore then take a dedicated course,
+
+74
+00:03:10,340 --> 00:03:13,120
+if that is what you're primarily interested in.
+
+75
+00:03:13,120 --> 00:03:15,563
+This course will focus on Clean Code.
+

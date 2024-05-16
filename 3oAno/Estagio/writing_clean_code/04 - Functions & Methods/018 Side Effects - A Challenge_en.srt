@@ -1,0 +1,785 @@
+1
+00:00:02,250 --> 00:00:04,370
+Now we learned about side effects
+
+2
+00:00:04,370 --> 00:00:06,230
+and pure functions.
+
+3
+00:00:06,230 --> 00:00:08,840
+Let's now have a look at a couple of examples here
+
+4
+00:00:08,840 --> 00:00:12,170
+so that you really get a feeling for what a side effect is
+
+5
+00:00:12,170 --> 00:00:14,170
+and how you could mitigate it.
+
+6
+00:00:14,170 --> 00:00:18,310
+So here's a code file, which you as always find attached
+
+7
+00:00:18,310 --> 00:00:22,390
+and this code file contains three example functions.
+
+8
+00:00:22,390 --> 00:00:24,240
+Now, as so many code files,
+
+9
+00:00:24,240 --> 00:00:26,820
+you won't be able to really execute this file,
+
+10
+00:00:26,820 --> 00:00:28,200
+it's not doing anything,
+
+11
+00:00:28,200 --> 00:00:31,470
+it just has a couple of example code snippets.
+
+12
+00:00:31,470 --> 00:00:33,970
+And now I want you to pause the video
+
+13
+00:00:33,970 --> 00:00:37,410
+and have a look at these different examples here
+
+14
+00:00:37,410 --> 00:00:41,510
+and then try to identify all the side effects you can find
+
+15
+00:00:41,510 --> 00:00:43,300
+just add a comment next to them
+
+16
+00:00:43,300 --> 00:00:45,930
+or write them down on a piece of paper
+
+17
+00:00:45,930 --> 00:00:50,700
+and also think whether that side effect is expected or not
+
+18
+00:00:50,700 --> 00:00:52,590
+and if it's not expected,
+
+19
+00:00:52,590 --> 00:00:55,930
+how you could potentially avoid it and work around it,
+
+20
+00:00:55,930 --> 00:00:57,950
+or make it expected.
+
+21
+00:00:57,950 --> 00:01:00,910
+So take that chance to pause the video and do that
+
+22
+00:01:00,910 --> 00:01:03,393
+thereafter, we'll walk through that together.
+
+23
+00:01:06,340 --> 00:01:07,740
+Were are you successful?
+
+24
+00:01:07,740 --> 00:01:08,700
+Let's take a look.
+
+25
+00:01:08,700 --> 00:01:11,560
+And let's start with connect Database.
+
+26
+00:01:11,560 --> 00:01:15,290
+If we call a function named connect Database,
+
+27
+00:01:15,290 --> 00:01:19,170
+we do expect that a database connection is established.
+
+28
+00:01:19,170 --> 00:01:21,560
+This of course, would be a side effect.
+
+29
+00:01:21,560 --> 00:01:25,550
+It changes the overall system and program state.
+
+30
+00:01:25,550 --> 00:01:27,170
+It's an important difference
+
+31
+00:01:27,170 --> 00:01:29,780
+whether our program is connected to a database
+
+32
+00:01:29,780 --> 00:01:31,283
+or not, after all.
+
+33
+00:01:32,150 --> 00:01:34,600
+So therefore, we would expect a side effect
+
+34
+00:01:34,600 --> 00:01:38,260
+ends up to function and indeed, we do have one.
+
+35
+00:01:38,260 --> 00:01:41,610
+Actually we have two, but let's start with the first one.
+
+36
+00:01:41,610 --> 00:01:43,410
+This is the first one,
+
+37
+00:01:43,410 --> 00:01:46,690
+calling database connect is probably the code
+
+38
+00:01:46,690 --> 00:01:50,330
+that would really establish a connection to some database.
+
+39
+00:01:50,330 --> 00:01:52,230
+So this is the code which ultimately
+
+40
+00:01:52,230 --> 00:01:54,960
+will change something in our system,
+
+41
+00:01:54,960 --> 00:01:56,710
+and therefore this operation
+
+42
+00:01:56,710 --> 00:01:59,800
+will definitely be a side effect.
+
+43
+00:01:59,800 --> 00:02:03,180
+And again, it's not an unexpected side effect at all
+
+44
+00:02:03,180 --> 00:02:07,110
+so there's nothing wrong with calling this function here.
+
+45
+00:02:07,110 --> 00:02:10,470
+However, we do have a second side effect here.
+
+46
+00:02:10,470 --> 00:02:12,613
+Did you spot that side effect?
+
+47
+00:02:13,650 --> 00:02:17,570
+Well, in the end it states console log statement down there,
+
+48
+00:02:17,570 --> 00:02:22,510
+where we output whether we were able to connect or not.
+
+49
+00:02:22,510 --> 00:02:24,410
+Now, this is also a side effect,
+
+50
+00:02:24,410 --> 00:02:26,850
+because showing a message to the user
+
+51
+00:02:26,850 --> 00:02:29,550
+is a change to the system state.
+
+52
+00:02:29,550 --> 00:02:30,680
+Now the question is
+
+53
+00:02:30,680 --> 00:02:33,480
+whether it's okay to have this code here or not?
+
+54
+00:02:33,480 --> 00:02:35,980
+And you can definitely discuss this.
+
+55
+00:02:35,980 --> 00:02:38,340
+We do have a name connect Database,
+
+56
+00:02:38,340 --> 00:02:41,020
+which implies that a side effect will happen.
+
+57
+00:02:41,020 --> 00:02:44,120
+But it's this first side effect which we expected,
+
+58
+00:02:44,120 --> 00:02:46,620
+not necessarily the second one.
+
+59
+00:02:46,620 --> 00:02:49,750
+But that is not exactly the thing we could discuss.
+
+60
+00:02:49,750 --> 00:02:52,240
+Because you could also make the argument
+
+61
+00:02:52,240 --> 00:02:56,010
+that a function named connect Database,
+
+62
+00:02:56,010 --> 00:02:59,810
+indeed might also take care about the error handling
+
+63
+00:02:59,810 --> 00:03:02,360
+if that connection failed.
+
+64
+00:03:02,360 --> 00:03:05,460
+So you could argue that it's not unexpected
+
+65
+00:03:05,460 --> 00:03:08,430
+that we don't just connect to the database,
+
+66
+00:03:08,430 --> 00:03:11,190
+but that we also show an error message
+
+67
+00:03:11,190 --> 00:03:13,160
+if that connection fails,
+
+68
+00:03:13,160 --> 00:03:15,330
+because connecting to a database
+
+69
+00:03:15,330 --> 00:03:18,140
+does not just include the success case,
+
+70
+00:03:18,140 --> 00:03:20,300
+but also the failure case.
+
+71
+00:03:20,300 --> 00:03:22,990
+That is an argument you could definitely make,
+
+72
+00:03:22,990 --> 00:03:25,570
+and then having this adverse side effect
+
+73
+00:03:25,570 --> 00:03:27,980
+would not be unexpected.
+
+74
+00:03:27,980 --> 00:03:31,430
+You could however, also argue that the only thing
+
+75
+00:03:31,430 --> 00:03:35,520
+which is expected is indeed that the database connection
+
+76
+00:03:35,520 --> 00:03:38,520
+is established and nothing else.
+
+77
+00:03:38,520 --> 00:03:42,290
+If that's the case, you could solve this problem
+
+78
+00:03:42,290 --> 00:03:45,520
+by simply creating a new function,
+
+79
+00:03:45,520 --> 00:03:48,840
+which you could call in it App.
+
+80
+00:03:48,840 --> 00:03:51,290
+So a function which is called at the beginning
+
+81
+00:03:51,290 --> 00:03:53,050
+to initialize your app
+
+82
+00:03:53,050 --> 00:03:56,103
+and in there you call connect Database.
+
+83
+00:03:58,610 --> 00:04:02,500
+And you expect to get back a success value let's say,
+
+84
+00:04:02,500 --> 00:04:05,470
+and then you grab your console log message here,
+
+85
+00:04:05,470 --> 00:04:09,090
+and you check if it's not a success here,
+
+86
+00:04:09,090 --> 00:04:12,220
+in which case, your initialization ends
+
+87
+00:04:12,220 --> 00:04:14,420
+and you just showed us error message
+
+88
+00:04:14,420 --> 00:04:18,510
+and otherwise, you continue with other initialization steps,
+
+89
+00:04:18,510 --> 00:04:19,990
+which you might have.
+
+90
+00:04:19,990 --> 00:04:21,850
+And then connect Database,
+
+91
+00:04:21,850 --> 00:04:24,650
+we therefore just return did Connect,
+
+92
+00:04:24,650 --> 00:04:26,940
+which could be a true false value,
+
+93
+00:04:26,940 --> 00:04:29,190
+or originally returned by connect,
+
+94
+00:04:29,190 --> 00:04:32,020
+which then is in the end checked here.
+
+95
+00:04:32,020 --> 00:04:34,530
+This is something you could do.
+
+96
+00:04:34,530 --> 00:04:35,550
+Now, you could argue
+
+97
+00:04:35,550 --> 00:04:36,750
+whether we really need
+(wave sound)
+
+98
+00:04:36,750 --> 00:04:39,520
+a separate connect Database function then
+
+99
+00:04:39,520 --> 00:04:42,250
+since that's the end, just renaming the operation
+
+100
+00:04:42,250 --> 00:04:43,480
+we're doing in there,
+
+101
+00:04:43,480 --> 00:04:45,970
+but it could be the case that we are doing more.
+
+102
+00:04:45,970 --> 00:04:49,390
+If for example, we could be preparing the connection, Uri
+
+103
+00:04:50,307 --> 00:04:52,170
+and we could be doing work here.
+
+104
+00:04:52,170 --> 00:04:54,360
+So ultimately, if we do more work,
+
+105
+00:04:54,360 --> 00:04:56,770
+having the separate function could make sense
+
+106
+00:04:56,770 --> 00:04:59,240
+if we really just call database connect,
+
+107
+00:04:59,240 --> 00:05:02,190
+then indeed Just rephrased the operation,
+
+108
+00:05:02,190 --> 00:05:04,840
+and hence extracting this extra function
+
+109
+00:05:04,840 --> 00:05:06,800
+might actually not be a good idea
+
+110
+00:05:06,800 --> 00:05:09,070
+and we should have went with it in it App function
+
+111
+00:05:09,070 --> 00:05:10,750
+right from the start.
+
+112
+00:05:10,750 --> 00:05:13,630
+And I'm just discussing all these different options
+
+113
+00:05:13,630 --> 00:05:16,000
+to also make it clear that clean code
+
+114
+00:05:16,000 --> 00:05:20,090
+always is something which depends on personal preferences
+
+115
+00:05:20,090 --> 00:05:22,110
+and the general context
+
+116
+00:05:22,110 --> 00:05:24,380
+and it's something you can argue about.
+
+117
+00:05:24,380 --> 00:05:25,720
+And that is important.
+
+118
+00:05:25,720 --> 00:05:28,600
+There is no single right or wrong solution.
+
+119
+00:05:28,600 --> 00:05:30,310
+But my goal with this course
+
+120
+00:05:30,310 --> 00:05:32,770
+is to show you many potential factors
+
+121
+00:05:32,770 --> 00:05:35,030
+which you should take into consideration
+
+122
+00:05:35,030 --> 00:05:38,050
+and many potential strategies you can use
+
+123
+00:05:38,050 --> 00:05:40,540
+to derive and write cleaner code.
+
+124
+00:05:40,540 --> 00:05:43,440
+And therefore, this here is now my solution
+
+125
+00:05:43,440 --> 00:05:46,430
+for this first example, as you can tell
+
+126
+00:05:46,430 --> 00:05:48,090
+by the discussion we had here,
+
+127
+00:05:48,090 --> 00:05:50,360
+definitely not the only solution
+
+128
+00:05:50,360 --> 00:05:53,100
+but now a solution where I would argue
+
+129
+00:05:53,100 --> 00:05:56,990
+that all the side effects are not unexpected
+
+130
+00:05:56,990 --> 00:06:00,683
+and where therefore we did write some clean code.
+
+131
+00:06:01,520 --> 00:06:03,830
+So let's now move on to the next function,
+
+132
+00:06:03,830 --> 00:06:06,180
+determine Support Agent.
+
+133
+00:06:06,180 --> 00:06:08,260
+Here, we're getting a ticket
+
+134
+00:06:08,260 --> 00:06:11,070
+and then in the end, we check the request type,
+
+135
+00:06:11,070 --> 00:06:13,330
+which seems to be stored in the ticket
+
+136
+00:06:13,330 --> 00:06:18,330
+to either find a Standard Agent, or Agent By Request Type,
+
+137
+00:06:18,570 --> 00:06:20,680
+and then we returned as agent.
+
+138
+00:06:20,680 --> 00:06:23,733
+Now, does this function have any side effects?
+
+139
+00:06:24,840 --> 00:06:27,510
+Well, it most likely does not,
+
+140
+00:06:27,510 --> 00:06:32,500
+maybe find Standard Agent and find Agent By Request Type
+
+141
+00:06:32,500 --> 00:06:35,410
+have side effects, but we wouldn't expect it
+
+142
+00:06:35,410 --> 00:06:38,120
+if we just have a look at their names.
+
+143
+00:06:38,120 --> 00:06:41,270
+I wanna point out however, that if these functions
+
+144
+00:06:41,270 --> 00:06:45,950
+would for example, send a HTTP request behind the scenes,
+
+145
+00:06:45,950 --> 00:06:49,150
+or if we would establish some database connection
+
+146
+00:06:49,150 --> 00:06:50,910
+inside of these functions,
+
+147
+00:06:50,910 --> 00:06:53,760
+we would of course, introduce a side effect.
+
+148
+00:06:53,760 --> 00:06:55,990
+Just looking at the name of these functions
+
+149
+00:06:55,990 --> 00:06:59,360
+we shouldn't expect that they do either of that though
+
+150
+00:06:59,360 --> 00:07:02,550
+but it also always depends on the general context
+
+151
+00:07:02,550 --> 00:07:05,500
+of your application, whether you could expect
+
+152
+00:07:05,500 --> 00:07:07,560
+that they do something like this.
+
+153
+00:07:07,560 --> 00:07:08,930
+For example, if you're building
+
+154
+00:07:08,930 --> 00:07:13,110
+a browser side web application or a mobile application,
+
+155
+00:07:13,110 --> 00:07:17,410
+you could expect that a find something method or function
+
+156
+00:07:17,410 --> 00:07:21,360
+does indeed send an HTTP request to a back end server
+
+157
+00:07:21,360 --> 00:07:24,950
+and then we would all of a sudden have a side effect here.
+
+158
+00:07:24,950 --> 00:07:27,060
+But if we don't have that context,
+
+159
+00:07:27,060 --> 00:07:29,020
+if we just have a look at their names,
+
+160
+00:07:29,020 --> 00:07:33,300
+we probably shouldn't expect a side effect to occur here.
+
+161
+00:07:33,300 --> 00:07:36,360
+So therefore, this function doesn't have any side effects.
+
+162
+00:07:36,360 --> 00:07:39,340
+It does not change the state of our system,
+
+163
+00:07:39,340 --> 00:07:40,793
+or any other state.
+
+164
+00:07:41,640 --> 00:07:45,040
+Now what about this last example is Valid?
+
+165
+00:07:45,040 --> 00:07:48,900
+Here, we get two parameters, and we validate this,
+
+166
+00:07:48,900 --> 00:07:52,380
+show this message and then return false or true.
+
+167
+00:07:52,380 --> 00:07:55,730
+This function clearly has a side effect
+
+168
+00:07:55,730 --> 00:07:58,300
+and it is an unexpected one.
+
+169
+00:07:58,300 --> 00:08:00,830
+If a function is named is Valid,
+
+170
+00:08:00,830 --> 00:08:03,760
+we expect to get back true or false.
+
+171
+00:08:03,760 --> 00:08:07,570
+And of course we do, but we expect nothing more than that.
+
+172
+00:08:07,570 --> 00:08:10,510
+We don't expect that anything else happens.
+
+173
+00:08:10,510 --> 00:08:14,460
+And here, we are also logging this message to the console,
+
+174
+00:08:14,460 --> 00:08:18,670
+which is more than just returning true or false.
+
+175
+00:08:18,670 --> 00:08:22,730
+This is a side effect, because it changes our system state
+
+176
+00:08:22,730 --> 00:08:25,230
+and it's an unexpected one as well.
+
+177
+00:08:25,230 --> 00:08:27,410
+So this is not good code.
+
+178
+00:08:27,410 --> 00:08:29,150
+The better solution here,
+
+179
+00:08:29,150 --> 00:08:31,400
+of course would be to take this code
+
+180
+00:08:31,400 --> 00:08:33,970
+and create a new function,
+
+181
+00:08:33,970 --> 00:08:37,230
+create User for example, as we had it before,
+
+182
+00:08:37,230 --> 00:08:39,022
+where we get our email and password
+
+183
+00:08:39,022 --> 00:08:41,220
+and in this function,
+
+184
+00:08:41,220 --> 00:08:45,230
+we then call if is Valid email, password
+
+185
+00:08:46,150 --> 00:08:49,500
+and if that's not the case, we console log that
+
+186
+00:08:49,500 --> 00:08:51,870
+and otherwise, we continue.
+
+187
+00:08:51,870 --> 00:08:53,960
+Now create User is a function
+
+188
+00:08:53,960 --> 00:08:56,640
+where this side effect could be expected
+
+189
+00:08:56,640 --> 00:09:00,090
+because validation and handling validation errors
+
+190
+00:09:00,090 --> 00:09:02,400
+that sounds like a task which is involved
+
+191
+00:09:02,400 --> 00:09:04,590
+in the user creation process,
+
+192
+00:09:04,590 --> 00:09:08,130
+but now is Valid is a clean function
+
+193
+00:09:08,130 --> 00:09:10,890
+because it does not have any side effects.
+
+194
+00:09:10,890 --> 00:09:13,270
+Indeed, this is not a pure function,
+
+195
+00:09:13,270 --> 00:09:16,030
+because for the same email and password values,
+
+196
+00:09:16,030 --> 00:09:19,433
+it will always return the exact same response values.
+

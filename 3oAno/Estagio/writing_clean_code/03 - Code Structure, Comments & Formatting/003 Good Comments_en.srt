@@ -1,0 +1,368 @@
+1
+00:00:02,170 --> 00:00:04,480
+Now as you saw, many comments are bad,
+
+2
+00:00:04,480 --> 00:00:06,670
+but actually there also are acceptable
+
+3
+00:00:06,670 --> 00:00:08,710
+or good comments out there.
+
+4
+00:00:08,710 --> 00:00:10,920
+For example, one kind of comment you will see
+
+5
+00:00:10,920 --> 00:00:14,760
+in some code files would be legal information.
+
+6
+00:00:14,760 --> 00:00:16,970
+Again, this example code file from before
+
+7
+00:00:16,970 --> 00:00:18,770
+which contains many bad comments
+
+8
+00:00:18,770 --> 00:00:21,440
+it also does have such a legal disclaimer
+
+9
+00:00:21,440 --> 00:00:24,390
+or such a legal comment right at the top.
+
+10
+00:00:24,390 --> 00:00:26,641
+And depending on the kind of project you're working on
+
+11
+00:00:26,641 --> 00:00:29,470
+you might be required to add something like this
+
+12
+00:00:29,470 --> 00:00:31,330
+to every code file you write.
+
+13
+00:00:31,330 --> 00:00:32,652
+Of course if it's your own project,
+
+14
+00:00:32,652 --> 00:00:34,410
+you can decide this on your own
+
+15
+00:00:34,410 --> 00:00:35,570
+if you need that or not.
+
+16
+00:00:35,570 --> 00:00:38,085
+But in a lot of organizations, you might be required
+
+17
+00:00:38,085 --> 00:00:39,803
+to add something like this.
+
+18
+00:00:39,803 --> 00:00:42,382
+And then of course, it's absolutely fine to do so.
+
+19
+00:00:42,382 --> 00:00:44,241
+I mean, you don't really have an alternative
+
+20
+00:00:44,241 --> 00:00:46,470
+to that anyways.
+
+21
+00:00:46,470 --> 00:00:48,900
+It doesn't really hurt to code readability though
+
+22
+00:00:48,900 --> 00:00:51,440
+because it sits right at the top of the file.
+
+23
+00:00:51,440 --> 00:00:54,137
+It's clear that it contains legal information and therefore
+
+24
+00:00:54,137 --> 00:00:56,980
+for it can easily be skipped and ignored.
+
+25
+00:00:56,980 --> 00:00:59,560
+Now, another kind of comment, which is actually good
+
+26
+00:00:59,560 --> 00:01:01,688
+is a comment that adds an explanation
+
+27
+00:01:01,688 --> 00:01:06,688
+which can't be delivered or replaced by proper naming.
+
+28
+00:01:06,810 --> 00:01:08,390
+And this would be an example.
+
+29
+00:01:08,390 --> 00:01:10,580
+We're using a regular expression
+
+30
+00:01:10,580 --> 00:01:13,490
+and even though that's a relatively simple one,
+
+31
+00:01:13,490 --> 00:01:16,116
+regular expressions can get quite long
+
+32
+00:01:16,116 --> 00:01:18,780
+and having a little comment next to it
+
+33
+00:01:18,780 --> 00:01:21,210
+which simply explains what does regular
+
+34
+00:01:21,210 --> 00:01:23,230
+expression does or checks for,
+
+35
+00:01:23,230 --> 00:01:25,130
+can be worth a lot.
+
+36
+00:01:25,130 --> 00:01:27,360
+Another kind of comments which could make sense
+
+37
+00:01:27,360 --> 00:01:30,570
+would be a comment that warns you of something.
+
+38
+00:01:30,570 --> 00:01:32,504
+For example, here we have a comment warning us
+
+39
+00:01:32,504 --> 00:01:34,660
+that this specific API,
+
+40
+00:01:34,660 --> 00:01:39,340
+the local storage API is only available in Java Script,
+
+41
+00:01:39,340 --> 00:01:41,169
+running in the browser, not running
+
+42
+00:01:41,169 --> 00:01:45,280
+on the number of machine with node JS for example.
+
+43
+00:01:45,280 --> 00:01:48,740
+Now we can always argue whether we really need this comment.
+
+44
+00:01:48,740 --> 00:01:50,635
+I mean after all, you could expect fellow developers
+
+45
+00:01:50,635 --> 00:01:51,945
+to be aware of that,
+
+46
+00:01:51,945 --> 00:01:55,670
+or you might want to place it in a try catch block
+
+47
+00:01:55,670 --> 00:01:57,276
+or some if statement anyways,
+
+48
+00:01:57,276 --> 00:02:00,215
+but if you have neither of that for some good reason
+
+49
+00:02:00,215 --> 00:02:03,384
+then adding a warning like that could make sense.
+
+50
+00:02:03,384 --> 00:02:05,355
+Now last but not least a comment
+
+51
+00:02:05,355 --> 00:02:08,920
+which has also okay to have would be a to do note.
+
+52
+00:02:08,920 --> 00:02:12,102
+You see one here even though that file
+
+53
+00:02:12,102 --> 00:02:13,839
+had a lot of bad comments
+
+54
+00:02:13,839 --> 00:02:16,770
+this is not one of the bad comments.
+
+55
+00:02:16,770 --> 00:02:18,423
+This to do note can make sense.
+
+56
+00:02:18,423 --> 00:02:20,360
+Now, of course we could argue
+
+57
+00:02:20,360 --> 00:02:22,040
+whether we should have an empty method
+
+58
+00:02:22,040 --> 00:02:23,480
+where everything is missing
+
+59
+00:02:23,480 --> 00:02:25,452
+and if it wouldn't be better to just remove it
+
+60
+00:02:25,452 --> 00:02:28,010
+and then add it all in one go.
+
+61
+00:02:28,010 --> 00:02:30,690
+But if you do have some code which is unfinished,
+
+62
+00:02:30,690 --> 00:02:33,120
+adding a note like this can indeed make sense
+
+63
+00:02:33,120 --> 00:02:34,780
+and can be okay.
+
+64
+00:02:34,780 --> 00:02:37,010
+Of course you shouldn't overdo it though.
+
+65
+00:02:37,010 --> 00:02:38,723
+And instead you should focus on writing code
+
+66
+00:02:38,723 --> 00:02:42,500
+which you finish instead of leaving unfinished code
+
+67
+00:02:42,500 --> 00:02:44,930
+sitting around in your code base.
+
+68
+00:02:44,930 --> 00:02:46,032
+Now one last kind of comment
+
+69
+00:02:46,032 --> 00:02:48,154
+which can make sense is a comment
+
+70
+00:02:48,154 --> 00:02:49,875
+where you add documentation
+
+71
+00:02:49,875 --> 00:02:53,350
+especially when providing a public API.
+
+72
+00:02:53,350 --> 00:02:56,945
+So methods, properties, classes, which can be used
+
+73
+00:02:56,945 --> 00:03:00,640
+by other people, not just in your organization
+
+74
+00:03:00,640 --> 00:03:02,940
+but maybe also from all around the world.
+
+75
+00:03:02,940 --> 00:03:04,200
+If you are building a library
+
+76
+00:03:04,200 --> 00:03:06,630
+which you wanna share as a third party library
+
+77
+00:03:06,630 --> 00:03:09,590
+with other people, then adding documentation strings
+
+78
+00:03:09,590 --> 00:03:12,270
+which can be picked up by IDEs
+
+79
+00:03:12,270 --> 00:03:15,052
+for example, of course also makes sense.
+
+80
+00:03:15,052 --> 00:03:16,788
+And here it then really comes
+
+81
+00:03:16,788 --> 00:03:19,610
+down to the programming language you're using.
+
+82
+00:03:19,610 --> 00:03:22,510
+For example, for Python, you have a certain structure
+
+83
+00:03:22,510 --> 00:03:24,581
+for how such documentation strings should like
+
+84
+00:03:24,581 --> 00:03:26,523
+and other programming languages
+
+85
+00:03:26,523 --> 00:03:29,140
+might bring their own conventions.
+
+86
+00:03:29,140 --> 00:03:32,561
+So documentation comments are a special kind of comment,
+
+87
+00:03:32,561 --> 00:03:34,355
+which can make sense depending
+
+88
+00:03:34,355 --> 00:03:37,660
+on which kind of project you are working on.
+
+89
+00:03:37,660 --> 00:03:40,106
+And that is already at for hate comments.
+
+90
+00:03:40,106 --> 00:03:42,321
+Hence the general rule really
+
+91
+00:03:42,321 --> 00:03:44,116
+is that you should avoid comments
+
+92
+00:03:44,116 --> 00:03:48,193
+with the few exceptions I showed you over the last minutes.
+

@@ -1,0 +1,820 @@
+1
+00:00:02,280 --> 00:00:05,400
+Now, I wanna use this course section
+
+2
+00:00:05,400 --> 00:00:07,970
+to simply summarize what we learned
+
+3
+00:00:07,970 --> 00:00:11,000
+and give you basically a checklist
+
+4
+00:00:11,000 --> 00:00:13,680
+for all the rules and concepts we covered
+
+5
+00:00:13,680 --> 00:00:15,010
+throughout this course,
+
+6
+00:00:15,010 --> 00:00:18,700
+which you can use to well, keep these things in mind
+
+7
+00:00:18,700 --> 00:00:20,330
+and follow these rules.
+
+8
+00:00:20,330 --> 00:00:22,530
+Though I also wanna emphasize again
+
+9
+00:00:22,530 --> 00:00:26,030
+that you shouldn't really treat it as a checklist.
+
+10
+00:00:26,030 --> 00:00:29,040
+At least always question all these rules
+
+11
+00:00:29,040 --> 00:00:31,930
+and concepts because as, for example,
+
+12
+00:00:31,930 --> 00:00:36,200
+with the functions, you wanna split functions reasonably.
+
+13
+00:00:36,200 --> 00:00:37,990
+You don't wanna overdo it.
+
+14
+00:00:37,990 --> 00:00:40,760
+These are guidelines and recommendations,
+
+15
+00:00:40,760 --> 00:00:43,800
+not hard rules which you have to follow.
+
+16
+00:00:43,800 --> 00:00:46,220
+Because the most important rule,
+
+17
+00:00:46,220 --> 00:00:48,420
+which you always should keep in mind
+
+18
+00:00:48,420 --> 00:00:50,716
+is that when we talk about clean code,
+
+19
+00:00:50,716 --> 00:00:52,410
+we talk about code,
+
+20
+00:00:52,410 --> 00:00:57,170
+which is easy to read and understand by humans.
+
+21
+00:00:57,170 --> 00:00:58,320
+This matters.
+
+22
+00:00:58,320 --> 00:01:00,250
+We're talking about humans here.
+
+23
+00:01:00,250 --> 00:01:01,130
+We're not talking
+
+24
+00:01:01,130 --> 00:01:03,580
+about the computer understanding your code.
+
+25
+00:01:03,580 --> 00:01:07,510
+It should be easy to read and understand for humans.
+
+26
+00:01:07,510 --> 00:01:10,690
+And if your code is easy to read and understand,
+
+27
+00:01:10,690 --> 00:01:13,970
+then it's clean or it's probably easy
+
+28
+00:01:13,970 --> 00:01:15,190
+to read and understand
+
+29
+00:01:15,190 --> 00:01:18,450
+because you wrote it in a clean way to be precise.
+
+30
+00:01:18,450 --> 00:01:20,858
+And there are certain key areas,
+
+31
+00:01:20,858 --> 00:01:23,204
+and key rules and concepts,
+
+32
+00:01:23,204 --> 00:01:27,410
+which you can follow to achieve that clean code.
+
+33
+00:01:27,410 --> 00:01:28,670
+And that would, for example,
+
+34
+00:01:28,670 --> 00:01:31,040
+be the naming of things,
+
+35
+00:01:31,040 --> 00:01:35,320
+naming of variables and functions and classes and so on,
+
+36
+00:01:35,320 --> 00:01:36,756
+comments and formatting,
+
+37
+00:01:36,756 --> 00:01:41,230
+functions, working with control structures correctly
+
+38
+00:01:41,230 --> 00:01:44,190
+and working with classes and objects correctly.
+
+39
+00:01:44,190 --> 00:01:47,970
+These are the areas we covered in this course.
+
+40
+00:01:47,970 --> 00:01:49,870
+And now let's take a closer look again
+
+41
+00:01:49,870 --> 00:01:53,390
+at all these areas and let me summarize what matters
+
+42
+00:01:53,390 --> 00:01:55,220
+for these specific areas
+
+43
+00:01:55,220 --> 00:01:58,023
+and which general rules you should follow there.
+
+44
+00:01:58,904 --> 00:02:00,860
+But let's start with naming.
+
+45
+00:02:00,860 --> 00:02:04,440
+There it all starts with descriptive names.
+
+46
+00:02:04,440 --> 00:02:08,169
+Describe which data you're storing in a variable
+
+47
+00:02:08,169 --> 00:02:11,650
+or which task a function is going to execute.
+
+48
+00:02:11,650 --> 00:02:15,130
+Therefore, typically, use nouns for variables
+
+49
+00:02:15,130 --> 00:02:18,746
+and properties or short phrases with adjectives.
+
+50
+00:02:18,746 --> 00:02:20,940
+Use nouns for classes
+
+51
+00:02:20,940 --> 00:02:22,550
+and verbs for methods
+
+52
+00:02:22,550 --> 00:02:25,620
+or just as for the variables and properties,
+
+53
+00:02:25,620 --> 00:02:27,174
+use short phrases.
+
+54
+00:02:27,174 --> 00:02:31,496
+Be specific and be as specific as possible
+
+55
+00:02:31,496 --> 00:02:34,000
+but don't be redundant.
+
+56
+00:02:34,000 --> 00:02:38,320
+So for example, you might name a variable SQL database
+
+57
+00:02:38,320 --> 00:02:40,510
+instead of just database
+
+58
+00:02:40,510 --> 00:02:43,870
+but you shouldn't come up with super long variable names,
+
+59
+00:02:43,870 --> 00:02:46,550
+which takes up the entire screen width.
+
+60
+00:02:46,550 --> 00:02:50,650
+And definitely avoid slang, unknown abbreviations,
+
+61
+00:02:50,650 --> 00:02:52,850
+and be consistent with your names.
+
+62
+00:02:52,850 --> 00:02:56,140
+Don't switch between get data and fetch data.
+
+63
+00:02:56,140 --> 00:02:57,400
+Be consistent.
+
+64
+00:02:57,400 --> 00:02:59,079
+And if you follow these rules,
+
+65
+00:02:59,079 --> 00:03:01,960
+and of course, that's just a summary
+
+66
+00:03:01,960 --> 00:03:04,610
+of what I taught in the naming module,
+
+67
+00:03:04,610 --> 00:03:06,240
+if you follow these rules,
+
+68
+00:03:06,240 --> 00:03:07,690
+you should end up with names
+
+69
+00:03:07,690 --> 00:03:10,710
+that are easy to read, which is an important part
+
+70
+00:03:10,710 --> 00:03:12,193
+of writing clean code.
+
+71
+00:03:13,400 --> 00:03:14,930
+Comments and formatting.
+
+72
+00:03:14,930 --> 00:03:16,534
+That's another important area.
+
+73
+00:03:16,534 --> 00:03:18,610
+There you should keep in mind
+
+74
+00:03:18,610 --> 00:03:20,047
+that most comments are bad
+
+75
+00:03:20,047 --> 00:03:22,329
+and you should therefore avoid them.
+
+76
+00:03:22,329 --> 00:03:26,100
+Now, feel free to add the good comments you learned about,
+
+77
+00:03:26,100 --> 00:03:27,710
+like legal information,
+
+78
+00:03:27,710 --> 00:03:31,150
+warnings, required explanations, for example,
+
+79
+00:03:31,150 --> 00:03:33,743
+for regular expressions and todos.
+
+80
+00:03:35,007 --> 00:03:36,450
+When it comes to formatting,
+
+81
+00:03:36,450 --> 00:03:38,040
+use vertical formatting
+
+82
+00:03:38,040 --> 00:03:40,152
+to keep related concepts together
+
+83
+00:03:40,152 --> 00:03:42,610
+and to separate concepts,
+
+84
+00:03:42,610 --> 00:03:44,520
+which are not closely related.
+
+85
+00:03:44,520 --> 00:03:46,970
+And when I say together or separate,
+
+86
+00:03:46,970 --> 00:03:48,850
+I'm talking about things like adding
+
+87
+00:03:48,850 --> 00:03:52,070
+or not adding blank lines and line breaks
+
+88
+00:03:52,070 --> 00:03:53,962
+and also about ordering.
+
+89
+00:03:53,962 --> 00:03:56,041
+A function should, for example,
+
+90
+00:03:56,041 --> 00:03:58,770
+come before the function which it calls,
+
+91
+00:03:58,770 --> 00:04:00,750
+if technically possible.
+
+92
+00:04:00,750 --> 00:04:02,970
+Now, when we talk about horizontal formatting,
+
+93
+00:04:02,970 --> 00:04:05,519
+you wanna keep lines short and add line breaks
+
+94
+00:04:05,519 --> 00:04:08,230
+and split code across multiple lines
+
+95
+00:04:08,230 --> 00:04:10,770
+to keep it easy to read and understand.
+
+96
+00:04:10,770 --> 00:04:13,750
+Also use indentation to express relations
+
+97
+00:04:13,750 --> 00:04:16,720
+between block statements and the code inside of them.
+
+98
+00:04:16,720 --> 00:04:20,260
+And of course, also keep language-specific style guides,
+
+99
+00:04:20,260 --> 00:04:23,460
+like the PEP8 style guide for Python in mind.
+
+100
+00:04:23,460 --> 00:04:26,020
+Also use IDE auto-formatting
+
+101
+00:04:26,020 --> 00:04:28,660
+and help the IDE can give you in general
+
+102
+00:04:28,660 --> 00:04:30,590
+when it comes to generating
+
+103
+00:04:30,590 --> 00:04:32,330
+and writing clean code.
+
+104
+00:04:32,330 --> 00:04:35,500
+This is all in addition to what you learned in this course,
+
+105
+00:04:35,500 --> 00:04:38,843
+which did not focus on a specific programming language.
+
+106
+00:04:39,840 --> 00:04:43,050
+Now, functions are the meat of most programs.
+
+107
+00:04:43,050 --> 00:04:45,721
+That's where the majority of your logic reside.
+
+108
+00:04:45,721 --> 00:04:48,612
+And therefore, it's key to write clean functions.
+
+109
+00:04:48,612 --> 00:04:51,840
+That all starts with the parameters.
+
+110
+00:04:51,840 --> 00:04:53,875
+Limit the number of function parameters
+
+111
+00:04:53,875 --> 00:04:56,630
+and try to keep the list short.
+
+112
+00:04:56,630 --> 00:04:59,028
+Consider using dictionaries or objects
+
+113
+00:04:59,028 --> 00:05:02,540
+to group multiple parameters into one parameter
+
+114
+00:05:02,540 --> 00:05:04,390
+and therefore, make sure that functions
+
+115
+00:05:04,390 --> 00:05:06,930
+are easy to call and the code
+
+116
+00:05:06,930 --> 00:05:08,800
+where a function does get called
+
+117
+00:05:08,800 --> 00:05:11,190
+is easy to read and understand.
+
+118
+00:05:11,190 --> 00:05:13,185
+Now, when we talk about the function body,
+
+119
+00:05:13,185 --> 00:05:16,337
+clean functions should be small functions
+
+120
+00:05:16,337 --> 00:05:19,320
+that do just one thing.
+
+121
+00:05:19,320 --> 00:05:21,190
+Now, you learned that this one thing
+
+122
+00:05:21,190 --> 00:05:24,160
+is related to the levels of abstraction.
+
+123
+00:05:24,160 --> 00:05:25,620
+So therefore, always make sure
+
+124
+00:05:25,620 --> 00:05:27,102
+that there is no big gap
+
+125
+00:05:27,102 --> 00:05:29,730
+between the level of abstraction implied
+
+126
+00:05:29,730 --> 00:05:32,640
+by a function name and the actual code
+
+127
+00:05:32,640 --> 00:05:34,660
+which can be found in the function
+
+128
+00:05:34,660 --> 00:05:37,940
+and that you're not mixing multiple levels of abstraction
+
+129
+00:05:37,940 --> 00:05:39,570
+in one function.
+
+130
+00:05:39,570 --> 00:05:42,250
+Also, of course, don't repeat yourself.
+
+131
+00:05:42,250 --> 00:05:45,000
+That should be obvious but it is important.
+
+132
+00:05:45,000 --> 00:05:47,690
+And avoid unexpected side effects.
+
+133
+00:05:47,690 --> 00:05:49,620
+Side effects are okay
+
+134
+00:05:49,620 --> 00:05:51,250
+but if they're unexpected,
+
+135
+00:05:51,250 --> 00:05:54,170
+then a function is not easy to understand
+
+136
+00:05:54,170 --> 00:05:57,070
+and therefore, it's not written in a clean way.
+
+137
+00:05:57,070 --> 00:05:59,886
+Now, often you're also going to use control structures
+
+138
+00:05:59,886 --> 00:06:01,734
+and there one suggestion
+
+139
+00:06:01,734 --> 00:06:04,427
+is that you're using positive wording
+
+140
+00:06:04,427 --> 00:06:07,590
+if possible and if it makes sense.
+
+141
+00:06:07,590 --> 00:06:09,868
+And of course, avoid deep nesting.
+
+142
+00:06:09,868 --> 00:06:12,107
+For example, by using these guards,
+
+143
+00:06:12,107 --> 00:06:15,490
+these if checks at the beginning of a function,
+
+144
+00:06:15,490 --> 00:06:18,380
+which cancel the function execution early
+
+145
+00:06:18,380 --> 00:06:20,185
+if some condition is not met.
+
+146
+00:06:20,185 --> 00:06:22,380
+Or avoid deep nesting
+
+147
+00:06:22,380 --> 00:06:25,540
+by extracting logic and control structures
+
+148
+00:06:25,540 --> 00:06:27,240
+into separate functions.
+
+149
+00:06:27,240 --> 00:06:29,468
+That is always something which matters.
+
+150
+00:06:29,468 --> 00:06:33,090
+Consider using polymorphism and factory functions
+
+151
+00:06:33,090 --> 00:06:34,990
+to avoid code duplication,
+
+152
+00:06:34,990 --> 00:06:37,576
+just as I showed it to you throughout this course.
+
+153
+00:06:37,576 --> 00:06:41,970
+And use real errors instead of synthetic errors,
+
+154
+00:06:41,970 --> 00:06:44,160
+replicated with if statements.
+
+155
+00:06:44,160 --> 00:06:47,738
+This also is a key part of writing clean code.
+
+156
+00:06:47,738 --> 00:06:51,465
+Now, often, you're also going to work with objects.
+
+157
+00:06:51,465 --> 00:06:53,352
+Of course, especially when using
+
+158
+00:06:53,352 --> 00:06:56,290
+an object-oriented programming style.
+
+159
+00:06:56,290 --> 00:06:57,920
+You should be able to differentiate
+
+160
+00:06:57,920 --> 00:07:00,660
+between real objects and objects
+
+161
+00:07:00,660 --> 00:07:02,250
+which only hold some data.
+
+162
+00:07:02,250 --> 00:07:04,630
+You could call these objects data structures
+
+163
+00:07:04,630 --> 00:07:06,370
+or data containers.
+
+164
+00:07:06,370 --> 00:07:07,450
+Depending on what you need,
+
+165
+00:07:07,450 --> 00:07:10,495
+it's okay to use either of these two kinds of objects
+
+166
+00:07:10,495 --> 00:07:12,055
+but you should not mix them.
+
+167
+00:07:12,055 --> 00:07:15,960
+Either have real objects with an API of methods
+
+168
+00:07:15,960 --> 00:07:19,010
+which are exposed or just use data containers.
+
+169
+00:07:19,010 --> 00:07:23,180
+Mixing them often results in unclean code.
+
+170
+00:07:23,180 --> 00:07:25,460
+Clean classes also should be small
+
+171
+00:07:25,460 --> 00:07:28,664
+and you achieve that by focusing on one responsibility,
+
+172
+00:07:28,664 --> 00:07:30,760
+which does not mean that a class
+
+173
+00:07:30,760 --> 00:07:32,380
+should only have one method.
+
+174
+00:07:32,380 --> 00:07:34,760
+That's important and I did explain this
+
+175
+00:07:34,760 --> 00:07:38,830
+in greater detail in the classes and objects module.
+
+176
+00:07:38,830 --> 00:07:40,870
+Also follow the Law of Demeter
+
+177
+00:07:40,870 --> 00:07:42,770
+when working with real objects
+
+178
+00:07:42,770 --> 00:07:45,880
+since that ensures that you're not diving too deeply
+
+179
+00:07:45,880 --> 00:07:49,610
+into objects and their API
+
+180
+00:07:49,610 --> 00:07:53,104
+and the API of only loosely related objects,
+
+181
+00:07:53,104 --> 00:07:55,070
+which often leads to code,
+
+182
+00:07:55,070 --> 00:07:57,200
+which would be hard to understand
+
+183
+00:07:57,200 --> 00:07:59,300
+and hard to maintain.
+
+184
+00:07:59,300 --> 00:08:01,710
+And speaking of maintainability,
+
+185
+00:08:01,710 --> 00:08:05,200
+especially when using an object-oriented programming style,
+
+186
+00:08:05,200 --> 00:08:07,840
+you should follow the SOLID principles.
+
+187
+00:08:07,840 --> 00:08:11,480
+Now, there especially the SRP and OCP matter,
+
+188
+00:08:11,480 --> 00:08:14,019
+as I explained in the classes and objects module
+
+189
+00:08:14,019 --> 00:08:16,922
+but if you follow these principles in general,
+
+190
+00:08:16,922 --> 00:08:21,210
+you also often will end up with cleaner code automatically
+
+191
+00:08:21,210 --> 00:08:25,410
+because these principles do not just enforce maintainability
+
+192
+00:08:25,410 --> 00:08:27,770
+but they also often lead to cleaner code
+
+193
+00:08:27,770 --> 00:08:30,848
+because they make the code easier to understand.
+
+194
+00:08:30,848 --> 00:08:34,400
+And these are the main things,
+
+195
+00:08:34,400 --> 00:08:37,053
+the main rules and concepts you should keep in mind.
+
+196
+00:08:37,053 --> 00:08:40,044
+You also find this checklist,
+
+197
+00:08:40,044 --> 00:08:42,700
+which you should really put between quotes
+
+198
+00:08:42,700 --> 00:08:45,400
+because it's not really a checklist as explained
+
+199
+00:08:45,400 --> 00:08:47,080
+but you do find it attached
+
+200
+00:08:47,080 --> 00:08:49,590
+and you also find a PDF document
+
+201
+00:08:49,590 --> 00:08:52,210
+with a checklist, which you could actually use
+
+202
+00:08:52,210 --> 00:08:54,250
+as a checklist if you wanted to.
+
+203
+00:08:54,250 --> 00:08:57,770
+And therefore, you now have all the different core rules
+
+204
+00:08:57,770 --> 00:09:00,458
+and concepts which you should always keep in mind
+
+205
+00:09:00,458 --> 00:09:03,883
+when you wanna focus on writing clean code.
+

@@ -1,0 +1,212 @@
+1
+00:00:02,190 --> 00:00:03,930
+Now I got one other note about
+
+2
+00:00:03,930 --> 00:00:06,470
+the programming languages we're using in the course
+
+3
+00:00:06,470 --> 00:00:09,690
+and programming languages and Clean Code in general.
+
+4
+00:00:09,690 --> 00:00:12,250
+In one of the first examples I showed you,
+
+5
+00:00:12,250 --> 00:00:14,110
+I used Python.
+
+6
+00:00:14,110 --> 00:00:16,660
+And here I used Python code,
+
+7
+00:00:16,660 --> 00:00:20,880
+which does not have any explicitly assigned types.
+
+8
+00:00:20,880 --> 00:00:22,750
+On the other hand, throughout this course,
+
+9
+00:00:22,750 --> 00:00:25,780
+you will also see examples written with TypeScript.
+
+10
+00:00:25,780 --> 00:00:27,370
+And for example, here's a version
+
+11
+00:00:27,370 --> 00:00:31,720
+of that code example I showed before, written in TypeScript.
+
+12
+00:00:31,720 --> 00:00:34,370
+Now TypeScript is an extension to JavaScript
+
+13
+00:00:34,370 --> 00:00:38,350
+and as its name suggests the primary thing which it does,
+
+14
+00:00:38,350 --> 00:00:41,300
+is that it adds types to JavaScript.
+
+15
+00:00:41,300 --> 00:00:44,840
+To be precise, explicitly typing things
+
+16
+00:00:44,840 --> 00:00:47,680
+which you normally don't have a JavaScript.
+
+17
+00:00:47,680 --> 00:00:49,830
+And you can see type assignments here
+
+18
+00:00:49,830 --> 00:00:52,630
+in the parameter list of this function,
+
+19
+00:00:52,630 --> 00:00:56,970
+or also for the parameter of DS returned functions.
+
+20
+00:00:56,970 --> 00:01:00,650
+Now, there are other languages like Java or C Sharp,
+
+21
+00:01:00,650 --> 00:01:04,010
+which also embrace the concept of types
+
+22
+00:01:04,010 --> 00:01:06,250
+and which also knows strict typing
+
+23
+00:01:06,250 --> 00:01:08,820
+and explicit type assignments.
+
+24
+00:01:08,820 --> 00:01:11,050
+And then there are other languages
+
+25
+00:01:11,050 --> 00:01:13,360
+which don't care as much like Python,
+
+26
+00:01:13,360 --> 00:01:16,470
+or which don't know the concept of strong typing,
+
+27
+00:01:16,470 --> 00:01:18,900
+for example, JavaScript.
+
+28
+00:01:18,900 --> 00:01:21,080
+Now, you could think that you need types
+
+29
+00:01:21,080 --> 00:01:23,710
+to write Clean Code, because having
+
+30
+00:01:23,710 --> 00:01:26,120
+these extra type assignments certainly
+
+31
+00:01:26,120 --> 00:01:28,630
+also helps with code understandability.
+
+32
+00:01:28,630 --> 00:01:31,830
+If you have a look at this code snippet here,
+
+33
+00:01:31,830 --> 00:01:35,030
+it should be quite straightforward to read and understand.
+
+34
+00:01:35,030 --> 00:01:38,200
+And whilst the types might help a little bit
+
+35
+00:01:38,200 --> 00:01:39,970
+with reading and understanding,
+
+36
+00:01:39,970 --> 00:01:43,420
+they primarily help with avoiding errors,
+
+37
+00:01:43,420 --> 00:01:45,180
+and only in addition to that,
+
+38
+00:01:45,180 --> 00:01:47,740
+they can also help with readability.
+
+39
+00:01:47,740 --> 00:01:50,910
+But the main reason for using strong typing
+
+40
+00:01:50,910 --> 00:01:53,960
+is that they can help prevent errors.
+
+41
+00:01:53,960 --> 00:01:56,360
+Because I would argue that this code
+
+42
+00:01:56,360 --> 00:01:59,080
+is equally easy to read and understand,
+
+43
+00:01:59,080 --> 00:02:02,370
+even though we don't have strong typing here.
+
+44
+00:02:02,370 --> 00:02:04,940
+So you don't need to use a language
+
+45
+00:02:04,940 --> 00:02:08,250
+which knows and uses strong typing
+
+46
+00:02:08,250 --> 00:02:10,850
+and wants explicit type assignments.
+
+47
+00:02:10,850 --> 00:02:13,380
+You don't need data to write Clean Code.
+
+48
+00:02:13,380 --> 00:02:16,130
+And throughout this course, you're also going to see a bunch
+
+49
+00:02:16,130 --> 00:02:19,060
+of examples written in Python and JavaScript,
+
+50
+00:02:19,060 --> 00:02:22,040
+which don't use explicit type assignments.
+
+51
+00:02:22,040 --> 00:02:24,750
+So you don't need data to write Clean Code,
+
+52
+00:02:24,750 --> 00:02:27,380
+it's not a must have and I just wanted
+
+53
+00:02:27,380 --> 00:02:29,193
+to emphasize this right away.
+

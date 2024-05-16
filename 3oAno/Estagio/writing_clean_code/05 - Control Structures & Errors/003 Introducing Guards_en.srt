@@ -1,0 +1,276 @@
+1
+00:00:02,050 --> 00:00:05,260
+When you have deeply nested code like this,
+
+2
+00:00:05,260 --> 00:00:08,480
+it can be overwhelming if you look at this code.
+
+3
+00:00:08,480 --> 00:00:10,340
+Where should you start?
+
+4
+00:00:10,340 --> 00:00:12,470
+Well, you're going to see various ways
+
+5
+00:00:12,470 --> 00:00:15,090
+of slimming this down and making it cleaner
+
+6
+00:00:15,090 --> 00:00:16,530
+throughout this module
+
+7
+00:00:16,530 --> 00:00:18,510
+but one very efficient tweak,
+
+8
+00:00:18,510 --> 00:00:20,712
+which you can make in a lot of cases
+
+9
+00:00:20,712 --> 00:00:23,540
+is that you use so-called guards
+
+10
+00:00:23,540 --> 00:00:26,000
+and that you fail fast.
+
+11
+00:00:26,000 --> 00:00:27,770
+Now, what does this mean?
+
+12
+00:00:27,770 --> 00:00:30,230
+Take a look at this simple snippet.
+
+13
+00:00:30,230 --> 00:00:31,980
+We have a if check here
+
+14
+00:00:31,980 --> 00:00:34,860
+where we check whether an email includes a @ sign
+
+15
+00:00:34,860 --> 00:00:36,080
+and if that's the case,
+
+16
+00:00:36,080 --> 00:00:39,500
+we do a bunch of work inside of that if statement.
+
+17
+00:00:39,500 --> 00:00:42,840
+And that bunch of work could be multiple lines of code.
+
+18
+00:00:42,840 --> 00:00:45,850
+It could be as much as all the code you have here
+
+19
+00:00:45,850 --> 00:00:47,510
+in the outermost if statement.
+
+20
+00:00:47,510 --> 00:00:49,960
+So all this code here ultimately
+
+21
+00:00:49,960 --> 00:00:52,363
+is in this one if check here.
+
+22
+00:00:53,460 --> 00:00:55,370
+Now, if you have a case like this,
+
+23
+00:00:55,370 --> 00:00:58,290
+you often can use a guard,
+
+24
+00:00:58,290 --> 00:01:01,660
+which means you simply invert the if check,
+
+25
+00:01:01,660 --> 00:01:04,440
+for example, in this case, by checking for the opposite
+
+26
+00:01:04,440 --> 00:01:05,890
+with an exclamation mark.
+
+27
+00:01:05,890 --> 00:01:09,490
+So for the email not including the @ sign,
+
+28
+00:01:09,490 --> 00:01:11,000
+and this is JavaScript
+
+29
+00:01:11,000 --> 00:01:14,050
+but of course, you can do this in any programming language.
+
+30
+00:01:14,050 --> 00:01:16,670
+The exact syntax might just matter.
+
+31
+00:01:16,670 --> 00:01:19,240
+And then you do one important other thing.
+
+32
+00:01:19,240 --> 00:01:22,680
+You just return inside of that if statement.
+
+33
+00:01:22,680 --> 00:01:25,350
+And that means that you now use this if check
+
+34
+00:01:25,350 --> 00:01:26,490
+as a guard.
+
+35
+00:01:26,490 --> 00:01:30,070
+It runs before your main code runs
+
+36
+00:01:30,070 --> 00:01:32,610
+and if you make it into this if check,
+
+37
+00:01:32,610 --> 00:01:34,710
+so if some condition is not met,
+
+38
+00:01:34,710 --> 00:01:37,770
+in this case, if the email does not include a @ sign,
+
+39
+00:01:37,770 --> 00:01:39,799
+then you fail fast,
+
+40
+00:01:39,799 --> 00:01:42,520
+which means you return,
+
+41
+00:01:42,520 --> 00:01:45,000
+which in the context of a function means
+
+42
+00:01:45,000 --> 00:01:46,133
+that the code thereafter,
+
+43
+00:01:46,133 --> 00:01:50,068
+all the code after the if statement won't execute.
+
+44
+00:01:50,068 --> 00:01:53,250
+This is what makes this if statement a guard.
+
+45
+00:01:53,250 --> 00:01:55,550
+It guards the rest of the code.
+
+46
+00:01:55,550 --> 00:01:57,460
+If this condition is not met
+
+47
+00:01:57,460 --> 00:02:01,140
+because we fail fast, we avoid that the other code
+
+48
+00:02:01,140 --> 00:02:02,600
+will run at all.
+
+49
+00:02:02,600 --> 00:02:05,830
+And we had the same behavior on the left side
+
+50
+00:02:05,830 --> 00:02:09,090
+but there, the to be executed code was inside
+
+51
+00:02:09,090 --> 00:02:10,169
+of the if statement
+
+52
+00:02:10,169 --> 00:02:12,960
+and therefore, it was nested inside of it,
+
+53
+00:02:12,960 --> 00:02:14,980
+making it harder to read.
+
+54
+00:02:14,980 --> 00:02:17,600
+A guard is typically way easier to read
+
+55
+00:02:17,600 --> 00:02:18,839
+and to understand.
+
+56
+00:02:18,839 --> 00:02:22,460
+And you cannot just use that if you have one if statement,
+
+57
+00:02:22,460 --> 00:02:24,400
+which wraps all your other code.
+
+58
+00:02:24,400 --> 00:02:25,800
+You can also use a guard
+
+59
+00:02:25,800 --> 00:02:27,680
+if you have a nested if statement
+
+60
+00:02:27,680 --> 00:02:29,690
+in another if statement.
+
+61
+00:02:29,690 --> 00:02:31,180
+For example, let's say here.
+
+62
+00:02:31,180 --> 00:02:32,800
+hasPurchases.
+
+63
+00:02:32,800 --> 00:02:34,430
+We could also outsource this
+
+64
+00:02:34,430 --> 00:02:37,730
+and turn this into a guard where we fail fast
+
+65
+00:02:37,730 --> 00:02:40,650
+so that we then have two consecutive if statements
+
+66
+00:02:40,650 --> 00:02:43,570
+instead of one deeply nested one.
+
+67
+00:02:43,570 --> 00:02:45,690
+And this is a super efficient technique
+
+68
+00:02:45,690 --> 00:02:49,270
+for removing unnecessary nesting.
+
+69
+00:02:49,270 --> 00:02:51,323
+Now, let's apply it to our example.
+

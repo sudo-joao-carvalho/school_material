@@ -1,0 +1,392 @@
+1
+00:00:02,170 --> 00:00:04,210
+So now in processTransactions,
+
+2
+00:00:04,210 --> 00:00:06,830
+we have our guard, we have our for loop.
+
+3
+00:00:06,830 --> 00:00:08,650
+I wanna keep the for loop here
+
+4
+00:00:08,650 --> 00:00:09,540
+because after all,
+
+5
+00:00:09,540 --> 00:00:12,770
+the function is named processTransactions.
+
+6
+00:00:12,770 --> 00:00:13,950
+So it makes a lot of sense
+
+7
+00:00:13,950 --> 00:00:16,040
+that we go through all the transactions there
+
+8
+00:00:16,040 --> 00:00:17,760
+and process them.
+
+9
+00:00:17,760 --> 00:00:19,480
+But what we do inside OF the for loop
+
+10
+00:00:19,480 --> 00:00:21,660
+could very well be outsourced.
+
+11
+00:00:21,660 --> 00:00:23,030
+Not this guard.
+
+12
+00:00:23,030 --> 00:00:24,170
+I wanna keep it here
+
+13
+00:00:24,170 --> 00:00:25,630
+because I call continue.
+
+14
+00:00:25,630 --> 00:00:27,720
+I execute the continue statement here.
+
+15
+00:00:27,720 --> 00:00:29,440
+And therefore, I wanna keep it close
+
+16
+00:00:29,440 --> 00:00:31,750
+to the for loop code itself.
+
+17
+00:00:31,750 --> 00:00:33,557
+But what about this code down there
+
+18
+00:00:33,557 --> 00:00:35,848
+where we check whether it's a payment
+
+19
+00:00:35,848 --> 00:00:40,848
+or a refund and then we process the different methods?
+
+20
+00:00:41,010 --> 00:00:43,643
+Or if it's an invalid transaction type?
+
+21
+00:00:44,560 --> 00:00:47,005
+This code could definitely be cut
+
+22
+00:00:47,005 --> 00:00:50,370
+and outsourced into a separate function.
+
+23
+00:00:50,370 --> 00:00:55,370
+That would already make processTransactions way slimmer.
+
+24
+00:00:55,460 --> 00:00:57,681
+So therefore, we can add a new function here
+
+25
+00:00:57,681 --> 00:01:01,620
+and maybe name it processTransaction,
+
+26
+00:01:01,620 --> 00:01:03,330
+so not Transactions.
+
+27
+00:01:03,330 --> 00:01:05,379
+That's the function name we have up here
+
+28
+00:01:05,379 --> 00:01:07,220
+for all the transactions
+
+29
+00:01:07,220 --> 00:01:08,506
+but inside of the loop,
+
+30
+00:01:08,506 --> 00:01:12,430
+processTransaction for a single transaction.
+
+31
+00:01:12,430 --> 00:01:15,610
+Hence here, we get the transaction as our parameter
+
+32
+00:01:15,610 --> 00:01:19,330
+and I know that the word transaction is everywhere here.
+
+33
+00:01:19,330 --> 00:01:22,610
+You can go for a different name if that's confusing to you
+
+34
+00:01:22,610 --> 00:01:25,730
+but I wanna use a name that best describes
+
+35
+00:01:25,730 --> 00:01:28,620
+what's in that variable or parameter
+
+36
+00:01:28,620 --> 00:01:30,590
+and it is a transaction after all.
+
+37
+00:01:30,590 --> 00:01:32,040
+So I will stick to this name.
+
+38
+00:01:32,930 --> 00:01:35,430
+And then inside of processTransaction,
+
+39
+00:01:35,430 --> 00:01:37,793
+I will paste in my code here.
+
+40
+00:01:38,690 --> 00:01:41,240
+Since I used transaction as a parameter name,
+
+41
+00:01:41,240 --> 00:01:43,260
+this code all still works
+
+42
+00:01:43,260 --> 00:01:45,760
+because I'm still checking transaction here.
+
+43
+00:01:45,760 --> 00:01:48,313
+Transaction.type, method and so on.
+
+44
+00:01:49,270 --> 00:01:51,090
+So this code still works
+
+45
+00:01:51,090 --> 00:01:53,230
+but now here in the for loop,
+
+46
+00:01:53,230 --> 00:01:57,110
+after our guard, I can simply call processTransaction
+
+47
+00:01:57,110 --> 00:01:59,203
+for the given transaction.
+
+48
+00:02:00,150 --> 00:02:05,080
+And that makes processTransactions way easier to read
+
+49
+00:02:05,080 --> 00:02:06,820
+and way cleaner.
+
+50
+00:02:06,820 --> 00:02:09,740
+It's still not as clean as I would want it
+
+51
+00:02:09,740 --> 00:02:12,730
+but it is way cleaner for sure.
+
+52
+00:02:12,730 --> 00:02:14,370
+We could now, by the way,
+
+53
+00:02:14,370 --> 00:02:16,330
+even take our guard here
+
+54
+00:02:16,330 --> 00:02:19,050
+and extract it from processTransactions,
+
+55
+00:02:19,050 --> 00:02:21,330
+even though I said I didn't want to do that
+
+56
+00:02:21,330 --> 00:02:22,163
+but we can do it
+
+57
+00:02:22,163 --> 00:02:23,710
+because we're going to rewrite it,
+
+58
+00:02:23,710 --> 00:02:26,853
+and move that into processTransaction at the start
+
+59
+00:02:26,853 --> 00:02:30,046
+and replace continue with return.
+
+60
+00:02:30,046 --> 00:02:32,040
+We can do this here
+
+61
+00:02:32,040 --> 00:02:34,150
+because processTransaction will execute
+
+62
+00:02:34,150 --> 00:02:35,380
+for every transaction.
+
+63
+00:02:35,380 --> 00:02:38,180
+And we wanna continue with the next loop iteration
+
+64
+00:02:38,180 --> 00:02:41,200
+if the transaction.status is not OPEN.
+
+65
+00:02:41,200 --> 00:02:43,610
+But since I have this as a guard in front
+
+66
+00:02:43,610 --> 00:02:45,630
+of my checks down there,
+
+67
+00:02:45,630 --> 00:02:47,070
+if we return here,
+
+68
+00:02:47,070 --> 00:02:49,610
+this code down there won't execute.
+
+69
+00:02:49,610 --> 00:02:51,870
+So since this has been there for the only function,
+
+70
+00:02:51,870 --> 00:02:53,710
+which is being called inside of that loop,
+
+71
+00:02:53,710 --> 00:02:55,600
+it's the same as continuing
+
+72
+00:02:55,600 --> 00:02:57,340
+but it's now even cleaner
+
+73
+00:02:57,340 --> 00:03:00,870
+because now we removed more code from processTransactions
+
+74
+00:03:00,870 --> 00:03:01,980
+and you could argue
+
+75
+00:03:01,980 --> 00:03:05,173
+that this is now on the same level of abstraction.
+
+76
+00:03:06,010 --> 00:03:08,830
+Maybe you would argue that this for loop
+
+77
+00:03:08,830 --> 00:03:13,530
+is more lower level than calling some other functions
+
+78
+00:03:13,530 --> 00:03:16,110
+and we could therefore, also extract this code
+
+79
+00:03:16,110 --> 00:03:17,185
+into another function.
+
+80
+00:03:17,185 --> 00:03:20,390
+But I personally have problems finding a name,
+
+81
+00:03:20,390 --> 00:03:22,570
+a good name for this function.
+
+82
+00:03:22,570 --> 00:03:24,040
+We would have to name it something
+
+83
+00:03:24,040 --> 00:03:26,940
+like loopThroughtTransactions
+
+84
+00:03:26,940 --> 00:03:28,510
+and that's essentially the same
+
+85
+00:03:28,510 --> 00:03:30,820
+as describing what's happening in there
+
+86
+00:03:30,820 --> 00:03:32,590
+and it's also pretty much the same
+
+87
+00:03:32,590 --> 00:03:34,800
+as processTransactions.
+
+88
+00:03:34,800 --> 00:03:38,260
+So finding a new distinctive name for this loop operation
+
+89
+00:03:38,260 --> 00:03:39,690
+is pretty hard for me.
+
+90
+00:03:39,690 --> 00:03:42,055
+And I personally would say that this code
+
+91
+00:03:42,055 --> 00:03:44,430
+is very readable and clean.
+
+92
+00:03:44,430 --> 00:03:47,270
+So I am fine with keeping this for loop here
+
+93
+00:03:47,270 --> 00:03:49,440
+in processTransactions for now.
+
+94
+00:03:49,440 --> 00:03:51,350
+And then just outsourcing all the work
+
+95
+00:03:51,350 --> 00:03:53,470
+to processTransaction.
+
+96
+00:03:53,470 --> 00:03:55,117
+The work for the individual transactions
+
+97
+00:03:55,117 --> 00:03:58,240
+and the work for checking whether this transaction
+
+98
+00:03:58,240 --> 00:04:01,053
+should be processed in the first place or not.
+

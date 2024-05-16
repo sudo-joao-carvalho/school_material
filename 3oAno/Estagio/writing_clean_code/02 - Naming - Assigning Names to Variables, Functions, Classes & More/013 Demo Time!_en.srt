@@ -1,0 +1,872 @@
+1
+00:00:02,270 --> 00:00:04,160
+So now that we got all the theory
+
+2
+00:00:04,160 --> 00:00:06,440
+out of the way, it's time for some demos
+
+3
+00:00:06,440 --> 00:00:09,640
+and for some bad to good code conversion
+
+4
+00:00:09,640 --> 00:00:12,100
+which we can do together for the moment,
+
+5
+00:00:12,100 --> 00:00:14,560
+your challenge will follow.
+
+6
+00:00:14,560 --> 00:00:15,393
+Now, you'll find
+
+7
+00:00:15,393 --> 00:00:19,400
+this file attached demo-01-bad-name-examples.py
+
+8
+00:00:19,400 --> 00:00:22,250
+holding some Python code and you can download it,
+
+9
+00:00:22,250 --> 00:00:25,080
+you can also run it if you got Python installed
+
+10
+00:00:25,080 --> 00:00:28,160
+but that is absolutely not something you need to do.
+
+11
+00:00:28,160 --> 00:00:31,630
+We will only work on the code and try to transform it
+
+12
+00:00:31,630 --> 00:00:34,923
+from bad code, from dirty code to clean code.
+
+13
+00:00:35,780 --> 00:00:37,780
+Now what's this program doing?
+
+14
+00:00:37,780 --> 00:00:41,840
+We are defining some class here, a class named entity.
+
+15
+00:00:41,840 --> 00:00:43,900
+It has a constructor function.
+
+16
+00:00:43,900 --> 00:00:47,670
+This is how a constructor function is defined in Python
+
+17
+00:00:47,670 --> 00:00:49,380
+and this constructor function
+
+18
+00:00:49,380 --> 00:00:52,200
+receives free main parameters.
+
+19
+00:00:52,200 --> 00:00:54,700
+The self keyword is a special keyword
+
+20
+00:00:54,700 --> 00:00:56,980
+and a special parameter in Python
+
+21
+00:00:56,980 --> 00:01:00,120
+which is basically the same as this keyword
+
+22
+00:01:00,120 --> 00:01:03,030
+in other programming languages.
+
+23
+00:01:03,030 --> 00:01:04,489
+So we got free parameters
+
+24
+00:01:04,489 --> 00:01:07,993
+which are being stored in properties of this class here.
+
+25
+00:01:08,830 --> 00:01:12,920
+Then we got a function, not a method but a function.
+
+26
+00:01:12,920 --> 00:01:14,060
+If it would be a method,
+
+27
+00:01:14,060 --> 00:01:16,770
+it would need to be indented differently,
+
+28
+00:01:16,770 --> 00:01:17,930
+it's indented like this.
+
+29
+00:01:17,930 --> 00:01:20,250
+So it's a function outside of the class
+
+30
+00:01:20,250 --> 00:01:21,770
+which takes an item
+
+31
+00:01:21,770 --> 00:01:24,900
+and which then in the end accesses various properties
+
+32
+00:01:24,900 --> 00:01:29,003
+on that item to simply print their values to the console.
+
+33
+00:01:29,870 --> 00:01:33,290
+Now, the item clearly is an instance of this entity
+
+34
+00:01:33,290 --> 00:01:36,310
+since we are accessing title description
+
+35
+00:01:36,310 --> 00:01:38,563
+and there's strange property.
+
+36
+00:01:40,080 --> 00:01:43,110
+Further down below, I then have a couple of variables
+
+37
+00:01:43,110 --> 00:01:46,160
+with various values which are being passed
+
+38
+00:01:46,160 --> 00:01:49,340
+to the entity constructor to construct a item
+
+39
+00:01:49,340 --> 00:01:51,950
+which the is passed to this output function,
+
+40
+00:01:51,950 --> 00:01:53,740
+we just had a look at.
+
+41
+00:01:53,740 --> 00:01:56,360
+So that's what the code does technically.
+
+42
+00:01:56,360 --> 00:01:59,250
+Now, what is it doing logically?
+
+43
+00:01:59,250 --> 00:02:02,610
+Whether it looks a little bit like entity in reality
+
+44
+00:02:02,610 --> 00:02:06,650
+would be some kind of blog post because we have a title,
+
+45
+00:02:06,650 --> 00:02:09,070
+we have a description and we have something
+
+46
+00:02:09,070 --> 00:02:12,890
+which is a date in the end, it's the date of today
+
+47
+00:02:12,890 --> 00:02:16,130
+formatted as such a string, where we simply start
+
+48
+00:02:16,130 --> 00:02:17,840
+with the year, then the month,
+
+49
+00:02:17,840 --> 00:02:20,103
+then the day, hours and minutes.
+
+50
+00:02:21,410 --> 00:02:25,010
+So this year, in this example, it should be a blog post,
+
+51
+00:02:25,010 --> 00:02:29,800
+hence a better name than entity is blog post describing
+
+52
+00:02:29,800 --> 00:02:33,190
+what this class will be in which kinds of objects
+
+53
+00:02:33,190 --> 00:02:35,123
+we can create with that class.
+
+54
+00:02:36,070 --> 00:02:39,150
+Now what about the parameters we get there?
+
+55
+00:02:39,150 --> 00:02:41,940
+I think title and description are all right
+
+56
+00:02:41,940 --> 00:02:45,080
+but what about this ymdhm thing?
+
+57
+00:02:45,080 --> 00:02:47,680
+This in the end is just the encoded version
+
+58
+00:02:47,680 --> 00:02:49,690
+of our timestamp here
+
+59
+00:02:49,690 --> 00:02:52,020
+but this is of course not really understandable
+
+60
+00:02:52,020 --> 00:02:53,450
+and human readable.
+
+61
+00:02:53,450 --> 00:02:55,670
+In the end, it is just a date, right?
+
+62
+00:02:55,670 --> 00:02:58,250
+So maybe we should name it date.
+
+63
+00:02:58,250 --> 00:03:00,840
+If we knew which kind of data it is,
+
+64
+00:03:00,840 --> 00:03:02,780
+we could also be more specific.
+
+65
+00:03:02,780 --> 00:03:04,840
+For example, if this was the date
+
+66
+00:03:04,840 --> 00:03:07,270
+on which this blog post was published,
+
+67
+00:03:07,270 --> 00:03:11,640
+we could name it date underscore published for example
+
+68
+00:03:11,640 --> 00:03:15,160
+or publish date, both would be options
+
+69
+00:03:15,160 --> 00:03:16,350
+you could go with here.
+
+70
+00:03:16,350 --> 00:03:19,480
+It always also comes down to your personal preference
+
+71
+00:03:19,480 --> 00:03:21,110
+to a certain extent.
+
+72
+00:03:21,110 --> 00:03:23,000
+So I will name it date published
+
+73
+00:03:23,000 --> 00:03:25,463
+and I'll assume that this is the published date.
+
+74
+00:03:26,340 --> 00:03:28,640
+So then of course, we need to adjust it here
+
+75
+00:03:28,640 --> 00:03:30,190
+and here as well.
+
+76
+00:03:30,190 --> 00:03:32,730
+I wanna use that same name as the property name
+
+77
+00:03:32,730 --> 00:03:35,830
+and I wanna store the value we receive on that parameter
+
+78
+00:03:35,830 --> 00:03:37,163
+in that property.
+
+79
+00:03:38,320 --> 00:03:41,090
+With that, this class doesn't look too bad,
+
+80
+00:03:41,090 --> 00:03:43,830
+it's now way more descriptive already.
+
+81
+00:03:43,830 --> 00:03:45,520
+Now what about output?
+
+82
+00:03:45,520 --> 00:03:48,610
+In the end, this is just outputting the blog post, right?
+
+83
+00:03:48,610 --> 00:03:50,053
+So maybe we should name it.
+
+84
+00:03:51,060 --> 00:03:56,060
+Output blog posts or I personally prefer print over output.
+
+85
+00:03:57,910 --> 00:04:00,540
+So print blog post makes it way clearer
+
+86
+00:04:00,540 --> 00:04:02,470
+what this function does?
+
+87
+00:04:02,470 --> 00:04:06,100
+And it's really only good at printing blog posts
+
+88
+00:04:06,100 --> 00:04:09,260
+because we try to access blog post properties
+
+89
+00:04:09,260 --> 00:04:11,420
+inside of the function.
+
+90
+00:04:11,420 --> 00:04:15,050
+So a more generic name like just print data
+
+91
+00:04:15,050 --> 00:04:18,220
+or anything like that would kind of be deceiving
+
+92
+00:04:18,220 --> 00:04:21,019
+because it would sound like we can pass any data
+
+93
+00:04:21,019 --> 00:04:24,790
+into this function when it will actually fail on any data
+
+94
+00:04:24,790 --> 00:04:27,750
+which has note the structure of a blog post.
+
+95
+00:04:27,750 --> 00:04:30,533
+Hence I prefer to print blog post name.
+
+96
+00:04:31,440 --> 00:04:34,310
+We can also rename the argument then and change it
+
+97
+00:04:34,310 --> 00:04:39,310
+from item to post or blog post, whatever you prefer.
+
+98
+00:04:39,720 --> 00:04:40,553
+And then of course,
+
+99
+00:04:40,553 --> 00:04:43,423
+we also need to use that name inside of this function.
+
+100
+00:04:44,650 --> 00:04:46,630
+Now this is all is a more readable
+
+101
+00:04:46,630 --> 00:04:49,700
+and we can now focus on the code down there.
+
+102
+00:04:49,700 --> 00:04:53,420
+Now these names here are pretty much all messed up.
+
+103
+00:04:53,420 --> 00:04:58,420
+Summary is at best okay-ish but this is the title
+
+104
+00:04:58,720 --> 00:05:01,440
+of the blog post but don't be just name it title,
+
+105
+00:05:01,440 --> 00:05:03,540
+this would be way clearer.
+
+106
+00:05:03,540 --> 00:05:06,260
+Desk of course is an abbreviation.
+
+107
+00:05:06,260 --> 00:05:09,257
+Actually it is an abbreviation which might be clear
+
+108
+00:05:09,257 --> 00:05:11,990
+but I personally prefer description.
+
+109
+00:05:11,990 --> 00:05:14,560
+It doesn't leave our developers guessing
+
+110
+00:05:14,560 --> 00:05:16,000
+whether that is a description
+
+111
+00:05:16,000 --> 00:05:18,320
+or maybe some other kinds of texts
+
+112
+00:05:18,320 --> 00:05:20,830
+but I think desk would have been acceptable.
+
+113
+00:05:20,830 --> 00:05:24,290
+Nonetheless description is cleaner in my opinion.
+
+114
+00:05:24,290 --> 00:05:25,900
+Now what about this state.
+
+115
+00:05:25,900 --> 00:05:30,020
+We are fetching the current date as of today with this code
+
+116
+00:05:30,020 --> 00:05:32,630
+whether that makes sense or not as a number question
+
+117
+00:05:32,630 --> 00:05:34,940
+but that's what we're doing here.
+
+118
+00:05:34,940 --> 00:05:37,680
+Now the name new date is okay,
+
+119
+00:05:37,680 --> 00:05:40,250
+it is a new date which we are generating
+
+120
+00:05:40,250 --> 00:05:44,200
+but maybe now or date today
+
+121
+00:05:44,200 --> 00:05:47,350
+or just today, anything like that might be better
+
+122
+00:05:47,350 --> 00:05:49,940
+and I will go with now because it makes it clear
+
+123
+00:05:49,940 --> 00:05:53,120
+that this is the current timestamp as of now,
+
+124
+00:05:53,120 --> 00:05:54,563
+as of right now.
+
+125
+00:05:55,560 --> 00:05:58,100
+Here, publish is a bad name.
+
+126
+00:05:58,100 --> 00:05:59,750
+This sounds like a command
+
+127
+00:05:59,750 --> 00:06:02,650
+and we definitely don't wanna name our variables
+
+128
+00:06:02,650 --> 00:06:05,810
+like commands instead as you learned,
+
+129
+00:06:05,810 --> 00:06:08,070
+variables are data containers
+
+130
+00:06:08,070 --> 00:06:10,120
+and we wanna describe which kind of data
+
+131
+00:06:10,120 --> 00:06:12,130
+is in that data container.
+
+132
+00:06:12,130 --> 00:06:15,780
+Here it's the formatted date in the end,
+
+133
+00:06:15,780 --> 00:06:18,810
+now is the date and we're formatting it here.
+
+134
+00:06:18,810 --> 00:06:21,060
+Of course, here I wanna use now therefore
+
+135
+00:06:21,060 --> 00:06:25,940
+and here we could have the formatted date as a name
+
+136
+00:06:25,940 --> 00:06:28,930
+because this describes what's inside of this variable,
+
+137
+00:06:28,930 --> 00:06:31,190
+it's a date and it's not just any date
+
+138
+00:06:31,190 --> 00:06:35,450
+but actually a formatted date, formatted in a certain way.
+
+139
+00:06:35,450 --> 00:06:39,990
+Now down here, we previously used entity, the entity class.
+
+140
+00:06:39,990 --> 00:06:42,070
+This is now the blog post class
+
+141
+00:06:42,070 --> 00:06:44,660
+so of course here, it's blog post
+
+142
+00:06:44,660 --> 00:06:48,740
+and we pass into title, the description
+
+143
+00:06:48,740 --> 00:06:51,480
+and then the formatted date
+
+144
+00:06:51,480 --> 00:06:53,870
+and it shouldn't be called item of course,
+
+145
+00:06:53,870 --> 00:06:57,870
+instead, this is a blog post or just a post,
+
+146
+00:06:57,870 --> 00:06:59,170
+anything like that.
+
+147
+00:06:59,170 --> 00:07:03,330
+It depends on the context, we can go with just post here
+
+148
+00:07:03,330 --> 00:07:04,640
+because of the surrounding code,
+
+149
+00:07:04,640 --> 00:07:07,990
+it's clear that it will be a blog post to be super safe,
+
+150
+00:07:07,990 --> 00:07:10,170
+you could of course always go with blog post here,
+
+151
+00:07:10,170 --> 00:07:11,163
+if you wanted to.
+
+152
+00:07:12,170 --> 00:07:13,790
+And then last but not least here,
+
+153
+00:07:13,790 --> 00:07:15,610
+we have print blog posts
+
+154
+00:07:15,610 --> 00:07:18,960
+and we pass the blog posts to this function.
+
+155
+00:07:18,960 --> 00:07:21,890
+And this is now a cleaner version of that code.
+
+156
+00:07:21,890 --> 00:07:25,850
+It's definitely not the only way of rewriting that code
+
+157
+00:07:25,850 --> 00:07:27,360
+and you might come up with names
+
+158
+00:07:27,360 --> 00:07:31,350
+which you personally prefer over the names I showed here
+
+159
+00:07:31,350 --> 00:07:34,640
+but you will probably agree that this code
+
+160
+00:07:34,640 --> 00:07:38,530
+is now way more readable and meaningful and descriptive
+
+161
+00:07:38,530 --> 00:07:42,690
+and self-explanatory than the code was before.
+
+162
+00:07:42,690 --> 00:07:44,860
+Now this code which we just wrote,
+
+163
+00:07:44,860 --> 00:07:48,250
+this code which we transformed from 30 to cleaner
+
+164
+00:07:48,250 --> 00:07:50,480
+could actually be improved even more
+
+165
+00:07:50,480 --> 00:07:52,410
+to be even cleaner.
+
+166
+00:07:52,410 --> 00:07:55,310
+Because the problem we have with this code right now
+
+167
+00:07:55,310 --> 00:07:59,720
+is that we do have some redundancy or some well,
+
+168
+00:07:59,720 --> 00:08:02,340
+some aspects to it which I don't totally like.
+
+169
+00:08:02,340 --> 00:08:05,480
+For example, this print blog post function.
+
+170
+00:08:05,480 --> 00:08:09,010
+We have a blog posts argument that blog post and the name,
+
+171
+00:08:09,010 --> 00:08:11,470
+this is kind of redundant but as I explained,
+
+172
+00:08:11,470 --> 00:08:14,820
+just print data on the other hand would be too unspecific
+
+173
+00:08:14,820 --> 00:08:17,300
+and it would kind of signal that we can pass
+
+174
+00:08:17,300 --> 00:08:20,840
+an any data when that's actually not true,
+
+175
+00:08:20,840 --> 00:08:23,920
+a great way of enhancing this code even more
+
+176
+00:08:23,920 --> 00:08:26,880
+would be to simply turn this function
+
+177
+00:08:26,880 --> 00:08:29,860
+into a method of the blog post class
+
+178
+00:08:29,860 --> 00:08:32,070
+by moving it into the blog post class
+
+179
+00:08:32,070 --> 00:08:35,222
+which in python's case is done by indenting it.
+
+180
+00:08:36,110 --> 00:08:38,090
+Now that being a method of that class,
+
+181
+00:08:38,090 --> 00:08:40,940
+it also needs to receive the self parameter
+
+182
+00:08:40,940 --> 00:08:42,610
+as a first parameter.
+
+183
+00:08:42,610 --> 00:08:44,290
+This is just a Python thing
+
+184
+00:08:44,290 --> 00:08:47,270
+to unlock the self keyword in this method.
+
+185
+00:08:47,270 --> 00:08:51,350
+And now we can operate on the properties of this class
+
+186
+00:08:51,350 --> 00:08:55,180
+and we don't rely on some input parameter anymore.
+
+187
+00:08:55,180 --> 00:08:57,560
+So we can remove that and instead now
+
+188
+00:08:57,560 --> 00:09:02,050
+simply access self.title, self.description
+
+189
+00:09:02,050 --> 00:09:06,110
+and here self.date published.
+
+190
+00:09:06,110 --> 00:09:08,610
+Actually that date name was something I forgot
+
+191
+00:09:08,610 --> 00:09:11,590
+to replace in the last example anyways.
+
+192
+00:09:11,590 --> 00:09:13,850
+But now we turn this into a method
+
+193
+00:09:13,850 --> 00:09:15,803
+and the advantage of this is that now
+
+194
+00:09:15,803 --> 00:09:20,140
+we can simply call blog post.print
+
+195
+00:09:20,140 --> 00:09:22,890
+and we can rename this to just print up here
+
+196
+00:09:22,890 --> 00:09:24,650
+instead of print blog posts
+
+197
+00:09:24,650 --> 00:09:28,440
+and then call just blog post.print.
+
+198
+00:09:28,440 --> 00:09:32,430
+And this is now very expressive and descriptive I would say,
+
+199
+00:09:32,430 --> 00:09:36,260
+it makes it very clear that we are printing that blog post.
+
+200
+00:09:36,260 --> 00:09:39,060
+So we are outputting data about that blog post
+
+201
+00:09:39,060 --> 00:09:41,490
+and that's very descriptive and very easy
+
+202
+00:09:41,490 --> 00:09:43,740
+to understand and read.
+
+203
+00:09:43,740 --> 00:09:47,350
+So that's one easy way of improving this code even more
+
+204
+00:09:47,350 --> 00:09:50,290
+and you might find more ways of improving it
+
+205
+00:09:50,290 --> 00:09:52,930
+but that was one improvement I wanted to make
+
+206
+00:09:52,930 --> 00:09:55,230
+to also show you that sometimes
+
+207
+00:09:55,230 --> 00:09:57,780
+it's not just about changing a name
+
+208
+00:09:57,780 --> 00:09:59,850
+but about changing something in code
+
+209
+00:09:59,850 --> 00:10:04,010
+which then there after makes naming automatically easier
+
+210
+00:10:04,010 --> 00:10:05,730
+and more descriptive.
+
+211
+00:10:05,730 --> 00:10:07,890
+And we'll see more of that later in the course
+
+212
+00:10:07,890 --> 00:10:10,690
+once we also dive into functions and classes
+
+213
+00:10:10,690 --> 00:10:13,390
+but this was a first glimpse at something
+
+214
+00:10:13,390 --> 00:10:16,140
+which sometimes it's the best possible solution,
+
+215
+00:10:16,140 --> 00:10:18,230
+not messing around with the name
+
+216
+00:10:18,230 --> 00:10:21,880
+but instead moving it somewhere else in code as we did here,
+
+217
+00:10:21,880 --> 00:10:24,500
+where we turned this from a regular function
+
+218
+00:10:24,500 --> 00:10:26,883
+into a method of the blog post class.
+

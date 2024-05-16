@@ -1,0 +1,524 @@
+1
+00:00:02,250 --> 00:00:05,960
+Now, let's start with the left side here
+
+2
+00:00:05,960 --> 00:00:09,300
+with calling a function and with passing values
+
+3
+00:00:09,300 --> 00:00:11,550
+for function parameters.
+
+4
+00:00:11,550 --> 00:00:14,370
+And here for writing clean code
+
+5
+00:00:14,370 --> 00:00:17,880
+and for being able to call functions in a clean
+
+6
+00:00:17,880 --> 00:00:21,420
+and understandable way, there is one simple rule,
+
+7
+00:00:21,420 --> 00:00:25,030
+you should minimize the number of parameters
+
+8
+00:00:25,030 --> 00:00:27,210
+your functions use.
+
+9
+00:00:27,210 --> 00:00:30,200
+Because the more parameters a function uses,
+
+10
+00:00:30,200 --> 00:00:32,400
+the harder it gets to call them.
+
+11
+00:00:32,400 --> 00:00:36,890
+And harder here really means that it's harder to memorize
+
+12
+00:00:36,890 --> 00:00:39,940
+which values should be passed as which argument.
+
+13
+00:00:39,940 --> 00:00:42,460
+So the order of arguments can be confusing.
+
+14
+00:00:42,460 --> 00:00:45,120
+And if you have to pass in a lot of arguments,
+
+15
+00:00:45,120 --> 00:00:47,220
+it all is as simply as a lot of code to write
+
+16
+00:00:47,220 --> 00:00:51,550
+and ultimately that all leads to more code you have to read
+
+17
+00:00:51,550 --> 00:00:54,290
+more things you have to keep in mind.
+
+18
+00:00:54,290 --> 00:00:58,180
+We can probably all agree that calling a function
+
+19
+00:00:58,180 --> 00:01:01,870
+or method with no parameters is very simple.
+
+20
+00:01:01,870 --> 00:01:05,000
+If we, for example, have a user object
+
+21
+00:01:05,000 --> 00:01:08,390
+and on that user object we have a safe method,
+
+22
+00:01:08,390 --> 00:01:11,100
+then this is very easy to call and to read.
+
+23
+00:01:11,100 --> 00:01:13,890
+We don't have to pass in multiple values
+
+24
+00:01:13,890 --> 00:01:16,490
+and remember the order of arguments,
+
+25
+00:01:16,490 --> 00:01:18,380
+we don't have to do anything of debt.
+
+26
+00:01:18,380 --> 00:01:22,120
+We have one function call with no parameters
+
+27
+00:01:22,120 --> 00:01:24,773
+this therefore is very easy to understand.
+
+28
+00:01:25,640 --> 00:01:28,550
+So it's easy to understand and easy to call.
+
+29
+00:01:28,550 --> 00:01:31,340
+And therefore, this is the best possible way
+
+30
+00:01:31,340 --> 00:01:33,780
+of calling a function though of course,
+
+31
+00:01:33,780 --> 00:01:35,030
+I will say right away,
+
+32
+00:01:35,030 --> 00:01:37,900
+this is not always the way you can do it.
+
+33
+00:01:37,900 --> 00:01:40,300
+There are of course functions or methods
+
+34
+00:01:40,300 --> 00:01:42,310
+which do require parameters.
+
+35
+00:01:42,310 --> 00:01:46,130
+You can't refactor every function to take no parameters.
+
+36
+00:01:46,130 --> 00:01:48,560
+That will just not be an option.
+
+37
+00:01:48,560 --> 00:01:51,210
+Nonetheless, sometimes you can achieve this.
+
+38
+00:01:51,210 --> 00:01:54,850
+And if you can, this therefore is the best possible option
+
+39
+00:01:54,850 --> 00:01:57,700
+when it comes to ease of calling
+
+40
+00:01:57,700 --> 00:02:00,610
+and to understanding this code.
+
+41
+00:02:00,610 --> 00:02:05,410
+Still very good, is if you need one parameter, one argument.
+
+42
+00:02:05,410 --> 00:02:08,530
+For example, if you had a log function,
+
+43
+00:02:08,530 --> 00:02:12,640
+which takes the message as to one argument at once.
+
+44
+00:02:12,640 --> 00:02:15,290
+This is still very easy to understand
+
+45
+00:02:15,290 --> 00:02:17,300
+and still very easy to call.
+
+46
+00:02:17,300 --> 00:02:19,410
+You have to pass in one value.
+
+47
+00:02:19,410 --> 00:02:21,820
+There is no order, which you have to memorize.
+
+48
+00:02:21,820 --> 00:02:25,920
+And if you read this code, it's crystal clear what it does.
+
+49
+00:02:25,920 --> 00:02:28,833
+So this is still a very good option you can use.
+
+50
+00:02:29,760 --> 00:02:32,290
+Now, it already becomes a bit more tricky
+
+51
+00:02:32,290 --> 00:02:35,690
+if you have two arguments, two parameters,
+
+52
+00:02:35,690 --> 00:02:37,650
+which need to be passed in.
+
+53
+00:02:37,650 --> 00:02:40,800
+For example, if we have a point object,
+
+54
+00:02:40,800 --> 00:02:43,980
+which we can instantiate by calling its constructor,
+
+55
+00:02:43,980 --> 00:02:46,030
+which this code could do
+
+56
+00:02:46,030 --> 00:02:49,350
+where we then pass in two arguments.
+
+57
+00:02:49,350 --> 00:02:53,363
+Let's say the X and Y coordinate of that point.
+
+58
+00:02:54,240 --> 00:02:56,460
+This is still okay to understand,
+
+59
+00:02:56,460 --> 00:03:01,460
+because it is kind of common sense that probably the X value
+
+60
+00:03:01,810 --> 00:03:03,130
+is the first argument
+
+61
+00:03:03,130 --> 00:03:05,660
+and the Y value is the second argument,
+
+62
+00:03:05,660 --> 00:03:08,060
+but still there is some ordering,
+
+63
+00:03:08,060 --> 00:03:09,650
+which you need to keep in mind.
+
+64
+00:03:09,650 --> 00:03:11,400
+The order could be switched
+
+65
+00:03:11,400 --> 00:03:14,470
+and therefore this acceptable to call,
+
+66
+00:03:14,470 --> 00:03:17,420
+but you might have to think about it for a second
+
+67
+00:03:17,420 --> 00:03:20,490
+to quickly verify that the first value
+
+68
+00:03:20,490 --> 00:03:25,100
+really is the X value and the second value is the Y value.
+
+69
+00:03:25,100 --> 00:03:27,680
+So therefore, you should use this approach
+
+70
+00:03:27,680 --> 00:03:32,090
+or write functions with more than one argument with caution.
+
+71
+00:03:32,090 --> 00:03:34,750
+In some cases like here, for a point,
+
+72
+00:03:34,750 --> 00:03:39,150
+it is still absolutely fine because it is quite obvious
+
+73
+00:03:39,150 --> 00:03:41,810
+that the first value will be the X value
+
+74
+00:03:41,810 --> 00:03:44,440
+and the second value will be the Y value,
+
+75
+00:03:44,440 --> 00:03:48,040
+but for other functions, this might not be as clear.
+
+76
+00:03:48,040 --> 00:03:51,110
+And then it immediately becomes harder to call them
+
+77
+00:03:51,110 --> 00:03:54,750
+because you have to think about the order of arguments.
+
+78
+00:03:54,750 --> 00:03:58,430
+And reading that code, therefore, also could become harder
+
+79
+00:03:58,430 --> 00:04:00,750
+because it's not immediately obvious
+
+80
+00:04:00,750 --> 00:04:03,363
+which argument fulfills which purpose.
+
+81
+00:04:04,280 --> 00:04:06,400
+Now, if we have even more arguments,
+
+82
+00:04:06,400 --> 00:04:10,600
+let's say three arguments, then we reach the point
+
+83
+00:04:10,600 --> 00:04:13,010
+where it's very hard to justify
+
+84
+00:04:13,010 --> 00:04:16,050
+why we need that many arguments.
+
+85
+00:04:16,050 --> 00:04:18,850
+For example, if we have a calc function,
+
+86
+00:04:18,850 --> 00:04:20,920
+which calculates something,
+
+87
+00:04:20,920 --> 00:04:23,130
+we might take in the two numbers
+
+88
+00:04:23,130 --> 00:04:25,350
+which we wanna use in the calculation
+
+89
+00:04:25,350 --> 00:04:27,540
+and then we have a third parameter
+
+90
+00:04:27,540 --> 00:04:31,520
+which defines which kind of calculation we wanna perform.
+
+91
+00:04:31,520 --> 00:04:33,920
+And this is challenging to understand
+
+92
+00:04:33,920 --> 00:04:35,660
+and challenging to call.
+
+93
+00:04:35,660 --> 00:04:40,660
+If we read this, it is still okay if we have add as a type,
+
+94
+00:04:41,690 --> 00:04:45,830
+but if we have subtract, it's already not 100% clear,
+
+95
+00:04:45,830 --> 00:04:49,210
+which number gets subtracted from which other number.
+
+96
+00:04:49,210 --> 00:04:50,850
+But especially when we call this
+
+97
+00:04:50,850 --> 00:04:52,740
+it's also hard to understand
+
+98
+00:04:52,740 --> 00:04:56,580
+because the order is totally not obvious.
+
+99
+00:04:56,580 --> 00:04:59,840
+We will probably need to dive into the code
+
+100
+00:04:59,840 --> 00:05:02,890
+or use some IDE features
+
+101
+00:05:02,890 --> 00:05:06,930
+to understand which arguments should go where.
+
+102
+00:05:06,930 --> 00:05:11,440
+For example, the type of calculation and in this example
+
+103
+00:05:11,440 --> 00:05:13,540
+could also be the first argument.
+
+104
+00:05:13,540 --> 00:05:16,670
+Common sense doesn't tell us whether it should be the last
+
+105
+00:05:16,670 --> 00:05:17,960
+or the first argument,
+
+106
+00:05:17,960 --> 00:05:20,050
+because this is not a common function,
+
+107
+00:05:20,050 --> 00:05:22,810
+not a common thing, unlike the point.
+
+108
+00:05:22,810 --> 00:05:24,890
+So therefore, you wanna avoid functions
+
+109
+00:05:24,890 --> 00:05:27,510
+like this if possible.
+
+110
+00:05:27,510 --> 00:05:29,900
+There can always be scenarios
+
+111
+00:05:29,900 --> 00:05:32,070
+where you need a function like this,
+
+112
+00:05:32,070 --> 00:05:35,180
+but you will probably not have them as often
+
+113
+00:05:35,180 --> 00:05:38,580
+as the other scenarios on the left here
+
+114
+00:05:38,580 --> 00:05:41,473
+for none, one and two arguments.
+
+115
+00:05:42,310 --> 00:05:45,480
+Now, any functions with more than three arguments
+
+116
+00:05:45,480 --> 00:05:48,370
+should absolutely be avoided.
+
+117
+00:05:48,370 --> 00:05:51,100
+For example, if you had a coords function,
+
+118
+00:05:51,100 --> 00:05:53,020
+which takes four values,
+
+119
+00:05:53,020 --> 00:05:56,380
+this would be very difficult to understand and to read
+
+120
+00:05:56,380 --> 00:05:58,810
+and very difficult to call.
+
+121
+00:05:58,810 --> 00:06:02,440
+It's not obvious at all, which value describes
+
+122
+00:06:02,440 --> 00:06:07,200
+which coordinate or what this function really does or wants.
+
+123
+00:06:07,200 --> 00:06:11,210
+So you really always wanna avoid having functions
+
+124
+00:06:11,210 --> 00:06:14,220
+with more than free arguments.
+
+125
+00:06:14,220 --> 00:06:18,140
+Nonetheless, I could imagine that you now automatically
+
+126
+00:06:18,140 --> 00:06:21,530
+have a couple of examples in mind where you think,
+
+127
+00:06:21,530 --> 00:06:24,970
+well, but I need more than two pieces of data
+
+128
+00:06:24,970 --> 00:06:27,420
+or more than three pieces of data.
+
+129
+00:06:27,420 --> 00:06:30,230
+So let's now have a look at a couple of examples
+
+130
+00:06:30,230 --> 00:06:32,220
+and a couple of solutions
+
+131
+00:06:32,220 --> 00:06:36,323
+for functions which need more than three pieces of data.
+

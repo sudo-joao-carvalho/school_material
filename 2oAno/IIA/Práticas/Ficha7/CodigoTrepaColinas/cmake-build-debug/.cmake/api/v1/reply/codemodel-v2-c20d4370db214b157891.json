@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CodigoTrepaColinas",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CodigoTrepaColinas::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CodigoTrepaColinas-Debug-5660bd9f521befd6543e.json",
+					"name" : "CodigoTrepaColinas",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/joaocarvalho/Desktop/Universidade/2oAno/IIA/Pr\u00e1ticas/Ficha7/CodigoTrepaColinas/cmake-build-debug",
+		"source" : "/Users/joaocarvalho/Desktop/Universidade/2oAno/IIA/Pr\u00e1ticas/Ficha7/CodigoTrepaColinas"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

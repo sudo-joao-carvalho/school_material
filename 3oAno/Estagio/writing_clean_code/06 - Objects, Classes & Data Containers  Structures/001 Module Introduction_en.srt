@@ -1,0 +1,128 @@
+1
+00:00:02,090 --> 00:00:05,710
+This course section will be about classes
+
+2
+00:00:05,710 --> 00:00:10,010
+and objects and about keeping your classes and objects clean
+
+3
+00:00:10,010 --> 00:00:13,450
+and working with objects in a clean way.
+
+4
+00:00:13,450 --> 00:00:15,240
+Now, therefore, of course,
+
+5
+00:00:15,240 --> 00:00:19,220
+it won't matter to you if you are never, ever working
+
+6
+00:00:19,220 --> 00:00:21,820
+with classes or objects in your code,
+
+7
+00:00:21,820 --> 00:00:25,730
+but if you do work with classes and objects in any way,
+
+8
+00:00:25,730 --> 00:00:30,430
+even if that's not a 100% object oriented style,
+
+9
+00:00:30,430 --> 00:00:33,050
+then you will get important information
+
+10
+00:00:33,050 --> 00:00:35,540
+out of this course section.
+
+11
+00:00:35,540 --> 00:00:38,730
+Because we are going to have a closer look at classes
+
+12
+00:00:38,730 --> 00:00:40,850
+and objects and we're going to learn
+
+13
+00:00:40,850 --> 00:00:44,750
+that we can differentiate between real objects,
+
+14
+00:00:44,750 --> 00:00:46,130
+if we wanna call them like this,
+
+15
+00:00:46,130 --> 00:00:49,430
+and data structures or data containers
+
+16
+00:00:49,430 --> 00:00:52,810
+and what that difference is and why it matters,
+
+17
+00:00:52,810 --> 00:00:56,500
+we'll have a look at a bunch of object oriented principles,
+
+18
+00:00:56,500 --> 00:00:59,180
+which even help you if you're not following
+
+19
+00:00:59,180 --> 00:01:02,120
+a 100% object oriented style.
+
+20
+00:01:02,120 --> 00:01:05,019
+We're going to have a look at the solid principles there
+
+21
+00:01:05,019 --> 00:01:06,633
+and at the Law of Demeter.
+
+22
+00:01:07,680 --> 00:01:11,060
+And we're also going to take another look at polymorphism
+
+23
+00:01:11,060 --> 00:01:14,380
+and see how classes can also help us with that.
+
+24
+00:01:14,380 --> 00:01:16,950
+It is a concept we already had a look at
+
+25
+00:01:16,950 --> 00:01:19,010
+in the last course section.
+
+26
+00:01:19,010 --> 00:01:22,273
+Now we're going to take a look in this section.
+
+27
+00:01:23,110 --> 00:01:26,030
+Now, this course section we'll still have a couple
+
+28
+00:01:26,030 --> 00:01:28,010
+of demos and examples,
+
+29
+00:01:28,010 --> 00:01:32,020
+but it will be a bit more theory than the last sections
+
+30
+00:01:32,020 --> 00:01:33,720
+because in this section,
+
+31
+00:01:33,720 --> 00:01:37,160
+we'll have a couple of core principles and guidelines,
+
+32
+00:01:37,160 --> 00:01:40,403
+which you should be aware of when working with classes.
+

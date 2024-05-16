@@ -1,0 +1,3 @@
+/Users/joaocarvalho/Desktop/Universidade/2oAno/IIA/Práticas/Ficha7/CodigoTrepaColinas/cmake-build-debug/CMakeFiles/CodigoTrepaColinas.dir
+/Users/joaocarvalho/Desktop/Universidade/2oAno/IIA/Práticas/Ficha7/CodigoTrepaColinas/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/joaocarvalho/Desktop/Universidade/2oAno/IIA/Práticas/Ficha7/CodigoTrepaColinas/cmake-build-debug/CMakeFiles/rebuild_cache.dir

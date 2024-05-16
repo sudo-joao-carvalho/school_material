@@ -1,0 +1,3 @@
+/Users/joaocarvalho/Desktop/Universidade/2oAno/IIA/Práticas/Ficha8/IIA_Ficha8_Codigo_Inicio/cmake-build-debug/CMakeFiles/IIA_Ficha8_Codigo_Inicio.dir
+/Users/joaocarvalho/Desktop/Universidade/2oAno/IIA/Práticas/Ficha8/IIA_Ficha8_Codigo_Inicio/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/joaocarvalho/Desktop/Universidade/2oAno/IIA/Práticas/Ficha8/IIA_Ficha8_Codigo_Inicio/cmake-build-debug/CMakeFiles/rebuild_cache.dir

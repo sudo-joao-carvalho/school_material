@@ -1,0 +1,1012 @@
+1
+00:00:02,110 --> 00:00:04,440
+So now that we know about the difference
+
+2
+00:00:04,440 --> 00:00:07,640
+between real objects and data containers,
+
+3
+00:00:07,640 --> 00:00:10,220
+let's dive into another important concept.
+
+4
+00:00:10,220 --> 00:00:12,800
+And that would be polymorphism.
+
+5
+00:00:12,800 --> 00:00:16,120
+Now we already had a first look at polymorphism
+
+6
+00:00:16,120 --> 00:00:18,430
+in the last course section,
+
+7
+00:00:18,430 --> 00:00:21,570
+where we built a factory function,
+
+8
+00:00:21,570 --> 00:00:24,450
+which created polymorphic objects
+
+9
+00:00:24,450 --> 00:00:26,670
+to hold different functions
+
+10
+00:00:26,670 --> 00:00:29,210
+for handling payments and refunds.
+
+11
+00:00:29,210 --> 00:00:32,770
+And I explained what polymorphism is back then.
+
+12
+00:00:32,770 --> 00:00:35,090
+It's simply an object or a method,
+
+13
+00:00:35,090 --> 00:00:38,880
+which always has the same structure and the same name,
+
+14
+00:00:38,880 --> 00:00:41,370
+but which then does different things
+
+15
+00:00:41,370 --> 00:00:45,770
+based on how it was created and how you use it therefore.
+
+16
+00:00:45,770 --> 00:00:47,560
+And that's a powerful concept,
+
+17
+00:00:47,560 --> 00:00:51,910
+because it can help us avoid code duplication.
+
+18
+00:00:51,910 --> 00:00:54,700
+We can also implement polymorphism,
+
+19
+00:00:54,700 --> 00:00:58,360
+or a use polymorphism when working with classes,
+
+20
+00:00:58,360 --> 00:01:01,340
+instead of creating objects or dictionaries
+
+21
+00:01:01,340 --> 00:01:05,580
+on the fly as I did it back in the last section.
+
+22
+00:01:05,580 --> 00:01:09,200
+So here is another clause, the delivery clause,
+
+23
+00:01:09,200 --> 00:01:11,510
+which has a private property purchase,
+
+24
+00:01:11,510 --> 00:01:14,460
+a constructor and then two methods,
+
+25
+00:01:14,460 --> 00:01:17,800
+deliver product and track product.
+
+26
+00:01:17,800 --> 00:01:20,640
+And in there you see something similar
+
+27
+00:01:20,640 --> 00:01:23,620
+as in the last course section,
+
+28
+00:01:23,620 --> 00:01:27,010
+we have different delivery types on this purchase,
+
+29
+00:01:27,010 --> 00:01:28,610
+which is part of the delivery,
+
+30
+00:01:28,610 --> 00:01:30,740
+and based on the different types,
+
+31
+00:01:30,740 --> 00:01:33,910
+we then dispatch different static methods
+
+32
+00:01:33,910 --> 00:01:37,130
+on some other object, some are class here.
+
+33
+00:01:37,130 --> 00:01:38,700
+And this is just some dummy code
+
+34
+00:01:38,700 --> 00:01:41,630
+both the purchase and the logistics object
+
+35
+00:01:41,630 --> 00:01:43,100
+doesn't really exist,
+
+36
+00:01:43,100 --> 00:01:46,140
+but I can still show you what polymorphism is
+
+37
+00:01:46,140 --> 00:01:48,850
+at this example and how you deal with it
+
+38
+00:01:48,850 --> 00:01:50,253
+when you using classes.
+
+39
+00:01:51,270 --> 00:01:55,030
+Because when using classes we can implement polymorphism
+
+40
+00:01:55,030 --> 00:01:57,423
+in a very, very elegant way.
+
+41
+00:01:58,300 --> 00:02:02,340
+The solution would be to not just use one class
+
+42
+00:02:02,340 --> 00:02:05,370
+but to have multiple specialized classes.
+
+43
+00:02:05,370 --> 00:02:09,880
+In this case, for the different kinds of delivery we have.
+
+44
+00:02:09,880 --> 00:02:14,880
+Express delivery, ensured delivery and standard delivery.
+
+45
+00:02:14,950 --> 00:02:18,170
+And we would just have a base delivery class
+
+46
+00:02:18,170 --> 00:02:21,150
+which holds all the shared logic and properties,
+
+47
+00:02:21,150 --> 00:02:24,230
+which all specialized classes need as well.
+
+48
+00:02:24,230 --> 00:02:26,810
+But then it would be the specialized classes
+
+49
+00:02:26,810 --> 00:02:29,080
+which have the specific deliver product
+
+50
+00:02:29,080 --> 00:02:31,810
+and track product implementations.
+
+51
+00:02:31,810 --> 00:02:34,430
+So if we would want to make this class
+
+52
+00:02:34,430 --> 00:02:39,180
+and these methods use polymorphism and be polymorphic
+
+53
+00:02:39,180 --> 00:02:42,870
+then we would in the end, create a couple of new classes.
+
+54
+00:02:42,870 --> 00:02:46,760
+For example, an express delivery class
+
+55
+00:02:46,760 --> 00:02:51,400
+but also ensured delivery class
+
+56
+00:02:51,400 --> 00:02:55,883
+and also standard delivery class.
+
+57
+00:02:58,840 --> 00:03:01,410
+We created these specialized versions
+
+58
+00:03:01,410 --> 00:03:03,350
+because these are in the end,
+
+59
+00:03:03,350 --> 00:03:05,830
+the three kinds of deliveries we have
+
+60
+00:03:05,830 --> 00:03:08,530
+if we have a look at these methods.
+
+61
+00:03:08,530 --> 00:03:10,960
+We see that the type of delivery seems
+
+62
+00:03:10,960 --> 00:03:12,700
+to play an important role.
+
+63
+00:03:12,700 --> 00:03:16,480
+So since this is the delivery class, which is responsible
+
+64
+00:03:16,480 --> 00:03:19,210
+for delivering a product or for tracking it,
+
+65
+00:03:19,210 --> 00:03:22,420
+we should have specialized wordings of these classes
+
+66
+00:03:22,420 --> 00:03:24,593
+for the different types of delivery.
+
+67
+00:03:25,590 --> 00:03:28,820
+So therefore here, we would have these three classes.
+
+68
+00:03:28,820 --> 00:03:32,510
+And for example, in the express delivery class here
+
+69
+00:03:32,510 --> 00:03:36,830
+we would then have a deliver product method.
+
+70
+00:03:36,830 --> 00:03:40,720
+So we can copy this, but it wouldn't have any if check.
+
+71
+00:03:40,720 --> 00:03:44,110
+It would just have the code which needs to be executed
+
+72
+00:03:44,110 --> 00:03:47,560
+to deliver a product with express delivery.
+
+73
+00:03:47,560 --> 00:03:50,660
+So in this case, I would reach out to logistics
+
+74
+00:03:50,660 --> 00:03:53,283
+and then call issue express delivery.
+
+75
+00:03:54,680 --> 00:03:58,300
+Now the purchase property is not accessible here
+
+76
+00:03:58,300 --> 00:04:00,960
+because at the moment, this is a standalone class
+
+77
+00:04:00,960 --> 00:04:03,680
+which doesn't have a purchase property.
+
+78
+00:04:03,680 --> 00:04:08,610
+The solution is to extend the base delivery class here
+
+79
+00:04:08,610 --> 00:04:11,530
+because when we extend that class
+
+80
+00:04:11,530 --> 00:04:14,650
+then we also have access to all the properties
+
+81
+00:04:14,650 --> 00:04:18,589
+this class has including its property.
+
+82
+00:04:18,589 --> 00:04:21,040
+Now, as a quick side note here,
+
+83
+00:04:21,040 --> 00:04:23,320
+of course here, I'm using inheritance
+
+84
+00:04:23,320 --> 00:04:26,480
+and I'm using a couple of concepts we know from classes
+
+85
+00:04:26,480 --> 00:04:28,650
+and the object oriented world.
+
+86
+00:04:28,650 --> 00:04:31,750
+Later I will also use an interface.
+
+87
+00:04:31,750 --> 00:04:35,210
+If this is all something you never heard about,
+
+88
+00:04:35,210 --> 00:04:38,180
+then you probably never worked with classes.
+
+89
+00:04:38,180 --> 00:04:41,100
+And then of course this specifically is a concept
+
+90
+00:04:41,100 --> 00:04:43,110
+you won't be able to utilize
+
+91
+00:04:43,110 --> 00:04:45,500
+and you won't need in general.
+
+92
+00:04:45,500 --> 00:04:47,650
+You still learned about polymorphism
+
+93
+00:04:47,650 --> 00:04:50,100
+in the last course, section though.
+
+94
+00:04:50,100 --> 00:04:52,910
+As I mentioned earlier, the idea of this course
+
+95
+00:04:52,910 --> 00:04:56,220
+and of this section is not to teach you classes
+
+96
+00:04:56,220 --> 00:04:58,610
+or object oriented programming
+
+97
+00:04:58,610 --> 00:05:01,680
+but to teach you a couple of concepts and ideas
+
+98
+00:05:01,680 --> 00:05:03,570
+and rules you should be aware
+
+99
+00:05:03,570 --> 00:05:07,220
+of when working with classes or objects.
+
+100
+00:05:07,220 --> 00:05:09,090
+And here we're working with classes
+
+101
+00:05:09,090 --> 00:05:13,030
+so therefore of course this general knowledge about classes
+
+102
+00:05:13,030 --> 00:05:16,350
+and that includes inheritance, is of course required.
+
+103
+00:05:16,350 --> 00:05:19,360
+You can of course skip this entire lecture for the moment
+
+104
+00:05:19,360 --> 00:05:22,843
+if that is something you don't have any experience with.
+
+105
+00:05:23,780 --> 00:05:25,940
+The only thing here is that this property
+
+106
+00:05:25,940 --> 00:05:27,850
+is private at the moment,
+
+107
+00:05:27,850 --> 00:05:30,520
+which means it can really only be used in here.
+
+108
+00:05:30,520 --> 00:05:32,880
+And if you are using a programming language
+
+109
+00:05:32,880 --> 00:05:36,420
+which knows the concept of private, public and so on,
+
+110
+00:05:36,420 --> 00:05:38,520
+then you know that you should change this
+
+111
+00:05:38,520 --> 00:05:41,480
+from private to protect it.
+
+112
+00:05:41,480 --> 00:05:45,090
+Which means it can still not be accessed from outside
+
+113
+00:05:45,090 --> 00:05:49,080
+of the class, but it can be accessed by child classes,
+
+114
+00:05:49,080 --> 00:05:51,900
+which is exactly what we need here.
+
+115
+00:05:51,900 --> 00:05:55,780
+And with that, we could then also copy over track product,
+
+116
+00:05:55,780 --> 00:05:58,960
+like this, and also get rid of the if statement here
+
+117
+00:05:58,960 --> 00:06:02,133
+and just call the code we need to track a product.
+
+118
+00:06:03,090 --> 00:06:05,620
+And now we repeat this procedure
+
+119
+00:06:05,620 --> 00:06:08,150
+for the other classes as well.
+
+120
+00:06:08,150 --> 00:06:13,150
+So we copy these methods also into ensured delivery,
+
+121
+00:06:13,670 --> 00:06:15,350
+get rid of all the if checks here
+
+122
+00:06:15,350 --> 00:06:17,530
+and just keep the code we wanna execute
+
+123
+00:06:17,530 --> 00:06:20,050
+if we do have an insured delivery.
+
+124
+00:06:20,050 --> 00:06:23,970
+And the same down here for tracking a product.
+
+125
+00:06:23,970 --> 00:06:27,900
+And then again, we copy it all into standard delivery
+
+126
+00:06:27,900 --> 00:06:30,020
+and remove all the if checks
+
+127
+00:06:30,020 --> 00:06:33,113
+and just keep the standard delivery code.
+
+128
+00:06:34,140 --> 00:06:38,090
+Of course, standard delivery and insured delivery
+
+129
+00:06:38,090 --> 00:06:42,250
+now also need to inherit from the base delivery class
+
+130
+00:06:42,250 --> 00:06:45,970
+which in the case of TypeScript is done like this.
+
+131
+00:06:45,970 --> 00:06:48,760
+So now we have these specialized classes.
+
+132
+00:06:48,760 --> 00:06:52,560
+In the base class, we can now remove the deliver product
+
+133
+00:06:52,560 --> 00:06:54,773
+and track product methods because
+
+134
+00:06:54,773 --> 00:06:58,523
+that is something our specialized classes will deal with.
+
+135
+00:06:59,640 --> 00:07:01,500
+Now, of course you might now ask,
+
+136
+00:07:01,500 --> 00:07:04,540
+that's all great, but where's the if statement?
+
+137
+00:07:04,540 --> 00:07:06,870
+I mean we need to decide somewhere
+
+138
+00:07:06,870 --> 00:07:10,090
+which specialized class should be used.
+
+139
+00:07:10,090 --> 00:07:12,450
+Well, that's something you need to do
+
+140
+00:07:12,450 --> 00:07:15,960
+in the place where you plan on using these classes.
+
+141
+00:07:15,960 --> 00:07:19,750
+So if you have some code in some other method or function
+
+142
+00:07:19,750 --> 00:07:24,750
+it doesn't matter where you wanna use such a delivery class.
+
+143
+00:07:25,040 --> 00:07:28,830
+You would in the past have created your delivery class
+
+144
+00:07:28,830 --> 00:07:31,160
+by instantiating a new delivery
+
+145
+00:07:31,160 --> 00:07:34,330
+and passing in some purchase object.
+
+146
+00:07:34,330 --> 00:07:35,910
+And then in the past,
+
+147
+00:07:35,910 --> 00:07:39,160
+before we created this specific versions
+
+148
+00:07:39,160 --> 00:07:42,033
+you could have called deliver product.
+
+149
+00:07:43,000 --> 00:07:44,990
+Now that's not possible anymore
+
+150
+00:07:44,990 --> 00:07:47,290
+because deliver product doesn't exist
+
+151
+00:07:47,290 --> 00:07:49,010
+on the base class anymore.
+
+152
+00:07:49,010 --> 00:07:51,750
+Instead you need a specific class now.
+
+153
+00:07:51,750 --> 00:07:53,730
+And that means that in the place
+
+154
+00:07:53,730 --> 00:07:55,300
+where this code would execute,
+
+155
+00:07:55,300 --> 00:07:58,800
+you need to decide which specific version you need.
+
+156
+00:07:58,800 --> 00:08:00,780
+But that's a decision you typically can make
+
+157
+00:08:00,780 --> 00:08:02,440
+in these places.
+
+158
+00:08:02,440 --> 00:08:06,830
+Now you just need to have your if check in that place here.
+
+159
+00:08:06,830 --> 00:08:09,460
+So here you would have your if check
+
+160
+00:08:09,460 --> 00:08:11,620
+with these different branches
+
+161
+00:08:11,620 --> 00:08:15,120
+and you could also use a switch case statement, of course
+
+162
+00:08:15,120 --> 00:08:18,540
+and then here you would have your delivery variable
+
+163
+00:08:18,540 --> 00:08:21,480
+which would be of type delivery.
+
+164
+00:08:21,480 --> 00:08:23,690
+And then here we would assign a value
+
+165
+00:08:23,690 --> 00:08:27,903
+of new express delivery and pass in our purchase.
+
+166
+00:08:31,920 --> 00:08:36,919
+Here, we would have a new insured delivery instance.
+
+167
+00:08:36,919 --> 00:08:38,140
+And down here we would have
+
+168
+00:08:38,140 --> 00:08:41,280
+a new standard delivery instance.
+
+169
+00:08:41,280 --> 00:08:45,620
+And then at the bottom we can call deliver product.
+
+170
+00:08:45,620 --> 00:08:49,680
+And of course, instead of this purchase delivery type,
+
+171
+00:08:49,680 --> 00:08:51,590
+you would have your purchase object
+
+172
+00:08:51,590 --> 00:08:53,610
+lying somewhere around here.
+
+173
+00:08:53,610 --> 00:08:56,380
+where you do execute this if statement.
+
+174
+00:08:56,380 --> 00:08:58,990
+Let's not worry about this condition at the moment though.
+
+175
+00:08:58,990 --> 00:09:02,420
+Let's assume we are in some place where we do have access
+
+176
+00:09:02,420 --> 00:09:03,730
+to this purchase.
+
+177
+00:09:03,730 --> 00:09:06,890
+Because this is sudo code anyways.
+
+178
+00:09:06,890 --> 00:09:08,470
+It won't execute anyways
+
+179
+00:09:08,470 --> 00:09:11,030
+because we don't have a real purchase here.
+
+180
+00:09:11,030 --> 00:09:14,600
+This is how you would solve these situations though.
+
+181
+00:09:14,600 --> 00:09:17,830
+How you would create the proper instance
+
+182
+00:09:17,830 --> 00:09:20,290
+of your delivery class based
+
+183
+00:09:20,290 --> 00:09:22,603
+on which specific type you need.
+
+184
+00:09:23,600 --> 00:09:26,160
+Now here actually, my IDE is complaining
+
+185
+00:09:26,160 --> 00:09:29,420
+that this is not a method of the delivery class.
+
+186
+00:09:29,420 --> 00:09:30,560
+And that would be correct,
+
+187
+00:09:30,560 --> 00:09:32,830
+it's the child classes which had it
+
+188
+00:09:32,830 --> 00:09:34,160
+but of course you can work
+
+189
+00:09:34,160 --> 00:09:35,910
+around something like this as well.
+
+190
+00:09:35,910 --> 00:09:40,173
+For example, by utilizing an interface or abstract classes.
+
+191
+00:09:41,230 --> 00:09:44,340
+So here we could have an interface called delivery
+
+192
+00:09:45,570 --> 00:09:50,570
+which dictates that we have a deliver product method
+
+193
+00:09:53,040 --> 00:09:57,113
+and that we have a track product method.
+
+194
+00:09:58,080 --> 00:10:01,910
+And then this here would be the delivery implementation,
+
+195
+00:10:01,910 --> 00:10:03,460
+for example,
+
+196
+00:10:03,460 --> 00:10:07,170
+and we would extend delivery implementation here
+
+197
+00:10:09,670 --> 00:10:12,290
+And our classes would implement
+
+198
+00:10:12,290 --> 00:10:15,143
+the delivery interface like this.
+
+199
+00:10:16,890 --> 00:10:19,430
+This is the TypeScript syntax for doing this,
+
+200
+00:10:19,430 --> 00:10:22,620
+for extending a class and for implementing an interface.
+
+201
+00:10:22,620 --> 00:10:24,900
+The exact implementation of course depends
+
+202
+00:10:24,900 --> 00:10:27,740
+on which programming language you are using.
+
+203
+00:10:27,740 --> 00:10:29,460
+This is just some way of doing it,
+
+204
+00:10:29,460 --> 00:10:31,990
+but now we can set the interface
+
+205
+00:10:31,990 --> 00:10:34,180
+as a type here and we therefore know,
+
+206
+00:10:34,180 --> 00:10:37,040
+whatever is stored in delivery will be an object
+
+207
+00:10:37,040 --> 00:10:39,290
+which implements this interface
+
+208
+00:10:39,290 --> 00:10:43,350
+and which therefore will have a deliver product method.
+
+209
+00:10:43,350 --> 00:10:47,040
+And therefore, now we can safely call deliver product here.
+
+210
+00:10:47,040 --> 00:10:49,770
+And it's this if check, which now ensures
+
+211
+00:10:49,770 --> 00:10:51,680
+that we're executing this method
+
+212
+00:10:51,680 --> 00:10:54,610
+on the correct type of object.
+
+213
+00:10:54,610 --> 00:10:56,850
+Now, of course you might have multiple places
+
+214
+00:10:56,850 --> 00:10:59,870
+in your code where you need such objects.
+
+215
+00:10:59,870 --> 00:11:01,570
+And therefore of course you could create
+
+216
+00:11:01,570 --> 00:11:03,570
+a factory function again
+
+217
+00:11:03,570 --> 00:11:07,430
+or a factory method in some utility class.
+
+218
+00:11:07,430 --> 00:11:11,160
+And for example, name this create delivery
+
+219
+00:11:11,160 --> 00:11:12,570
+where you get the purchase
+
+220
+00:11:12,570 --> 00:11:14,480
+for which it should be created.
+
+221
+00:11:14,480 --> 00:11:16,500
+And then you move that if code just
+
+222
+00:11:16,500 --> 00:11:20,610
+into your factory method, you pass the purchase
+
+223
+00:11:20,610 --> 00:11:23,320
+to these constructor functions
+
+224
+00:11:23,320 --> 00:11:25,770
+and then wherever you needed such
+
+225
+00:11:25,770 --> 00:11:27,800
+a specific type of delivery,
+
+226
+00:11:27,800 --> 00:11:32,700
+you would just call create delivery, pass your object to it
+
+227
+00:11:32,700 --> 00:11:35,070
+and you would then be good.
+
+228
+00:11:35,070 --> 00:11:38,420
+Of course, we need to return the created object
+
+229
+00:11:38,420 --> 00:11:39,870
+in the factory function.
+
+230
+00:11:39,870 --> 00:11:42,760
+And then this factory function could be used anywhere
+
+231
+00:11:42,760 --> 00:11:47,410
+in the code where you need this specific type of object.
+
+232
+00:11:47,410 --> 00:11:49,690
+And now in this factory function,
+
+233
+00:11:49,690 --> 00:11:52,290
+of course we can get rid of the this key word
+
+234
+00:11:52,290 --> 00:11:54,830
+and assume the purchase which we got here
+
+235
+00:11:54,830 --> 00:11:56,620
+has a delivery type.
+
+236
+00:11:56,620 --> 00:11:58,760
+Again, I just wanna make it really clear,
+
+237
+00:11:58,760 --> 00:12:02,300
+the object I do pass in doesn't have to this property,
+
+238
+00:12:02,300 --> 00:12:05,290
+but this again is just some sudo code.
+
+239
+00:12:05,290 --> 00:12:08,660
+Of course, instead of passing in an empty object down there
+
+240
+00:12:08,660 --> 00:12:11,120
+where you create your instance,
+
+241
+00:12:11,120 --> 00:12:13,410
+you would have a concrete purchase object,
+
+242
+00:12:13,410 --> 00:12:15,420
+which you would be getting from somewhere else
+
+243
+00:12:15,420 --> 00:12:17,090
+in your application.
+
+244
+00:12:17,090 --> 00:12:18,860
+It's just not the focus here.
+
+245
+00:12:18,860 --> 00:12:22,110
+The focus is that we do have such a factory function
+
+246
+00:12:22,110 --> 00:12:25,580
+which knows how to produce specific instances
+
+247
+00:12:25,580 --> 00:12:30,580
+of our classes here based on which kind of purchase we get.
+
+248
+00:12:30,580 --> 00:12:33,700
+And that's how you can use polymorphism
+
+249
+00:12:33,700 --> 00:12:37,840
+and create polymorphic objects when using classes.
+
+250
+00:12:37,840 --> 00:12:41,900
+It's basically the same idea as in the last course section
+
+251
+00:12:41,900 --> 00:12:44,860
+where I essentially created an object
+
+252
+00:12:44,860 --> 00:12:48,530
+or a dictionary on the fly with the factory function.
+
+253
+00:12:48,530 --> 00:12:52,653
+Now we're solving the same problem by using classes.
+

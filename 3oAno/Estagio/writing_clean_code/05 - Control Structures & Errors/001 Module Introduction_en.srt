@@ -1,0 +1,228 @@
+1
+00:00:02,170 --> 00:00:04,840
+Now that we know how to name things
+
+2
+00:00:04,840 --> 00:00:06,490
+how to format our code
+
+3
+00:00:06,490 --> 00:00:08,810
+and how to write clean functions
+
+4
+00:00:08,810 --> 00:00:10,720
+which is super important
+
+5
+00:00:10,720 --> 00:00:13,600
+we're going to have a look at Control Structures
+
+6
+00:00:13,600 --> 00:00:15,620
+in this course section
+
+7
+00:00:15,620 --> 00:00:19,860
+add loops and most importantly, If statements.
+
+8
+00:00:19,860 --> 00:00:22,950
+Because it turns out that control structures
+
+9
+00:00:22,950 --> 00:00:26,690
+play an important role when it comes to writing clean code.
+
+10
+00:00:26,690 --> 00:00:30,900
+To be precise, you wanna avoid code like this.
+
+11
+00:00:30,900 --> 00:00:34,540
+This kind of code is also sometimes called arrow code
+
+12
+00:00:34,540 --> 00:00:37,170
+because it looks like an arrow from left to right
+
+13
+00:00:37,170 --> 00:00:41,090
+and we have deeply nested control structures here.
+
+14
+00:00:41,090 --> 00:00:43,360
+If statements that contain four loops
+
+15
+00:00:43,360 --> 00:00:45,140
+which then contain more If statements
+
+16
+00:00:45,140 --> 00:00:48,740
+which then yet again, contain nested If statements
+
+17
+00:00:48,740 --> 00:00:53,160
+this is super hard to read, super hard to maintain
+
+18
+00:00:53,160 --> 00:00:58,040
+error prone and therefore definitely not clean at all.
+
+19
+00:00:58,040 --> 00:01:02,030
+In this course section we are going to work on this example
+
+20
+00:01:02,030 --> 00:01:05,900
+and learn different techniques and rules which we can apply
+
+21
+00:01:05,900 --> 00:01:08,570
+to turn this into cleaner code.
+
+22
+00:01:08,570 --> 00:01:11,200
+Therefore, specifically in this module
+
+23
+00:01:11,200 --> 00:01:12,320
+we're going to have a look
+
+24
+00:01:12,320 --> 00:01:15,730
+at how to avoid deeply nested control structures
+
+25
+00:01:15,730 --> 00:01:17,640
+like the one you just saw
+
+26
+00:01:17,640 --> 00:01:21,400
+we're going to have a look at error handling, try/catch
+
+27
+00:01:21,400 --> 00:01:24,840
+and how to utilize errors in your application
+
+28
+00:01:24,840 --> 00:01:27,070
+instead of using If statements
+
+29
+00:01:27,070 --> 00:01:30,740
+and of course as always, and as you just saw already
+
+30
+00:01:30,740 --> 00:01:34,200
+we're going to do all of that at a concrete example
+
+31
+00:01:34,200 --> 00:01:37,910
+you're going to see demos and I will also give you a chance
+
+32
+00:01:37,910 --> 00:01:39,650
+to practice what you learned.
+
+33
+00:01:39,650 --> 00:01:42,760
+Now I have one warning about this section
+
+34
+00:01:42,760 --> 00:01:46,240
+this will be a very practical section
+
+35
+00:01:46,240 --> 00:01:50,230
+we'll have less slides and more refactoring on the code.
+
+36
+00:01:50,230 --> 00:01:52,230
+This long code what you see here
+
+37
+00:01:52,230 --> 00:01:54,800
+will change a lot throughout this section.
+
+38
+00:01:54,800 --> 00:01:56,470
+We'll refactor it a lot
+
+39
+00:01:56,470 --> 00:02:00,800
+and we'll even refactor our refactoring results
+
+40
+00:02:00,800 --> 00:02:03,040
+because that is how you write clean code
+
+41
+00:02:03,040 --> 00:02:05,230
+and I can really show everything we learned
+
+42
+00:02:05,230 --> 00:02:08,250
+up to this point, including some new concepts
+
+43
+00:02:08,250 --> 00:02:11,360
+you should be aware of at this concrete example
+
+44
+00:02:11,360 --> 00:02:13,640
+and I wanna take you with me on that journey
+
+45
+00:02:13,640 --> 00:02:15,800
+of improving this code.
+
+46
+00:02:15,800 --> 00:02:18,170
+So if you're not a fan of refactoring
+
+47
+00:02:18,170 --> 00:02:22,040
+and if you're not a fan of seeing code change a lot,
+
+48
+00:02:22,040 --> 00:02:25,240
+then A, clean code and writing clean code
+
+49
+00:02:25,240 --> 00:02:27,440
+will be difficult for you anyways
+
+50
+00:02:27,440 --> 00:02:31,640
+and B, this section might not be so great for you.
+
+51
+00:02:31,640 --> 00:02:34,580
+Nonetheless what I will show you is super important
+
+52
+00:02:34,580 --> 00:02:37,220
+and is how you do actually write clean code.
+
+53
+00:02:37,220 --> 00:02:38,820
+And this section is less
+
+54
+00:02:38,820 --> 00:02:42,090
+about tons of new rules and concepts
+
+55
+00:02:42,090 --> 00:02:45,120
+and more about applying what we already learned
+
+56
+00:02:45,120 --> 00:02:48,750
+combined with some new rules and concepts.
+
+57
+00:02:48,750 --> 00:02:50,503
+So therefore, let's dive in.
+

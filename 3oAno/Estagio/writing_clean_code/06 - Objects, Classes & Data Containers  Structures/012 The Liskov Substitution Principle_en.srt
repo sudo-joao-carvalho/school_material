@@ -1,0 +1,472 @@
+1
+00:00:02,120 --> 00:00:05,420
+Besides the Single Responsibility Principle
+
+2
+00:00:05,420 --> 00:00:07,230
+and the Open-Closed Principle,
+
+3
+00:00:07,230 --> 00:00:10,810
+which are the two most important principles
+
+4
+00:00:10,810 --> 00:00:14,270
+for us here when it comes to writing clean code,
+
+5
+00:00:14,270 --> 00:00:17,510
+we also have three other principles.
+
+6
+00:00:17,510 --> 00:00:18,850
+And I want to next dive
+
+7
+00:00:18,850 --> 00:00:21,970
+into the Liskov Substitution Principle,
+
+8
+00:00:21,970 --> 00:00:24,430
+because even though these remaining
+
+9
+00:00:24,430 --> 00:00:26,970
+three principles are not as important
+
+10
+00:00:26,970 --> 00:00:30,230
+for writing clean code as the first two,
+
+11
+00:00:30,230 --> 00:00:33,300
+I still want to cover this entire list.
+
+12
+00:00:33,300 --> 00:00:37,650
+So what's the Liskov Substitution Principle all about then?
+
+13
+00:00:37,650 --> 00:00:41,000
+The Liskov Substitution Principle basically says
+
+14
+00:00:41,000 --> 00:00:44,150
+that objects should be replaceable
+
+15
+00:00:44,150 --> 00:00:47,000
+with instances of their subclasses
+
+16
+00:00:47,000 --> 00:00:50,023
+without altering their behavior.
+
+17
+00:00:51,130 --> 00:00:54,040
+Now this is a very abstract sentence.
+
+18
+00:00:54,040 --> 00:00:56,540
+What exactly does it mean?
+
+19
+00:00:56,540 --> 00:00:59,550
+Here I again got an example.
+
+20
+00:00:59,550 --> 00:01:02,420
+We have a class, bird, let's say,
+
+21
+00:01:02,420 --> 00:01:05,300
+of course, this is a very simple example here,
+
+22
+00:01:05,300 --> 00:01:09,000
+but we got a class bird, which has a fly method.
+
+23
+00:01:09,000 --> 00:01:13,490
+We then got a class eagle, which extends the bird class
+
+24
+00:01:13,490 --> 00:01:15,630
+and adds a dive method,
+
+25
+00:01:15,630 --> 00:01:18,910
+because not all birds really can dive.
+
+26
+00:01:18,910 --> 00:01:23,830
+Eagles though certainly can dive down onto their prey.
+
+27
+00:01:23,830 --> 00:01:25,990
+And then here, we got some code
+
+28
+00:01:25,990 --> 00:01:30,950
+where I instantiate bird, not eagle but bird, and call fly.
+
+29
+00:01:30,950 --> 00:01:35,470
+And the Liskov Substitution Principle now basically says
+
+30
+00:01:35,470 --> 00:01:39,170
+that I should be able to substitute bird down there
+
+31
+00:01:39,170 --> 00:01:43,090
+with a subclass of this bird, super class.
+
+32
+00:01:43,090 --> 00:01:47,000
+So here, we should be able to instantiate an eagle instead
+
+33
+00:01:48,290 --> 00:01:50,510
+and call fly on an eagle,
+
+34
+00:01:50,510 --> 00:01:54,563
+and we should essentially have the same behavior as before.
+
+35
+00:01:55,620 --> 00:01:58,330
+So of course, in a real program,
+
+36
+00:01:58,330 --> 00:02:01,260
+the eagle class then might be doing more things
+
+37
+00:02:01,260 --> 00:02:03,030
+than just the bird class.
+
+38
+00:02:03,030 --> 00:02:06,450
+I mean, even here we can see that we can call dive
+
+39
+00:02:06,450 --> 00:02:10,150
+in addition to fly, but we still can call fly
+
+40
+00:02:10,150 --> 00:02:13,230
+as before on the bird, and we can still expect
+
+41
+00:02:13,230 --> 00:02:15,620
+that fly does the same thing.
+
+42
+00:02:15,620 --> 00:02:18,460
+So in this example, the bird flies.
+
+43
+00:02:18,460 --> 00:02:22,090
+In a real application, we could have different databases,
+
+44
+00:02:22,090 --> 00:02:26,160
+and no matter if it's an SQL or a MongoDB database,
+
+45
+00:02:26,160 --> 00:02:28,150
+we should have a connect method,
+
+46
+00:02:28,150 --> 00:02:31,230
+which always has the same behavior of connecting
+
+47
+00:02:31,230 --> 00:02:33,360
+to that database.
+
+48
+00:02:33,360 --> 00:02:36,253
+So it seems like everything is fine here, right?
+
+49
+00:02:37,150 --> 00:02:40,150
+Well, what happens if we add a penguin class,
+
+50
+00:02:40,150 --> 00:02:42,590
+which also extends bird?
+
+51
+00:02:42,590 --> 00:02:44,550
+A penguin is a bird.
+
+52
+00:02:44,550 --> 00:02:48,330
+The problem just is that a penguin can't fly.
+
+53
+00:02:48,330 --> 00:02:52,730
+So we have the wrong base class here, the wrong super class.
+
+54
+00:02:52,730 --> 00:02:56,310
+Bird is a good super class if we only work
+
+55
+00:02:56,310 --> 00:02:59,380
+with eagles and other birds who can fly,
+
+56
+00:02:59,380 --> 00:03:02,490
+but as soon as we start adding birds who can't fly,
+
+57
+00:03:02,490 --> 00:03:04,310
+we have a problem.
+
+58
+00:03:04,310 --> 00:03:06,310
+And if I have a look at this other example
+
+59
+00:03:06,310 --> 00:03:09,980
+I briefly mentioned where we maybe have multiple databases,
+
+60
+00:03:09,980 --> 00:03:12,340
+which all have a connect method,
+
+61
+00:03:12,340 --> 00:03:15,030
+even there, as soon as we add a database
+
+62
+00:03:15,030 --> 00:03:16,720
+which doesn't need to connect,
+
+63
+00:03:16,720 --> 00:03:19,810
+let's say some in memory database,
+
+64
+00:03:19,810 --> 00:03:23,520
+we also have the problem of modeling our data
+
+65
+00:03:23,520 --> 00:03:26,210
+and our entities in the wrong way.
+
+66
+00:03:26,210 --> 00:03:29,090
+Because that's what the Liskov Substitution Principle
+
+67
+00:03:29,090 --> 00:03:30,810
+ultimately is all about.
+
+68
+00:03:30,810 --> 00:03:34,020
+It wants to ensure that you don't model your data
+
+69
+00:03:34,020 --> 00:03:35,400
+in the wrong way.
+
+70
+00:03:35,400 --> 00:03:38,700
+For example here, we picked a bird as a base class
+
+71
+00:03:38,700 --> 00:03:40,760
+for all our specialized birds,
+
+72
+00:03:40,760 --> 00:03:43,620
+and as it turns out, at the example of the penguin,
+
+73
+00:03:43,620 --> 00:03:45,403
+that was the wrong choice.
+
+74
+00:03:46,450 --> 00:03:49,460
+So how would you write proper code here?
+
+75
+00:03:49,460 --> 00:03:52,750
+Well for example, you could add another base class,
+
+76
+00:03:52,750 --> 00:03:55,100
+let's say a flying bird,
+
+77
+00:03:55,100 --> 00:03:57,550
+which actually has this fly method,
+
+78
+00:03:57,550 --> 00:04:01,310
+and it's the flying bird which acts as a base class
+
+79
+00:04:01,310 --> 00:04:04,160
+for the eagle, and it's the regular bird,
+
+80
+00:04:04,160 --> 00:04:06,900
+which might have other shared functionalities,
+
+81
+00:04:06,900 --> 00:04:09,060
+it doesn't here, but it could have,
+
+82
+00:04:09,060 --> 00:04:12,210
+which you use as a base class for the penguin.
+
+83
+00:04:12,210 --> 00:04:15,810
+And now in here, you can use flying bird
+
+84
+00:04:15,810 --> 00:04:20,660
+and call fly, or use a eagle and still call fly,
+
+85
+00:04:20,660 --> 00:04:22,690
+but you can't use a penguin,
+
+86
+00:04:22,690 --> 00:04:26,270
+and you also don't need to substitute your flying bird
+
+87
+00:04:26,270 --> 00:04:28,130
+or eagle with a penguin,
+
+88
+00:04:28,130 --> 00:04:31,400
+because penguin extends bird, not flying bird.
+
+89
+00:04:31,400 --> 00:04:35,530
+The base class, the super class, is a different one.
+
+90
+00:04:35,530 --> 00:04:37,900
+So that's what the Liskov Substitution Principle
+
+91
+00:04:37,900 --> 00:04:38,990
+is all about.
+
+92
+00:04:38,990 --> 00:04:41,720
+If a class inherits from another class,
+
+93
+00:04:41,720 --> 00:04:45,210
+then you need to be able to replace that other super class
+
+94
+00:04:45,210 --> 00:04:47,930
+with instances of inheriting class
+
+95
+00:04:47,930 --> 00:04:50,040
+without changing any behavior.
+
+96
+00:04:50,040 --> 00:04:53,260
+And at the example of a penguin, that didn't work,
+
+97
+00:04:53,260 --> 00:04:56,040
+unless we added a new super class for eagle
+
+98
+00:04:56,040 --> 00:04:57,960
+and all other birds who can fly,
+
+99
+00:04:57,960 --> 00:05:00,430
+because now we can substitute these classes
+
+100
+00:05:00,430 --> 00:05:02,950
+with each other, and we can substitute bird
+
+101
+00:05:02,950 --> 00:05:06,463
+with penguin, because fly is not built into penguin.
+
+102
+00:05:07,440 --> 00:05:09,530
+So the Liskov Substitution Principle
+
+103
+00:05:09,530 --> 00:05:11,710
+ultimately is about forcing you
+
+104
+00:05:11,710 --> 00:05:14,580
+to model your data correctly.
+
+105
+00:05:14,580 --> 00:05:17,350
+Now why is it not a super important principle
+
+106
+00:05:17,350 --> 00:05:19,840
+when it comes to writing clean code?
+
+107
+00:05:19,840 --> 00:05:22,060
+Well, it certainly is important
+
+108
+00:05:22,060 --> 00:05:24,500
+when it comes to modeling data correctly,
+
+109
+00:05:24,500 --> 00:05:26,550
+which of course is an important part
+
+110
+00:05:26,550 --> 00:05:29,160
+of writing good and extensible code,
+
+111
+00:05:29,160 --> 00:05:32,730
+but from a readability and clean code perspective,
+
+112
+00:05:32,730 --> 00:05:36,590
+I think it's fair to say that throughout this example here,
+
+113
+00:05:36,590 --> 00:05:39,770
+and me adding this flying bird class,
+
+114
+00:05:39,770 --> 00:05:42,200
+the readability didn't really change.
+
+115
+00:05:42,200 --> 00:05:45,570
+It always was very readable and understandable,
+
+116
+00:05:45,570 --> 00:05:47,960
+and the (indistinct) Liskov Substitution Principle
+
+117
+00:05:47,960 --> 00:05:52,330
+doesn't add too much when it comes to just code readability
+
+118
+00:05:52,330 --> 00:05:54,263
+and clean code being written.
+

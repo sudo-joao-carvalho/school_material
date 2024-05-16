@@ -1,0 +1,281 @@
+package com.sample.rules
+
+import com.sample.Divisao;
+import com.sample.EntidadeDetetada;
+import com.sample.Sensor;
+import com.sample.Camera;
+import com.sample.Alarme;
+import com.sample.Log;
+import java.util.Scanner;
+
+//RULE 1
+rule "Ativar todos os sensores quando o software inicia" //cameras so sao ativadas quando existe um intruso naquela divisao
+salience 100
+	when
+		$d: Divisao()
+		$s: Sensor($d == divisao, ligado == false)
+	then
+		$s.setLigado(true);
+		update($s);
+		//System.out.println();
+		//System.out.println("Sensor ligado na divisao " + $d.getTipo());
+		
+		insert(new Log("Sensor ligado na divisao " + $d.getTipo()));
+end
+
+//RULE 2 -> FALSO ALARME: detecao de avarias
+rule "Deteta Avaria"
+salience 99
+	when
+		$d: Divisao()
+		$e: EntidadeDetetada($d == divisao, nome == "")
+	then
+		insert(new Alarme());
+		//retract($e); -> ja estava comentado antes
+		
+		//System.out.println();
+		//System.out.println("--------------------------");
+		//System.out.println();
+		//System.out.println("!!!!!!! WARNING !!!!!!!");
+		//System.out.println();
+		//System.out.println("AVARIA DETETADA NA DIVISAO " + $d.getTipo());
+		//System.out.println();
+		//System.out.println("--------------------------");	
+		
+		insert(new Log("AVARIA DETETADA NA DIVISAO " + $d.getTipo()));
+end
+
+//RULE 3
+rule "Se existe avaria, elimina e desliga alarme"
+salience 98
+	when
+		$d: Divisao()
+		exists EntidadeDetetada($d == divisao, nome == "")
+		$e: EntidadeDetetada($d == divisao, nome == "")
+		$a: Alarme()
+		
+	then
+		retract($e);
+		retract($a);
+		//System.out.println();
+		//System.out.println("--------------------------");
+		//System.out.println();
+		//System.out.println("Avaria resolvida na divisao " + $d.getTipo());
+		//System.out.println();
+		//System.out.println("Alarme desligado");
+		//System.out.println();
+		//System.out.println("--------------------------");	
+		
+		insert(new Log("Avaria resolvida na divisao " + $d.getTipo() + "\tAlarme desligado"));
+end
+
+//RULE 4
+rule "Verifica entrada de pessoa na divisao" //camera so liga quando uma pessoa e detetada pelo sensor
+salience 95
+	when
+		$d: Divisao()
+		$e: EntidadeDetetada($d == divisao)
+	then
+		//System.out.println();
+		//System.out.println("Entidade na divisao " + $d.getTipo() + " (" + $e.getEspecie() + " " + $e.getNome() + ")!");
+		
+		insert(new Log("Entidade na divisao " + $d.getTipo() + " (" + $e.getEspecie() + " " + $e.getNome() + ")!"));
+end
+
+//RULE 5
+rule "Se há pessoa numa divisao, liga a camera" //camera so liga quando uma pessoa e detetada pelo sensor
+salience 95
+	when
+		$d: Divisao()
+		exists EntidadeDetetada($d == divisao)
+		$c: Camera($d == divisao, ligado == false)
+	then
+		$c.setLigado(true);
+		update($c);
+		//System.out.println();
+		//System.out.println("Camera ativada na " + $d.getTipo());
+		
+		insert(new Log("Camera ativada na " + $d.getTipo()));
+		
+end
+
+//RULE 6
+rule "Se entrada e permitida no escritorio, mas nome nao é Pai nem Intruso"
+salience 89
+	when
+		$d: Divisao(tipo == "escritorio")
+		exists EntidadeDetetada($d == divisao, nome != "Pai" && nome != "Unknown", permitido == true)
+		$e: EntidadeDetetada($d == divisao, nome != "Pai" && nome != "Unknown", permitido == true)
+	then
+		$e.setPermitido(false);
+		update($e);
+		//System.out.println();
+		//System.out.println();
+		//System.out.println("Entrada Nao Permitida (" + $e.getEspecie() + " " + $e.getNome() + ") na divisao " + $d.getTipo() + " !");
+		//System.out.println();
+		
+		insert(new Log("Entrada Nao Permitida (" + $e.getEspecie() + " " + $e.getNome() + ") na divisao " + $d.getTipo() + " !"));
+end
+
+//RULE 7
+rule "Se entrada nao e permitida numa divisao que nao e o escritorio, mas nome nao é Unknown"
+salience 87
+	when
+		$d: Divisao(tipo != "escritorio")
+		exists EntidadeDetetada($d == divisao, nome == "Pai" || nome == "Mae" || nome == "Filho", permitido == false)
+		$e: EntidadeDetetada($d == divisao, nome == "Pai" || nome == "Mae" || nome == "Filho", permitido == false)
+	then
+		$e.setPermitido(true);
+		update($e);
+		//System.out.println();
+		//System.out.println();
+		//System.out.println("Entrada Permitida (" + $e.getEspecie() + " " + $e.getNome() + ") na divisao " + $d.getTipo() + " !");
+		//System.out.println();
+		
+		insert(new Log("Entrada Permitida (" + $e.getEspecie() + " " + $e.getNome() + ") na divisao " + $d.getTipo() + " !"));
+end
+
+//RULE 8
+rule "So o pai pode entrar no escritorio, outras entidades nao sao permitidas"
+salience 86
+	when
+		$d: Divisao(tipo == "escritorio")
+		exists EntidadeDetetada($d == divisao, nome != "Pai" && nome != "Unknown", permitido == false)
+		$e: EntidadeDetetada($d == divisao, nome != "Pai" && nome != "Unknown", permitido == false)
+	then
+		retract($e);
+		//System.out.println();
+		//System.out.println("Divisao proibida !! Apenas Pai pode entrar ( LOG TO: " + $e.getNome() + " )");
+		
+		insert(new Log("Divisao proibida !! Apenas Pai pode entrar ( LOG TO: " + $e.getNome() + " )"));
+end
+
+//RULE 9
+rule "Ativa alarme, se ha intruso na divisao"
+salience 85
+	when
+		$d: Divisao()
+		exists EntidadeDetetada($d == divisao, permitido == false)
+		$e: EntidadeDetetada($d == divisao, permitido == false)
+	then
+		insert(new Alarme());
+		//System.out.println();
+		//System.out.println("Alarme Ativo!!");
+		//System.out.println("INTRUSO (" + $e.getEspecie() + " " + $e.getNome() + ") na divisao " + $d.getTipo());
+		
+		insert(new Log("Alarme Ativo!!" + "\n\tINTRUSO (" + $e.getEspecie() + " " + $e.getNome() + ") na divisao " + $d.getTipo()));
+end	
+
+//RULE 10
+rule "Se existir um intruso elimina-lo, desliga alarme"
+salience 40
+	when
+		$d: Divisao()
+		$e: EntidadeDetetada($d == divisao, especie == "Humano", permitido == false)
+		$a: Alarme()
+	then
+		retract($a);
+		retract($e);
+		//System.out.println();
+		//System.out.println("--------------------------------------------------------");
+		//System.out.println("INTRUSO (" + $e.getEspecie() + " " + $e.getNome() + ") eliminado na divisao " + $d.getTipo());
+		//System.out.println();
+		//System.out.println("Alarme Desligado!");
+		//System.out.println("--------------------------------------------------------");
+		
+		insert(new Log("INTRUSO (" + $e.getEspecie() + " " + $e.getNome() + ") eliminado na divisao " + $d.getTipo() + "\n\tAlarme Desligado!"));		
+end	
+
+//RULE 11 --> falso alarme
+rule "Falso alarme, intruso é um animal"
+salience 40
+	when
+		$d: Divisao()
+		exists EntidadeDetetada(nome == "Cao" || nome == "Gato", especie == "Animal", permitido == false)
+		$e: EntidadeDetetada($d == divisao, especie == "Animal", permitido == false)
+		$a: Alarme()
+	then
+		retract($a);
+		$e.setPermitido(true);
+		update($e);
+		//System.out.println();
+		//System.out.println("Alarme desativado");
+		//System.out.println("FALSO ALARME! Intruso na " + $d.getTipo() + " era um animal");
+		
+		insert(new Log("FALSO ALARME! Intruso na " + $d.getTipo() + " era um animal \n\tAlarme desativado"));
+end
+
+//RULE 12
+rule "Desativa cameras, se não há intrusos" //se nao ha ninguem
+salience 2
+	when
+		$d: Divisao()
+		not EntidadeDetetada($d == divisao)
+		//$a: Alarme()
+		$c: Camera($d == divisao, ligado == true) //com esta linha a regra ia ser disparada quantas vezes cameras tivessem ativas
+		not Log(this.getLog().contains("SOFTWARE RESET\n\tAlarme desligado\n\tCameras desligadas")) //esta linha previne que aconteca o que foi dito na linha de cima
+	then
+		//retract($a);
+		$c.setLigado(false);
+		update($c);
+		//System.out.println();
+		//System.out.println("*************************************");
+		//System.out.println("* RESET PROCESS");
+		//System.out.println();
+		//System.out.println("* Alarme desligado");
+		//System.out.println();
+		//System.out.println("* Cameras desligadas");
+		//System.out.println("*************************************");
+		
+		insert(new Log("SOFTWARE RESET\n\tAlarme desligado\n\tCameras desligadas"));
+end
+
+//RULE 13
+rule "Se alarme esta desligado, tudo normal"
+salience 1
+	when
+		not Alarme()
+	then
+		//System.out.println();
+		//System.out.println("Tudo normal");
+		
+		insert(new Log("Tudo normal"));
+end
+
+//RULE 13
+rule "Mostrar LOG de Eventos"
+salience 0
+	when
+		exists Log()
+	then
+		Log.displayLog();
+end
+
+rule "Entrada de Daods"
+salience 110
+	when
+	
+	then
+		System.out.println("Tipo de Entidade: ");
+		Scanner sc = new Scanner(System.in);
+		String nomeENtidade = sc.nextLine();
+		
+		System.out.println("Divisao: ");
+		String tipoDivisao = sc.nextLine();
+		
+		Divisao divisao = new Divisao(tipoDIvisao);
+		insert();
+		
+		System.out.println("Especie: ");
+		String especie = sc.nextLine();
+		
+		System.out.println("Permitido: [S/N]");
+		String permitido = sc.nextLine();
+		
+		if(permitido.equalsIgnoreCase("S"))
+			insert(new EntidadeDetetada());
+end
+
+
+
+

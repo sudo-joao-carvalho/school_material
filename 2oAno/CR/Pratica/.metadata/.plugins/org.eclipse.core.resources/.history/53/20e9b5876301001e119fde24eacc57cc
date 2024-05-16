@@ -1,0 +1,16 @@
+package com.sample;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Log {
+	
+	private static List<String> log = new ArrayList<>();
+	
+	public Log(String logEntry) {
+		log.add("LOG: " + logEntry);
+	}
+	
+	public static String getLog() {return log.toString();}
+
+}

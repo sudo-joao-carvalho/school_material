@@ -1,0 +1,36 @@
+
+% Terceiro capítulo deste trabalho.
+%--------------------------------------
+\chapter{Citações e estilos de referências}
+\label{cap3}
+
+Este é o terceiro capítulo deste trabalho. 
+Na Secção \ref{cap3:citacoes} é indicado como citar uma referência bibliográfica. Os estilos a adotar para as referências bibliográficas são descritos na Secção \ref{cap3:estilosRef}.
+
+\section{Citações}
+\label{cap3:citacoes}
+    
+    Para citar no texto um trabalho previamente incluído nas referências bibliográficas, deve apenas usar-se o comando \verb|\cite| e o respetivo identificador associado a cada uma das referências. 
+    
+    \subsection{Alguns exemplos}
+    
+    Aqui pode encontrar exemplos de citações de um artigo \cite{Cohen:1963}, de um livro \cite{CitekeyBook}, de uma secção de um livro \cite{CitekeyInbook}, de um artigo publicado nas atas de um evento \cite{CitekeyInproceedings}, de uns \textit{proceedings} \cite{CitekeyProceedings}, de um manual \cite{CitekeyManual}, de uma tese de mestrado \cite{CitekeyMastersthesis}, de uma tese de doutoramento \cite{CitekeyPhdthesis}, de um relatório técnico \cite{CitekeyTechreport}  
+    e de uma referência que não se insere nas categorias anteriores \cite{CitekeyMisc}.
+    Se for necessário citar mais do que um trabalho no mesmo ponto do texto, basta separar os trabalhos por vírgulas dentro do comando \verb|\cite|. A título de exemplo, podem citar-se três trabalhos em simultâneo da seguinte forma \cite{Cohen:1963, CitekeyBook,CitekeyInbook}.
+
+\section{Estilo a adotar para as referências bibliográficas}
+    \label{cap3:estilosRef}
+    
+    Os alunos podem escolher utilizar o estilo IEEE ou o estilo APA.
+    
+    \subsection{Estilo APA}
+    \label{cap3:estiloAPA}
+    
+    Para escolher o estilo APA, deve aceder ao ficheiro \verb+extras.sty+ e procurar por Obs\#1 e descomentar a linha relativa à instrução \verb+\usepackage{apacite}+. \\
+    Adicionalmente, no ficheiro \verb+main.tex+ deve procurar a Obs\#3 e descomentar a instrução \verb+\bibliographystyle{apacite}+ e comentar \verb+\bibliographystyle{IEEEtran}+.
+    
+    \subsection{Estilo IEEE}
+    Para escolher o estilo IEEE, deve fazer o procedimento inverso ao descrito na Subsecção \ref{cap3:estiloAPA}, ou seja, deve comentar a instrução \verb+\usepackage{apacite}+ no ficheiro \verb+extras.sty+ (procurar por Obs\#1) bem como comentar a linha \verb+\bibliographystyle{apacite}+ e descomentar a linha \verb+\bibliographystyle{IEEEtran}+ no ficheiro \verb+main.tex+ (procurar por Obs\#3). 
+    
+    
+    

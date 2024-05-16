@@ -1,0 +1,340 @@
+1
+00:00:02,230 --> 00:00:05,270
+So that's it for this section.
+
+2
+00:00:05,270 --> 00:00:06,650
+It was a long section
+
+3
+00:00:06,650 --> 00:00:09,080
+with a lot of code, which we changed.
+
+4
+00:00:09,080 --> 00:00:12,240
+Now, we have this final result
+
+5
+00:00:12,240 --> 00:00:15,229
+though I will already say one piece is missing.
+
+6
+00:00:15,229 --> 00:00:18,110
+And that would be polymorphism,
+
+7
+00:00:18,110 --> 00:00:20,880
+which also can help us with solving that problem
+
+8
+00:00:20,880 --> 00:00:24,160
+of having duplicate if checks.
+
+9
+00:00:24,160 --> 00:00:25,560
+We solved it for now
+
+10
+00:00:25,560 --> 00:00:28,879
+by having this map full of functions, which works.
+
+11
+00:00:28,879 --> 00:00:31,740
+But there is another approach using classes
+
+12
+00:00:31,740 --> 00:00:34,831
+and polymorphism, which I will also come back to
+
+13
+00:00:34,831 --> 00:00:36,800
+in the next section, however,
+
+14
+00:00:36,800 --> 00:00:39,410
+because the next section will be about classes,
+
+15
+00:00:39,410 --> 00:00:42,580
+objects and everything we need to know about them
+
+16
+00:00:42,580 --> 00:00:45,070
+when it comes to writing clean code.
+
+17
+00:00:45,070 --> 00:00:46,490
+So therefore, for the moment,
+
+18
+00:00:46,490 --> 00:00:48,760
+this is the final state.
+
+19
+00:00:48,760 --> 00:00:50,180
+And of course, you might argue
+
+20
+00:00:50,180 --> 00:00:52,810
+that this is quite a long file
+
+21
+00:00:52,810 --> 00:00:57,080
+with quite a lot of scrolling required to move around.
+
+22
+00:00:57,080 --> 00:00:59,562
+Now, of course, keep a couple of things in mind.
+
+23
+00:00:59,562 --> 00:01:01,960
+For one, we've got a bunch of dummy data here,
+
+24
+00:01:01,960 --> 00:01:05,420
+which already occupies 30-ish lines of code.
+
+25
+00:01:05,420 --> 00:01:07,830
+And then we get all these dummy methods down there
+
+26
+00:01:07,830 --> 00:01:09,360
+at the bottom, which we, of course,
+
+27
+00:01:09,360 --> 00:01:11,230
+also would have in reality
+
+28
+00:01:11,230 --> 00:01:12,950
+with real code in there
+
+29
+00:01:12,950 --> 00:01:16,119
+but they would probably not all be in the same file.
+
+30
+00:01:16,119 --> 00:01:19,547
+And in general, this long file could be split up.
+
+31
+00:01:19,547 --> 00:01:23,030
+I have an example folder structure here
+
+32
+00:01:23,030 --> 00:01:24,830
+in the final-demo folder,
+
+33
+00:01:24,830 --> 00:01:26,646
+which you also find attached.
+
+34
+00:01:26,646 --> 00:01:30,220
+There, I have a very lean app.js file
+
+35
+00:01:30,220 --> 00:01:31,880
+where we just have the main function,
+
+36
+00:01:31,880 --> 00:01:33,980
+processTransactions and processTransaction
+
+37
+00:01:35,070 --> 00:01:36,800
+and then all the other functions,
+
+38
+00:01:36,800 --> 00:01:38,270
+which are being called in here
+
+39
+00:01:38,270 --> 00:01:41,240
+are in the end imported from other files,
+
+40
+00:01:41,240 --> 00:01:43,190
+which you find in subfolders.
+
+41
+00:01:43,190 --> 00:01:46,720
+For example, the util folder has the error-handling function
+
+42
+00:01:46,720 --> 00:01:48,177
+and my validator functions.
+
+43
+00:01:48,177 --> 00:01:51,931
+The data folder simply holds these transactions
+
+44
+00:01:51,931 --> 00:01:53,566
+and the processing folder
+
+45
+00:01:53,566 --> 00:01:57,180
+has these functions that deal with the direct processing
+
+46
+00:01:57,180 --> 00:01:58,560
+of the transactions.
+
+47
+00:01:58,560 --> 00:02:01,920
+So the validation, and then also for processing
+
+48
+00:02:01,920 --> 00:02:04,843
+with a processor, and picking a processor.
+
+49
+00:02:05,780 --> 00:02:07,210
+And of course, in reality,
+
+50
+00:02:07,210 --> 00:02:09,350
+you would split up code like this
+
+51
+00:02:09,350 --> 00:02:11,180
+or in a similar way
+
+52
+00:02:11,180 --> 00:02:14,770
+because that then makes the individual files easier to read
+
+53
+00:02:14,770 --> 00:02:18,560
+and therefore, also helps with achieving clean code
+
+54
+00:02:18,560 --> 00:02:20,610
+throughout your entire project.
+
+55
+00:02:20,610 --> 00:02:23,401
+You don't just want to have one endless file.
+
+56
+00:02:23,401 --> 00:02:26,230
+Of course, for the purpose of this section
+
+57
+00:02:26,230 --> 00:02:27,570
+and for showing everything
+
+58
+00:02:27,570 --> 00:02:29,720
+without switching files all the time,
+
+59
+00:02:29,720 --> 00:02:31,790
+I did do it all in one file
+
+60
+00:02:31,790 --> 00:02:34,350
+and even if you go through this file, therefore,
+
+61
+00:02:34,350 --> 00:02:36,640
+it should still be rather clean.
+
+62
+00:02:36,640 --> 00:02:38,255
+It reads top to bottom.
+
+63
+00:02:38,255 --> 00:02:41,130
+We have these functions with good names,
+
+64
+00:02:41,130 --> 00:02:42,290
+which we can call
+
+65
+00:02:42,290 --> 00:02:44,410
+and we used all these functions
+
+66
+00:02:44,410 --> 00:02:46,350
+and all these various concepts covered
+
+67
+00:02:46,350 --> 00:02:47,630
+through this course
+
+68
+00:02:47,630 --> 00:02:50,350
+to ensure that we still have a couple of if statements
+
+69
+00:02:50,350 --> 00:02:52,997
+and a loop but we have less of them
+
+70
+00:02:52,997 --> 00:02:55,130
+and we do combine them
+
+71
+00:02:55,130 --> 00:02:57,300
+in a more structured way
+
+72
+00:02:57,300 --> 00:03:00,410
+to ensure that we have way more readable code
+
+73
+00:03:00,410 --> 00:03:02,392
+even though it takes up more lines of code
+
+74
+00:03:02,392 --> 00:03:05,030
+than we had the beginning
+
+75
+00:03:05,030 --> 00:03:08,100
+because this was definitely harder to read
+
+76
+00:03:08,100 --> 00:03:11,070
+and understand and maintain and it had a lot
+
+77
+00:03:11,070 --> 00:03:13,160
+of duplication inside of it.
+
+78
+00:03:13,160 --> 00:03:14,550
+So now throughout this section,
+
+79
+00:03:14,550 --> 00:03:18,057
+we learned how splitting this up into functions,
+
+80
+00:03:18,057 --> 00:03:20,930
+something we already learned in the last section
+
+81
+00:03:20,930 --> 00:03:23,110
+and how a couple of tweaks related
+
+82
+00:03:23,110 --> 00:03:24,920
+to if statements
+
+83
+00:03:24,920 --> 00:03:27,381
+and how to name our conditions and so on
+
+84
+00:03:27,381 --> 00:03:32,381
+can help us with turning this into a way more readable
+
+85
+00:03:32,470 --> 00:03:34,970
+and therefore cleaner code base.
+

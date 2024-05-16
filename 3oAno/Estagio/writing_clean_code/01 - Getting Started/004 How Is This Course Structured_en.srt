@@ -1,0 +1,116 @@
+1
+00:00:02,180 --> 00:00:05,230
+Now all these course sections in this course
+
+2
+00:00:05,230 --> 00:00:07,820
+will follow a certain structure.
+
+3
+00:00:07,820 --> 00:00:11,400
+We'll always start by diving into the core problems
+
+4
+00:00:11,400 --> 00:00:13,920
+and the important rules and concepts you should know
+
+5
+00:00:13,920 --> 00:00:15,650
+to solve these problems.
+
+6
+00:00:15,650 --> 00:00:17,800
+For example, when we talk about naming,
+
+7
+00:00:17,800 --> 00:00:20,970
+I will start by explaining how good names look like
+
+8
+00:00:20,970 --> 00:00:23,140
+and why they look like this.
+
+9
+00:00:23,140 --> 00:00:25,800
+So we'll learn about bad code and why it's bad,
+
+10
+00:00:25,800 --> 00:00:27,780
+and we'll understand these core rules
+
+11
+00:00:27,780 --> 00:00:29,920
+and concepts you should follow.
+
+12
+00:00:29,920 --> 00:00:33,070
+But theory alone won't do the trick.
+
+13
+00:00:33,070 --> 00:00:35,900
+That's why in all these course sections,
+
+14
+00:00:35,900 --> 00:00:39,750
+I'll back that theory up with demos and examples.
+
+15
+00:00:39,750 --> 00:00:42,670
+We'll see both bad and good code in action,
+
+16
+00:00:42,670 --> 00:00:46,830
+and we'll all transform bad code to good codes together
+
+17
+00:00:46,830 --> 00:00:49,220
+so that we have a realistic example,
+
+18
+00:00:49,220 --> 00:00:51,870
+and we can see that transformation in action
+
+19
+00:00:51,870 --> 00:00:55,133
+rather than me just throwing finished examples at you.
+
+20
+00:00:55,990 --> 00:00:59,660
+In addition, every section will have challenges for you.
+
+21
+00:00:59,660 --> 00:01:02,810
+There are challenges where you can apply what you learned
+
+22
+00:01:02,810 --> 00:01:04,069
+and where I challenge you
+
+23
+00:01:04,069 --> 00:01:07,670
+to analyze and improve and transform some dirty code
+
+24
+00:01:07,670 --> 00:01:09,020
+on your own.
+
+25
+00:01:09,020 --> 00:01:10,010
+This ensures that
+
+26
+00:01:10,010 --> 00:01:12,880
+you don't just learn about these concepts in theory,
+
+27
+00:01:12,880 --> 00:01:15,350
+but that instead, you get a lot out of this course,
+
+28
+00:01:15,350 --> 00:01:17,760
+and you will really remember these concepts
+
+29
+00:01:17,760 --> 00:01:20,653
+so that you can use them in your upcoming projects.
+

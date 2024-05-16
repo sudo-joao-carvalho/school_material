@@ -1,0 +1,308 @@
+1
+00:00:02,080 --> 00:00:03,959
+So let's now dig a bit deeper
+
+2
+00:00:03,959 --> 00:00:08,410
+and let's start with variables, constants, and properties.
+
+3
+00:00:08,410 --> 00:00:10,570
+How should this be named?
+
+4
+00:00:10,570 --> 00:00:14,420
+We can differentiate between three main kinds of values
+
+5
+00:00:14,420 --> 00:00:16,580
+which are being stored in them.
+
+6
+00:00:16,580 --> 00:00:20,021
+Our values could be objects and this includes lists
+
+7
+00:00:20,021 --> 00:00:24,600
+or maps or any other more complex data structure.
+
+8
+00:00:24,600 --> 00:00:27,894
+Our value could be a simple number or string,
+
+9
+00:00:27,894 --> 00:00:30,890
+or our value could be a boolean.
+
+10
+00:00:30,890 --> 00:00:33,200
+And you can already tell by the color coding here
+
+11
+00:00:33,200 --> 00:00:34,800
+that there seems to be a difference
+
+12
+00:00:34,800 --> 00:00:38,550
+between booleans and the other kinds of values.
+
+13
+00:00:38,550 --> 00:00:39,890
+Now, if your value,
+
+14
+00:00:39,890 --> 00:00:41,970
+which you store in a variable constant
+
+15
+00:00:42,940 --> 00:00:46,660
+or property is an object or an object to like thing
+
+16
+00:00:46,660 --> 00:00:49,406
+then the name which you assigned to your variable
+
+17
+00:00:49,406 --> 00:00:52,426
+or property should simply describe the value.
+
+18
+00:00:52,426 --> 00:00:54,859
+So if you are storing a user object
+
+19
+00:00:54,859 --> 00:00:58,540
+in your variable, name the variable user.
+
+20
+00:00:58,540 --> 00:01:01,866
+If you are storing an object which describes a database
+
+21
+00:01:01,866 --> 00:01:04,301
+and offers database operations
+
+22
+00:01:04,301 --> 00:01:08,030
+you might wanna name the variable database.
+
+23
+00:01:08,030 --> 00:01:11,579
+If your value is a number or a string, so some text,
+
+24
+00:01:11,579 --> 00:01:15,280
+then you also just wanna describe the value.
+
+25
+00:01:15,280 --> 00:01:18,780
+If you have a variable that holds the name of a user,
+
+26
+00:01:18,780 --> 00:01:21,410
+you might just wanna call it name.
+
+27
+00:01:21,410 --> 00:01:24,558
+The same of course if it's a property in a user object.
+
+28
+00:01:24,558 --> 00:01:26,470
+If you have a variable
+
+29
+00:01:26,470 --> 00:01:28,110
+or property, which holds an age
+
+30
+00:01:28,110 --> 00:01:32,420
+you might wanna call it age, just like that.
+
+31
+00:01:32,420 --> 00:01:35,490
+Now for booleans, there is a special case.
+
+32
+00:01:35,490 --> 00:01:39,570
+For booleans your name should simply be a question
+
+33
+00:01:39,570 --> 00:01:42,750
+that can be answered with true or false.
+
+34
+00:01:42,750 --> 00:01:44,534
+So you might name your variable
+
+35
+00:01:44,534 --> 00:01:47,400
+something like is active or logged in
+
+36
+00:01:47,400 --> 00:01:52,200
+because that can be yes or no and therefore true or false.
+
+37
+00:01:52,200 --> 00:01:56,270
+You are active, or you are not it's an either or choice.
+
+38
+00:01:56,270 --> 00:02:00,072
+So for a booleans we want this is something naming
+
+39
+00:02:00,072 --> 00:02:02,350
+or name like logged in,
+
+40
+00:02:02,350 --> 00:02:05,800
+which also can be answered with yes or no.
+
+41
+00:02:05,800 --> 00:02:09,130
+Now you might wanna consider providing more details
+
+42
+00:02:09,130 --> 00:02:11,871
+and more information where it makes sense
+
+43
+00:02:11,871 --> 00:02:15,990
+but you don't wanna introduce extra redundancy.
+
+44
+00:02:15,990 --> 00:02:19,041
+For example, if your user in a certain branch
+
+45
+00:02:19,041 --> 00:02:22,185
+of your code is always an authenticated user,
+
+46
+00:02:22,185 --> 00:02:23,639
+you could consider naming
+
+47
+00:02:23,639 --> 00:02:27,600
+that variable authenticated user to make it really clear
+
+48
+00:02:27,600 --> 00:02:29,226
+to everyone who reads that code
+
+49
+00:02:29,226 --> 00:02:33,200
+that you're only acting on an authenticated user here.
+
+50
+00:02:33,200 --> 00:02:35,408
+If it's a customer, you could name it customer
+
+51
+00:02:35,408 --> 00:02:38,960
+instead of user, to have this more specific name.
+
+52
+00:02:38,960 --> 00:02:40,770
+If it's a SQL database
+
+53
+00:02:40,770 --> 00:02:42,930
+you could use that as a name to make it really clear
+
+54
+00:02:42,930 --> 00:02:45,940
+which kind of database you are working on.
+
+55
+00:02:45,940 --> 00:02:49,363
+If you store just a first name of a user in a certain field
+
+56
+00:02:49,363 --> 00:02:51,980
+you might wanna name it first name instead
+
+57
+00:02:51,980 --> 00:02:54,407
+of just name, to be more specific about the kind
+
+58
+00:02:54,407 --> 00:02:56,700
+of name being stored in there.
+
+59
+00:02:56,700 --> 00:02:58,226
+On the apprehend I would argue that age
+
+60
+00:02:58,226 --> 00:03:00,560
+is already pretty specific.
+
+61
+00:03:00,560 --> 00:03:03,240
+So you probably can't be more specific there.
+
+62
+00:03:03,240 --> 00:03:06,297
+So it's not about making your names as long as possible
+
+63
+00:03:06,297 --> 00:03:08,770
+but just about making them as clear
+
+64
+00:03:08,770 --> 00:03:11,510
+and as easy to understand as possible.
+
+65
+00:03:11,510 --> 00:03:13,400
+And sometimes shorter is better.
+
+66
+00:03:13,400 --> 00:03:15,270
+Sometimes longer is better.
+
+67
+00:03:15,270 --> 00:03:17,493
+Obviously this is also something which will come
+
+68
+00:03:17,493 --> 00:03:20,620
+with experience but also with help of the demos
+
+69
+00:03:20,620 --> 00:03:23,970
+and exercises you will see through out this course.
+
+70
+00:03:23,970 --> 00:03:25,382
+Now for booleans it's the same.
+
+71
+00:03:25,382 --> 00:03:27,888
+You can add more details if it makes sense.
+
+72
+00:03:27,888 --> 00:03:31,273
+For example, if is active refers to a user,
+
+73
+00:03:31,273 --> 00:03:34,001
+you could name it is active user logged in
+
+74
+00:03:34,001 --> 00:03:37,860
+on the other hand will typically always refer to a user.
+
+75
+00:03:37,860 --> 00:03:41,460
+So for example, using user is logged in
+
+76
+00:03:41,460 --> 00:03:42,988
+instead of just logged in
+
+77
+00:03:42,988 --> 00:03:46,333
+is longer but not necessarily better.
+

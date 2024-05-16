@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/base_navigation"
+    app:startDestination="@id/fragment1">
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="pt.isec.ans.teonavigationcontroller.Fragment1"
+        android:label="fragment_1"
+        tools:layout="@layout/fragment_1">
+        <action
+            android:id="@+id/action_fragment1_to_fragment2"
+            app:destination="@id/fragment2" />
+        <action
+
+            android:id="@+id/action_fragment1_to_fragment3"
+            app:destination="@id/fragment3" />
+        <action
+            android:id="@+id/action_fragment1_self"
+            app:destination="@id/fragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="pt.isec.ans.teonavigationcontroller.Fragment2"
+        android:label="fragment_2"
+        tools:layout="@layout/fragment_2">
+        <action
+            android:id="@+id/action_fragment2_to_fragment1"
+            app:destination="@id/fragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="pt.isec.ans.teonavigationcontroller.Fragment3"
+        android:label="fragment_3"
+        tools:layout="@layout/fragment_3">
+        <action
+            android:id="@+id/action_fragment3_to_fragment2"
+            app:destination="@id/fragment2" />
+        <action
+            android:id="@+id/action_fragment3_to_fragment1"
+            app:destination="@id/fragment1" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_fragment1"
+        app:destination="@id/fragment1" />
+    <action
+        android:id="@+id/action_global_fragment2"
+        app:destination="@id/fragment2" />
+    <action
+        android:id="@+id/action_global_fragment3"
+        app:destination="@id/fragment3" />
+</navigation>

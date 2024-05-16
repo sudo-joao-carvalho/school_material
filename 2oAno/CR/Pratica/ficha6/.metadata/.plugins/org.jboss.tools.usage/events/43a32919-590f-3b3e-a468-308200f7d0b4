@@ -1,0 +1,11 @@
+#Fri Apr 28 20:34:02 WEST 2023
+a=finishWizard
+c=0
+cl=org.drools.eclipse.wizard.project.NewDroolsProjectWizard
+cmp=usage
+ct=jbt
+d=1682710442639
+l=Wizard class name
+s=3
+v=2.2.500
+vl=How many times the 'Finish' button pressed during the day

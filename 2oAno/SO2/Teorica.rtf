@@ -1,0 +1,83 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 FUNCOES SECURE E NAO-SECURE\
+\
+	Fun\'e7\'f5es nao Secure\
+\
+	. Muitas das fun\'e7\'f5es para tratamento de texto sao apontadas como nao Secure\
+	\
+	\'97> int num;\
+	      TCHAR str[10];\
+	      strcpy(str, \'93ola manuel Afonso\'94); \'97> podemos meter uma string que tem mais dimens\'e3o do que a dimens\'e3o al\'e7ada e isto vai corromper o c\'f3digo entao usar a vers\'e3o segura\
+\
+	      _tscanf(_T(\'93%s\'94), str);\
+	      _tscanf(_T(%s), str, 10); \'97> vers\'e3o segura que define o tamanho da string\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+8 bits \'97> char\
+16 bits \'97> wchar_t\
+\
+Entao existe um typedef que faz suportar os dois tipo \'97> TCHAR\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+PROCESSOS\
+\
+. CreateProcess()\
+. ResumeThread()\
+. WaitForSingleObject()\
+. GetExitCodeProcess()\
+. CloseHandle()\
+. ExitProcess() \'97> ou seja ao inv\'e9s de fazer return 0 fazemos ExitProcess();\
+\
+CREATEPROCESS()\
+\
+POSIX\
+. fork() \'97> cria o processo filho\
+. execl() \'97> carrega um execut\'e1vel criando um novo processo\
+\
+No Windows:\
+\
+(Pai)\
+	|\
+	|\
+	|\
+	|\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97(CreateProcess)\
+	|		|\
+	|		|\
+	|		|\
+	|		|\
+(Pai)		(Filho)\
+\
+Em posix o filho herdava tudo do pai ja em windows ele cria um processo completamente diferente do pai\
+\
+CreateProcess(NULL, _T(\'93ex1.exe ola\'94)) \'97> isto \'e9 como far\'edamos para correr o programa como far\'edamos na linha de comandos argv[0] = ex1.exe, argv[1] = ola\
+\
+CreateProcess(\'93ex1.exe\'94, \'93ola\'94) \'97> usando o primeiro atributo que constitui o nome da aplica\'e7\'e3o\
+\
+5\'ba parametro \'97> bInheritHandles \'97> para o caso de como se fazia nos promotores do tp de SO se usarmos pipas an\'f3nimos por exemplo e queremos passar informa\'e7\'e3o por esses pipas temos que meter true neste par\'e2metro e especificar que \'e9 por esse pipe que queremos passar a informa\'e7\'e3o\
+\
+No atributo das vars de ambiente, se meter NULL vai herdar as vars de ambiente do pai,  se eu quiser mudar tenho que fazer _T(\'93Nome: Joao\\0Idade: 21\\0\\0\'94);\
+\
+STARTUPINFO \'97> \'e9 a estrutura que nos permite definir as dimens\'f5es da janela, etc\
+\
+\
+Quando criamos o processo devemos fazer um CloseHandle(pi.hProcess)\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+Diferen\'e7a entre RETURN e EXIT\
+\
+Return por exemplo numa thread \'97> ela termina\
+Se fizer exit vai rebentar com o processo, acaba o programa onde quer que esteja\
+\
+QUALQUER APLICACAO QUE SEJA EXECUTADA CRIA AUTOMATICAMENTE UM PROCESSO E UMA THREAD\
+\
+}

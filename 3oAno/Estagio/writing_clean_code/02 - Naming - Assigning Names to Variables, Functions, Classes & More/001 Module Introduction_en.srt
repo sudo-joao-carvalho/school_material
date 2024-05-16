@@ -1,0 +1,72 @@
+1
+00:00:02,090 --> 00:00:04,780
+So finally let's get started
+
+2
+00:00:04,780 --> 00:00:07,130
+with our first key pain point
+
+3
+00:00:07,130 --> 00:00:12,130
+or first area of improvement and that would be names.
+
+4
+00:00:12,130 --> 00:00:16,600
+In this module, we are going to focus on naming things.
+
+5
+00:00:16,600 --> 00:00:19,520
+So on assigning good names,
+
+6
+00:00:19,520 --> 00:00:23,500
+we'll focus on all the nameable things in development,
+
+7
+00:00:23,500 --> 00:00:26,915
+which would be variables, constants and properties,
+
+8
+00:00:26,915 --> 00:00:31,493
+functions and methods and of course also classes.
+
+9
+00:00:32,710 --> 00:00:36,450
+We are going to explore why names matter exactly
+
+10
+00:00:36,450 --> 00:00:38,630
+and how good names can help us.
+
+11
+00:00:38,630 --> 00:00:40,590
+We'll then most importantly,
+
+12
+00:00:40,590 --> 00:00:44,430
+dive into rules and concepts for assigning good names,
+
+13
+00:00:44,430 --> 00:00:47,270
+and we'll compare these names to bad names
+
+14
+00:00:47,270 --> 00:00:49,130
+to really see the difference
+
+15
+00:00:49,130 --> 00:00:50,950
+and of course, as promised,
+
+16
+00:00:50,950 --> 00:00:54,030
+we'll have plenty of small examples and demos,
+
+17
+00:00:54,030 --> 00:00:57,530
+and also a challenge for you at the end of this module
+
+18
+00:00:57,530 --> 00:00:59,133
+to apply what you'll learned.
+

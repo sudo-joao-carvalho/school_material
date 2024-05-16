@@ -1,0 +1,23 @@
+package com.sample;
+
+public class EntidadeDetetada {
+	
+	String nome;
+	boolean permitido;
+	Divisao divisao;
+
+	public EntidadeDetetada(Divisao divisao, String nome) {
+		super();
+		this.divisao = divisao;
+	}
+
+	public Divisao getDivisao() {
+		return divisao;
+	}
+
+	public void setDivisao(Divisao divisao) {
+		this.divisao = divisao;
+	}
+	
+	
+}

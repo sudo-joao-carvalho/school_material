@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{C1032575-DD4A-4F90-8452-CFEBE2CCA65F}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Ficha1__P1__V1 PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Curso.cs">
+    <Files>
+      <File FileName="Models/Curso.cs" Line="6" Column="6" />
+      <File FileName="Controllers/CursosController.cs" Line="120" Column="1" />
+      <File FileName="Views/Cursos/Index.cshtml" Line="68" Column="58" />
+      <File FileName="Data/ApplicationDbContext.cs" Line="9" Column="49" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Ficha1_P1_V1" expanded="True">
+            <Node name="Ficha1_P1_V1" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True">
+                <Node name="Migrations" expanded="True" />
+              </Node>
+              <Node name="Models" expanded="True">
+                <Node name="Curso.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Cursos" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

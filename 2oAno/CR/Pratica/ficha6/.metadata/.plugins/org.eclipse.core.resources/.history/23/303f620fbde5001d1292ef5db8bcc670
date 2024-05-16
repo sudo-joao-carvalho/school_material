@@ -1,0 +1,17 @@
+package com.sample;
+
+public class Sintoma {
+	
+	private final String id;
+	private String sintoma;
+	
+	public Sintoma(String id, String sintoma) {
+		this.id = id;
+		this.sintoma = sintoma;
+	}
+	
+	public String getID() {return this.id;}
+	public String getSintoma() {return this.sintoma;}
+	public void setSintoma() {this.sintoma = sintoma;}
+
+}

@@ -1,0 +1,127 @@
+package com.sample.rules
+ 
+import com.sample.Divisao
+import com.sample.Fogo
+import com.sample.Aspersor
+import com.sample.Alarme
+
+import java.util.Scanner;
+import java.io.FileInputStream;
+ 
+/*rule "Hello World"
+    when
+        m : Message( status == Message.HELLO, myMessage : message )
+    then
+        System.out.println( myMessage );
+        m.setMessage( "Goodbye cruel world" );
+        m.setStatus( Message.GOODBYE );
+        update( m );
+end
+
+rule "GoodBye"
+    when
+        Message( status == Message.GOODBYE, myMessage : message )
+    then
+        System.out.println( myMessage );
+end*/
+
+rule "Se há fogo numa divisão, ligar aspersor de água"
+salience 50
+	when 
+		$d: Divisao()
+		$f: Fogo($d == divisao)
+		$a: Aspersor($d == divisao, ligado == false)
+	then
+		$a.setLigado(true);
+		update($a);
+		System.out.println("Aspersor ligado na " + $d.getNome());
+		retract($f);
+		System.out.println("Fogo apagado na " + $d.getNome());
+end
+
+ rule "Fogo apagado numa divisão, desligar aspersor"
+ salience 40
+ 	when
+ 		$d: Divisao()
+ 		$a: Aspersor($d == divisao, ligado == true)
+ 		not Fogo($d == divisao)
+ 	then
+ 		$a.setLigado(false);
+ 		update($a);
+ 		System.out.println("Aspersor desligado na " + $d.getNome());
+ end
+ 
+rule "Liga alarme se há fogos"
+salience 100
+	when
+		exists Fogo()
+	then
+		insert(new Alarme());
+		System.out.println("Alarme ligado");
+end
+
+rule "Desliga alarme se não há fogos "
+salience 10
+	when
+		not Fogo()
+		$a: Alarme()
+	then
+		retract($a);
+		System.out.println("Alarme desligado");
+end
+
+rule "Tudo OK"
+salience 1
+	when
+		not Alarme()
+		not Aspersor(ligado == true)
+	then
+		System.out.println("Tudo OK");
+end
+
+rule "Entrada de Dados"
+salience 110
+	when
+	then
+	try{
+		Scanner input = new Scanner(new FileInputStream("/Users/joaocarvalho/Desktop/Universidade/2oAno/CR/Pratica/Ficha 7 - Drools #3-20230505/fogo.txt"));
+		//input.useDelimiter(";");
+		
+		String linha = input.nextLine();
+		//String[] campos = null;
+		while(input.hasNextLine()){
+			linha = input.nextLine();
+			String[] campos =linha.split(";");
+			//int i = 0;
+			//while(input.hasNext()){
+			//	campos[i] = input.next();
+			//	i++;
+			//}
+			
+			Divisao d = new Divisao(campos[0]);
+			insert(d);
+			
+			if(campos[1].equals("sim")){
+				Aspersor asp = new Aspersor(d, false);
+				insert(asp); 
+			}
+			
+			if(campos[2].equals("sim")){
+				Fogo f = new Fogo(d);
+				insert(f);
+			}
+			
+		}
+		
+		input.close();
+	}catch(IOException e){
+		System.out.println("ERRO");
+	}
+		
+end 
+ 
+ 
+ 
+ 
+ 
+ 

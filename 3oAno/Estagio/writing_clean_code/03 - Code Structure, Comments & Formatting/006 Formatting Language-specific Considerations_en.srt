@@ -1,0 +1,188 @@
+1
+00:00:02,100 --> 00:00:03,270
+Now before we dive dodge into,
+
+2
+00:00:03,270 --> 00:00:05,270
+a horizontal formatting,
+
+3
+00:00:05,270 --> 00:00:09,090
+let's also talk about this reading flow again.
+
+4
+00:00:09,090 --> 00:00:10,620
+Here's another example,
+
+5
+00:00:10,620 --> 00:00:14,090
+it's a JavaScript file where I call a start function,
+
+6
+00:00:14,090 --> 00:00:15,980
+which Dennis defined right below it,
+
+7
+00:00:15,980 --> 00:00:17,870
+so that we can immediately see it.
+
+8
+00:00:17,870 --> 00:00:19,630
+And that calls a next function,
+
+9
+00:00:19,630 --> 00:00:20,913
+which is defined right below,
+
+10
+00:00:20,913 --> 00:00:23,563
+And the same as true for the last function.
+
+11
+00:00:24,410 --> 00:00:26,820
+Now if would execute this file, it would work.
+
+12
+00:00:26,820 --> 00:00:29,573
+And I would log all these log messages.
+
+13
+00:00:30,420 --> 00:00:34,370
+JavaScript is a language which supports this syntax,
+
+14
+00:00:34,370 --> 00:00:37,880
+we can call a function before it was to find,
+
+15
+00:00:37,880 --> 00:00:39,820
+because when JavaScript executes,
+
+16
+00:00:39,820 --> 00:00:42,500
+it automatically pulls all the functions,
+
+17
+00:00:42,500 --> 00:00:45,560
+in front of the other codes so to say.
+
+18
+00:00:45,560 --> 00:00:46,470
+On the other hand,
+
+19
+00:00:46,470 --> 00:00:49,350
+there are other languages like Python,
+
+20
+00:00:49,350 --> 00:00:51,390
+where does this different.
+
+21
+00:00:51,390 --> 00:00:54,730
+Here if we would call start in line two,
+
+22
+00:00:54,730 --> 00:00:55,790
+it wouldn't work.
+
+23
+00:00:55,790 --> 00:00:58,870
+This code would fail, if we tried to execute it,
+
+24
+00:00:58,870 --> 00:01:01,771
+because in Python, we can't execute a function,
+
+25
+00:01:01,771 --> 00:01:04,519
+before it was to find,
+
+26
+00:01:04,519 --> 00:01:07,760
+it will not magically be pulled on top of the file,
+
+27
+00:01:07,760 --> 00:01:10,250
+as it was the case with JavaScript.
+
+28
+00:01:10,250 --> 00:01:12,970
+So executing start in line two, wouldn't work.
+
+29
+00:01:12,970 --> 00:01:15,203
+However, executing it in line 11 here,
+
+30
+00:01:15,203 --> 00:01:17,700
+in this example, odds it wouldn't work.
+
+31
+00:01:17,700 --> 00:01:20,000
+Yes, start would be defined,
+
+32
+00:01:20,000 --> 00:01:22,720
+but in start, I call next and next,
+
+33
+00:01:22,720 --> 00:01:24,230
+at this point of time,
+
+34
+00:01:24,230 --> 00:01:28,438
+when code execution reaches line 11 is still unknown.
+
+35
+00:01:28,438 --> 00:01:32,100
+Hence the only place where we can call start here,
+
+36
+00:01:32,100 --> 00:01:35,000
+is after all these functions have been defined,
+
+37
+00:01:35,000 --> 00:01:38,500
+so that they can call each other successfully.
+
+38
+00:01:38,500 --> 00:01:39,990
+So here it's really just about,
+
+39
+00:01:39,990 --> 00:01:42,470
+when we start that function execution,
+
+40
+00:01:42,470 --> 00:01:44,350
+and then Python simply requires,
+
+41
+00:01:44,350 --> 00:01:46,310
+that it saw every function,
+
+42
+00:01:46,310 --> 00:01:48,760
+which is called by some other place in the code,
+
+43
+00:01:48,760 --> 00:01:50,670
+before it's being called.
+
+44
+00:01:50,670 --> 00:01:51,854
+And therefore, of course again,
+
+45
+00:01:51,854 --> 00:01:54,210
+you have to keep such language,
+
+46
+00:01:54,210 --> 00:01:57,640
+specific rules and restrictions in mind,
+
+47
+00:01:57,640 --> 00:02:01,293
+when it comes to ordering and executing your functions.
+

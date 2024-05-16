@@ -1,0 +1,100 @@
+1
+00:00:02,220 --> 00:00:03,860
+By now in this course,
+
+2
+00:00:03,860 --> 00:00:06,560
+we learned how to name things properly
+
+3
+00:00:06,560 --> 00:00:09,010
+and to not overuse comments.
+
+4
+00:00:09,010 --> 00:00:12,250
+We haven't worked too much on the actual code
+
+5
+00:00:12,250 --> 00:00:14,240
+which we write except for the names
+
+6
+00:00:14,240 --> 00:00:16,040
+we assigned two things.
+
+7
+00:00:16,040 --> 00:00:18,830
+Now therefore in this course section,
+
+8
+00:00:18,830 --> 00:00:22,360
+we are going to take a closer look at functions
+
+9
+00:00:22,360 --> 00:00:26,680
+because functions ultimately are where we write
+
+10
+00:00:26,680 --> 00:00:30,550
+the majority of our code, functions or methods.
+
+11
+00:00:30,550 --> 00:00:32,700
+And in this course section,
+
+12
+00:00:32,700 --> 00:00:35,870
+you will learn how to write clean functions
+
+13
+00:00:35,870 --> 00:00:39,400
+and we'll have a look at every aspect of functions.
+
+14
+00:00:39,400 --> 00:00:41,780
+We'll have a look at the parameters,
+
+15
+00:00:41,780 --> 00:00:43,570
+the arguments you use
+
+16
+00:00:43,570 --> 00:00:47,040
+and functions and how to be clean there.
+
+17
+00:00:47,040 --> 00:00:49,010
+And of course, we're going to have a look
+
+18
+00:00:49,010 --> 00:00:50,530
+at the function body,
+
+19
+00:00:50,530 --> 00:00:54,100
+and we're going to talk about the length of functions,
+
+20
+00:00:54,100 --> 00:00:58,640
+abstraction levels and how to properly split one function
+
+21
+00:00:58,640 --> 00:01:02,389
+into multiple functions to increase readability.
+
+22
+00:01:02,389 --> 00:01:04,690
+And as always, we're going to do this
+
+23
+00:01:04,690 --> 00:01:06,780
+with a bunch of examples, demos
+
+24
+00:01:06,780 --> 00:01:08,980
+and also a challenge for you.
+
+25
+00:01:08,980 --> 00:01:10,093
+So let's dive in.
+

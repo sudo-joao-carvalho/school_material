@@ -1,0 +1,14 @@
+package com.sample;
+
+import java.util.List;
+
+public class Divisao {
+
+	private String tipo;
+	private List<EntidadeDetetada> entidadesPermitidas;
+	
+	public Divisao(String tipo) {
+		this.tipo = tipo;
+		this.entidadesPermitidas = entidades;
+	}
+}

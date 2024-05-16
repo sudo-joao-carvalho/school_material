@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "578572414186",
+    "project_id": "p1japcamov",
+    "storage_bucket": "p1japcamov.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578572414186:android:3276410e5fb5aeb6917b93",
+        "android_client_info": {
+          "package_name": "pt.isec.amov.japc.p1_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFy8Stk161mZGGYbGbwDnUO-aN5BThCM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

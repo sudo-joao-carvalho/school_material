@@ -1,0 +1,216 @@
+1
+00:00:02,130 --> 00:00:04,790
+So now it's again time for more examples,
+
+2
+00:00:04,790 --> 00:00:07,030
+this time focused on classes.
+
+3
+00:00:07,030 --> 00:00:09,870
+And again, we got these three kinds of names
+
+4
+00:00:09,870 --> 00:00:13,340
+and the question is which kind of object is described?
+
+5
+00:00:13,340 --> 00:00:15,760
+And let's say that is a user again.
+
+6
+00:00:15,760 --> 00:00:18,490
+How should the classes be named then?
+
+7
+00:00:18,490 --> 00:00:20,170
+When it comes to bad names,
+
+8
+00:00:20,170 --> 00:00:24,400
+we could use something like UEntity or ObjA.
+
+9
+00:00:24,400 --> 00:00:26,440
+These again are very unspecific.
+
+10
+00:00:26,440 --> 00:00:27,890
+They could hold anything.
+
+11
+00:00:27,890 --> 00:00:29,803
+These are not the names you wanna use.
+
+12
+00:00:30,840 --> 00:00:33,640
+Better names would be something like UserObj or AppUser.
+
+13
+00:00:34,970 --> 00:00:37,130
+These names are okay,
+
+14
+00:00:37,130 --> 00:00:40,310
+but actually we have redundant information in there.
+
+15
+00:00:40,310 --> 00:00:42,460
+Of course, a user is an object.
+
+16
+00:00:42,460 --> 00:00:45,350
+And of course, a user in our application
+
+17
+00:00:45,350 --> 00:00:47,010
+is an application user.
+
+18
+00:00:47,010 --> 00:00:49,690
+So using these names might not make too much sense
+
+19
+00:00:49,690 --> 00:00:52,640
+unless you have a very good reason for doing that.
+
+20
+00:00:52,640 --> 00:00:54,870
+Now, good names could be just User
+
+21
+00:00:54,870 --> 00:00:57,710
+or the more specific kind of user Admin
+
+22
+00:00:57,710 --> 00:01:00,290
+or also customer and so on.
+
+23
+00:01:00,290 --> 00:01:02,000
+This is fine and specific enough,
+
+24
+00:01:02,000 --> 00:01:04,660
+or in the case of Admin, even very specific.
+
+25
+00:01:04,660 --> 00:01:07,310
+So these are great names to use.
+
+26
+00:01:07,310 --> 00:01:10,110
+And that, of course, again means that it's now time for you
+
+27
+00:01:10,110 --> 00:01:11,460
+to practice this.
+
+28
+00:01:11,460 --> 00:01:13,820
+Again, take the chance to pause the video
+
+29
+00:01:13,820 --> 00:01:17,070
+and then come up with some names for a database,
+
+30
+00:01:17,070 --> 00:01:19,700
+which should be described by a class.
+
+31
+00:01:19,700 --> 00:01:22,020
+So let's say you are creating a class
+
+32
+00:01:22,020 --> 00:01:25,010
+which then has methods which you can use in your code
+
+33
+00:01:25,010 --> 00:01:27,110
+for connecting to a database
+
+34
+00:01:27,110 --> 00:01:30,320
+and for sending queries to that database.
+
+35
+00:01:30,320 --> 00:01:32,190
+That would be a thing you would definitely have
+
+36
+00:01:32,190 --> 00:01:33,520
+in a lot of applications.
+
+37
+00:01:33,520 --> 00:01:37,423
+And the question now is, how could you name such a class?
+
+38
+00:01:40,300 --> 00:01:42,110
+Here are some bad names.
+
+39
+00:01:42,110 --> 00:01:45,950
+The problem with these is that Data and DataStorage
+
+40
+00:01:45,950 --> 00:01:50,351
+are very unspecific or even describing the wrong thing.
+
+41
+00:01:50,351 --> 00:01:52,990
+DataStorage doesn't have to be a database.
+
+42
+00:01:52,990 --> 00:01:57,350
+It could also be a file storage or a storage in memory.
+
+43
+00:01:57,350 --> 00:02:01,190
+So this is very unspecific and even a bit misleading.
+
+44
+00:02:01,190 --> 00:02:04,090
+Better names could be Db or just Data,
+
+45
+00:02:04,090 --> 00:02:06,620
+but it's still not 100% specific,
+
+46
+00:02:06,620 --> 00:02:09,479
+especially Data is almost a bad name
+
+47
+00:02:09,479 --> 00:02:12,130
+because Data again could be anything.
+
+48
+00:02:12,130 --> 00:02:15,230
+So this might not even be okay.
+
+49
+00:02:15,230 --> 00:02:18,350
+Now, good names, on the other hand, are of course Database
+
+50
+00:02:18,350 --> 00:02:22,000
+or the specific kind of database which is being created.
+
+51
+00:02:22,000 --> 00:02:24,120
+If you have a SQL database
+
+52
+00:02:24,120 --> 00:02:26,520
+and your class has all the methods it needs
+
+53
+00:02:26,520 --> 00:02:29,160
+for interacting with this kind of database,
+
+54
+00:02:29,160 --> 00:02:31,973
+SQLDatabase, of course, is a great name.
+

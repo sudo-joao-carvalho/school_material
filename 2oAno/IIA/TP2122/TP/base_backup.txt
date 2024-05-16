@@ -1,0 +1,461 @@
+breed[comiloes comilao]
+breed[limpadores limpador]
+turtles-own[energy]
+limpadores-own[quantLixo]
+globals [counter1 counter2 counter3 counter4 perc_resMax perc_comidaMin perc_comidaMax total_res]
+
+to setup
+  reset-ticks
+  setup-patches
+  setup-turtles
+end
+
+to setup-patches
+
+  clear-all
+  set-patch-size 15
+  reset-ticks
+
+  set counter1 0
+  set counter2 0
+  set counter3 0
+  set counter4 0
+
+  let num_patches count patches
+
+  set perc_resMax num_patches * 0.15
+  set perc_comidaMin num_patches * 0.05
+  set perc_comidaMax num_patches * 0.20
+  ask patches
+  [
+;    ifelse random 101 <= 5 ;;lixo normal
+;    [
+;      set pcolor yellow
+;      ;;set plabel "lNormal"
+;    ]
+;    [
+;      ifelse random 101 <= 10 ;;lixo toxico
+;      [
+;        set pcolor red
+;        ;;set plabel "lToxico"
+;      ]
+;      [
+;        if random 101 <= 15 ;; comida
+;        [
+;          set pcolor green
+;          ;;set plabel "Comida"
+;        ]
+;      ]
+;    ]
+;
+
+    if pcolor = black
+    [
+      if counter1 < nLixoNormal
+      [
+        set pcolor yellow
+      ]
+      set counter1 counter1 + 1
+
+    ]
+
+    if pcolor = black
+    [
+      if counter2 < nLixoToxico
+      [
+        set pcolor red
+      ]
+      set counter2 counter2 + 1
+    ]
+
+    if pcolor = black
+    [
+      if counter3 < nComida
+      [
+        set pcolor green
+      ]
+      set counter3 counter3 + 1
+    ]
+
+    if pcolor = black
+    [
+      if counter4 < nDepositos
+      [
+        set pcolor blue
+      ]
+      set counter4 counter4 + 1
+    ]
+  ]
+
+end
+
+to setup-turtles
+
+  create-comiloes N-comiloes
+  [
+    set color cyan
+    let x one-of patches with[pcolor != yellow and pcolor != red and pcolor != green and pcolor != blue]
+    setxy [pxcor] of x [pycor] of x
+    set heading one-of [0 90 180 270]
+    set energy Energia_inicial
+  ]
+
+  create-limpadores N-limpadores
+  [
+    set shape "bug"
+    set color grey
+    let x one-of patches with[ pcolor != yellow and pcolor != red and pcolor != green and pcolor != blue and not any? comiloes-here]
+    setxy [pxcor] of x [pycor] of x
+    set heading one-of [0 90 180 270]
+    set energy Energia_inicial
+    set quantLixo 0
+  ]
+
+end
+
+to go
+  get_lixon
+  get_lixot
+  ask limpadores
+  [storage]
+  move-comiloes
+  move-limpadores
+  com-eating
+  limp_eating_rules
+  morte
+  tick
+  if count turtles = 0 or ticks = 1000
+  [stop]
+
+end
+
+to move-comiloes
+
+  ask comiloes
+  [
+    let x patch-ahead 1
+    let y patch-right-and-ahead 90 1
+    let z patch-left-and-ahead 90 1
+
+
+;PERCECIONAR COMIDA E LIXO
+    ifelse [pcolor] of x = yellow ;
+    [
+      set energy energy - (energy * 0.05)
+      rt 90
+    ]
+    [
+      ifelse [pcolor] of x = red
+      [
+        set energy energy - (energy * 0.10)
+        rt 90
+      ]
+      [
+        ifelse [pcolor] of z = yellow
+        [
+          set energy energy - (energy * 0.05)
+          fd 1
+        ]
+        [
+          ifelse [pcolor] of y = yellow
+          [
+            set energy energy - (energy * 0.05)
+            fd 1
+          ]
+          [
+            ifelse [pcolor] of z = red
+            [
+              set energy energy - (energy * 0.10)
+              fd 1
+            ]
+            [
+              ifelse [pcolor] of y = red
+              [
+                set energy energy - (energy * 0.10)
+                fd 1
+              ]
+              [
+                ifelse [pcolor] of x = green
+                [
+                  fd 1
+                  set energy energy - 1
+                ]
+                [
+                  ifelse [pcolor] of z = green
+                  [
+                    lt 90
+                    fd 1
+                    set energy energy - 1
+                  ]
+                  [
+                    ifelse [pcolor] of y = green
+                    [
+                      rt 90
+                      fd 1
+                      set energy energy - 1
+                    ]
+                    [
+                      ifelse random 101 < 85
+                      [
+                        fd 1
+                        set energy energy - 1
+                      ]
+                      [
+                        ifelse random 101 < 50
+                        [
+                          rt 90
+                          set energy energy - 1
+                        ]
+                        [
+                          if random 101 < 50
+                          [
+                            lt 90
+                            set energy energy - 1
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+
+;PERCECIONAR COMIDA E LIXO
+
+;PERCECIONAR SE PATCH-HERE É LIXO
+
+    if [pcolor] of patch-here = yellow
+    [die]
+
+    if [pcolor] of patch-here = red
+    [die]
+
+
+;PERCECIONAR SE PATCH-HERE É LIXO
+
+  ]
+
+end
+
+to get_lixon
+
+  ask limpadores
+  [
+    if [pcolor] of patch-here = yellow
+    [
+
+      ifelse quantLixo = Max_lixo
+      [
+        set pcolor yellow
+      ]
+      [
+        set pcolor black
+        set quantLixo quantLixo + 1
+
+        ask one-of patches with [pcolor = black]
+        [set pcolor yellow]
+      ]
+
+    ]
+  ]
+
+
+end
+
+to get_lixot
+
+  ask limpadores
+  [
+    if [pcolor] of patch-here = red
+    [
+
+      ifelse quantLixo = Max_lixo
+      [
+        set pcolor red
+      ]
+      [
+        set pcolor black
+        set quantLixo quantLixo + 1
+
+        ask one-of patches with [pcolor = black]
+        [set pcolor red]
+      ]
+
+    ]
+  ]
+
+end
+
+to storage
+
+
+  if ([pcolor] of patch-here = yellow) and quantLixo < Max_lixo
+  [
+    set quantLixo quantLixo + 1
+  ]
+
+  if ([pcolor] of patch-here = red) and quantLixo < Max_lixo
+  [
+    set quantLixo quantLixo + 2
+  ]
+
+  if ([pcolor] of patch-here = blue) and ((quantLixo < Max_lixo) or (quantLixo = Max_lixo))
+  [
+    set total_res total_res + quantLixo
+    set energy energy + (quantLixo * 10)
+    set quantLixo 0
+  ]
+
+end
+
+to move-limpadores
+
+  ask limpadores
+  [
+    let x patch-ahead 1
+    let z patch-left-and-ahead -90 1
+
+    ifelse [pcolor] of x = green
+    [
+      fd 1
+      set energy energy - 1
+    ]
+    [
+      ifelse [pcolor] of z = green
+      [
+        rt 90
+        fd 1
+        set energy energy - 1
+      ]
+      [
+        ifelse [pcolor] of x = yellow
+        [
+          fd 1
+          set energy energy - 1
+        ]
+        [
+          ifelse [pcolor] of z = yellow
+          [
+            rt 90
+            fd 1
+            set energy energy - 1
+          ]
+          [
+            ifelse [pcolor] of x = red
+            [
+              fd 1
+              set energy energy - 1
+            ]
+            [
+              ifelse [pcolor] of z = red
+              [
+                rt 90
+                fd 1
+                set energy energy - 1
+              ]
+              [
+                ifelse [pcolor] of x = blue
+                [
+                  fd 1
+                  set energy energy - 1
+                ]
+                [
+                  ifelse[pcolor] of z = blue
+                  [
+                    rt 90
+                    fd 1
+                    set energy energy - 1
+                  ]
+                  [
+                    ifelse random 101 < 80
+                    [
+                      fd 1
+                      set energy energy - 1
+                    ]
+                    [
+                      if random 101 < 50
+                      [
+                        rt 90
+                        set energy energy - 1
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+
+
+  ]
+
+end
+
+to com-eating
+
+  ask comiloes
+  [
+    ;COMER
+    if [pcolor] of patch-here = green
+    [
+      set pcolor black
+      set energy energy + Aum_energy
+
+      ask one-of patches with [pcolor = black]
+      [set pcolor green]
+    ]
+   ;COMER
+  ]
+
+end
+
+to limp_eating_rules
+
+  ask limpadores
+  [
+    ifelse quantLixo < (Max_lixo / 2)
+    [
+      ;set energy energy + Aum_energy
+      if [pcolor] of patch-here = green
+      [
+        set pcolor black
+        set energy energy + Aum_energy
+
+        ask one-of patches with [pcolor = black]
+        [set pcolor green]
+      ]
+    ]
+    [
+      ;set energy energy + (Aum_energy / 2)
+      if [pcolor] of patch-here = green
+      [
+        set pcolor black
+        set energy energy + Aum_energy
+
+        ask one-of patches with [pcolor = black]
+        [set pcolor green]
+      ]
+    ]
+
+
+  ]
+
+end
+
+to morte
+
+  ask turtles
+  [
+    if energy <= 0
+    [
+      die
+    ]
+  ]
+
+end

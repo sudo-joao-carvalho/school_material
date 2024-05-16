@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- aquele xmls:app é o namespace para a suport library que me ajuda a usar funcionalidades de equipamentos mais recentes em versoes mais antigas -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFF00"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FF0000">
+
+        <!-- @ quer dizer que é um resource -->
+        <!-- a unidade dp que dizer density points e tem a ver com a proporçao de pixeis numa unidade -->
+        <!-- 0dp indica ao mecanismo que temos uma maneira diferente de indicar o seu tamanho, neste caso é com o weight -->
+        <!-- como existem pesos, caso um dos elementos nao tenha peso tem ele garante que exista espaço suficiente para aparecerem todos os elementos com o wrap-content -->
+        <!-- margins sao idicadas por multiplos-->
+        <!-- a unidade sp so deve ser usada para textSize, para fonts -->
+
+        <!--  android:_textSize="24sp" -->
+        <!-- com as 3 propriedades auto, se eu aumentar o container onde o texto esta inserido o texto vai aumentar, mas isto so esta disponivel a partir do api24, ou seja tenho que mudar o namespace de android para app para usar a support Library -->
+        <!-- android:_maxLines="1" maxLines tem que se ter cuidado porque se o texto for muito grande parte se tudo -->
+
+        <!-- gravity alinha o conteudo -->
+        <!-- layout_gravity alinha o elemento -->
+        <TextView
+            android:background="#00FF00"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:id="@+id/tvMessage1"
+            android:textColor="#000087"
+            android:textStyle="italic|bold"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="24sp"
+            android:fontFamily="serif"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Hello World 123456789!" />
+
+        <TextView
+            android:background="#00FFFF"
+            android:id="@+id/tvMessage2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="bottom|end"
+            android:text="Hello World 2!" />
+
+    </LinearLayout>
+
+    <!-- @android:drawable usa os recursos dos sistemas para meter icons e imagens -->
+    <Button
+        android:drawableLeft="@android:drawable/arrow_up_float"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btnBotao1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botao_1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btnBotao2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/botao_2" />
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btnBotao3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/botao_3" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btnBotao4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/botao_4" />
+
+        <!-- android:onClick="onClick" deprecated, tem que ter o tools:context para a actividade onde temos a funcao para lidar ocm o click -->
+        <!-- esta deprecated pq se eu escrever mal o nome da funcao o programa compila na mesma -->
+        <Button
+            android:onClick="onBotao5"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btnBotao5"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/botao_5" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

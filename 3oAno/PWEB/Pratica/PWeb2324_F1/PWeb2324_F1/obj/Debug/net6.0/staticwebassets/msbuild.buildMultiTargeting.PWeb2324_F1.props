@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/PWeb2324_F1.props" />
+</Project>
